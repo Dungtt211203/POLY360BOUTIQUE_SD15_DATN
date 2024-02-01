@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../../../css/header.css">
+<%@ page pageEncoding="utf-8" %>
 <header>
     <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -8,19 +9,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#" style="color: #2D2D2D">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Thuong Hieu</a>
+                            <a class="nav-link" href="#"style="color: #2D2D2D">Thương Hiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">San Pham</a>
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Lien He</a>
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Liên Hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gioi Thieu</a>
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Giới Thiệu</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">

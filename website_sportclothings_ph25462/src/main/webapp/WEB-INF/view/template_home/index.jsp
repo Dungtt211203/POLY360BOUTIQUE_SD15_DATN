@@ -16,44 +16,42 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="icon" href="../../src/image/logohome.jpg">
+
 </head>
 
 <body>
 <jsp:include page="header.jsp"/>
 <section>
     <section>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel"
-             style="margin-top: 50px;">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../../img/banner.jpg" class="banner">
+                    <img src="../../../img/imgbanner/banner1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../../img/banner1'.jpg" class="banner">
+                    <img src="../../../img/imgbanner/banner1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../../img/banner2.jpg" class="banner">
+                    <img src="../../../img/imgbanner/banner1.png" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
     </section>
-    <h1 style="text-align: center;margin-top: 30px">Thuong Hieu Noi Bat</h1>
-    <section>
-        <h1 style="text-align: center;margin-top: 30px">Tat Ca San Pham</h1>
+    <h1 style="text-align: center;margin-top: 30px">Thương Hiệu Nổi Bật</h1>
+    <section style="margin-top: 30px">
+        <h1 style="text-align: center;margin-top: 30px">Tất Cả Sản Phẩm</h1>
        <jsp:include page="../cart.jsp"/>
     </section>
-    <section>
-        <h1 style="text-align: center;margin-top: 30px">San Pham Ban Chay</h1>
+    <section style="margin-top: 30px">
+        <h1 style="text-align: center;margin-top: 30px">Sản Phẩm Bán Chạy</h1>
         <jsp:include page="../cart.jsp"/>
     </section>
 </section>
@@ -61,6 +59,7 @@
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
 
 </body>
 
