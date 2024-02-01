@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
-    <link rel="icon" href="../../src/image/logohome.jpg">
+    <link rel="icon" href="../../../svg/logohome.svg">
 
 </head>
 
@@ -59,6 +59,14 @@
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+<script type="text/javascript">
+    jQuery('.nav-link').on('click', function name(params) {
+        jQuery('.nav-link').each(function name(params) {
+            jQuery(this).removeClass('active')
+        })
+        jQuery(this).addClass('active')
+    })
+</script>
 
 
 </body>
