@@ -47,13 +47,13 @@
             </button>
         </div>
     </section>
-    <h1 style="text-align: center">Thuong Hieu Noi Bat</h1>
+    <h1 style="text-align: center;margin-top: 30px">Thuong Hieu Noi Bat</h1>
     <section>
-        <h1 style="text-align: center">Tat Ca San Pham</h1>
+        <h1 style="text-align: center;margin-top: 30px">Tat Ca San Pham</h1>
        <jsp:include page="../cart.jsp"/>
     </section>
     <section>
-        <h1 style="text-align: center">San Pham Ban Chay</h1>
+        <h1 style="text-align: center;margin-top: 30px">San Pham Ban Chay</h1>
         <jsp:include page="../cart.jsp"/>
     </section>
 </section>

@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../../../css/footer.css">
-<footer class="footer">
+<footer class="footer" style="margin-top: 50px">
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
