@@ -1,51 +1,18 @@
 
 ::selection{
     color: #fff;
-    background: #ff7979;
+    background: orange;
 }
 .wrapper{
     position: relative;
     max-width: 1300px;
-    height: 500px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.cart .cart-nav{
-    position: absolute;
-    right: 0;
-    top: -35%;
-    width: 130px;
-    background: #fff;
-    padding: 13px 15px;
-    border-radius: 3px;
-    display: flex;
-    cursor: pointer;
-    justify-content: space-evenly;
-    margin-right: 1000px;
-    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.15);
-}
-.cart-nav .icon{
-    color: #ff7979;
-}
-.cart-nav .icon i{
-    font-size: 20px;
-}
-.cart-nav .icon span{
-    font-weight: 500;
-}
-.cart-nav .item-count{
-    font-size: 15px;
-    height: 23px;
-    width: 23px;
-    color: #ff7979;
-    background: #fff;
-    text-align: center;
-    line-height: 22px;
-    border: 1px solid #ffb3b3;
-    border-radius: 50%;
-}
+
 .wrapper .card{
     position: relative;
     background: #fff;
@@ -124,6 +91,6 @@ button:first-child:hover{
     background: orange;
 }
 button:last-child:hover{
-    background: #FFFFFF;
-    border-color: #2D2D2D;
+    border-color: orange;
+    color: #FFFFFF;
 }

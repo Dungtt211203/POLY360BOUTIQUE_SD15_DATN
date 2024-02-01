@@ -75,6 +75,70 @@
             </div>
         </div>
     </div>
+    <div class="card">
+        <img src="../../img/sp05ao.png" alt="">
+        <div class="content">
+            <div class="row">
+                <div class="details">
+                    <span>Apple Airpod</span>
+                    <p>Premium black airpod</p>
+                </div>
+                <div class="price">$50</div>
+            </div>
+            <div class="buttons">
+                <button>Buy Now</button>
+                <button class="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="../../img/sp06ao.png" alt="">
+        <div class="content">
+            <div class="row">
+                <div class="details">
+                    <span>Apple Airpod</span>
+                    <p>Premium black airpod</p>
+                </div>
+                <div class="price">$50</div>
+            </div>
+            <div class="buttons">
+                <button>Buy Now</button>
+                <button class="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="../../img/sp07.png" alt="">
+        <div class="content">
+            <div class="row">
+                <div class="details">
+                    <span>Apple Airpod</span>
+                    <p>Premium black airpod</p>
+                </div>
+                <div class="price">$50</div>
+            </div>
+            <div class="buttons">
+                <button>Buy Now</button>
+                <button class="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="../../img/sp08ao.png" alt="">
+        <div class="content">
+            <div class="row">
+                <div class="details">
+                    <span>Apple Airpod</span>
+                    <p>Premium black airpod</p>
+                </div>
+                <div class="price">$50</div>
+            </div>
+            <div class="buttons">
+                <button>Buy Now</button>
+                <button class="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="../../js/cart.js"></script>
