@@ -4,6 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLY360BOUTIQUE</title>
+    <link rel="stylesheet" href="../../../css/index.css">
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+          href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d">
     <link rel="stylesheet" href="../../../css/thuong-hieu.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
@@ -12,6 +17,9 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
 </head>
 <body>
+<header>
+    <jsp:include page="../template_home/header.jsp"/>
+</header>
 <div class="flex-box">
     <div class="left">
         <div class="big-img">
@@ -19,22 +27,21 @@
         </div>
         <div class="images">
             <div class="small-img">
-                <img src="../../../img/ctsp12.1ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/ctsp12.1ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img src="../../../img/sp12ao.2ao.png" onclick="showImg(this.src)">
+                <img class="img-th"  src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img src="../../../img/sp12ao.3ao.png" onclick="showImg(this.src)">
+                <img class="img-th"  src="../../../img/ctsp12.3ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img src="../../../img/sp12ao.4ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/ctsp12.4ao.png" onclick="showImg(this.src)">
             </div>
         </div>
     </div>
 
     <div class="right">
-        <div class="url">Home > Product > T-Shirt</div>
         <div class="pname">T-Shirts for Men</div>
         <div class="ratings">
             <i class="fas fa-star"></i>
@@ -61,7 +68,7 @@
         </div>
     </div>
 </div>
-
+<jsp:include page="../template_home/footer.jsp"/>
 
 <script>
     let bigImg = document.querySelector('.big-img img');
