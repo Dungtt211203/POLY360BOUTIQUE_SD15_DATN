@@ -23,16 +23,28 @@
 <aside>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản Lý </a>
+            <a class="nav-link" href="#">Trang chủ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Bán hàng tại quầy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Quản lý tài khoản</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Quản lý hóa đơn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Quản Lý khuyến mãi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Quản lý đổi trả</a>
         </li>
     </ul>
 </aside>
