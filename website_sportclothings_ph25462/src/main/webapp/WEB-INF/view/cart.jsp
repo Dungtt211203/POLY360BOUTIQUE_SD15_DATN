@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="../../img/sp03.png" alt="">
+        <img src="../../img/sp03quan.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">

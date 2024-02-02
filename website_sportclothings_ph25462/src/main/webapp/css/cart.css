@@ -94,3 +94,6 @@ button:last-child:hover{
     border-color: orange;
     color: #FFFFFF;
 }
+.card{
+    margin-top: 30px;
+}

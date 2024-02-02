@@ -12,7 +12,13 @@
                             <a class="nav-link active" aria-current="page" href="#" style="color: #2D2D2D">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"style="color: #2D2D2D">Thương Hiệu</a>
+                            <a class="nav-link" href="#"style="color: #2D2D2D">Thương Hiệu
+                                <div class="dropdown-content">
+                                    <a href="../thuong-hieu/thuong-hieu.jsp">Nike</a>
+                                    <a href="../thuong-hieu/thuong-hieu.jsp">Adidas</a>
+                                    <a href="../thuong-hieu/thuong-hieu.jsp">Li-ning</a>
+                                </div>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
