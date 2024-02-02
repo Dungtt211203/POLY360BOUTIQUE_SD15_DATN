@@ -24,7 +24,7 @@
                             <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: #2D2D2D">Liên Hệ</a>
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Chính Sách</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D">Giới Thiệu</a>

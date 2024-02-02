@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="icon" href="../../../svg/logohome.svg">
 </head>
 <body>
 <header>
@@ -70,11 +71,12 @@
 </div>
 <jsp:include page="../template_home/footer.jsp"/>
 
-<script>
+<script type="text/javascript">
     let bigImg = document.querySelector('.big-img img');
     function showImg(pic){
         bigImg.src = pic;
     }
+
 </script>
 </body>
 </html>
