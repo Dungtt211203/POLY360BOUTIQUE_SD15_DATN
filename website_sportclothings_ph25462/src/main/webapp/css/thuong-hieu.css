@@ -9,14 +9,14 @@
 
 .flex-box{
     display: flex;
-    width: 1000px;
+    width: 1400px;
     margin: 20px auto;
 }
 .left{
     width: 40%;
 }
 .big-img{
-    width: 250px;
+    width: 560px;
 }
 .big-img img{
     width: inherit;
@@ -24,44 +24,46 @@
 .images{
     display: flex;
     justify-content: space-between;
-    width: 60%;
-    margin-top: 15px;
+    gap: 15px;
+    margin-top: 30px;
 }
 .small-img{
-    width: 50px;
+    width: 150px;
+    display: flex;
     overflow: hidden;
     border: 1.5px solid black;
 }
-.small-img img{
-    width: inherit;
+.small-img .img-th{
+    width: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .small-img:hover img{
     transform: scale(1.2);
 }
-.url{
-    font-size: 16px;
-    font-weight: 400;
-    color: rgb(0, 102, 255);
-}
 .pname{
     font-size: 22px;
     font-weight: 600;
     margin-top: 50px;
+    margin-left: 200px;
 }
 .ratings i{
     color: rgb(255, 136, 0);
+}
+.ratings{
+    margin-left: 200px;
 }
 .price{
     font-size: 20px;
     font-weight: 500;
     margin: 20px 0;
+    margin-left: 200px;
 }
 .size{
     display: flex;
     align-items: center;
     margin: 20px 0;
+    margin-left: 200px;
 }
 .size p{
     font-size: 18px;
@@ -83,6 +85,7 @@
 }
 .quantity{
     display: flex;
+    margin-left: 200px;
 }
 .quantity p{
     font-size: 18px;
@@ -98,6 +101,7 @@
 .btn-box{
     display: flex;
     margin-top: 40px;
+    margin-left: 200px;
 }
 .btn-box button{
     font-size: 18px;

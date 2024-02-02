@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../../css/header.css">
+<link rel="stylesheet"  type="text/css" href="../../../css/header.css">
 <%@ page pageEncoding="utf-8" %>
 <header>
     <div>
@@ -14,9 +14,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"style="color: #2D2D2D">Thương Hiệu
                                 <div class="dropdown-content">
-                                    <a href="../thuong-hieu/thuong-hieu.jsp">Nike</a>
-                                    <a href="../thuong-hieu/thuong-hieu.jsp">Adidas</a>
-                                    <a href="../thuong-hieu/thuong-hieu.jsp">Li-ning</a>
+                                    <a href="/poly360boutique/thuong-hieu-nike">Nike</a>
+                                    <a href="/poly360boutique/thuong-hieu-nike">Adidas</a>
+                                    <a href="/poly360boutique/thuong-hieu-nike">Li-ning</a>
                                 </div>
                             </a>
                         </li>
