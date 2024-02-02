@@ -48,11 +48,11 @@
     <h1 style="text-align: center;margin-top: 30px">Thương Hiệu Nổi Bật</h1>
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Tất Cả Sản Phẩm</h1>
-       <jsp:include page="../cart.jsp"/>
+       <jsp:include page="../template_home/cart.jsp"/>
     </section>
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Sản Phẩm Bán Chạy</h1>
-        <jsp:include page="../cart.jsp"/>
+        <jsp:include page="../template_home/cart.jsp"/>
     </section>
 </section>
 <jsp:include page="footer.jsp"/>

@@ -1,0 +1,16 @@
+aside {
+    background: orange;
+    display: table-cell;
+    height: 100vh;
+    min-height: 100%;
+    padding: 0 25px;
+    vertical-align: top;
+    width: 280px;
+    transition: width .3s ease;
+}
+.text{
+    color: #FFFFFF;
+    font-size: 30px;
+    margin-top: 100px;
+    text-decoration: none;
+}
