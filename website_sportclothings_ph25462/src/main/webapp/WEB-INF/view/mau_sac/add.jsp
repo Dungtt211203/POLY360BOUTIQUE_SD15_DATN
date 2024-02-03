@@ -66,7 +66,17 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA MÀU SẮC</h1>
-
-Tên Màu Sắc<input >
+    <form:form action="/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
+        TenMauSac: <form:input path="ten"/>
+        <br/>
+        NgayTao: <form:input path="ngayTao" type="date"/>
+        <br/>
+        NgaySua: <form:input path="ngaySua" type="date"/>
+        <br/>
+        TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
+        <form:radiobutton path="tt" value="1" />Khong Hoat Dong
+        <br/>
+        <form:button type="submit">Add</form:button>
+    </form:form>
 </div>
 </body>
