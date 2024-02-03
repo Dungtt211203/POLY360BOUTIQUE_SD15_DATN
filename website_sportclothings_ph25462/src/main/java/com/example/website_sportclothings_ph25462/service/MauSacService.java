@@ -9,5 +9,7 @@ import java.util.List;
 @Service
 public interface MauSacService {
     List<MauSac> getAll();
+    void  add(MauSac mauSac);
 
+    void remove(Long id);
 }

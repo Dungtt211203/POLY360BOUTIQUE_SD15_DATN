@@ -18,33 +18,53 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="icon" href="../../../svg/logohome.svg">
+    <style>
+        .image-logo{
+            margin-left: 60px;
+        }
+        h1{
+            color: #FFFFFF;
+            font-size: 20px;
+            text-align: center;
+        }
+        .nav-link-admin{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .nav-link-admin:hover{
+            color: #0066ff;
+        }
+
+    </style>
 </head>
 <body>
 <aside>
+    <img class="image-logo" src="../../../svg/logohome.svg" width="100px" height="100px">
+    <h1>POLY360BOUTIQUE</h1>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="#">Trang chủ</a>
+            <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý sản phẩm</a>
+            <a class="nav-link-admin" href="#">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/poly360boutique/mau-sac/hien-thi">Quản lý màu sắc</a>
+            <a class="nav-link-admin" href="/poly360boutique/ms/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Bán hàng tại quầy</a>
+            <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý tài khoản</a>
+            <a class="nav-link-admin" href="#">Quản lý tài khoản</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý hóa đơn</a>
+            <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản Lý khuyến mãi</a>
+            <a class="nav-link-admin" href="#">Quản Lý khuyến mãi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý đổi trả</a>
+            <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
         </li>
     </ul>
 </aside>

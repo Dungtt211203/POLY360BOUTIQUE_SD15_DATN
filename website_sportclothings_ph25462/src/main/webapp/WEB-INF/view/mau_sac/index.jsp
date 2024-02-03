@@ -9,18 +9,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POLY360BOUTIQUE_ADMIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<table>
+<h1 style="text-align: center">QUẢN LÝ MÀU SẮC</h1>
+<table class="table">
     <thead>
     <tr>
-        <th>#</th>
-        <th>MaPhieu</th>
-        <th>TenPhieu</th>
-        <th>NgayBatDau</th>
-        <th>NgayKetThuc</th>
-        <th>TrangThai</th>
-        <th>TenKhachHang</th>
+        <th>STT</th>
+        <th>ID</th>
+        <th>Tên Màu Sắc</th>
+        <th>Ngày Tạo</th>
+        <th>Ngày Sửa</th>
+        <th>Trạng Thái</th>
         <th colspan="2">Action</th>
     </tr>
     </thead>
@@ -34,8 +35,8 @@
             <td>${ms.ngaySua}</td>
             <td>${ms.tt}</td>
             <td>
-                <button><a href="/ms/detail/${ms.id}">Detail</a></button>
-                <button><a href="/ms/remove/${ms.id}">Remove</a></button>
+                <button class="btn btn-success"><a href="/poly360boutique/ms/detail/${ms.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+                <button class="btn btn-danger"><a href="/poly360boutique/ms/remove/${ms.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 
@@ -43,5 +44,6 @@
     </c:forEach>
     </tbody>
 </table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
