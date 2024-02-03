@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,29 +19,34 @@ public class MauSacController {
     MauSacRepository msr;
     @Autowired
     MauSacServiceImpl mss;
+
     public Map<Integer, String> getDsTrangThai() {
         Map<Integer, String> dsTrangThai = new HashMap<>();
         dsTrangThai.put(0, " hoạt động");
         dsTrangThai.put(1, " không Hoạt động");
         return dsTrangThai;
     }
+
     @GetMapping("/mau-sac/hien-thi")
-    public String hienThi(Model model){
-        model.addAttribute("load",mss.getAll());
-        model.addAttribute("ms",new MauSac());
+    public String hienThi(Model model) {
+        model.addAttribute("load", mss.getAll());
+        model.addAttribute("ms", new MauSac());
         return "/mau_sac/index";
     }
+
     @GetMapping("/mau-sac/hien-thi-add")
-    public String hienThiAdd(){
+    public String hienThiAdd(@ModelAttribute("mauSac") MauSac mauSac) {
         return ("/mau_sac/add");
     }
-    @PostMapping("/")
-    public String add(@ModelAttribute("ms")MauSac mauSac){
+
+    @PostMapping("/mau-sac/hien-thi-add")
+    public String add(@ModelAttribute("mauSac") MauSac mauSac) {
         mss.add(mauSac);
         return "redirect:/mau-sac/hien-thi";
     }
+
     @GetMapping("/mau-sac/remove/{id}")
-    public String remove(@PathVariable("id")Long id){
+    public String remove(@PathVariable("id") Long id) {
         mss.remove(id);
         return "redirect:/mau-sac/hien-thi";
     }

@@ -7,9 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "mau_sac")
 @Entity
@@ -22,14 +22,14 @@ public class MauSac {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @NotBlank(message = "không để trống tên")
     @Column(name = "ten_mau_sac")
     private String ten;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "ngay_tao")
     private Date ngayTao;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "ngay_sua")
     private Date ngaySua;
-    @NotNull(message = "Vui lòng chọn trạng thái!")
     @Column(name = "trang_thai")
     private Integer tt;
 }
