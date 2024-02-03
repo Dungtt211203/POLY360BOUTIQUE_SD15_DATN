@@ -6,13 +6,13 @@ import com.example.website_sportclothings_ph25462.service.Impl.MauSacServiceImpl
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-
 public class MauSacController {
     @Autowired
     MauSacRepository msr;
@@ -24,21 +24,24 @@ public class MauSacController {
         dsTrangThai.put(1, " không Hoạt động");
         return dsTrangThai;
     }
-    @RequestMapping("/poly360boutique/ms")
-    @GetMapping("/hien-thi")
+    @GetMapping("/mau-sac/hien-thi")
     public String hienThi(Model model){
         model.addAttribute("load",mss.getAll());
         model.addAttribute("ms",new MauSac());
         return "/mau_sac/index";
     }
-    @PostMapping("/add")
+    @GetMapping("/mau-sac/hien-thi-add")
+    public String hienThiAdd(){
+        return ("/mau_sac/add");
+    }
+    @PostMapping("/mau-sac/hien-thi-add")
     public String add(@ModelAttribute("ms")MauSac mauSac){
         mss.add(mauSac);
         return "redirect:/mau-sac/hien-thi";
     }
-    @GetMapping("/remove/{id}")
+    @GetMapping("/mau-sac/remove/{id}")
     public String remove(@PathVariable("id")Long id){
         mss.remove(id);
-        return "redirect:/poly360boutique/ms/hien-thi";
+        return "redirect:/mau-sac/hien-thi";
     }
 }
