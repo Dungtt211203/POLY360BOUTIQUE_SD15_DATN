@@ -6,7 +6,6 @@ import com.example.website_sportclothings_ph25462.service.Impl.MauSacServiceImpl
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -34,7 +33,7 @@ public class MauSacController {
     public String hienThiAdd(){
         return ("/mau_sac/add");
     }
-    @PostMapping("/mau-sac/hien-thi-add")
+    @PostMapping("/")
     public String add(@ModelAttribute("ms")MauSac mauSac){
         mss.add(mauSac);
         return "redirect:/mau-sac/hien-thi";
