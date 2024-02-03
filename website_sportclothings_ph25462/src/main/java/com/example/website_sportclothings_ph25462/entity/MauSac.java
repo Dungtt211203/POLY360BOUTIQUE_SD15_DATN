@@ -10,6 +10,7 @@ import lombok.Setter;
 
 import java.util.Date;
 import java.util.UUID;
+
 @Table(name = "mau_sac")
 @Entity
 @Getter
@@ -18,9 +19,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class MauSac {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @NotBlank(message = "không để trống tên")
     @Column(name = "ten_mau_sac")
     private String ten;
