@@ -16,4 +16,13 @@ public class MauSacServiceImpl implements MauSacService {
     public List<MauSac> getAll() {
         return msr.findAll();
     }
+    @Override
+    public void add(MauSac mauSac) {
+        msr.save(mauSac);
+    }
+
+    @Override
+    public void remove(Long id) {
+        msr.deleteById(id);
+    }
 }
