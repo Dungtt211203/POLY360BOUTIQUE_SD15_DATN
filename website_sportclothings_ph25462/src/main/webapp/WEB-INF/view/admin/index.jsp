@@ -49,7 +49,7 @@
             <a class="nav-link-admin" href="#">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-admin" href="/poly360boutique/ms/hien-thi">Quản lý màu sắc</a>
+            <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>

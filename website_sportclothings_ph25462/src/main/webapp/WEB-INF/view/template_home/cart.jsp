@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Product Card Poly360Boutique</title>
-    <link rel="stylesheet" href="src/main/webapp/css/cart.css">
+    <link rel="stylesheet" href="../../../css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -12,7 +12,7 @@
 <body>
 <div class="wrapper">
     <div class="card">
-        <img src="src/main/webapp/img/sp01ao.png" alt="">
+        <img src="../../../img/sp01ao.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp02quan.png" alt="">
+        <img src="../../../img/sp02quan.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp03quan.png" alt="">
+        <img src="../../../img/sp03quan.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp04quan.png" alt="">
+        <img src="../../../img/sp04quan.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp05ao.png" alt="">
+        <img src="../../../img/sp05ao.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp06ao.png" alt="">
+        <img src="../../../img/sp06ao.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -108,7 +108,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp07.png" alt="">
+        <img src="../../../img/sp07.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
@@ -124,7 +124,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="src/main/webapp/img/sp08ao.png" alt="">
+        <img src="../../../img/sp08ao.png" alt="">
         <div class="content">
             <div class="row">
                 <div class="details">
