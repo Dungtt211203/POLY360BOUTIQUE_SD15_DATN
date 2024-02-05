@@ -1,11 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-import com.example.website_sportclothings_ph25462.entity.ChatLieu;
-import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
-import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
-import com.example.website_sportclothings_ph25462.service.ChatLieuService;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,7 +32,7 @@ public class SanPhamController {
     @GetMapping("/san-pham/hien-thi")
     public String hienThi(Model model) {
         model.addAttribute("load", sanPhamService.getAll());
-        model.addAttribute("sp", new ChatLieu());
+        model.addAttribute("sp", new SanPham());
         model.addAttribute("view", "../san_pham/index.jsp");
         return "/san_pham/index";
     }
@@ -52,7 +48,7 @@ public class SanPhamController {
         return "redirect:/san-pham/hien-thi";
     }
 
-    @GetMapping("/chat-lieu/remove/{id}")
+    @GetMapping("/san-pham/remove/{id}")
     public String remove(@PathVariable("id") UUID id) {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";

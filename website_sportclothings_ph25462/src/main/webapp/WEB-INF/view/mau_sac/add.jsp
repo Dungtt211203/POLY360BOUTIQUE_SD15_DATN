@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link
@@ -13,10 +13,11 @@
 <link rel="icon" href="../../../svg/logohome.svg">
 <style>
 
-    body{
+    body {
         background-color: #D9D9D9;
     }
-    .formAdd{
+
+    .formAdd {
         width: 700px;
         height: 600px;
         margin: 0 auto;
@@ -26,28 +27,30 @@
         font-family: "Nunito";
     }
 
-    form{
+    form {
         margin-left: 50px;
     }
 
-    .formAdd>form>.mb-3>.col-sm-8{
+    .formAdd > form > .mb-3 > .col-sm-8 {
         margin-top: 20px;
     }
 
-    .formAdd>h1{
+    .formAdd > h1 {
         text-align: center;
         padding-top: 40px;
     }
-    .formAdd>form>.mb-3>label{
+
+    .formAdd > form > .mb-3 > label {
         margin-top: 20px;
     }
 
-    .buttonSubmit{
+    .buttonSubmit {
         margin-top: 50px;
         margin-left: -50px;
         text-align: center;
     }
-    .buttonSubmit>button{
+
+    .buttonSubmit > button {
         background-color: #FFFFFF;
         color: black;
         font-weight: bold;
@@ -57,7 +60,7 @@
         border: 0px;
     }
 
-    .radioButton{
+    .radioButton {
         margin-top: 10px;
     }
 </style>
@@ -67,12 +70,12 @@
 <div class="formAdd">
     <h1>THÊM/SỬA MÀU SẮC</h1>
     <form:form action="/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
-        Ma: <form:input path="ma"/>
+        Mã Màu Sắc: <form:input path="ma"/>
         <br/>
-        TenMauSac: <form:input path="ten"/>
+        Tên Màu Sắc: <form:input path="ten"/>
         <br/>
-        TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1" />Khong Hoat Dong
+        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
+        <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
         <br/>
         <form:button type="submit">Add</form:button>
     </form:form>
