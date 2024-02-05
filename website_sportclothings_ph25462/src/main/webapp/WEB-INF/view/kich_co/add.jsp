@@ -30,7 +30,7 @@
 
 <body>
 <div class="formAdd">
-    <h1>THÊM/SỬA CHẤT LIỆU</h1>
+    <h1>THÊM/SỬA KÍCH CỠ</h1>
     <form:form action="/kich-co/hien-thi-add" method="post" modelAttribute="kichCo">
         MaKickCo: <form:input path="ma"/>
         <br/>
