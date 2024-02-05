@@ -1,7 +1,6 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
-import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
 import org.springframework.beans.factory.annotation.Autowired;
