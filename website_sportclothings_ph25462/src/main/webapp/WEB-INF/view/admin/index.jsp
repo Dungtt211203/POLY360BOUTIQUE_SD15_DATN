@@ -58,6 +58,9 @@
             <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
         <li class="nav-item">
