@@ -32,12 +32,12 @@
 <div class="formAdd">
     <h1>THÊM/SỬA CHẤT LIỆU</h1>
     <form:form action="/chat-lieu/hien-thi-add" method="post" modelAttribute="chatLieu">
-        MaKickCo: <form:input path="ma"/>
+        Mã Chất Liệu: <form:input path="ma"/>
         <br/>
-        TenKichCo: <form:input path="ten"/>
+        Tên Chất Liệu: <form:input path="ten"/>
         <br/>
-        TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1" />Khong Hoat Dong
+        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoạt Động
+        <form:radiobutton path="tt" value="1" />Không Hoạt Động
         <br/>
         <form:button type="submit">Add</form:button>
     </form:form>

@@ -41,7 +41,7 @@ public class ChatLieuController {
     }
 
     @GetMapping("/chat-lieu/hien-thi-add")
-    public String hienThiAdd(@ModelAttribute("chatLieu") KichCo kichCo) {
+    public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
         return ("/chat_lieu/add");
     }
 

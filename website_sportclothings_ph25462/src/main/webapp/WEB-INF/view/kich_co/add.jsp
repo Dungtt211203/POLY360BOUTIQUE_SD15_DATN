@@ -32,12 +32,12 @@
 <div class="formAdd">
     <h1>THÊM/SỬA KÍCH CỠ</h1>
     <form:form action="/kich-co/hien-thi-add" method="post" modelAttribute="kichCo">
-        MaKickCo: <form:input path="ma"/>
+        Mã Kích Cỡ: <form:input path="ma"/>
         <br/>
-        TenKichCo: <form:input path="ten"/>
+        Tên Kích Cỡ: <form:input path="ten"/>
         <br/>
-        TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1" />Khong Hoat Dong
+        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoạt Động
+        <form:radiobutton path="tt" value="1" />Không Hoạt Động
         <br/>
         <form:button type="submit">Add</form:button>
     </form:form>
