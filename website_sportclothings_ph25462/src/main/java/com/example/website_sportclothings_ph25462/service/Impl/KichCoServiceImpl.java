@@ -19,8 +19,8 @@ public class KichCoServiceImpl implements KichCoService {
         return kcr.findAll();
     }
     @Override
-    public void add(KichCo mauSac) {
-        kcr.save(mauSac);
+    public void add(KichCo kichCo) {
+        kcr.save(kichCo);
     }
 
     @Override
