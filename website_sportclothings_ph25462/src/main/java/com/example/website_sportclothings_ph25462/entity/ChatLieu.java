@@ -1,29 +1,26 @@
 package com.example.website_sportclothings_ph25462.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
-
-@Table(name = "mau_sac")
+@Table(name = "chat_lieu")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MauSac {
+public class ChatLieu {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @Column(name = "ma_mau_sac")
+    @Column(name = "ma_chat_lieu")
     private String ma;
-    @Column(name = "ten_mau_sac")
+    @Column(name = "ten_chat_lieu")
     private String ten;
     @Column(name = "trang_thai")
     private Integer tt;

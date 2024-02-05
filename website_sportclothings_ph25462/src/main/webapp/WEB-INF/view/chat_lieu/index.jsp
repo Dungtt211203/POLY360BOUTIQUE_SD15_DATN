@@ -13,30 +13,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<h1 style="text-align: center">QUẢN LÝ MÀU SẮC</h1>
+<h1 style="text-align: center">QUẢN LÝ CHẤT LIỆU</h1>
 <table class="table">
     <thead>
     <tr>
         <th>STT</th>
         <th>ID</th>
-        <th>Mã Màu Sắc</th>
-        <th>Tên Màu Sắc</th>
+        <th>Mã Chất Liệu</th>
+        <th>Tên Chất Liệu</th>
         <th>Trạng Thái</th>
         <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${load}" var="ms" varStatus="i">
+    <c:forEach items="${load}" var="cl" varStatus="i">
         <tr>
             <td>${i.index+1}</td>
-            <td>${ms.id}</td>
-            <td>${ms.ma}</td>
-            <td>${ms.ten}</td>
-            <td>${ms.tt}</td>
+            <td>${cl.id}</td>
+            <td>${cl.ma}</td>
+            <td>${cl.ten}</td>
+            <td>${cl.tt}</td>
             <td>
-                <button class="btn btn-success"><a href="/mau-sac/detail/${ms.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
-                <button class="btn btn-success"><a href="/mau-sac/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-                <button class="btn btn-danger"><a href="/mau-sac/remove/${ms.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
+                <button class="btn btn-success"><a href="/chat-lieu/detail/${cl.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+                <button class="btn btn-success"><a href="/chat-lieu/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+                <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 
