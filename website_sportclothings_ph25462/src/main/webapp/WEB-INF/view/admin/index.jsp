@@ -55,6 +55,9 @@
             <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
         <li class="nav-item">
