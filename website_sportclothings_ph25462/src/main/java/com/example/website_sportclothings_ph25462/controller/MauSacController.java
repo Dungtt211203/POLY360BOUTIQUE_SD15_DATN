@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 public class MauSacController {
@@ -44,7 +45,7 @@ public class MauSacController {
     }
 
     @GetMapping("/mau-sac/remove/{id}")
-    public String remove(@PathVariable("id") Long id) {
+    public String remove(@PathVariable("id") UUID id) {
         mss.remove(id);
         return "redirect:/mau-sac/hien-thi";
     }
