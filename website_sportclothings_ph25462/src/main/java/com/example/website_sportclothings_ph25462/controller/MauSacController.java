@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +28,7 @@ public class MauSacController {
     public String hienThi(Model model) {
         model.addAttribute("load", mss.getAll());
         model.addAttribute("ms", new MauSac());
+        model.addAttribute("view", "../mau_sac/index.jsp");
         return "/mau_sac/index";
     }
 

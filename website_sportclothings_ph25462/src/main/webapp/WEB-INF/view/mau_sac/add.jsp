@@ -20,7 +20,7 @@
         width: 700px;
         height: 600px;
         margin: 0 auto;
-        background-color: #37517E;
+        background-color: orange;
         border-radius: 20px;
         color: #FFFFFF;
         font-family: "Nunito";
