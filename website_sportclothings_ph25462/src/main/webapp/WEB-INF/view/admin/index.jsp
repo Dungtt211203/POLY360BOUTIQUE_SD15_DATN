@@ -52,6 +52,9 @@
             <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
         <li class="nav-item">

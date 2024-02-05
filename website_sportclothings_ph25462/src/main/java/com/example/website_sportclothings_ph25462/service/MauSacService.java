@@ -10,6 +10,7 @@ import java.util.UUID;
 @Service
 public interface MauSacService {
     List<MauSac> getAll();
+
     void  add(MauSac mauSac);
 
     void remove(UUID id);

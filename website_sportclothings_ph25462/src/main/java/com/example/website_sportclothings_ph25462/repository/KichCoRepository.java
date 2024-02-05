@@ -1,4 +1,9 @@
 package com.example.website_sportclothings_ph25462.repository;
 
-public interface KichCoRepository {
+import com.example.website_sportclothings_ph25462.entity.KichCo;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface KichCoRepository extends JpaRepository<KichCo, UUID> {
 }
