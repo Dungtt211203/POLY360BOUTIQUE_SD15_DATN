@@ -35,16 +35,20 @@
                     <img class="img-banner" src="../../../img/imgbanner/banner1.png" class="d-block w-100" alt="...">
                 </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
+
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
         </div>
     </section>
+
     <h1 style="text-align: center;margin-top: 30px">Thương Hiệu Nổi Bật</h1>
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Tất Cả Sản Phẩm</h1>
@@ -55,11 +59,13 @@
         <jsp:include page="../template_home/cart.jsp"/>
     </section>
 </section>
+
 <jsp:include page="footer.jsp"/>
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
+
     jQuery('.nav-link').on('click', function name(params) {
         jQuery('.nav-link').each(function name(params) {
             jQuery(this).removeClass('active')

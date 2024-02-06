@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
@@ -16,13 +17,17 @@
         <img src="../../../img/sp01ao.png" alt="">
         <div class="content">
             <div class="row">
-                <div class="details">
-                    <span>Headphone</span>
-                    <p>Premium headphone</p>
-                </div>
-                <div class="price">$30</div>
+                <c:forEach items="${product.content}" var="hienthi">
+                    <h3>${hienthi.ten}</h3>
+                    <%--                    <div class="details">--%>
+                    <%--                     value       ${hienthi.ten}--%>
+                    <%--                    </div>--%>
+                    <%--                    <div class="price">$30</div>--%>
+                </c:forEach>
             </div>
+
             <div class="buttons">
+                <button class="cart-btn">Detail</button>
                 <button>Buy Now</button>
                 <button class="cart-btn">Add to Cart</button>
             </div>
@@ -143,6 +148,5 @@
 </div>
 
 <script src="src/main/webapp/js/cart.js"></script>
-
 </body>
 </html>
