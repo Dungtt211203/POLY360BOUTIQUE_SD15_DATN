@@ -30,11 +30,28 @@
 
 <body>
 <div class="formAdd">
-    <h1>THÊM/SỬA MÀU SẮC</h1>
+<%--    <th>STT</th>--%>
+<%--    <th>ID</th>--%>
+<%--    <th>Mã Sản Phẩm</th>--%>
+<%--    <th>Tên Sản Phẩm</th>--%>
+<%--    <th>Mô Tả</th>--%>
+<%--    <th>Ngày Tạo</th>--%>
+<%--    <th>Người Tạo</th>--%>
+<%--    <th>Trạng Thái</th>--%>
+<%--    <th colspan="2">Action</th>--%>
+    <h1>THÊM/SỬA SẢN PHẤM</h1>
     <form:form action="/san-pham/hien-thi-add" method="post" modelAttribute="sanPham">
         Mã Sản Phẩm: <form:input path="ma"/>
         <br/>
         Tên Sản Phẩm: <form:input path="ten"/>
+        <br/>
+        Mô Tả: <form:input path="mo_ta"/>
+        <br/>
+        Tên Ngày Tạo: <form:input path="ngay_tao"/>
+        <br/>
+        Tên Người Sửa: <form:input path="nguoi_sua"/>
+        <br/>
+        Tên Người Tạo: <form:input path="nguoi_tao"/>
         <br/>
         TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
         <form:radiobutton path="tt" value="1" />Khong Hoat Dong
