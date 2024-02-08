@@ -30,11 +30,17 @@
 
 <body>
 <div class="formAdd">
-    <h1>THÊM/SỬA MÀU SẮC</h1>
+    <h1>THÊM/SỬA SẢN PHẨM</h1>
     <form:form action="/san-pham/hien-thi-add" method="post" modelAttribute="sanPham">
         Mã Sản Phẩm: <form:input path="ma"/>
         <br/>
         Tên Sản Phẩm: <form:input path="ten"/>
+        <br/>
+        Mô Tả Sản Phẩm: <form:textarea path="moTa"/>
+        <br/>
+<%--        Ngày Tạo: <form:input path="ngayTao" type="date"/>--%>
+<%--        <br/>--%>
+        Người Tạo: <form:input path="nguoiTao"/>
         <br/>
         TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
         <form:radiobutton path="tt" value="1" />Khong Hoat Dong
