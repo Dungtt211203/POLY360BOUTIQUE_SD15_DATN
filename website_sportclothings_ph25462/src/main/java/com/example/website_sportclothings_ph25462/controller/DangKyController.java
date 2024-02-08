@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/poly360boutique")
-public class ThuongHieuController {
-    @GetMapping("/thuong-hieu-nike")
-    public String hienThi(){
-        return ("/thuong-hieu/thuong-hieu");
+public class DangKyController {
+    @GetMapping("/dang-ky")
+    public String index(){
+        return ("/login/dangky");
     }
 }

@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/poly360boutique")
-public class AdminController {
-    @GetMapping("/admin")
-    public String getHienThiAdmin (){
-        return ("/admin/index");
+public class QuenMatKhauController {
+    @GetMapping("/quen-mat-khau")
+    public String index(){
+        return ("/login/quenmatkhau");
     }
-
 }
