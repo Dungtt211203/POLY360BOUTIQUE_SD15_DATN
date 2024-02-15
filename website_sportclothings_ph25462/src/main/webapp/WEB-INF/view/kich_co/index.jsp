@@ -34,7 +34,7 @@
             <td>${kc.ten}</td>
             <td>${kc.tt}</td>
             <td>
-                <button class="btn btn-success"><a href="/kich-co/detail/${kc.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+                <button class="btn btn-success"><a href="/kich-co/update/${kc.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/kich-co/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
                 <button class="btn btn-danger"><a href="/kich-co/remove/${kc.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
