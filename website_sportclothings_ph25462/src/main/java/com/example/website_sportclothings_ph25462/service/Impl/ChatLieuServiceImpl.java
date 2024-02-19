@@ -17,8 +17,8 @@ public class ChatLieuServiceImpl implements ChatLieuService {
         return clr.findAll();
     }
     @Override
-    public void add(ChatLieu chatLieu) {
-        clr.save(chatLieu);
+    public ChatLieu add(ChatLieu chatLieu) {
+        return clr.save(chatLieu);
     }
 
     @Override
