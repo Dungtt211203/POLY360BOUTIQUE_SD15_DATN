@@ -24,7 +24,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -120,7 +120,7 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -136,13 +136,17 @@
             </div>
             <div class="buttons">
                 <button>Buy Now</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>
             </div>
         </div>
     </div>
 </div>
 
 <script src="src/main/webapp/js/cart.js"></script>
+<script>
+    function showMessage(){
 
+    }
+</script>
 </body>
 </html>

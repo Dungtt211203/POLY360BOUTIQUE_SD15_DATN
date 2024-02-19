@@ -30,13 +30,17 @@
                             <a class="nav-link" href="#" style="color: #2D2D2D">Giới Thiệu</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="search" type="search" placeholder="Search" aria-label="Search"
-                               style="height: 40px;">
+                    <form class="d-flex" role="search" style="gap: 10px;">
+                        <input class="search" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search"
+                               style="height: 40px;margin: unset;">
                         <button type="submit" class="btn btn-outline-warning">Search</button>
                     </form>
-                    <a href=""><i class="far fa-user"
-                                  style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i></a>
+                    <div onclick="myFunction()"><i class="far fa-user"
+                                  style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i></div>
+                    <div class="popuptext" id="myPopup" style="display: none">
+                        <button>Đăng nhập</button>
+                        <button>Đăng xuất</button>
+                    </div>
                     <a href=""> <i class="fa-sharp fa-regular fa-cart-shopping"
                                                          style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i></a>
                 </div>
@@ -44,3 +48,23 @@
         </nav>
     </div>
 </header>
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>
+<style>
+    .show{
+        display: flex!important;
+        flex-direction: column;
+        position: relative;
+        top: 65px;
+        width: 0;
+        right: 80px;
+        gap: 10px;
+    }
+    .show button{
+        width: 150px;
+    }
+</style>
