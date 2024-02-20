@@ -18,12 +18,12 @@ public class MauSacController {
     @Autowired
     MauSacServiceImpl mss;
 
-    public Map<Integer, String> getDsTrangThai() {
-        Map<Integer, String> dsTrangThai = new HashMap<>();
-        dsTrangThai.put(0, " hoạt động");
-        dsTrangThai.put(1, " không Hoạt động");
-        return dsTrangThai;
-    }
+//    public Map<Integer, String> getDsTrangThai() {
+//        Map<Integer, String> dsTrangThai = new HashMap<>();
+//        dsTrangThai.put(0, " hoạt động");
+//        dsTrangThai.put(1, " không Hoạt động");
+//        return dsTrangThai;
+//    }
 
     @GetMapping("/mau-sac/hien-thi")
     public String hienThi(Model model) {
@@ -31,6 +31,12 @@ public class MauSacController {
         model.addAttribute("ms", new MauSac());
         model.addAttribute("view", "../mau_sac/index.jsp");
         return "/mau_sac/index";
+    }
+    @GetMapping("/mau-sac/view-update/{id}")
+    public String update(@PathVariable UUID id,
+                         Model model){
+        model.addAttribute("mauSac", mss.update(id));
+        return "/mau_sac/view_update";
     }
 
     @GetMapping("/mau-sac/hien-thi-add")

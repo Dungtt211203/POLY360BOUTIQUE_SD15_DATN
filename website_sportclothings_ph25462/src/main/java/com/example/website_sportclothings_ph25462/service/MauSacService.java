@@ -11,7 +11,9 @@ import java.util.UUID;
 public interface MauSacService {
     List<MauSac> getAll();
 
-    void  add(MauSac mauSac);
+    void add(MauSac mauSac);
 
     void remove(UUID id);
+
+    MauSac update(UUID id);
 }

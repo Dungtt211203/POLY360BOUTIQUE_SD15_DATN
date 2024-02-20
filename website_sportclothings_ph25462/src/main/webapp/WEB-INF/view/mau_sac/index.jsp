@@ -34,7 +34,7 @@
             <td>${ms.ten}</td>
             <td>${ms.tt}</td>
             <td>
-                <button class="btn btn-success"><a href="/mau-sac/update/${ms.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
+                <button class="btn btn-success"><a href="/mau-sac/view-update/${ms.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/mau-sac/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
                 <button class="btn btn-danger"><a href="/mau-sac/remove/${ms.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>

@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
 import com.example.website_sportclothings_ph25462.service.MauSacService;
@@ -20,6 +21,10 @@ public class MauSacServiceImpl implements MauSacService {
     @Override
     public void add(MauSac mauSac) {
         msr.save(mauSac);
+    }
+    @Override
+    public MauSac update(UUID id) {
+        return msr.getById(id);
     }
 
     @Override
