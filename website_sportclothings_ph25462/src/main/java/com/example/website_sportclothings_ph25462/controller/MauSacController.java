@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.MauSac;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.MauSacServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,14 @@ public class MauSacController {
                          Model model){
         model.addAttribute("mauSac", mss.update(id));
         return "/mau_sac/view_update";
+    }
+    @PostMapping("/mau-sac/view-update/{id}")
+    public String update(
+            @PathVariable UUID id, @ModelAttribute("mauSac") MauSac mauSac
+    ) {
+        mauSac.setId(id);
+        mss.add(mauSac);
+        return "redirect:/mau-sac/hien-thi";
     }
 
     @GetMapping("/mau-sac/hien-thi-add")
