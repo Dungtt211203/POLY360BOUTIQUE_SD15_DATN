@@ -58,7 +58,7 @@
             <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-admin" href="/thuong-hieu/hien-thi">Quản lý thương hiệu</a>
+            <a class="nav-link-admin" href="/poly360boutique/thuong-hieu/hien-thi">Quản lý thương hiệu</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="/chitietsp/hien-thi">Quản lý chi tiết sp</a>
