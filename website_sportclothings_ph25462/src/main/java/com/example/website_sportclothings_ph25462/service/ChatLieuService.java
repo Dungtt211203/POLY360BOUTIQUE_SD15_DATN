@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
+
 @Service
 public interface ChatLieuService {
     List<ChatLieu> getAll();
@@ -21,4 +22,6 @@ public interface ChatLieuService {
 //    }
 
     void remove(UUID id);
+
+    ChatLieu update(UUID id);
 }

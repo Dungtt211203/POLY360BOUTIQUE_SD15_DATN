@@ -20,6 +20,10 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     public ChatLieu add(ChatLieu chatLieu) {
         return clr.save(chatLieu);
     }
+    @Override
+    public ChatLieu update(UUID id) {
+        return clr.getById(id);
+    }
 
     @Override
     public void remove(UUID id) {
