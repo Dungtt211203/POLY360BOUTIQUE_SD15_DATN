@@ -21,12 +21,12 @@ public class KichCoController {
     @Autowired
     KichCoService kichCoService;
 
-    public Map<Integer, String> getDsTrangThai() {
-        Map<Integer, String> dsTrangThai = new HashMap<>();
-        dsTrangThai.put(0, " hoạt động");
-        dsTrangThai.put(1, " không Hoạt động");
-        return dsTrangThai;
-    }
+//    public Map<Integer, String> getDsTrangThai() {
+//        Map<Integer, String> dsTrangThai = new HashMap<>();
+//        dsTrangThai.put(0, " hoạt động");
+//        dsTrangThai.put(1, " không Hoạt động");
+//        return dsTrangThai;
+//    }
 
     @GetMapping("/kich-co/hien-thi")
     public String hienThi(Model model) {
@@ -34,6 +34,12 @@ public class KichCoController {
         model.addAttribute("kc", new KichCo());
         model.addAttribute("view", "../kick_co/index.jsp");
         return "/kich_co/index";
+    }
+    @GetMapping("/kich-co/view-update/{id}")
+    public String update(@PathVariable UUID id,
+                         Model model){
+        model.addAttribute("kichCo", kichCoService.update(id));
+        return "/kich_co/view_update";
     }
 
     @GetMapping("/kich-co/hien-thi-add")

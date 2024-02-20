@@ -27,7 +27,6 @@
     }
 </style>
 <br>
-
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KÍCH CỠ</h1>
@@ -40,6 +39,6 @@
         <form:radiobutton path="tt" value="1" />Không Hoạt Động
         <br/>
         <form:button type="submit">Add</form:button>
-    </form:form>
+    </form:form action="/kich-co/hien-thi-add">
 </div>
 </body>
