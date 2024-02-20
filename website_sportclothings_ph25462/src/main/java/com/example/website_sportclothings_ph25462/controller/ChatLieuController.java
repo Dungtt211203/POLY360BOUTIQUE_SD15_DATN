@@ -20,46 +20,48 @@ import java.util.Map;
 import java.util.UUID;
 
 @Controller
-@RestController
-@RequestMapping("/api/v1")
-@RequiredArgsConstructor
-@Slf4j
 public class ChatLieuController {
-//    @Autowired
-//    ChatLieuRepository clr;
-//    @Autowired
-//    ChatLieuService chatLieuService;
-//
+    @Autowired
+    ChatLieuRepository clr;
+    @Autowired
+    ChatLieuService chatLieuService;
+
 //    public Map<Integer, String> getDsTrangThai() {
 //        Map<Integer, String> dsTrangThai = new HashMap<>();
 //        dsTrangThai.put(0, " hoạt động");
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
-//
-//    @GetMapping("/chat-lieu/hien-thi")
-//    public String hienThi(Model model) {
-//        model.addAttribute("load", chatLieuService.getAll());
-//        model.addAttribute("cl", new ChatLieu());
-//        model.addAttribute("view", "../chat_lieu/index.jsp");
-//        return "/chat_lieu/index";
-//    }
-//
-//    @GetMapping("/chat-lieu/hien-thi-add")
-//    public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
-//        return ("/chat_lieu/add");
-//    }
-//
-//    @PostMapping("/chat-lieu/hien-thi-add")
-//    public String add(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
-//        chatLieuService.add(chatLieu);
-//        return "redirect:/chat-lieu/hien-thi";
-//    }
-//
-//    @GetMapping("/chat-lieu/remove/{id}")
-//    public String remove(@PathVariable("id") UUID id) {
-//        chatLieuService.remove(id);
-//        return "redirect:/chat-lieu/hien-thi";
-//    }
+
+    @GetMapping("/chat-lieu/hien-thi")
+    public String hienThi(Model model) {
+        model.addAttribute("load", chatLieuService.getAll());
+        model.addAttribute("cl", new ChatLieu());
+        model.addAttribute("view", "../chat_lieu/index.jsp");
+        return "/chat_lieu/index";
+    }
+
+    @GetMapping("/chat-lieu/hien-thi-add")
+    public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
+        return ("/chat_lieu/add");
+    }
+    @GetMapping("/chat-lieu/view-update/{id}")
+    public String update(@PathVariable UUID id,
+                         Model model){
+        model.addAttribute("chatLieu", chatLieuService.update(id));
+        return "/chat_lieu/view_update";
+    }
+
+    @PostMapping("/chat-lieu/hien-thi-add")
+    public String add(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
+        chatLieuService.add(chatLieu);
+        return "redirect:/chat-lieu/hien-thi";
+    }
+
+    @GetMapping("/chat-lieu/remove/{id}")
+    public String remove(@PathVariable("id") UUID id) {
+        chatLieuService.remove(id);
+        return "redirect:/chat-lieu/hien-thi";
+    }
 
 }
