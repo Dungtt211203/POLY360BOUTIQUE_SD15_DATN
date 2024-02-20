@@ -14,17 +14,20 @@ import java.util.UUID;
 public class MauSacServiceImpl implements MauSacService {
     @Autowired
     MauSacRepository msr;
+
     @Override
     public List<MauSac> getAll() {
         return msr.findAll();
     }
+
     @Override
     public void add(MauSac mauSac) {
         msr.save(mauSac);
     }
+
     @Override
     public MauSac update(UUID id) {
-        return msr.getById(id);
+        return msr.findById(id).orElse(null);
     }
 
     @Override
