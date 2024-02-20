@@ -1,7 +1,12 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
+import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
+import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
+import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
+import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
+import com.example.website_sportclothings_ph25462.repository.ThuongHieuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +22,26 @@ import java.util.UUID;
 public class ChiTietSPController {
     @Autowired
     private ChiTietSPRepository repository;
+    @Autowired
+    private SanPhamRepository sanPhamRepository;
+    @Autowired
+    private KichCoRepository kichCoRepository;
+    @Autowired
+    private MauSacRepository mauSacRepository;
+    @Autowired
+    private ChatLieuRepository chatLieuRepository;
+    @Autowired
+    private ThuongHieuRepository thuongHieuRepository;
     @GetMapping("/hien-thi")
     public String view(Model model) {
         model.addAttribute("list", repository.findAll());
         model.addAttribute("sp",new ChiTietSP());
         model.addAttribute("view", "../chitietsp/index.jsp");
+        model.addAttribute("sanPham", sanPhamRepository.findAll());
+        model.addAttribute("kichCo", kichCoRepository.findAll());
+        model.addAttribute("mauSac", mauSacRepository.findAll());
+        model.addAttribute("chatLieu", chatLieuRepository.findAll());
+        model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
         return "/chitietsp/index";
     }
 

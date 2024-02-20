@@ -21,17 +21,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-0">
-    <div class="navbar-nav collapse navbar-collapse">
-        <a class="nav-item nav-link" href="/cua-hang/hien-thi">Quản lý cửa hàng</a>
-        <a class="nav-item nav-link" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
-        <a class="nav-item nav-link" href="/chuc-vu/hien-thi">Quản lý Chức vụ</a>
-        <a class="nav-item nav-link" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
-        <a class="nav-item nav-link" href="/nxs/hien-thi">Quản lý nxs</a>
-        <a class="nav-item nav-link" href="/dongsp/hien-thi">Quản lý Dòng SP</a>
-        <a class="nav-item nav-link" href="/nhan-vien/hien-thi">Quản lý Nhân viên</a>
-        <a class="nav-item nav-link" href="/khach-hang/hien-thi">Quản lý Khách hàng</a>
-        <a class="nav-item nav-link" href="/chitietsp/hien-thi">Chi Tiết Sản Phẩm</a>
+
     </div>
 </nav>
 <form action="/chitietsp/detail/${chitietsp.id}">
