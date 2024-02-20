@@ -22,7 +22,7 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     }
     @Override
     public ChatLieu update(UUID id) {
-        return clr.getById(id);
+        return clr.findById(id).orElse(null);
     }
 
     @Override

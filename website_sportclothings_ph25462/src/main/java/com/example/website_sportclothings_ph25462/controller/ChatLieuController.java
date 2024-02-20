@@ -2,6 +2,7 @@ package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
+import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
@@ -50,6 +51,14 @@ public class ChatLieuController {
                          Model model){
         model.addAttribute("chatLieu", chatLieuService.update(id));
         return "/chat_lieu/view_update";
+    }
+    @PostMapping("/chat-lieu/view-update/{id}")
+    public String update(
+            @PathVariable UUID id, @ModelAttribute("chatLieu") ChatLieu chatLieu
+    ) {
+        chatLieu.setId(id);
+        chatLieuService.add(chatLieu);
+        return "redirect:/chat-lieu/hien-thi";
     }
 
     @PostMapping("/chat-lieu/hien-thi-add")
