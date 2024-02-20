@@ -61,6 +61,9 @@
             <a class="nav-link-admin" href="/thuong-hieu/hien-thi">Quản lý thương hiệu</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link-admin" href="/chitietsp/hien-thi">Quản lý chi tiết sp</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
         <li class="nav-item">
