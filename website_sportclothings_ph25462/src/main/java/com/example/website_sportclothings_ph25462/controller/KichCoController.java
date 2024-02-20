@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.KichCoService;
@@ -40,6 +41,14 @@ public class KichCoController {
                          Model model){
         model.addAttribute("kichCo", kichCoService.update(id));
         return "/kich_co/view_update";
+    }
+    @PostMapping("/kich-co/view-update/{id}")
+    public String update(
+            @PathVariable UUID id, @ModelAttribute("kichCo") KichCo kichCo
+    ) {
+        kichCo.setId(id);
+        kichCoService.add(kichCo);
+        return "redirect:/kich-co/hien-thi";
     }
 
     @GetMapping("/kich-co/hien-thi-add")
