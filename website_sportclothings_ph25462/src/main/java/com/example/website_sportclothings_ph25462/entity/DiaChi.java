@@ -8,36 +8,32 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table(name = "nhan_vien")
+@Table(name = "dia_chi")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class NhanVien {
+public class DiaChi {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @Column(name = "ma_nhan_vien")
+    @Column(name = "ma_dia_chi")
     private String ma;
-    @Column(name = "ho")
-    private String ho;
-    @Column(name = "ten_dem")
-    private String tenDem;
-    @Column(name = "ten")
-    private String ten;
-    @Column(name = "gioi_tinh")
-    private Boolean gioiTinh;
-    @Column(name = "dia_chi")
+    @Column(name = "phuong_xa")
+    private String phuongXa;
+    @Column(name = "quan_huyen")
+    private String quanHuyen;
+    @Column(name = "thanh_pho")
+    private String thanhPho;
+    @Column(name = "tinh")
+    private Boolean tinh;
+    @Column(name = "dia_chi_cu_the")
     private String diaChi;
-    @Column(name = "so_dien_thoai")
-    private Integer sdt;
-    @Column(name = "email")
-    private String email;
     @Column(name = "trang_thai")
     private Boolean tt;
     @OneToOne()
     @JoinColumn(name = "id_tai_khoan")
-    private TaiKhoan taiKhoanNV;
+    private TaiKhoan taiKhoanKH;
 }

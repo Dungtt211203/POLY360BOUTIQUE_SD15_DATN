@@ -7,21 +7,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
-@Table(name = "thuong_hieu")
+
+@Table(name = "vai_tro")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ThuongHieu {
+public class VaiTro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-    @Column(name = "ma_thuong_hieu")
-    private String maTH;
-    @Column(name = "ten_thuong_hieu")
-    private String tenTH;
-    @Column(name = "trang_thai")
-    private Integer tt;
+    @Column(name = "ma_vai_tro")
+    private String maVT;
+    @Column(name = "ten_vai_tro")
+    private String tenVT;
 }
