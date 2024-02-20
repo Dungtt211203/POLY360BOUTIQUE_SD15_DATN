@@ -27,7 +27,7 @@ public class KichCoServiceImpl implements KichCoService {
 
     @Override
     public KichCo update(UUID id) {
-        return kcr.getById(id);
+        return kcr.findById(id).orElse(null);
 
     }
 
