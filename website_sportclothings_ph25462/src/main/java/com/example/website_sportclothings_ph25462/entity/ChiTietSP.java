@@ -70,11 +70,11 @@ public class ChiTietSP {
     private MauSac mauSac;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "chat_lieu", referencedColumnName = "id")
+    @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
     private ChatLieu chatLieu;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "thuong_hieu", referencedColumnName = "id")
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
     private ThuongHieu thuongHieu;
 
 }

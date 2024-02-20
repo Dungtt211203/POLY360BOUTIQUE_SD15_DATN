@@ -3,6 +3,7 @@ package com.example.website_sportclothings_ph25462.controller;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.UUID;
-@RequestMapping("/chitiepsp")
+@Controller
+@RequestMapping("/chitietsp")
 public class ChiTietSPController {
     @Autowired
     private ChiTietSPRepository repository;
