@@ -8,17 +8,25 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+
 @Service
 public class SanPhamServiceImpl implements SanPhamService {
     @Autowired
     SanPhamRepository spr;
+
     @Override
     public List<SanPham> getAll() {
         return spr.findAll();
     }
+
     @Override
     public void add(SanPham sanPham) {
         spr.save(sanPham);
+    }
+
+    @Override
+    public SanPham update(UUID id) {
+        return spr.findById(id).orElse(null);
     }
 
     @Override
