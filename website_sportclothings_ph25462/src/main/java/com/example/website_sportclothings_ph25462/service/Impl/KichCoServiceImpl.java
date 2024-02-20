@@ -14,13 +14,21 @@ import java.util.UUID;
 public class KichCoServiceImpl implements KichCoService {
     @Autowired
     KichCoRepository kcr;
+
     @Override
     public List<KichCo> getAll() {
         return kcr.findAll();
     }
+
     @Override
     public void add(KichCo kichCo) {
         kcr.save(kichCo);
+    }
+
+    @Override
+    public KichCo update(UUID id) {
+        return kcr.getById(id);
+
     }
 
     @Override
