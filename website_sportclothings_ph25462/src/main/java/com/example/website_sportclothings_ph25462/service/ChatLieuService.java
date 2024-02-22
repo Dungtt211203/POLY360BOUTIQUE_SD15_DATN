@@ -2,6 +2,8 @@ package com.example.website_sportclothings_ph25462.service;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -24,4 +26,6 @@ public interface ChatLieuService {
     void remove(UUID id);
 
     ChatLieu update(UUID id);
+
+    Page<ChatLieu> search(String key, Pageable pageable);
 }
