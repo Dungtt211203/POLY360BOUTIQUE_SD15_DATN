@@ -1,22 +1,21 @@
 package com.example.website_sportclothings_ph25462.service;
 
+
+import com.example.website_sportclothings_ph25462.entity.HinhAnhSP;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
-
-public interface SanPhamService {
 
 
-    Page<SanPham> getData(Integer page);
+public interface HinhAnhSPService {
 
-    SanPham getOne(String id);
+    Page<HinhAnhSP> getData(Integer page);
 
-    List<SanPham> getAll();
+    HinhAnhSP getOne(String id);
 
-    void add(SanPham sanPham);
+    List<HinhAnhSP> getAll();
 
-    void remove(UUID id);
+
 }

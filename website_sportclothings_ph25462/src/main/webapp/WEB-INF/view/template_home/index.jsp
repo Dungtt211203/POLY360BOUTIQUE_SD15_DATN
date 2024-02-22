@@ -36,12 +36,14 @@
                 </div>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                    data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
 
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                    data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -50,10 +52,13 @@
     </section>
 
     <h1 style="text-align: center;margin-top: 30px">Thương Hiệu Nổi Bật</h1>
+
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Tất Cả Sản Phẩm</h1>
-       <jsp:include page="../template_home/cart.jsp"/>
+        <jsp:include page="../template_home/cart.jsp"/>
     </section>
+
+
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Sản Phẩm Bán Chạy</h1>
         <jsp:include page="../template_home/cart.jsp"/>

@@ -18,20 +18,22 @@ public class SanPhamServiceImpl implements SanPhamService {
     SanPhamRepository sanPhamRepository;
 
     @Override
-    public Page<SanPham> getData(int page) {
+    public Page<SanPham> getData(Integer page) {
 
-        Pageable pageable = PageRequest.of(page, 8);
+        Pageable pageable = PageRequest.of(page, 10);
 
         return sanPhamRepository.findAll(pageable);
     }
 
     @Override
     public SanPham getOne(String id) {
+
         return sanPhamRepository.findById(UUID.fromString(id)).orElse(null);
     }
 
     @Override
     public List<SanPham> getAll() {
+
         return sanPhamRepository.findAll();
     }
 
