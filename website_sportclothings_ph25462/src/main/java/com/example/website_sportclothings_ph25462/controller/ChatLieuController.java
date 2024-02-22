@@ -1,23 +1,16 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
-import com.example.website_sportclothings_ph25462.entity.KichCo;
-import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
-import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
-import com.example.website_sportclothings_ph25462.service.KichCoService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -73,4 +66,11 @@ public class ChatLieuController {
         return "redirect:/chat-lieu/hien-thi";
     }
 
+    @GetMapping("/search")
+    public String search(Model model, @ModelAttribute("key") String key , @RequestParam(defaultValue = "0", name = "page") Integer page){
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<ChatLieu> list = chatLieuService.search(key, pageable);
+        model.addAttribute("list", list);
+        return "redirect:/chat-lieu/hien-thi";
+    }
 }
