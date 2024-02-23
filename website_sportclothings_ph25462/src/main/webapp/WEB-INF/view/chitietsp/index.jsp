@@ -72,7 +72,6 @@ ThuongHieu: <form:select path="thuongHieu">
             <td>${ctsp.chatLieu.ten}</td>
             <td>${ctsp.thuongHieu.ten}</td>
             <td>
-                <button class="btn btn-success"><a href="/chitietsp/detail/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
                 <button class="btn btn-primary"><a href="/chitietsp/update/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-danger"><a href="/chitietsp/delete/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
