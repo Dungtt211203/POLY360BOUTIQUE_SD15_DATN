@@ -38,7 +38,7 @@ ChatLieu: <form:select path="chatLieu">
 ThuongHieu: <form:select path="thuongHieu">
     <form:options items="${thuongHieu}" itemLabel="ten"/>
 </form:select><br>
-<form:button>Add</form:button>
+<form:button class="btn btn-primary">Add</form:button>
 </form:form>
 <table class="table">
     <thead>
@@ -79,7 +79,6 @@ ThuongHieu: <form:select path="thuongHieu">
 
         </tr>
     </c:forEach>
-    <button class="btn btn-primary"><a href="/chitietsp/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
 
     </tbody>
 </table>
