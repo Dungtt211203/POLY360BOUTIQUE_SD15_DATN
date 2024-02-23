@@ -24,19 +24,19 @@ NgayTao:<form:input path="ngayTao"/><br>
 NgaySua:<form:input path="ngaySua"/><br>
 
 TenSP: <form:select path="sanPham">
-    <form:options items="${sanPham}" itemLabel="ma"/>
+    <form:options items="${sanPham}" itemLabel="ten"/>
 </form:select><br>
 KichCo: <form:select path="kichCo">
-    <form:options items="${kichCo}" itemLabel="ma"/>
+    <form:options items="${kichCo}" itemLabel="ten"/>
 </form:select><br>
 Mau Sac: <form:select path="mauSac">
-    <form:options items="${mauSac}" itemLabel="ma"/>
+    <form:options items="${mauSac}" itemLabel="ten"/>
 </form:select><br>
 ChatLieu: <form:select path="chatLieu">
-    <form:options items="${chatLieu}" itemLabel="ma"/>
+    <form:options items="${chatLieu}" itemLabel="ten"/>
 </form:select><br>
 ThuongHieu: <form:select path="thuongHieu">
-    <form:options items="${thuongHieu}" itemLabel="ma"/>
+    <form:options items="${thuongHieu}" itemLabel="ten"/>
 </form:select><br>
 <form:button>Add</form:button>
 </form:form>
