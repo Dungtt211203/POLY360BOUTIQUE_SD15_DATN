@@ -19,7 +19,7 @@ public class SanPham {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "ma_san_pham")
     private String ma;
     @Column(name = "ten_san_pham")

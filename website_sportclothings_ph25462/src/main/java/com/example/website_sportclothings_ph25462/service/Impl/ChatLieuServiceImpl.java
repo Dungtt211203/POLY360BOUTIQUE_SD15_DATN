@@ -22,7 +22,7 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         clr.deleteById(id);
     }
 }

@@ -24,7 +24,7 @@ public class KichCoServiceImpl implements KichCoService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         kcr.deleteById(id);
     }
 }

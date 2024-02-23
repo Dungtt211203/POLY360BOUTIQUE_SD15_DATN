@@ -11,5 +11,5 @@ public interface ThuongHieuService {
 
     void  add(ThuongHieu thuongHieu);
 
-    void remove(UUID id);
+    void remove(Long id);
 }

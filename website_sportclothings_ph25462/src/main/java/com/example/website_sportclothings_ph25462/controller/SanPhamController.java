@@ -49,7 +49,7 @@ public class SanPhamController {
     }
 
     @GetMapping("/san-pham/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";
     }

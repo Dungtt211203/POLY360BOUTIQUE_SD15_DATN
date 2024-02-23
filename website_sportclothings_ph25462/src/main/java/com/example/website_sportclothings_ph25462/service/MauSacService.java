@@ -13,5 +13,5 @@ public interface MauSacService {
 
     void  add(MauSac mauSac);
 
-    void remove(UUID id);
+    void remove(Long id);
 }

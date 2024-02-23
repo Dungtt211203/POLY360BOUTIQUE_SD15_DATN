@@ -17,7 +17,7 @@ public class ChatLieu {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "ma_chat_lieu")
     private String ma;
     @Column(name = "ten_chat_lieu")

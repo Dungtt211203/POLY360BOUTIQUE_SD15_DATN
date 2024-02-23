@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 @Repository
-public interface KichCoRepository extends JpaRepository<KichCo, UUID> {
+public interface KichCoRepository extends JpaRepository<KichCo, Long> {
 }

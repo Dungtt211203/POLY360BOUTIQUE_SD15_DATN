@@ -9,7 +9,5 @@ import java.util.UUID;
 public interface ChiTietSPService {
     List<ChiTietSP> getAll();
 
-
-
-    void remove(UUID id);
+    void remove(Long id);
 }

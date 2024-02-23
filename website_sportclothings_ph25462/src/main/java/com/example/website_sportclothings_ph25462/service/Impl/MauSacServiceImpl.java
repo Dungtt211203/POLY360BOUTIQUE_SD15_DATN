@@ -23,7 +23,7 @@ public class MauSacServiceImpl implements MauSacService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         msr.deleteById(id);
     }
 }

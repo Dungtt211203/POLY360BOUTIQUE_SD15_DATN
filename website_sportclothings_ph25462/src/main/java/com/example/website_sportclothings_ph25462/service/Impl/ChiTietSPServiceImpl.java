@@ -20,7 +20,7 @@ public class ChiTietSPServiceImpl implements ChiTietSPService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         chiTietSP.deleteById(id);
     }
 }

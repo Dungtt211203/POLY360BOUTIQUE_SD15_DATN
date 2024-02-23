@@ -24,7 +24,7 @@ public class ThuongHieuServiceImpl implements ThuongHieuService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
     thr.deleteById(id);
     }
 }

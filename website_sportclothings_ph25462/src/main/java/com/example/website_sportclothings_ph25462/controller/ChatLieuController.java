@@ -52,7 +52,7 @@ public class ChatLieuController {
     }
 
     @GetMapping("/chat-lieu/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         chatLieuService.remove(id);
         return "redirect:/chat-lieu/hien-thi";
     }

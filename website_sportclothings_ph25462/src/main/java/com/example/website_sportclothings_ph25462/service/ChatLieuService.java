@@ -12,5 +12,5 @@ public interface ChatLieuService {
 
     void add(ChatLieu chatLieu);
 
-    void remove(UUID id);
+    void remove(Long id);
 }

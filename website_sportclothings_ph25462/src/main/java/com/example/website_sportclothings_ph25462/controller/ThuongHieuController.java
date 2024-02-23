@@ -54,7 +54,7 @@ public class ThuongHieuController {
     }
 
     @GetMapping("/thuong-hieu/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         thuongHieuService.remove(id);
         return "redirect:/thuong-hieu/hien-thi";
     }

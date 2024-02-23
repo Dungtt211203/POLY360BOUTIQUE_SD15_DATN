@@ -32,9 +32,9 @@ import java.util.UUID;
 @Builder
 public class ChiTietSP {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "ma_ctsp")
     private String ma;
     @Column(name = "so_luong")

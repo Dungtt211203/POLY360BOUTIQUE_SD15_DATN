@@ -16,29 +16,29 @@
 <h1 style="text-align: center">QUẢN LÝ CHI TIẾT SẢN PHẨM</h1>
 <form:form method="post" action="/chitietsp/add" modelAttribute="sp">
     ID:<form:input path="id"/><br>
-    Ma:<form:input path="ma"/><br>
-    SoLuong:<form:input path="soLuong"/><br>
-    GiaHienHanh:<form:input path="giaHienHanh"/><br>
+Ma:<form:input path="ma"/><br>
+SoLuong:<form:input path="soLuong"/><br>
+GiaHienHanh:<form:input path="giaHienHanh"/><br>
 
-    NgayTao:<form:input path="ngayTao"/><br>
-    NgaySua:<form:input path="ngaySua"/><br>
+NgayTao:<form:input path="ngayTao"/><br>
+NgaySua:<form:input path="ngaySua"/><br>
 
-    TenSP: <form:select path="sanPham">
+TenSP: <form:select path="sanPham">
     <form:options items="${sanPham}" itemLabel="ma"/>
 </form:select><br>
-    KichCo: <form:select path="kichCo">
+KichCo: <form:select path="kichCo">
     <form:options items="${kichCo}" itemLabel="ma"/>
 </form:select><br>
-    Mau Sac: <form:select path="mauSac">
+Mau Sac: <form:select path="mauSac">
     <form:options items="${mauSac}" itemLabel="ma"/>
 </form:select><br>
-    ChatLieu: <form:select path="chatLieu">
+ChatLieu: <form:select path="chatLieu">
     <form:options items="${chatLieu}" itemLabel="ma"/>
 </form:select><br>
-    ThuongHieu: <form:select path="thuongHieu">
-     <form:options items="${thuongHieu}" itemLabel="ma"/>
+ThuongHieu: <form:select path="thuongHieu">
+    <form:options items="${thuongHieu}" itemLabel="ma"/>
 </form:select><br>
-    <form:button>Add</form:button>
+<form:button>Add</form:button>
 </form:form>
 <table class="table">
     <thead>
@@ -73,7 +73,8 @@
             <td>${ctsp.thuongHieu.ten}</td>
             <td>
                 <button class="btn btn-success"><a href="/chitietsp/detail/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
-                <button class="btn btn-danger"><a href="/chitietsp/remove/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
+                <button class="btn btn-primary"><a href="/chitietsp/update/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
+                <button class="btn btn-danger"><a href="/chitietsp/delete/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 

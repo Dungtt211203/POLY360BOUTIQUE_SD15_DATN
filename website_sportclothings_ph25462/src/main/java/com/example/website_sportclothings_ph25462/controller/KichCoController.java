@@ -48,7 +48,7 @@ public class KichCoController {
     }
 
     @GetMapping("/kich-co/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         kichCoService.remove(id);
         return "redirect:/kich-co/hien-thi";
     }

@@ -53,14 +53,20 @@ public class ChiTietSPController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable(name = "id") UUID id) {
+    public String delete(@PathVariable(name = "id") Long id) {
         repository.deleteById(id);
         return "redirect:/chitietsp/hien-thi";
     }
 
     @GetMapping("/update/{id}")
-    public String viewUpdate(@PathVariable UUID id, Model model) {
+    public String viewUpdate(@PathVariable Long id, Model model) {
         ChiTietSP chiTietSp = repository.findById(id).orElse(null);
+     //   model.addAttribute("view", "../chitietsp/index.jsp");
+        model.addAttribute("sanPham", sanPhamRepository.findAll());
+        model.addAttribute("kichCo", kichCoRepository.findAll());
+        model.addAttribute("mauSac", mauSacRepository.findAll());
+        model.addAttribute("chatLieu", chatLieuRepository.findAll());
+        model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
         model.addAttribute("sp",new ChiTietSP());
         model.addAttribute("chitietsp", chiTietSp);
         return "chitietsp/update";
@@ -73,12 +79,6 @@ public class ChiTietSPController {
         return "redirect:/chitietsp/hien-thi";
     }
 
-    @GetMapping("/detail/{id}")
-    public String detail(@PathVariable UUID id, Model model) {
-        ChiTietSP chiTietSp = repository.findById(id).orElse(null);
-        model.addAttribute("chitietsp", chiTietSp);
-        return "chitietsp/detail";
-    }
 }
 
 

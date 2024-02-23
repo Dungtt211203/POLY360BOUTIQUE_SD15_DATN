@@ -22,7 +22,7 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         spr.deleteById(id);
     }
 }

@@ -45,7 +45,7 @@ public class MauSacController {
     }
 
     @GetMapping("/mau-sac/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         mss.remove(id);
         return "redirect:/mau-sac/hien-thi";
     }
