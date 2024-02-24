@@ -26,12 +26,12 @@ public class MauSacServiceImpl implements MauSacService {
     }
 
     @Override
-    public MauSac update(UUID id) {
+    public MauSac update(Long id) {
         return msr.findById(id).orElse(null);
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         msr.deleteById(id);
     }
 }

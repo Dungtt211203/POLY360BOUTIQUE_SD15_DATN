@@ -34,14 +34,14 @@ public class MauSacController {
         return "/mau_sac/index";
     }
     @GetMapping("/mau-sac/view-update/{id}")
-    public String update(@PathVariable UUID id,
+    public String update(@PathVariable Long id,
                          Model model){
         model.addAttribute("mauSac", mss.update(id));
         return "/mau_sac/view_update";
     }
     @PostMapping("/mau-sac/view-update/{id}")
     public String update(
-            @PathVariable UUID id, @ModelAttribute("mauSac") MauSac mauSac
+            @PathVariable Long id, @ModelAttribute("mauSac") MauSac mauSac
     ) {
         mauSac.setId(id);
         mss.add(mauSac);
@@ -60,7 +60,7 @@ public class MauSacController {
     }
 
     @GetMapping("/mau-sac/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         mss.remove(id);
         return "redirect:/mau-sac/hien-thi";
     }

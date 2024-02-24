@@ -40,14 +40,14 @@ public class ChatLieuController {
         return ("/chat_lieu/add");
     }
     @GetMapping("/chat-lieu/view-update/{id}")
-    public String update(@PathVariable UUID id,
+    public String update(@PathVariable Long id,
                          Model model){
         model.addAttribute("chatLieu", chatLieuService.update(id));
         return "/chat_lieu/view_update";
     }
     @PostMapping("/chat-lieu/view-update/{id}")
     public String update(
-            @PathVariable UUID id, @ModelAttribute("chatLieu") ChatLieu chatLieu
+            @PathVariable Long id, @ModelAttribute("chatLieu") ChatLieu chatLieu
     ) {
         chatLieu.setId(id);
         chatLieuService.add(chatLieu);
@@ -61,7 +61,7 @@ public class ChatLieuController {
     }
 
     @GetMapping("/chat-lieu/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         chatLieuService.remove(id);
         return "redirect:/chat-lieu/hien-thi";
     }

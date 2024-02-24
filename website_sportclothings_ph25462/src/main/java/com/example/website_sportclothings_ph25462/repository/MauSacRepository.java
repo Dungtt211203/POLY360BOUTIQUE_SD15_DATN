@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 @Repository
-public interface MauSacRepository extends JpaRepository<MauSac, UUID> {
+public interface MauSacRepository extends JpaRepository<MauSac, Long> {
 }

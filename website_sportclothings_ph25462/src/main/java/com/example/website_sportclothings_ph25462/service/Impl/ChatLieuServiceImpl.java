@@ -24,12 +24,12 @@ public class ChatLieuServiceImpl implements ChatLieuService {
         return clr.save(chatLieu);
     }
     @Override
-    public ChatLieu update(UUID id) {
+    public ChatLieu update(Long id) {
         return clr.findById(id).orElse(null);
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         clr.deleteById(id);
     }
 

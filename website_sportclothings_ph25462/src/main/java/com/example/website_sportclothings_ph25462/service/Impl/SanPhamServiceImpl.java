@@ -25,12 +25,12 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
-    public SanPham update(UUID id) {
+    public SanPham update(Long id) {
         return spr.findById(id).orElse(null);
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         spr.deleteById(id);
     }
 }
