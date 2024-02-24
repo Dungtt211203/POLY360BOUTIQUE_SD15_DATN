@@ -34,12 +34,19 @@
             <td>${ms.ten}</td>
             <td>${ms.tt}</td>
             <td>
+<<<<<<< HEAD
                 <button class="btn btn-success"><a href="/mau-sac/view-update/${ms.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/mau-sac/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+=======
+                <button class="btn btn-success"><a href="/mau-sac/detail/${ms.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+>>>>>>> hoanglc_PH27504
                 <button class="btn btn-danger"><a href="/mau-sac/remove/${ms.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
         </tr>
+
     </c:forEach>
+    <button class="btn btn-primary"><a href="/mau-sac/hien-thi-add" style="text-decoration: none;color: #ffffff">ADD</a></button>
+
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

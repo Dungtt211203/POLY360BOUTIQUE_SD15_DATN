@@ -14,6 +14,9 @@ public interface KichCoService {
     void add(KichCo kichCo);
 
     void remove(Long id);
+<<<<<<< HEAD
 
     KichCo update(Long id);
+=======
+>>>>>>> hoanglc_PH27504
 }

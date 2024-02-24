@@ -13,6 +13,9 @@ public interface SanPhamService {
     void add(SanPham sanPham);
 
     void remove(Long id);
+<<<<<<< HEAD
 
     SanPham update(Long id);
+=======
+>>>>>>> hoanglc_PH27504
 }

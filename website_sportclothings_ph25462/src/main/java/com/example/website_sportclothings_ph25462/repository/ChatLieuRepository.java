@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 @Repository
 public interface ChatLieuRepository extends JpaRepository<ChatLieu, Long> {
+<<<<<<< HEAD
     @Query("SELECT cl FROM ChatLieu cl where cl.ten LIKE %?1% or cl.ma like %?1%")
     Page<ChatLieu> search(String key, Pageable pageable);
+=======
+>>>>>>> hoanglc_PH27504
 }

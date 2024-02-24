@@ -26,12 +26,15 @@ public class KichCoServiceImpl implements KichCoService {
     }
 
     @Override
+<<<<<<< HEAD
     public KichCo update(Long id) {
         return kcr.findById(id).orElse(null);
 
     }
 
     @Override
+=======
+>>>>>>> hoanglc_PH27504
     public void remove(Long id) {
         kcr.deleteById(id);
     }

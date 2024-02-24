@@ -34,14 +34,20 @@
             <td>${cl.ten}</td>
             <td>${cl.tt}</td>
             <td>
+<<<<<<< HEAD
                 <button class="btn btn-success"><a href="/chat-lieu/view-update/${cl.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/chat-lieu/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+=======
+                <button class="btn btn-success"><a href="/chat-lieu/detail/${cl.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+>>>>>>> hoanglc_PH27504
                 <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 
         </tr>
     </c:forEach>
+    <button class="btn btn-primary"><a href="/chat-lieu/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
