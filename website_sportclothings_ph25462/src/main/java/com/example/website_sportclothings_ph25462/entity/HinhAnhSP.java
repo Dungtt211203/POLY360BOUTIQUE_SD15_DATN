@@ -19,12 +19,12 @@ import java.util.UUID;
 public class HinhAnhSP {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
 
-    @Column(name = "link_anh")
-    private String linkAnh;
+    @Column(name = "url")
+    private String url;
 
     @Column(name = "ngay_tao")
     private Date ngayTao;

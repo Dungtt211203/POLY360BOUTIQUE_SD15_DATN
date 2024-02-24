@@ -18,9 +18,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class ChatLieu {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @NotBlank(message = "* không để trống")
     @Length(min = 4,max = 50, message = "* Không dưới 5 kí tự và quá 50 kí tự")
     @Column(name = "ma_chat_lieu")
