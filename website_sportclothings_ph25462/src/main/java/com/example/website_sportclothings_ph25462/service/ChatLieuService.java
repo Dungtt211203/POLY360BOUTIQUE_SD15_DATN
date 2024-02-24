@@ -23,9 +23,9 @@ public interface ChatLieuService {
 //        return bannerRepo.save(banner);
 //    }
 
-    void remove(UUID id);
+    void remove(Long id);
 
-    ChatLieu update(UUID id);
+    ChatLieu update(Long id);
 
     Page<ChatLieu> search(String key, Pageable pageable);
 }

@@ -13,7 +13,7 @@ public interface KichCoService {
 
     void add(KichCo kichCo);
 
-    void remove(UUID id);
+    void remove(Long id);
 
-    KichCo update(UUID id);
+    KichCo update(Long id);
 }

@@ -12,7 +12,7 @@ public interface SanPhamService {
 
     void add(SanPham sanPham);
 
-    void remove(UUID id);
+    void remove(Long id);
 
-    SanPham update(UUID id);
+    SanPham update(Long id);
 }
