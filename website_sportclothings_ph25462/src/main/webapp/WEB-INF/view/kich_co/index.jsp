@@ -34,12 +34,10 @@
             <td>${kc.ten}</td>
             <td>${kc.tt}</td>
             <td>
-<<<<<<< HEAD
+
                 <button class="btn btn-success"><a href="/kich-co/view-update/${kc.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/kich-co/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-=======
                 <button class="btn btn-success"><a href="/kich-co/detail/${kc.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
->>>>>>> hoanglc_PH27504
                 <button class="btn btn-danger"><a href="/kich-co/remove/${kc.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 

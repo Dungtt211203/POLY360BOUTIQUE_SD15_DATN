@@ -21,11 +21,8 @@ public class ChatLieu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-<<<<<<< HEAD
     @NotBlank(message = "* không để trống")
     @Length(min = 4,max = 50, message = "* Không dưới 5 kí tự và quá 50 kí tự")
-=======
->>>>>>> hoanglc_PH27504
     @Column(name = "ma_chat_lieu")
     private String ma;
     @NotBlank(message = "* không để trống")

@@ -14,9 +14,6 @@ public interface MauSacService {
     void add(MauSac mauSac);
 
     void remove(Long id);
-<<<<<<< HEAD
 
     MauSac update(Long id);
-=======
->>>>>>> hoanglc_PH27504
 }

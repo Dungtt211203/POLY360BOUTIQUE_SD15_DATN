@@ -46,12 +46,11 @@
             <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
-=======
+
             <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
->>>>>>> hoanglc_PH27504
+
             <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">

@@ -25,14 +25,13 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
-<<<<<<< HEAD
+
     public SanPham update(Long id) {
         return spr.findById(id).orElse(null);
     }
 
     @Override
-=======
->>>>>>> hoanglc_PH27504
+
     public void remove(Long id) {
         spr.deleteById(id);
     }

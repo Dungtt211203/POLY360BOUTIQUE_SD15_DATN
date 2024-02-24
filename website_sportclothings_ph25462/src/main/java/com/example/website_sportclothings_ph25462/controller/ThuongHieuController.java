@@ -1,13 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
-
-<<<<<<< HEAD
-public class ThuongHieuController {
-=======
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.entity.ThuongHieu;
-import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.repository.ThuongHieuRepository;
-import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import com.example.website_sportclothings_ph25462.service.ThuongHieuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,10 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/poly360boutique")
@@ -61,5 +53,5 @@ public class ThuongHieuController {
         thuongHieuService.remove(id);
         return "redirect:/thuong-hieu/hien-thi";
     }
->>>>>>> hoanglc_PH27504
+
 }

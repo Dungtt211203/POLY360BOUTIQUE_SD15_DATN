@@ -26,14 +26,12 @@ public class MauSacServiceImpl implements MauSacService {
     }
 
     @Override
-<<<<<<< HEAD
+
     public MauSac update(Long id) {
         return msr.findById(id).orElse(null);
     }
 
     @Override
-=======
->>>>>>> hoanglc_PH27504
     public void remove(Long id) {
         msr.deleteById(id);
     }

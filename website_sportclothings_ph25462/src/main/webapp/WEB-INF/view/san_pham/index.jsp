@@ -40,12 +40,12 @@
             <td>${sp.nguoiTao}</td>
             <td>${sp.tt}</td>
             <td>
-<<<<<<< HEAD
+
                 <button class="btn btn-success"><a href="/san-pham/view-update/${sp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/san-pham/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-=======
+
                 <button class="btn btn-success"><a href="/san-pham/detail/${sp.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
->>>>>>> hoanglc_PH27504
+
                 <button class="btn btn-danger"><a href="/san-pham/remove/${sp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 

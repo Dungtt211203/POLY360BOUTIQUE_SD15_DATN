@@ -18,7 +18,7 @@ public interface ChatLieuService {
 
     ChatLieu add(ChatLieu chatLieu);
 
-<<<<<<< HEAD
+
 //    public ChatLieu createChatLieu(ChatLieu chatLieu) {
 //        ChatLieu banner = new ChatLieu();
 //        return bannerRepo.save(banner);
@@ -29,7 +29,6 @@ public interface ChatLieuService {
     ChatLieu update(Long id);
 
     Page<ChatLieu> search(String key, Pageable pageable);
-=======
-    void remove(Long id);
->>>>>>> hoanglc_PH27504
+
+
 }

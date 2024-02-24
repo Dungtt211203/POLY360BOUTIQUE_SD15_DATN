@@ -1,9 +1,5 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
-<<<<<<< HEAD:website_sportclothings_ph25462/src/main/java/com/example/website_sportclothings_ph25462/service/Impl/DiaChiServiceImpl.java
-public class DiaChiServiceImpl {
-=======
-import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.entity.ThuongHieu;
 import com.example.website_sportclothings_ph25462.repository.ThuongHieuRepository;
 import com.example.website_sportclothings_ph25462.service.ThuongHieuService;
@@ -11,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 @Service
 public class ThuongHieuServiceImpl implements ThuongHieuService {
     @Autowired
     ThuongHieuRepository thr;
+
     @Override
     public List<ThuongHieu> getAll() {
         return thr.findAll();
@@ -23,12 +19,11 @@ public class ThuongHieuServiceImpl implements ThuongHieuService {
 
     @Override
     public void add(ThuongHieu thuongHieu) {
-    thr.save(thuongHieu);
+
     }
 
     @Override
     public void remove(Long id) {
-    thr.deleteById(id);
+
     }
->>>>>>> hoanglc_PH27504:website_sportclothings_ph25462/src/main/java/com/example/website_sportclothings_ph25462/service/Impl/ThuongHieuServiceImpl.java
 }
