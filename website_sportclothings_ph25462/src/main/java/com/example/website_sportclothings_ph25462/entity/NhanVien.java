@@ -16,9 +16,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class NhanVien {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "ma_nhan_vien")
     private String ma;
     @Column(name = "ho")

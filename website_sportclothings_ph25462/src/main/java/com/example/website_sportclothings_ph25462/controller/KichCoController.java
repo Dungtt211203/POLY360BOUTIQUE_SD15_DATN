@@ -37,14 +37,14 @@ public class KichCoController {
         return "/kich_co/index";
     }
     @GetMapping("/kich-co/view-update/{id}")
-    public String update(@PathVariable UUID id,
+    public String update(@PathVariable Long id,
                          Model model){
         model.addAttribute("kichCo", kichCoService.update(id));
         return "/kich_co/view_update";
     }
     @PostMapping("/kich-co/view-update/{id}")
     public String update(
-            @PathVariable UUID id, @ModelAttribute("kichCo") KichCo kichCo
+            @PathVariable Long id, @ModelAttribute("kichCo") KichCo kichCo
     ) {
         kichCo.setId(id);
         kichCoService.add(kichCo);
@@ -63,7 +63,7 @@ public class KichCoController {
     }
 
     @GetMapping("/kich-co/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         kichCoService.remove(id);
         return "redirect:/kich-co/hien-thi";
     }

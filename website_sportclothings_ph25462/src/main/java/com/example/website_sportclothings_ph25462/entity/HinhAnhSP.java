@@ -15,22 +15,32 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class HinhAnh {
+
+public class HinhAnhSP {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
-    @Column(name = "link_anh")
-    private String link;
+    private Long id;
+
+    @Column(name = "url")
+    private String url;
+
     @Column(name = "ngay_tao")
     private Date ngayTao;
+
     @Column(name = "ngay_sua")
     private Date ngaySua;
+
+    @Column(name = "trang_thai")
+    private Integer trangThai;
+
     @Column(name = "uu_tien")
     private String uuTien;
-    @Column(name = "trang_thai")
-    private Boolean tt;
-    @OneToOne()
-    @JoinColumn(name = "san_pham_id")
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
     private SanPham sanPham;
+
+
 }

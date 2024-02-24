@@ -41,7 +41,7 @@ public class SanPhamController {
     }
 
     @GetMapping("/san-pham/view-update/{id}")
-    public String update(@PathVariable UUID id,
+    public String update(@PathVariable Long id,
                          Model model) {
         model.addAttribute("sanPham", sanPhamService.update(id));
         return "/san_pham/view_update";
@@ -49,7 +49,7 @@ public class SanPhamController {
 
     @PostMapping("/san-pham/view-update/{id}")
     public String update(
-            @PathVariable UUID id, @ModelAttribute("sanPham") SanPham sanPham
+            @PathVariable Long id, @ModelAttribute("sanPham") SanPham sanPham
     ) {
         sanPham.setId(id);
         sanPhamService.add(sanPham);
@@ -68,7 +68,7 @@ public class SanPhamController {
     }
 
     @GetMapping("/san-pham/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";
     }

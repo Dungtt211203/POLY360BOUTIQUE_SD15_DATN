@@ -17,9 +17,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Voucher {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "ma_voucher")
     private String maVC;
     @Column(name = "ten_voucher")

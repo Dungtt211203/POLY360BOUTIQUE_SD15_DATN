@@ -33,7 +33,7 @@ public class ChatlieuController {
     @PostMapping(value = "/chatlieu", consumes = "application/json", produces = "application/json")
     public ResponseEntity<ChatLieu> creatNewChatlieu(
             @RequestBody ChatLieu chatLieu
-    ){
+    ) {
         return ResponseEntity.ok(chatLieuService.add(chatLieu));
     }
 
