@@ -15,5 +15,7 @@ public interface KichCoService {
 
     void remove(Long id);
 
+
     KichCo update(Long id);
+
 }

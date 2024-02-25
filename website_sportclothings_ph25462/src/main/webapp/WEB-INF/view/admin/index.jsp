@@ -46,6 +46,11 @@
             <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
         <li class="nav-item">
+
+            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
+        </li>
+        <li class="nav-item">
+
             <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
@@ -55,7 +60,10 @@
             <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
+            <a class="nav-link-admin" href="/poly360boutique/thuong-hieu/hien-thi">Quản lý thương hiệu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link-admin" href="/chitietsp/hien-thi">Quản lý chi tiết sp</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
