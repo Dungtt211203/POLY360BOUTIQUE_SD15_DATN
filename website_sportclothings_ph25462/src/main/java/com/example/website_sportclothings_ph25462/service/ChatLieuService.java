@@ -28,4 +28,6 @@ public interface ChatLieuService {
     ChatLieu update(Long id);
 
     Page<ChatLieu> search(String key, Pageable pageable);
+
+    ChatLieu getOne(String maCL);
 }
