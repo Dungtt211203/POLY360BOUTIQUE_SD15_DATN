@@ -15,4 +15,5 @@ public interface SanPhamService {
     void remove(Long id);
 
     SanPham update(Long id);
+
 }

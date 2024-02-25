@@ -18,6 +18,7 @@ public interface ChatLieuService {
 
     ChatLieu add(ChatLieu chatLieu);
 
+
 //    public ChatLieu createChatLieu(ChatLieu chatLieu) {
 //        ChatLieu banner = new ChatLieu();
 //        return bannerRepo.save(banner);
@@ -30,4 +31,5 @@ public interface ChatLieuService {
     Page<ChatLieu> search(String key, Pageable pageable);
 
     ChatLieu getOne(String maCL);
+
 }
