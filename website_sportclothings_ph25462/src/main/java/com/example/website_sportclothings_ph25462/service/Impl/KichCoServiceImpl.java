@@ -39,6 +39,6 @@ public class KichCoServiceImpl implements KichCoService {
         kcr.deleteById(id);
     }
     public KichCo getOne(String maKC) {
-        return kcr.getSanPhamByMaSP(maKC);
+        return kcr.getSanPhamByMaKC(maKC);
     }
 }
