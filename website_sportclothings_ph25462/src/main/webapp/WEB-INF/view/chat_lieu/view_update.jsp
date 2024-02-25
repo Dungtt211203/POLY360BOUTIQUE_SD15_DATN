@@ -73,15 +73,13 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA CHẤT LIỆU</h1>
-    <form:form action="/chat-lieu/hien-thi-add" method="post" modelAttribute="chatLieu">
+    <form:form action="/chat-lieu/hien-thi-update" method="post" modelAttribute="chatLieu">
         <div class="input">
             <label>Mã Chất Liệu</label>: <form:input path="ma"/>
-            <form:errors path="ma" cssStyle="color: red"/>
             <br/>
         </div>
         <div class="input">
             <label>Tên Chất Liệu</label>: <form:input path="ten"/>
-            <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
         <div id="tt">
@@ -90,7 +88,7 @@
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>
         </div>
-        <form:button type="submit" class="btn btn-success" id="but">Add</form:button>
+        <form:button type="submit" class="btn btn-success" id="but">Update</form:button>
     </form:form>
 </div>
 </body>

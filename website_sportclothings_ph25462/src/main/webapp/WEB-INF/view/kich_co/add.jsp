@@ -25,20 +25,69 @@
         color: #FFFFFF;
         font-family: "Nunito";
     }
+    input {
+        width: 300px;
+        margin-right: 20px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .input {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+    }
+
+    .input label {
+        padding-left: 50px;
+    }
+
+    #but {
+        margin-left: 300px;
+        width: 200px;
+        border-radius: 10px;
+        background-color: #3e8e41;
+        font-weight: bold;
+        margin-top: 70px;
+
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .tt {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .radio1 {
+        margin-left: -135px;
+    }
 </style>
 <br>
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KÍCH CỠ</h1>
     <form:form action="/kich-co/hien-thi-add" method="post" modelAttribute="kichCo">
-        Mã Kích Cỡ: <form:input path="ma"/>
-        <br/>
-        Tên Kích Cỡ: <form:input path="ten"/>
-        <br/>
-        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoạt Động
-        <form:radiobutton path="tt" value="1" />Không Hoạt Động
-        <br/>
-        <form:button type="submit">Add</form:button>
-    </form:form action="/kich-co/hien-thi-add">
+        <div class="input">
+            <label>Mã Kích Cỡ</label>: <form:input path="ma"/>
+            <form:errors path="ma" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            <label>Tên Kích Cỡ</label>: <form:input path="ten"/>
+            <form:errors path="ten" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div id="tt">
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
+            Động
+            <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
+            <br/>
+        </div>
+        <form:button type="submit" class="btn btn-success" id="but">Add</form:button>
+    </form:form>
 </div>
 </body>
