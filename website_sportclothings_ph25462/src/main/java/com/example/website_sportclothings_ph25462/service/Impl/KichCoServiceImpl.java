@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
@@ -34,5 +35,8 @@ public class KichCoServiceImpl implements KichCoService {
     @Override
     public void remove(Long id) {
         kcr.deleteById(id);
+    }
+    public KichCo getOne(String maKC) {
+        return kcr.getSanPhamByMaSP(maKC);
     }
 }
