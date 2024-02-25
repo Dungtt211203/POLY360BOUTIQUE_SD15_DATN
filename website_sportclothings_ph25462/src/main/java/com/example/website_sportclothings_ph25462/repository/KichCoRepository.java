@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KichCoRepository extends JpaRepository<KichCo, Long> {
     @Query("select kc from KichCo kc where  kc.ma =?1")
-    KichCo getSanPhamByMaSP(String maKC);
+    KichCo getSanPhamByMaKC(String maKC);
 }

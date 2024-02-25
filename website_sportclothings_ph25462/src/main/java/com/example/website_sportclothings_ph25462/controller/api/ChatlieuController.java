@@ -26,7 +26,6 @@
 //    @GetMapping("/chatlieu")
 //    public ResponseEntity<List<ChatLieu>> chatlieu() {
 //        List<ChatLieu> chatlieuData = chatLieuService.getAll();
-//
 //        return ResponseEntity.ok(chatlieuData);
 //    }
 //

@@ -5,7 +5,6 @@ import com.example.website_sportclothings_ph25462.entity.MauSac;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public interface MauSacService {
@@ -16,4 +15,6 @@ public interface MauSacService {
     void remove(Long id);
 
     MauSac update(Long id);
+
+    MauSac getOne(String maMS);
 }
