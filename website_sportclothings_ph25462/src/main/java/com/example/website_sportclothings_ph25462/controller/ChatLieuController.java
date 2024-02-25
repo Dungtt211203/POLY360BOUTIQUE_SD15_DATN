@@ -14,19 +14,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @Controller
 public class ChatLieuController {
     @Autowired
     ChatLieuRepository clr;
     @Autowired
     ChatLieuService chatLieuService;
-
-//    public Map<Integer, String> getDsTrangThai() {
-//        Map<Integer, String> dsTrangThai = new HashMap<>();
-//        dsTrangThai.put(0, " hoạt động");
-//        dsTrangThai.put(1, " không Hoạt động");
-//        return dsTrangThai;
-//    }
 
     @GetMapping("/chat-lieu/hien-thi")
     public String hienThi(Model model) {

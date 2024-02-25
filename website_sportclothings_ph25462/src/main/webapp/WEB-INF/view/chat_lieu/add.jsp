@@ -85,7 +85,7 @@
             <br/>
         </div>
         <div id="tt">
-            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1" />Hoạt
             Động
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>

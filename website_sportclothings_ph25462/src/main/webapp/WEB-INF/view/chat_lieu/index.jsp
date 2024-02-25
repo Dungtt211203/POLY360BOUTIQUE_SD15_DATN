@@ -12,7 +12,13 @@
     <link rel="icon" href="../../../svg/logohome.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+    button{
+        width: 200px;
+    }
+</style>
 <body>
+
 <h1 style="text-align: center">QUẢN LÝ CHẤT LIỆU</h1>
 <table class="table">
     <thead>
@@ -32,11 +38,10 @@
             <td>${cl.id}</td>
             <td>${cl.ma}</td>
             <td>${cl.ten}</td>
-            <td>${cl.tt}</td>
+            <td>${cl.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
             <td>
 
                 <button class="btn btn-success"><a href="/chat-lieu/view-update/${cl.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-success"><a href="/chat-lieu/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
                 <button class="btn btn-success"><a href="/chat-lieu/detail/${cl.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
                 <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
