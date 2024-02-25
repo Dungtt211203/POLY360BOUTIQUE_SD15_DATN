@@ -22,13 +22,13 @@
 </head>
 <body>
 
-
+<div class="row">
 <c:forEach items="${hienthihinh.content}" var="hienthihinh">
     <c:forEach items="${hienthi.content}" var="hienthi">
         <div class="col-3 mt-3">
             <div class="card">
-                <img src="/img/${hienthihinh.linkAnh}" class="card-img-top" alt=""
-                     style="width: 319px; height: 319px">
+                <img src="/img/${hienthihinh.url}" class="card-img-top mx-auto d-block"  alt=""
+                     style="min-width: 319px; min-height: 319px">
                     <%--                <img src="/img/${hienthis.img}" class="card-img-top"--%>
                     <%--
                                                         style="width: 319px; height: 319px">--%>
@@ -40,26 +40,25 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"> ${hienthi.sanPham.moTa }</li>
                     <li class="list-group-item">Gía tiền: ${hienthi.gia }
-
                         <fmt:formatNumber
                                 pattern="###,### VNĐ">
                         </fmt:formatNumber>
 
                     </li>
                 </ul>
-                <div class="card-body">
-                    <div>
-                        <a href="" class="btn btn-primary">Thêm vào giỏ hàng </a>
-                    </div>
-                    <div>
-                        <a href="" class="btn btn-secondary">Xem chi tiết </a>
-                    </div>
-                </div>
+<%--                <div class="card-body">--%>
+<%--                    <div>--%>
+<%--                        <a href="" class="btn btn-primary">Thêm vào giỏ hàng </a>--%>
+<%--                    </div>--%>
+<%--                    <div>--%>
+<%--                        <a href="" class="btn btn-secondary">Xem chi tiết </a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
             </div>
         </div>
     </c:forEach>
 </c:forEach>
-
+</div>
 <nav aria-label="Page navigation example">
     <ul class="pagination">
 
