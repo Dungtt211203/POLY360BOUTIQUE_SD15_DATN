@@ -41,10 +41,10 @@ public class HomeController {
     public String index(@RequestParam(defaultValue = "0", name = "page") Integer page, Model model) {
 
         Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(page);
-        model.addAttribute("hienthihinh", hinhAnhSPS);
+        model.addAttribute("hienthi", hinhAnhSPS);
 
-        Page<ChiTietSanPham> chiTietSanPhams = chiTietSanPhamService.getData(page);
-        model.addAttribute("hienthi", chiTietSanPhams);
+//        Page<ChiTietSanPham> chiTietSanPhams = chiTietSanPhamService.getData(page);
+//        model.addAttribute("hienthi", chiTietSanPhams);
 
         List<SanPham> sanPhamList = sanPhamService.getAll();
         model.addAttribute("sanpham", sanPhamList);

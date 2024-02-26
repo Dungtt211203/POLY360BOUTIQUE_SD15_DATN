@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "san_pham")
 @Entity
@@ -20,18 +19,28 @@ public class SanPham {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_san_pham")
     private String ma;
+
     @Column(name = "ten_san_pham")
     private String ten;
+
+    @Column(name = "gia")
+    private String gia;
+
     @Column(name = "mo_ta")
     private String moTa;
+
     @Column(name = "ngay_tao")
     private Date ngayTao;
+
     @Column(name = "ngay_sua")
     private Date ngaySua;
+
     @Column(name = "nguoi_tao")
     private String nguoiTao;
+
     @Column(name = "trang_thai")
     private Integer tt;
 }
