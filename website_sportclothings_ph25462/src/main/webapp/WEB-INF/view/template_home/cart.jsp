@@ -27,7 +27,7 @@
     <c:forEach items="${hienthi.content}" var="hienthi">
         <div class="col-3 mt-3">
             <div class="card">
-                <img src="/img/${hienthihinh.linkAnh}" class="card-img-top" alt=""
+                <img src="/img/${hienthihinh.url}" class="card-img-top" alt=""
                      style="width: 319px; height: 319px">
                     <%--                <img src="/img/${hienthis.img}" class="card-img-top"--%>
                     <%--
