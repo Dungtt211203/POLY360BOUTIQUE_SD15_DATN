@@ -4,9 +4,11 @@ import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.KichCoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,7 +59,20 @@ public class KichCoController {
     }
 
     @PostMapping("/kich-co/hien-thi-add")
-    public String add(@ModelAttribute("kichCo") KichCo kichCo) {
+    public String add(Model model, @Valid @ModelAttribute("kichCo") KichCo kichCo, BindingResult result) {
+        Boolean hasError = result.hasErrors();
+        KichCo product = kichCoService.getOne(kichCo.getMa());
+        if (product != null) {
+            hasError = true;
+            model.addAttribute("makcError", "Vui lòng không nhập trùng mã");
+            model.addAttribute("view", "/kich_co/add.jsp");
+            return "/kich_co/add";
+        }
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/kich_co/add.jsp");
+            return "/kich_co/add";
+        }
         kichCoService.add(kichCo);
         return "redirect:/kich-co/hien-thi";
     }

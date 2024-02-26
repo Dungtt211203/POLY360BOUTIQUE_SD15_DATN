@@ -24,7 +24,7 @@ public class HinhAnhSPServiceImpl implements HinhAnhSPService {
     @Override
     public Page<HinhAnhSP> getData(Integer page) {
 
-        Pageable pageable = PageRequest.of(page, 5);
+        Pageable pageable = PageRequest.of(page, 8);
 
         return hinhAnhSPRepository.findAll(pageable);
     }

@@ -1,16 +1,15 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.MauSac;
-import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.MauSacServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+
 
 @Controller
 public class MauSacController {
@@ -54,7 +53,20 @@ public class MauSacController {
     }
 
     @PostMapping("/mau-sac/hien-thi-add")
-    public String add(@ModelAttribute("mauSac") MauSac mauSac) {
+    public String add(Model model, @Valid @ModelAttribute("mauSac") MauSac mauSac, BindingResult result) {
+        Boolean hasError = result.hasErrors();
+        MauSac product = mss.getOne(mauSac.getMa());
+        if (product != null) {
+            hasError = true;
+            model.addAttribute("mamsError", "Vui lòng không nhập trùng mã");
+            model.addAttribute("view", "/mau_sac/add.jsp");
+            return "/mau_sac/add";
+        }
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/mau_sac/add.jsp");
+            return "/mau_sac/add";
+        }
         mss.add(mauSac);
         return "redirect:/mau-sac/hien-thi";
     }
