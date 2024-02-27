@@ -41,8 +41,14 @@ public class ChatLieuController {
 
     @PostMapping("/chat-lieu/view-update/{id}")
     public String update(
-            @PathVariable Long id, @ModelAttribute("chatLieu") ChatLieu chatLieu
+            @PathVariable Long id,Model model,@Valid @ModelAttribute("chatLieu") ChatLieu chatLieu,BindingResult result
     ) {
+        Boolean hasError = result.hasErrors();
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/chat_lieu/view_update.jsp");
+            return "/chat_lieu/view_update";
+        }
         chatLieu.setId(id);
         chatLieuService.add(chatLieu);
         return "redirect:/chat-lieu/hien-thi";

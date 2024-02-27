@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImpl;
@@ -49,8 +50,14 @@ public class SanPhamController {
 
     @PostMapping("/san-pham/view-update/{id}")
     public String update(
-            @PathVariable Long id, @ModelAttribute("sanPham") SanPham sanPham
+            @PathVariable Long id,Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result
     ) {
+        Boolean hasError = result.hasErrors();
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/san_pham/view_update.jsp");
+            return "/san_pham/view_update";
+        }
         sanPham.setId(id);
         sanPhamService.add(sanPham);
         return "redirect:/san-pham/hien-thi";
@@ -62,7 +69,20 @@ public class SanPhamController {
     }
 
     @PostMapping("/san-pham/hien-thi-add")
-    public String add(@ModelAttribute("sanPham") SanPham sanPham) {
+    public String add(Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result) {
+        Boolean hasError = result.hasErrors();
+        SanPham product = sanPhamService.getOne(sanPham.getMa());
+        if (product != null) {
+            hasError = true;
+            model.addAttribute("maclError", "Vui lòng không nhập trùng mã");
+            model.addAttribute("view", "/san_pham/add.jsp");
+            return "/san_pham/add";
+        }
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/san_pham/add.jsp");
+            return "/san_pham/add";
+        }
         sanPhamService.add(sanPham);
         return "redirect:/san-pham/hien-thi";
     }

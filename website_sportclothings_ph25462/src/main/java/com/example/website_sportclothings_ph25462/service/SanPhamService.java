@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.service;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,7 @@ public interface SanPhamService {
     void remove(Long id);
 
     SanPham update(Long id);
+
+    SanPham getOne(String maCL);
 
 }
