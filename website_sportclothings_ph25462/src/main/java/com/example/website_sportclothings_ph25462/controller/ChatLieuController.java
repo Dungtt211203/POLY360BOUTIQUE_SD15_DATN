@@ -76,11 +76,11 @@ public class ChatLieuController {
         return "redirect:/chat-lieu/hien-thi";
     }
 
-    @GetMapping("/search")
-    public String search(Model model, @ModelAttribute("key") String key, @RequestParam(defaultValue = "0", name = "page") Integer page) {
-        Pageable pageable = PageRequest.of(page, 5);
-        Page<ChatLieu> list = chatLieuService.search(key, pageable);
-        model.addAttribute("list", list);
-        return "redirect:/chat-lieu/hien-thi";
-    }
+//    @GetMapping("/search")
+//    public String search(Model model, @ModelAttribute("key") String key, @RequestParam(defaultValue = "0", name = "page") Integer page) {
+//        Pageable pageable = PageRequest.of(page, 5);
+//        Page<ChatLieu> list = chatLieuService.search(key, pageable);
+//        model.addAttribute("list", list);
+//        return "redirect:/chat-lieu/hien-thi";
+//    }
 }

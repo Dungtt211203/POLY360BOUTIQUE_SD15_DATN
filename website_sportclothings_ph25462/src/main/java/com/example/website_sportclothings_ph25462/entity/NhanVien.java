@@ -28,7 +28,7 @@ public class NhanVien {
     @Column(name = "ten")
     private String ten;
     @Column(name = "gioi_tinh")
-    private Boolean gioiTinh;
+    private Integer gioiTinh;
     @Column(name = "dia_chi")
     private String diaChi;
     @Column(name = "so_dien_thoai")
@@ -36,8 +36,8 @@ public class NhanVien {
     @Column(name = "email")
     private String email;
     @Column(name = "trang_thai")
-    private Boolean tt;
+    private Integer tt;
     @OneToOne()
-    @JoinColumn(name = "id_tai_khoan")
+    @JoinColumn(name = "tai_khoan_id")
     private TaiKhoan taiKhoanNV;
 }
