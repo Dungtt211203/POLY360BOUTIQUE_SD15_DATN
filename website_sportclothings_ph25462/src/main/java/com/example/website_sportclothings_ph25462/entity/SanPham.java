@@ -11,7 +11,6 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "san_pham")
 @Entity
@@ -51,6 +50,4 @@ public class SanPham {
     @Column(name = "nguoi_tao")
     private String nguoiTao;
     @NotNull(message = "Trạng thái không được để trống")
-    @Column(name = "trang_thai")
-    private Integer tt;
 }

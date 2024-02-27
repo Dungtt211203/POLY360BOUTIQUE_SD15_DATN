@@ -23,41 +23,30 @@
 <body>
 
 <div class="row">
-<c:forEach items="${hienthihinh.content}" var="hienthihinh">
-    <c:forEach items="${hienthi.content}" var="hienthi">
+    <c:forEach items="${hienthi.content}" var="hienthis">
         <div class="col-3 mt-3">
             <div class="card">
-                <img src="/img/${hienthihinh.url}" class="card-img-top mx-auto d-block"  alt=""
-                     style="min-width: 319px; min-height: 319px">
-                    <%--                <img src="/img/${hienthis.img}" class="card-img-top"--%>
-                    <%--
-                                                        style="width: 319px; height: 319px">--%>
-                <div class="card-body">
-                    <h5 class="card-title">${hienthihinh.sanPham.ten}</h5>
 
+                <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block" alt=""
+                     style="min-width: 319px; min-height: 319px">
+
+                <div class="card-body">
+                    <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> ${hienthi.sanPham.moTa }</li>
-                    <li class="list-group-item">Gía tiền: ${hienthi.gia }
-                        <fmt:formatNumber
-                                pattern="###,### VNĐ">
-                        </fmt:formatNumber>
+                    <li class="list-group-item"> ${hienthis.sanPham.moTa }</li>
+                    <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }
+                            <%--                        <fmt:formatNumber--%>
+                            <%--                                pattern="###,### VNĐ">--%>
+                            <%--                        </fmt:formatNumber>--%>
 
                     </li>
                 </ul>
-<%--                <div class="card-body">--%>
-<%--                    <div>--%>
-<%--                        <a href="" class="btn btn-primary">Thêm vào giỏ hàng </a>--%>
-<%--                    </div>--%>
-<%--                    <div>--%>
-<%--                        <a href="" class="btn btn-secondary">Xem chi tiết </a>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
+
             </div>
         </div>
     </c:forEach>
-</c:forEach>
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination">
@@ -70,136 +59,6 @@
     </ul>
 </nav>
 
-
-<%--<div class="wrapper">--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp01ao.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Headphone</span>--%>
-<%--                    <p>Premium headphone</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$30</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp02quan.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Watch</span>--%>
-<%--                    <p>Premium digital watch</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$80</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp03quan.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp04quan.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp05ao.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp06ao.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp07.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="card">--%>
-<%--        <img src="../../../img/sp08ao.png" alt="">--%>
-<%--        <div class="content">--%>
-<%--            <div class="row">--%>
-<%--                <div class="details">--%>
-<%--                    <span>Apple Airpod</span>--%>
-<%--                    <p>Premium black airpod</p>--%>
-<%--                </div>--%>
-<%--                <div class="price">$50</div>--%>
-<%--            </div>--%>
-<%--            <div class="buttons">--%>
-<%--                <button>Buy Now</button>--%>
-<%--                <button class="cart-btn" onclick="showMessage()">Add to Cart</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 </div>
 
 <script src="src/main/webapp/js/cart.js"></script>
