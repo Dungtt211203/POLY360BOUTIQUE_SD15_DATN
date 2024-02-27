@@ -94,9 +94,14 @@
             <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
-            <label class="tt">Giới Tính:</label> <form:radiobutton path="gioiTinh" value="0" checked="true" class="radio1" />Nam
-            <form:radiobutton path="gioiTinh" value="1" class="radio"/>Nữ
+        <div class="input">
+            <label>Ngay Sinh</label>: <form:input type="date" path="ngaySinh"/>
+            <form:errors path="ngaySinh" cssStyle="color: red"/>
             <br/>
+        </div>
+        <label class="tt">Giới Tính:</label> <form:radiobutton path="gioiTinh" value="0" checked="true" class="radio1"/>Nam
+        <form:radiobutton path="gioiTinh" value="1" class="radio"/>Nữ
+        <br/>
         <div class="input">
             <label>Địa Chỉ</label>: <form:input path="diaChi"/>
             <form:errors path="diaChi" cssStyle="color: red"/>
@@ -107,8 +112,13 @@
             <form:errors path="sdt" cssStyle="color: red"/>
             <br/>
         </div>
+        <div class="input">
+            <label>Email</label>: <form:input path="email"/>
+            <form:errors path="email" cssStyle="color: red"/>
+            <br/>
+        </div>
         <div id="tt">
-            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1" />Hoạt
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
             Động
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>
