@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
@@ -44,7 +45,17 @@ public class ChiTietSPController {
         model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
         return "/chitietsp/index";
     }
-
+    @GetMapping("/viewadd")
+    public String hienThiAdd(@ModelAttribute("ctsp") ChiTietSP chiTietSP, Model model) {
+        //   model.addAttribute("view", "../chitietsp/index.jsp");
+        model.addAttribute("sanPham", sanPhamRepository.findAll());
+        model.addAttribute("kichCo", kichCoRepository.findAll());
+        model.addAttribute("mauSac", mauSacRepository.findAll());
+        model.addAttribute("chatLieu", chatLieuRepository.findAll());
+        model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
+        model.addAttribute("ctsp",new ChiTietSP());
+        return "chitietsp/add";
+    }
     @PostMapping("/add")
     public String add(ChiTietSP chiTietSp, Model model) {
         model.addAttribute("sp",new ChiTietSP());

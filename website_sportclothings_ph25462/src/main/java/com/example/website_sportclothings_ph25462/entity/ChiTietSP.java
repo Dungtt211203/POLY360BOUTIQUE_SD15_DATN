@@ -40,8 +40,8 @@ public class ChiTietSP {
     @Column(name = "so_luong")
     private Integer soLuong;
 
-    @Column(name = "gia_hien_hanh")
-    private Long giaHienHanh;
+//    @Column(name = "gia_hien_hanh")
+//    private Long giaHienHanh;
 
     @Column(name = "trang_thai")
     private Integer trangThai;

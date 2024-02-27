@@ -36,6 +36,8 @@
         <br/>
         Tên Sản Phẩm: <form:input path="ten"/>
         <br/>
+        Giá: <form:input path="gia"/>
+        <br/>
         Mô Tả Sản Phẩm: <form:textarea path="moTa"/>
         <br/>
         Người Tạo: <form:input path="nguoiTao"/>

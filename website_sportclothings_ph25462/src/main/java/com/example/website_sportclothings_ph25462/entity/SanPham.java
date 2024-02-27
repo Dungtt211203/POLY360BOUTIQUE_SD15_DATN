@@ -33,6 +33,10 @@ public class SanPham {
     private String ten;
     @NotBlank(message = "không để trống tên")
     @Length(max = 100, message = "Không quá 100 kí tự")
+    @Column(name = "gia")
+    private String gia;
+    @NotBlank(message = "không để trống tên")
+    @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "mo_ta")
     private String moTa;
     @Temporal(TemporalType.DATE)
@@ -49,5 +53,7 @@ public class SanPham {
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "nguoi_tao")
     private String nguoiTao;
-    @NotNull(message = "Trạng thái không được để trống")
+  //  @NotNull(message = "Trạng thái không được để trống")
+    @Column(name = "trang_thai")
+    private Integer tt;
 }

@@ -14,39 +14,14 @@
 </head>
 <body>
 <h1 style="text-align: center">QUẢN LÝ CHI TIẾT SẢN PHẨM</h1>
-<form:form method="post" action="/chitietsp/add" modelAttribute="sp">
-    ID:<form:input path="id"/><br>
-Ma:<form:input path="ma"/><br>
-SoLuong:<form:input path="soLuong"/><br>
-GiaHienHanh:<form:input path="giaHienHanh"/><br>
-
-NgayTao:<form:input path="ngayTao"/><br>
-NgaySua:<form:input path="ngaySua"/><br>
-
-TenSP: <form:select path="sanPham">
-    <form:options items="${sanPham}" itemLabel="ten"/>
-</form:select><br>
-KichCo: <form:select path="kichCo">
-    <form:options items="${kichCo}" itemLabel="ten"/>
-</form:select><br>
-Mau Sac: <form:select path="mauSac">
-    <form:options items="${mauSac}" itemLabel="ten"/>
-</form:select><br>
-ChatLieu: <form:select path="chatLieu">
-    <form:options items="${chatLieu}" itemLabel="ten"/>
-</form:select><br>
-ThuongHieu: <form:select path="thuongHieu">
-    <form:options items="${thuongHieu}" itemLabel="ten"/>
-</form:select><br>
-<form:button class="btn btn-primary">Add</form:button>
-</form:form>
+<button class="btn btn-primary"><a href="/chitietsp/viewadd" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
 <table class="table">
     <thead>
     <tr>
         <th>ID</th>
         <th>Mã CTSP</th>
         <th>Số lượng</th>
-        <th>Giá</th>
+
         <th>Ngày Tạo</th>
         <th>Ngày Sửa</th>
         <th>Sản Phẩm </th>
@@ -63,7 +38,7 @@ ThuongHieu: <form:select path="thuongHieu">
             <td>${ctsp.id}</td>
             <td>${ctsp.ma}</td>
             <td>${ctsp.soLuong}</td>
-            <td>${ctsp.giaHienHanh}</td>
+
             <td>${ctsp.ngayTao}</td>
             <td>${ctsp.ngaySua}</td>
             <td>${ctsp.sanPham.ten}</td>
@@ -79,6 +54,7 @@ ThuongHieu: <form:select path="thuongHieu">
 
         </tr>
     </c:forEach>
+
 
     </tbody>
 </table>

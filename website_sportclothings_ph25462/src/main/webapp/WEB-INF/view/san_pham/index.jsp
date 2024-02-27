@@ -21,6 +21,7 @@
         <th>ID</th>
         <th>Mã Sản Phẩm</th>
         <th>Tên Sản Phẩm</th>
+        <th>Giá</th>
         <th>Mô Tả</th>
         <th>Ngày Tạo</th>
         <th>Người Tạo</th>
@@ -35,6 +36,7 @@
             <td>${sp.id}</td>
             <td>${sp.ma}</td>
             <td>${sp.ten}</td>
+            <td>${sp.gia}</td>
             <td>${sp.moTa}</td>
             <td>${sp.ngayTao}</td>
             <td>${sp.nguoiTao}</td>

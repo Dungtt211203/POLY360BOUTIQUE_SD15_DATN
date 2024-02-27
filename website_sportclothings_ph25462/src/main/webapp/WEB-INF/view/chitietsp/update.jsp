@@ -26,7 +26,6 @@
     ID:<form:input path="id" value="${chitietsp.id}"/><br>
     Ma:<form:input path="ma" value="${chitietsp.ma}"/><br>
     SoLuong:<form:input path="soLuong" value="${chitietsp.soLuong}"/><br>
-    GiaHienHanh:<form:input path="giaHienHanh" value="${chitietsp.giaHienHanh}"/><br>
 
     NgayTao:<form:input path="ngayTao" value="${chitietsp.ngayTao}"/><br>
     NgaySua:<form:input path="ngaySua" value="${chitietsp.ngaySua}"/><br>
