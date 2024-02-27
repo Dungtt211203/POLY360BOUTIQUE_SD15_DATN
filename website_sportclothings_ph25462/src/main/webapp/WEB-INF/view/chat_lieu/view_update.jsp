@@ -72,18 +72,43 @@
 
 <body>
 <div class="formAdd">
-    <h1>THÊM/SỬA CHẤT LIỆU</h1>
-    <form:form action="/chat-lieu/hien-thi-update" method="post" modelAttribute="chatLieu">
+    <h1>THÊM/SỬA KHÁCH HÀNG</h1>
+    <form:form action="/khach-hang/hien-thi-update" method="post" modelAttribute="khachHang">
         <div class="input">
-            <label>Mã Chất Liệu</label>: <form:input path="ma"/>
+            <label>Mã Khách Hàng</label>: <form:input path="ma"/>
+            <form:errors path="ma" cssStyle="color: red"/>
             <br/>
         </div>
         <div class="input">
-            <label>Tên Chất Liệu</label>: <form:input path="ten"/>
+            <label>Họ Khách Hàng</label>: <form:input path="ho"/>
+            <form:errors path="ho" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            <label>Tên Đệm Khách Hàng</label>: <form:input path="tenDem"/>
+            <form:errors path="tenDem" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            <label>Tên Khách Hàng</label>: <form:input path="ten"/>
+            <form:errors path="ten" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <label class="tt">Giới Tính:</label> <form:radiobutton path="gioiTinh" value="0" checked="true" class="radio1" />Nam
+        <form:radiobutton path="gioiTinh" value="1" class="radio"/>Nữ
+        <br/>
+        <div class="input">
+            <label>Địa Chỉ</label>: <form:input path="diaChi"/>
+            <form:errors path="diaChi" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            <label>Số Điện Thoại</label>: <form:input path="sdt"/>
+            <form:errors path="sdt" cssStyle="color: red"/>
             <br/>
         </div>
         <div id="tt">
-            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1" />Hoạt
             Động
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>
@@ -91,4 +116,5 @@
         <form:button type="submit" class="btn btn-success" id="but">Update</form:button>
     </form:form>
 </div>
+
 </body>

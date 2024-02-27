@@ -38,14 +38,10 @@
             <td>${sp.moTa}</td>
             <td>${sp.ngayTao}</td>
             <td>${sp.nguoiTao}</td>
-            <td>${sp.tt}</td>
+            <td>${sp.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
             <td>
 
                 <button class="btn btn-success"><a href="/san-pham/view-update/${sp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-success"><a href="/san-pham/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-
-                <button class="btn btn-success"><a href="/san-pham/detail/${sp.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
-
                 <button class="btn btn-danger"><a href="/san-pham/remove/${sp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
