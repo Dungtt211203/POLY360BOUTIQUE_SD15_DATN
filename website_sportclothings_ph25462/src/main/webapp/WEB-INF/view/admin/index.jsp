@@ -73,7 +73,7 @@
         </li>
         <div id="myPopup" style="display: none">
             <li class="nav-item nav-popup">
-                <a class="nav-link-admin" href="#">Khách hàng</a>
+                <a class="nav-link-admin" href="/khach-hang/hien-thi">Khách hàng</a>
             </li>
             <li class="nav-item nav-popup">
                 <a class="nav-link-admin" href="#">Nhân viên</a>

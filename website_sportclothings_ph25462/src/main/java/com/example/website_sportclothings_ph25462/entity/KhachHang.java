@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "khach_hang")
@@ -27,14 +29,18 @@ public class KhachHang {
     @Column(name = "ten")
     private String ten;
     @Column(name = "gioi_tinh")
-    private Boolean gioiTinh;
+    private Integer gioiTinh;
+    @Column(name = "ngay_sinh")
+    private Date ngaySinh;
     @Column(name = "dia_chi")
     private String diaChi;
     @Column(name = "so_dien_thoai")
     private Integer sdt;
+    @Column(name = "email")
+    private String email;
     @Column(name = "trang_thai")
-    private Boolean tt;
+    private Integer tt;
     @OneToOne()
-    @JoinColumn(name = "id_tai_khoan")
+    @JoinColumn(name = "tai_khoan_id")
     private TaiKhoan taiKhoanKH;
 }

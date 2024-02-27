@@ -26,9 +26,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D">Chính Sách</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: #2D2D2D">Giới Thiệu</a>
-                        </li>
                     </ul>
                     <form class="d-flex" role="search" style="gap: 10px;">
                         <input class="search" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search"

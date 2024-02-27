@@ -30,8 +30,9 @@
             <td>${i.index+1}</td>
             <td>${th.ma}</td>
             <td>${th.ten}</td>
-            <td>${th.tt}</td>
+            <td>${th.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
             <td>
+                <button class="btn btn-danger"><a href="/thuong-hieu/view-update/${th.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/thuong-hieu/detail/${th.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
                 <button class="btn btn-danger"><a href="/thuong-hieu/remove/${th.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
