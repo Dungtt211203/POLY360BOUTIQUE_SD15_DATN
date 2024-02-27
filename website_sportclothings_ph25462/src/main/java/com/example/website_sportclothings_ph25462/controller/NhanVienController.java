@@ -43,17 +43,9 @@ public class NhanVienController {
 
     @PostMapping("/nhan-vien/view-update/{id}")
     public String update(
-            Model model,@Valid @PathVariable Long id, @ModelAttribute("nhanVien") NhanVien nhanVien,BindingResult result
+            @PathVariable Long id, Model model,@Valid @ModelAttribute("nhanVien") NhanVien nhanVien,BindingResult result
     ) {
-
-            Boolean hasError = result.hasErrors();
-            NhanVien product = nhanVienService.getOne(nhanVien.getMa());
-            if (product != null) {
-                hasError = true;
-                model.addAttribute("manvError", "Vui lòng không nhập trùng mã");
-                model.addAttribute("view", "/nhan_vien/view_update.jsp");
-                return "/nhan_vien/view_update";
-            }
+        Boolean hasError = result.hasErrors();
             if (hasError) {
                 // Báo lỗi
                 model.addAttribute("view", "/nhan_vien/view_update.jsp");

@@ -75,8 +75,10 @@
     <h1>THÊM/SỬA CHẤT LIỆU</h1>
     <form:form method="post" modelAttribute="chatLieu">
         Mã Màu Sắc: <form:input path="ma"/>
+        <form:errors path="ma"  cssStyle="color: red"/>
         <br/>
         Tên Màu Sắc: <form:input path="ten"/>
+        <form:errors path="ten" cssStyle="color: red"/>
         <br/>
         Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
         <form:radiobutton path="tt" value="1"/>Khong Hoat Dong

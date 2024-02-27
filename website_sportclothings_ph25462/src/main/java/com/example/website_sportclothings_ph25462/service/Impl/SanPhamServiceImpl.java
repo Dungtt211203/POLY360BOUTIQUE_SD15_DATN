@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
@@ -31,8 +32,11 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
-
     public void remove(Long id) {
         spr.deleteById(id);
+    }
+
+    public SanPham getOne(String maCL) {
+        return spr.getSanPhamByMaSP(maCL);
     }
 }

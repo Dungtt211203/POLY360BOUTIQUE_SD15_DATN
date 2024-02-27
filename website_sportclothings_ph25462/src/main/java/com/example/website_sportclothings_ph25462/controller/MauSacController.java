@@ -40,8 +40,14 @@ public class MauSacController {
     }
     @PostMapping("/mau-sac/view-update/{id}")
     public String update(
-            @PathVariable Long id, @ModelAttribute("mauSac") MauSac mauSac
+            @PathVariable Long id,Model model,@Valid @ModelAttribute("mauSac") MauSac mauSac,BindingResult result
     ) {
+        Boolean hasError = result.hasErrors();
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/mau_sac/view_update.jsp");
+            return "/mau_sac/view_update";
+        }
         mauSac.setId(id);
         mss.add(mauSac);
         return "redirect:/mau-sac/hien-thi";

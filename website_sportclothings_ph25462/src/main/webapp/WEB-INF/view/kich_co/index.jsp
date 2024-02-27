@@ -32,7 +32,7 @@
             <td>${kc.id}</td>
             <td>${kc.ma}</td>
             <td>${kc.ten}</td>
-            <td>${kc.tt}</td>
+            <td>${kc.tt==0?"hoạt Động":"Không Hoạt Động"}</td>
             <td>
 
                 <button class="btn btn-success"><a href="/kich-co/view-update/${kc.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>

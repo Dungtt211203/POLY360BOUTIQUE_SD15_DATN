@@ -39,20 +39,13 @@ public class KhachHangController {
 
     @PostMapping("/khach-hang/view-update/{id}")
     public String update(
-            Model model, @Valid @PathVariable Long id, @ModelAttribute("khachHang") KhachHang khachHang, BindingResult result
+            @PathVariable Long id, Model model, @Valid @ModelAttribute("khachHang") KhachHang khachHang, BindingResult result
     ) {
         Boolean hasError = result.hasErrors();
-        KhachHang product = khachHangService.getOne(khachHang.getMa());
-        if (product != null) {
-            hasError = true;
-            model.addAttribute("makhError", "Vui lòng không nhập trùng mã");
-            model.addAttribute("view", "/khach_hang/view_update.jsp");
-            return "/khach_hang/view_update";
-        }
         if (hasError) {
             // Báo lỗi
-            model.addAttribute("view", "/khach_hang/add.jsp");
-            return "/khach_hang/add";
+            model.addAttribute("view", "/khach_hang/view_update.jsp");
+            return "/khach_hang/view_update";
         }
         khachHang.setId(id);
         khachHangService.add(khachHang);

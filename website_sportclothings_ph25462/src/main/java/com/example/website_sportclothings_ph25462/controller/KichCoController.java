@@ -46,8 +46,14 @@ public class KichCoController {
     }
     @PostMapping("/kich-co/view-update/{id}")
     public String update(
-            @PathVariable Long id, @ModelAttribute("kichCo") KichCo kichCo
+            @PathVariable Long id,Model model,@Valid @ModelAttribute("kichCo") KichCo kichCo,BindingResult result
     ) {
+        Boolean hasError = result.hasErrors();
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/kich_co/view_update.jsp");
+            return "/kich_co/view_update";
+        }
         kichCo.setId(id);
         kichCoService.add(kichCo);
         return "redirect:/kich-co/hien-thi";
