@@ -20,7 +20,7 @@
 <body>
 
 <h1 style="text-align: center">QUẢN LÝ KHÁCH HÀNG</h1>
-<table class="table">
+<table class="table-warning">
     <thead>
     <tr>
         <th>STT</th>
@@ -42,7 +42,7 @@
     <tbody>
     <c:forEach items="${load}" var="kh" varStatus="i">
         <tr>
-            <td>${i.index+1}</td>
+            <td >${i.index+1}</td>
             <td>${kh.id}</td>
             <td>${kh.taiKhoanKH.id}</td>
             <td>${kh.ma}</td>

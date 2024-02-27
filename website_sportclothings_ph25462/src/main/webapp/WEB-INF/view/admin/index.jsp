@@ -76,7 +76,7 @@
                 <a class="nav-link-admin" href="/khach-hang/hien-thi">Khách hàng</a>
             </li>
             <li class="nav-item nav-popup">
-                <a class="nav-link-admin" href="#">Nhân viên</a>
+                <a class="nav-link-admin" href="/nhan-vien/hien-thi">Nhân viên</a>
             </li>
         </div>
         <li class="nav-item">

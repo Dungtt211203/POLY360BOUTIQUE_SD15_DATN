@@ -23,7 +23,7 @@ public class ChatLieu {
     @Column(name = "id")
     private Long id;
     @NotBlank(message = " không để trống mã")
-    @Length(min = 4,max = 50, message = " Không dưới 5 kí tự và quá 50 kí tự")
+    @Length(min = 5,max = 50, message = " Không dưới 5 kí tự và quá 50 kí tự")
     @Column(name = "ma_chat_lieu")
     private String ma;
     @NotBlank(message = "không để trống tên")

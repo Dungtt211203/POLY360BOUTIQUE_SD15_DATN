@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KHÁCH HÀNG</h1>
-    <form:form action="/khach-hang/hien-thi-add" method="post" modelAttribute="khachHang">
+    <form:form method="post" modelAttribute="khachHang">
         <div class="input">
             <label>Mã Khách Hàng</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>
@@ -94,7 +94,12 @@
             <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
-        <label class="tt">Giới Tính:</label> <form:radiobutton path="gioiTinh" value="0" checked="true" class="radio1" />Nam
+        <div class="input">
+            <label>Ngay Sinh</label>: <form:input type="date" path="ngaySinh"/>
+            <form:errors path="ngaySinh" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <label class="tt">Giới Tính:</label> <form:radiobutton path="gioiTinh" value="0" checked="true" class="radio1"/>Nam
         <form:radiobutton path="gioiTinh" value="1" class="radio"/>Nữ
         <br/>
         <div class="input">
@@ -107,13 +112,18 @@
             <form:errors path="sdt" cssStyle="color: red"/>
             <br/>
         </div>
+        <div class="input">
+            <label>Email</label>: <form:input path="email"/>
+            <form:errors path="email" cssStyle="color: red"/>
+            <br/>
+        </div>
         <div id="tt">
-            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1" />Hoạt
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
             Động
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>
         </div>
-        <form:button type="submit" class="btn btn-success" id="but">Add</form:button>
+        <form:button type="submit" class="btn btn-success" id="but">Update</form:button>
     </form:form>
 </div>
 
