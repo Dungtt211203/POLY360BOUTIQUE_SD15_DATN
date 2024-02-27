@@ -19,7 +19,7 @@
 </style>
 <body>
 
-<h1 style="text-align: center">QUẢN LÝ KHÁCH HÀNG</h1>
+<h1 style="text-align: center">QUẢN LÝ NHÂN VIÊN</h1>
 <table class="table-warning">
     <thead>
     <tr>
