@@ -7,9 +7,10 @@
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>LOGIN POLY360BOUTIQUE</title>
+    <title>POLY360BOUTIQUE</title>
     <link rel="icon" href="../../../svg/logohome.svg">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="icon" href="../../../svg/logohome.svg">
 </head>
 
 <style>
@@ -88,7 +89,7 @@
 
     <div class="registration-container">
         <form onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold">POLY 360 BOUTIQUE</h3>
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
             <br>
             <span class="header-title">
                     <span style="color: red"></span>
