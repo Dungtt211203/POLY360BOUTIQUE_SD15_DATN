@@ -16,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class HinhAnhSP {
+public class  HinhAnhSP {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
