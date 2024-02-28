@@ -30,18 +30,12 @@ public class SanPham {
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "ten_san_pham")
     private String ten;
-    @NotBlank(message = "không để trống tên")
+    @NotBlank(message = "không để trống giá")
     @Length(max = 100, message = "Không quá 100 kí tự")
-<<<<<<< Updated upstream
     @Column(name = "gia")
     private String gia;
     @NotBlank(message = "không để trống tên")
     @Length(max = 100, message = "Không quá 100 kí tự")
-=======
-    @NotNull(message = "Giá không được null")
-    @Column(name = "gia")
-    private Integer gia;
->>>>>>> Stashed changes
     @Column(name = "mo_ta")
     private String moTa;
     @Temporal(TemporalType.DATE)
@@ -58,11 +52,7 @@ public class SanPham {
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "nguoi_tao")
     private String nguoiTao;
-<<<<<<< Updated upstream
-  //  @NotNull(message = "Trạng thái không được để trống")
-=======
     @NotNull(message = "Trạng thái không được để trống")
->>>>>>> Stashed changes
     @Column(name = "trang_thai")
     private Integer tt;
 }
