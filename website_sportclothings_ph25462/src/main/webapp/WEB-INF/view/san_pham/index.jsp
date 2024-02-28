@@ -21,14 +21,10 @@
         <th>ID</th>
         <th>Mã Sản Phẩm</th>
         <th>Tên Sản Phẩm</th>
-<<<<<<< Updated upstream
-        <th>Giá</th>
-=======
         <th>Gíá Sản Phẩm</th>
->>>>>>> Stashed changes
         <th>Mô Tả</th>
-        <th>Ngày Tạo</th>
-        <th>Người Tạo</th>
+<%--        <th>Ngày Tạo</th>--%>
+<%--        <th>Người Tạo</th>--%>
         <th>Trạng Thái</th>
         <th colspan="2">Action</th>
     </tr>
@@ -42,16 +38,13 @@
             <td>${sp.ten}</td>
             <td>${sp.gia}</td>
             <td>${sp.moTa}</td>
-            <td>${sp.ngayTao}</td>
-            <td>${sp.nguoiTao}</td>
+<%--            <td>${sp.ngayTao}</td>--%>
+<%--            <td>${sp.nguoiTao}</td>--%>
             <td>${sp.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
             <td>
-
                 <button class="btn btn-success"><a href="/san-pham/view-update/${sp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-danger"><a href="/san-pham/remove/${sp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
-
-
         </tr>
     </c:forEach>
     <button class="btn btn-primary"><a href="/san-pham/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>

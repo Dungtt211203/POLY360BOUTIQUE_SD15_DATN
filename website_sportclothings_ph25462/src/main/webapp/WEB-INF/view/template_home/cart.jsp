@@ -36,11 +36,10 @@
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"> ${hienthis.sanPham.moTa }</li>
-<%--                    <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }--%>
-                            <%--                        <fmt:formatNumber--%>
-                            <%--                                pattern="###,### VNĐ">--%>
-                            <%--                        </fmt:formatNumber>--%>
-
+                    <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia}
+                        <fmt:formatNumber
+                                pattern="###,### VNĐ">
+                        </fmt:formatNumber>
                     </li>
                 </ul>
 
@@ -48,20 +47,23 @@
         </div>
     </c:forEach>
 </div>
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-
-        <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
-            <li class="page-item"><a class="page-link" href="/home?page=${loop.index}">${loop.index+1}</a>
-            </li>
-        </c:forEach>
-
-    </ul>
-</nav>
+<%--<nav aria-label="Page navigation example">--%>
+<%--    <ul class="pagination">--%>
+<%--        <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">--%>
+<%--            <li class="page-item"><a class="page-link" href="/home?page=${loop.index}">${loop.index+1}</a>--%>
+<%--            </li>--%>
+<%--        </c:forEach>--%>
+<%--    </ul>--%>
+<%--</nav>--%>
 
 </div>
 
 <script src="src/main/webapp/js/cart.js"></script>
+<script>
+    <%--    B1: lẤY DANH SÁCH SẢN PHẨM DƯỚI LOCALSTORAGE--%>
+    <%--B2: CHUYỂN DANH SÁCH ĐỐI TƯỢNG SẢN PHẨM SANG ĐOẠN HTML--%>
+    <%--B3: GẮN ĐOẠN HTML ĐỔ VÀO SECTION--%>
+</script>
 <script>
     function showMessage() {
     }

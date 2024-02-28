@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +29,7 @@
         </div>
         <div class="images">
             <div class="small-img">
-                <img class="img-th" src="../../../img/ctsp12.1ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
                 <img class="img-th"  src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
@@ -51,7 +52,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
         </div>
-        <div class="price">$40</div>
+        <div class="price">500.000 VNĐ</div>
         <div class="size">
             <p>Size :</p>
             <div class="psize active">M</div>
@@ -61,7 +62,7 @@
         </div>
         <div class="quantity">
             <p>Quantity :</p>
-            <input type="number" min="1" max="5" value="1">
+            <input type="number" min="1" max="100" value="1">
         </div>
         <div class="btn-box">
             <button class="cart-btn">Add to Cart</button>
