@@ -38,7 +38,11 @@
         Tên Sản Phẩm: <form:input path="ten"/>
         <form:errors path="ten" cssStyle="color: red"/>
         <br/>
+<<<<<<< Updated upstream
         Tên Sản Phẩm: <form:input path="gia"/>
+=======
+        Gía Sản Phẩm: <form:input path="gia"/>
+>>>>>>> Stashed changes
         <form:errors path="gia" cssStyle="color: red"/>
         <br/>
         Mô Tả Sản Phẩm: <form:textarea path="moTa"/>

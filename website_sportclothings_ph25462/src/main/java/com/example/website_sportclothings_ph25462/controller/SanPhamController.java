@@ -37,7 +37,7 @@ public class SanPhamController {
     public String hienThi(Model model) {
         model.addAttribute("load", sanPhamService.getAll());
         model.addAttribute("sp", new SanPham());
-        model.addAttribute("view", "../san_pham/index.jsp");
+        model.addAttribute("view", "../webapp/WEB-INF/view/san_pham/index.jsp");
         return "/san_pham/index";
     }
 

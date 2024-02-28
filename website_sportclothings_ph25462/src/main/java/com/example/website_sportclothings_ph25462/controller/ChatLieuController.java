@@ -23,7 +23,7 @@ public class ChatLieuController {
     public String hienThi(Model model) {
         model.addAttribute("load", chatLieuService.getAll());
         model.addAttribute("cl", new ChatLieu());
-        model.addAttribute("view", "../chat_lieu/index.jsp");
+        model.addAttribute("view", "/chat_lieu/index.jsp");
         return "/chat_lieu/index";
     }
 

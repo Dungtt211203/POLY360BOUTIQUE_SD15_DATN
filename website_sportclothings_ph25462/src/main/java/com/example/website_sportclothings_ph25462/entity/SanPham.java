@@ -1,8 +1,7 @@
 package com.example.website_sportclothings_ph25462.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +23,7 @@ public class SanPham {
     @Column(name = "id")
     private Long id;
     @NotBlank(message = " không để trống mã")
-    @Length(min = 5,max = 50, message = " Không dưới 5 kí tự và quá 50 kí tự")
+    @Length(min = 5, max = 50, message = " Không dưới 5 kí tự và quá 50 kí tự")
     @Column(name = "ma_san_pham")
     private String ma;
     @NotBlank(message = "không để trống tên")
@@ -33,27 +32,37 @@ public class SanPham {
     private String ten;
     @NotBlank(message = "không để trống tên")
     @Length(max = 100, message = "Không quá 100 kí tự")
+<<<<<<< Updated upstream
     @Column(name = "gia")
     private String gia;
     @NotBlank(message = "không để trống tên")
     @Length(max = 100, message = "Không quá 100 kí tự")
+=======
+    @NotNull(message = "Giá không được null")
+    @Column(name = "gia")
+    private Integer gia;
+>>>>>>> Stashed changes
     @Column(name = "mo_ta")
     private String moTa;
     @Temporal(TemporalType.DATE)
     @NotNull(message = "không để trống ngày tạo")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "ngay_tao")
     private Date ngayTao;
     @Temporal(TemporalType.DATE)
     @NotNull(message = "không để trống ngày sửa")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "ngay_sua")
     private Date ngaySua;
     @NotBlank(message = "không để trống tên")
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "nguoi_tao")
     private String nguoiTao;
+<<<<<<< Updated upstream
   //  @NotNull(message = "Trạng thái không được để trống")
+=======
+    @NotNull(message = "Trạng thái không được để trống")
+>>>>>>> Stashed changes
     @Column(name = "trang_thai")
     private Integer tt;
 }

@@ -21,7 +21,11 @@
         <th>ID</th>
         <th>Mã Sản Phẩm</th>
         <th>Tên Sản Phẩm</th>
+<<<<<<< Updated upstream
         <th>Giá</th>
+=======
+        <th>Gíá Sản Phẩm</th>
+>>>>>>> Stashed changes
         <th>Mô Tả</th>
         <th>Ngày Tạo</th>
         <th>Người Tạo</th>

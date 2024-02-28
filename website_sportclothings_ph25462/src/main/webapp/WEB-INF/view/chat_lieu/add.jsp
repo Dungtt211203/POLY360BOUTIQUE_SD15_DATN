@@ -29,7 +29,7 @@
 
     input {
         width: 300px;
-        margin-right: 20px;
+        /*margin-right: 20px;*/
         border-radius: 10px;
         border: none;
     }
@@ -41,9 +41,9 @@
 
     }
 
-    .input label {
-        padding-left: 50px;
-    }
+    /*.input label {*/
+    /*    padding-left: 50px;*/
+    /*}*/
 
     #but {
         margin-left: 300px;
@@ -57,16 +57,23 @@
 
     h1 {
         text-align: center;
+        padding-top: 1.2rem;
     }
 
-    .tt {
-        margin-left: 50px;
-        margin-top: 50px;
-    }
+    /*.tt {*/
+    /*    margin-left: 50px;*/
+    /*    margin-top: 50px;*/
+    /*}*/
 
-    .radio1 {
-        margin-left: -135px;
-    }
+    /*.sp_next{*/
+    /*    margin-right: -100px;*/
+    /*}*/
+
+    /*.radio{*/
+    /*    margin-right: -50px;*/
+    /*}*/
+
+
 </style>
 <br>
 
@@ -85,9 +92,10 @@
             <br/>
         </div>
         <div id="tt">
-            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1" />Hoạt
-            Động
-            <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>
+            <span class="sp_next">Hoạt Động</span> <br>
+
+            <form:radiobutton path="tt" value="1" class="radio"/> <span class="sp_next">Không Hoạt Động</span>
             <br/>
         </div>
         <form:button type="submit" class="btn btn-success" id="but">Add</form:button>
