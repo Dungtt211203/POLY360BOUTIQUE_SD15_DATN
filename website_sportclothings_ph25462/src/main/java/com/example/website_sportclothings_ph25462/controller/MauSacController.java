@@ -4,7 +4,9 @@ import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.MauSacServiceImpl;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,18 +14,29 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
+@RestController
+@RequestMapping("/api/v1")
+@Slf4j
 public class MauSacController {
     @Autowired
     MauSacRepository msr;
     @Autowired
     MauSacServiceImpl mss;
 
-//    public Map<Integer, String> getDsTrangThai() {
+    //    public Map<Integer, String> getDsTrangThai() {
 //        Map<Integer, String> dsTrangThai = new HashMap<>();
 //        dsTrangThai.put(0, " hoạt động");
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
+    @GetMapping("/mau-sac")
+    public ResponseEntity<?> index() {
+//        Pageable pageable = PageRequest.of(page, 5);
+//        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+//        model.addAttribute("list", list);
+//        model.addAttribute("searchForm", new SearchForm());
+        return ResponseEntity.ok(msr.findAll());
+    }
 
     @GetMapping("/mau-sac/hien-thi")
     public String hienThi(Model model) {
@@ -32,15 +45,17 @@ public class MauSacController {
         model.addAttribute("view", "../mau_sac/index.jsp");
         return "/mau_sac/index";
     }
+
     @GetMapping("/mau-sac/view-update/{id}")
     public String update(@PathVariable Long id,
-                         Model model){
+                         Model model) {
         model.addAttribute("mauSac", mss.update(id));
         return "/mau_sac/view_update";
     }
+
     @PostMapping("/mau-sac/view-update/{id}")
     public String update(
-            @PathVariable Long id,Model model,@Valid @ModelAttribute("mauSac") MauSac mauSac,BindingResult result
+            @PathVariable Long id, Model model, @Valid @ModelAttribute("mauSac") MauSac mauSac, BindingResult result
     ) {
         Boolean hasError = result.hasErrors();
         if (hasError) {

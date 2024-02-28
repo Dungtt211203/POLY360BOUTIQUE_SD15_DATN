@@ -7,6 +7,7 @@ import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImp
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,12 +27,20 @@ public class SanPhamController {
     @Autowired
     SanPhamService sanPhamService;
 
-//    public Map<Integer, String> getDsTrangThai() {
+    //    public Map<Integer, String> getDsTrangThai() {
 //        Map<Integer, String> dsTrangThai = new HashMap<>();
 //        dsTrangThai.put(0, " hoạt động");
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
+    @GetMapping("/san-pham")
+    public ResponseEntity<?> index() {
+//        Pageable pageable = PageRequest.of(page, 5);
+//        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+//        model.addAttribute("list", list);
+//        model.addAttribute("searchForm", new SearchForm());
+        return ResponseEntity.ok(spr.findAll());
+    }
 
     @GetMapping("/san-pham/hien-thi")
     public String hienThi(Model model) {
@@ -50,7 +59,7 @@ public class SanPhamController {
 
     @PostMapping("/san-pham/view-update/{id}")
     public String update(
-            @PathVariable Long id,Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result
+            @PathVariable Long id, Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result
     ) {
         Boolean hasError = result.hasErrors();
         if (hasError) {
@@ -69,7 +78,7 @@ public class SanPhamController {
     }
 
     @PostMapping("/san-pham/hien-thi-add")
-    public String add(Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result) {
+    public String add(Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result) {
         Boolean hasError = result.hasErrors();
         SanPham product = sanPhamService.getOne(sanPham.getMa());
         if (product != null) {
