@@ -19,19 +19,22 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="icon" href="../../../svg/logohome.svg">
     <style>
-        .image-logo{
+        .image-logo {
             margin-left: 60px;
         }
-        h1{
+
+        h1 {
             color: #FFFFFF;
             font-size: 20px;
             text-align: center;
         }
-        .nav-link-admin{
+
+        .nav-link-admin {
             color: #FFFFFF;
             text-decoration: none;
         }
-        .nav-link-admin:hover{
+
+        .nav-link-admin:hover {
             color: black;
         }
 
@@ -45,24 +48,30 @@
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
+        <li class="nav-item" onclick="myDrowDown()">
+            <div class="nav-link-admin">Quản lý sản phẩm</div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/poly360boutique/thuong-hieu/hien-thi">Quản lý thương hiệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/chitietsp/hien-thi">Quản lý chi tiết sp</a>
-        </li>
+        <div id="myDropdown" style="display: none">
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/san-pham/hien-thi">Sản phẩm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/mau-sac/hien-thi">Màu sắc</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/kich-co/hien-thi">Kích cỡ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/chat-lieu/hien-thi">Chất liệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/thuong-hieu/hien-thi">Thương hiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/chitietsp/hien-thi">Chi tiết sản phẩm</a>
+            </li>
+        </div>
+
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
         </li>
@@ -88,13 +97,7 @@
         </li>
     </ul>
 </aside>
-<%--<div id="">--%>
-<%--    <main>--%>
-<%--        <div class="container-fluid">--%>
-<%--            <jsp:include page="${view}"/>--%>
-<%--        </div>--%>
-<%--    </main>--%>
-<%--</div>--%>
+
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -102,13 +105,20 @@
     function myFunction() {
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
+
+    }
+
+    function myDrowDown() {
+        var dropDown = document.getElementById("myDropdown");
+        dropDown.classList.toggle("show");
     }
 </script>
 <style>
-    .show{
-        display: flex!important;
+    .show {
+        display: flex !important;
         flex-direction: column;
         gap: 10px;
+        cursor: pointer;
     }
 </style>
 </body>
