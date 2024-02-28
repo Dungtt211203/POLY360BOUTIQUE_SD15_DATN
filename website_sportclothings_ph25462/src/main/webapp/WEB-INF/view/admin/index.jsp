@@ -88,7 +88,7 @@
         </li>
     </ul>
 </aside>
-<%--<div id="layoutSidenav_content">--%>
+<%--<div id="">--%>
 <%--    <main>--%>
 <%--        <div class="container-fluid">--%>
 <%--            <jsp:include page="${view}"/>--%>

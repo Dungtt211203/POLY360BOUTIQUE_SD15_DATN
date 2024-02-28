@@ -17,6 +17,8 @@ public class KhachHangController {
     @Autowired
     KhachHangService khachHangService;
 
+
+
     @GetMapping("/khach-hang/hien-thi")
     public String hienThi(Model model) {
         model.addAttribute("load", khachHangService.getAll());

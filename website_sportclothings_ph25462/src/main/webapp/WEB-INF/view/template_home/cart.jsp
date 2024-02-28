@@ -60,6 +60,11 @@
 
 <script src="src/main/webapp/js/cart.js"></script>
 <script>
+    <%--    B1: lẤY DANH SÁCH SẢN PHẨM DƯỚI LOCALSTORAGE--%>
+    <%--B2: CHUYỂN DANH SÁCH ĐỐI TƯỢNG SẢN PHẨM SANG ĐOẠN HTML--%>
+    <%--B3: GẮN ĐOẠN HTML ĐỔ VÀO SECTION--%>
+</script>
+<script>
     function showMessage() {
     }
 </script>
