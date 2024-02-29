@@ -40,10 +40,8 @@
                             <%--                        <fmt:formatNumber--%>
                             <%--                                pattern="###,### VNĐ">--%>
                             <%--                        </fmt:formatNumber>--%>
-
                     </li>
                 </ul>
-
             </div>
         </div>
     </c:forEach>
@@ -58,8 +56,6 @@
 
     </ul>
 </nav>
-
-</div>
 
 <script src="src/main/webapp/js/cart.js"></script>
 <script>
