@@ -45,7 +45,6 @@
             </button>
         </div>
     </section>
-    <h1 style="text-align: center;margin-top: 30px">Thương Hiệu Nổi Bật</h1>
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">Tất Cả Sản Phẩm</h1>
        <jsp:include page="../template_home/cart.jsp"/>
