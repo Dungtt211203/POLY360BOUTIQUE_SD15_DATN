@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
-
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
@@ -24,16 +22,14 @@
 
 <div class="row">
     <c:forEach items="${hienthi.content}" var="hienthis">
-        <div class="col-3 mt-3">
-            <div class="card">
-
+    <div class="col-3 mt-3">
+        <div class="card">
+            <div id="cartItems">
                 <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block" alt=""
                      style="min-width: 319px; min-height: 319px">
-
                 <div class="card-body">
                     <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                 </div>
-
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"> ${hienthis.sanPham.moTa }</li>
                     <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia}
@@ -42,31 +38,28 @@
                         </fmt:formatNumber>
                     </li>
                 </ul>
-
+                <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào đây -->
+            </div>
+                <div class="button-container">
+                    <button class="btn1" style="background-color: #FFFFFF">Mua Ngay</button>
+                    <button class="btn1" style="background-color: black;color: #FFFFFF" onclick="addToCart()">Them vao
+                        gio hang
+                    </button>
+                </div>
             </div>
         </div>
-    </c:forEach>
-</div>
-<%--<nav aria-label="Page navigation example">--%>
-<%--    <ul class="pagination">--%>
-<%--        <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">--%>
-<%--            <li class="page-item"><a class="page-link" href="/home?page=${loop.index}">${loop.index+1}</a>--%>
-<%--            </li>--%>
-<%--        </c:forEach>--%>
-<%--    </ul>--%>
-<%--</nav>--%>
+        </c:forEach>
+    </div>
+    <%--<nav aria-label="Page navigation example">--%>
+    <%--    <ul class="pagination">--%>
+    <%--        <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">--%>
+    <%--            <li class="page-item"><a class="page-link" href="/home?page=${loop.index}">${loop.index+1}</a>--%>
+    <%--            </li>--%>
+    <%--        </c:forEach>--%>
+    <%--    </ul>--%>
+    <%--</nav>--%>
 
 </div>
-
 <script src="src/main/webapp/js/cart.js"></script>
-<script>
-    <%--    B1: lẤY DANH SÁCH SẢN PHẨM DƯỚI LOCALSTORAGE--%>
-    <%--B2: CHUYỂN DANH SÁCH ĐỐI TƯỢNG SẢN PHẨM SANG ĐOẠN HTML--%>
-    <%--B3: GẮN ĐOẠN HTML ĐỔ VÀO SECTION--%>
-</script>
-<script>
-    function showMessage() {
-    }
-</script>
 </body>
 </html>

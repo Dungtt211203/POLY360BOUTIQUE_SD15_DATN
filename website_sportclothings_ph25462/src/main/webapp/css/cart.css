@@ -1,9 +1,10 @@
 
-::selection{
+::selection {
     color: #fff;
     background: orange;
 }
-.wrapper{
+
+.wrapper {
     position: relative;
     max-width: 1300px;
     height: auto;
@@ -13,87 +14,89 @@
 }
 
 
-.wrapper .card{
+.wrapper .card {
     position: relative;
     background: #fff;
     border-radius: 3px;
     width: calc(25% - 13px);
     overflow: hidden;
-    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.15);
+    /*box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);*/
 }
-.wrapper .card img{
+
+.wrapper .card img {
     width: 100%;
     border-radius: 3px;
     transition: all 0.3s ease;
     height: 500px;
 }
-.card:hover img{
+
+.card:hover img {
     transform: scale(1.1);
 }
-.wrapper .card .content{
+
+.wrapper .card .content {
     position: absolute;
     width: 100%;
     bottom: -50%;
     background: #fff;
     padding: 10px 20px 22px 20px;
-    box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.15);
+    /*box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.15);*/
     transition: all 0.3s ease;
 }
-.wrapper .card:hover .content{
+
+.wrapper .card:hover .content {
     bottom: 0;
 }
+
 .card .content .row,
-.content .buttons{
+.content .buttons {
     display: flex;
     justify-content: space-between;
 }
-.content .row .details span{
+
+.content .row .details span {
     font-size: 22px;
     font-weight: 500;
 }
-.content .row .details p{
+
+.content .row .details p {
     color: #333;
     font-size: 17px;
     font-weight: 400;
 }
-.content .row .price{
+
+.content .row .price {
     color: #2D2D2D;
     font-size: 25px;
     font-weight: 600;
 }
-.content .buttons{
-    margin-top: 20px;
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    left: 0;
+    right: 0;
+    margin-top: 210px;
+    margin-left: 50px;
 }
-.content .buttons button{
-    width: 100%;
-    padding: 9px 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 3px;
-    border: 2px solid orange;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+
+.card {
+    position: relative;
+    display: inline-block;
 }
-.buttons button:first-child{
-    color: #2D2D2D;
-    margin-right: 10px;
-    background: #fff;
+
+.card:hover .button-container {
+    opacity: 1;
 }
-button:first-child:hover{
-    color: #fff;
-    background-color: orange;
+
+.btn1 {
+
+    padding: 20px 30px;
+    margin: 5px;
 }
-.buttons button:last-child{
-    color: #2D2D2D;
-    margin-left: 10px;
-    background: orange;
-}
-button:last-child:hover{
-    border-color: orange;
-    color: #FFFFFF;
-}
-.card{
+.card {
     margin-top: 30px;
 }

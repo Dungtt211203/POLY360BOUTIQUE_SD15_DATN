@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RestController
-@RequestMapping("/api/v1")
-@Slf4j
+//@RestController
+//@Slf4j
 public class MauSacController {
     @Autowired
     MauSacRepository msr;
@@ -71,6 +70,11 @@ public class MauSacController {
     @GetMapping("/mau-sac/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("mauSac") MauSac mauSac) {
         return ("/mau_sac/add");
+    }
+
+    @PostMapping("/add/mau-sac")
+    public ResponseEntity<?> add(@RequestBody @Valid MauSac mauSac) {
+        return ResponseEntity.ok(msr.save(mauSac));
     }
 
     @PostMapping("/mau-sac/hien-thi-add")

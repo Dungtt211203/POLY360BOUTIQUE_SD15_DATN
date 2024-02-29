@@ -6,21 +6,21 @@ import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImpl;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @Controller
+//@RestController
+//@Slf4j
 public class SanPhamController {
     @Autowired
     SanPhamRepository spr;
@@ -33,13 +33,18 @@ public class SanPhamController {
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
-    @GetMapping("/san-pham")
-    public ResponseEntity<?> index() {
-//        Pageable pageable = PageRequest.of(page, 5);
-//        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
-//        model.addAttribute("list", list);
-//        model.addAttribute("searchForm", new SearchForm());
-        return ResponseEntity.ok(spr.findAll());
+//    @GetMapping("/san-pham")
+//    public ResponseEntity<?> index() {
+////        Pageable pageable = PageRequest.of(page, 5);
+////        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+////        model.addAttribute("list", list);
+////        model.addAttribute("searchForm", new SearchForm());
+//        return ResponseEntity.ok(spr.findAll());
+//    }
+
+    @PostMapping("/add/san-pham")
+    public ResponseEntity<?> add(@RequestBody @Valid SanPham sanPham) {
+        return ResponseEntity.ok(spr.save(sanPham));
     }
 
     @GetMapping("/san-pham/hien-thi")
@@ -101,4 +106,5 @@ public class SanPhamController {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";
     }
+
 }
