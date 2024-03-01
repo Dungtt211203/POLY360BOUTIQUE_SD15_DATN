@@ -3,7 +3,6 @@ package com.example.website_sportclothings_ph25462.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @Table(name = "tai_khoan")
@@ -15,7 +14,7 @@ import java.util.Date;
 @Builder
 @ToString
 
-public class TaiKhoan implements Serializable {
+public class TaiKhoan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
