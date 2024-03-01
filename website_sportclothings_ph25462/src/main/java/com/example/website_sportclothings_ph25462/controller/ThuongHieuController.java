@@ -22,12 +22,12 @@ public class ThuongHieuController {
     @Autowired
     ThuongHieuService thuongHieuService;
 
-    public Map<Integer, String> getDsTrangThai() {
-        Map<Integer, String> dsTrangThai = new HashMap<>();
-        dsTrangThai.put(0, " hoạt động");
-        dsTrangThai.put(1, " không Hoạt động");
-        return dsTrangThai;
-    }
+//    public Map<Integer, String> getDsTrangThai() {
+//        Map<Integer, String> dsTrangThai = new HashMap<>();
+//        dsTrangThai.put(0, " hoạt động");
+//        dsTrangThai.put(1, " không Hoạt động");
+//        return dsTrangThai;
+//    }
 
     @GetMapping("/thuong-hieu/hien-thi")
     public String hienThi(Model model) {
@@ -35,6 +35,10 @@ public class ThuongHieuController {
         model.addAttribute("th", new ThuongHieu());
         model.addAttribute("view", "../thuong_hieu/index.jsp");
         return "/thuong_hieu/index";
+    }
+    @GetMapping("/thuong-hieu-nike")
+    public String hienThiThuongHieu() {
+        return "/thuong_hieu/thuong-hieu";
     }
 
     @GetMapping("/thuong-hieu/hien-thi-add")

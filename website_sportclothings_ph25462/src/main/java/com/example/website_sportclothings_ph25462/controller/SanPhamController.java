@@ -6,38 +6,52 @@ import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImpl;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @Controller
+//@RestController
+//@Slf4j
 public class SanPhamController {
     @Autowired
     SanPhamRepository spr;
     @Autowired
     SanPhamService sanPhamService;
 
-//    public Map<Integer, String> getDsTrangThai() {
+    //    public Map<Integer, String> getDsTrangThai() {
 //        Map<Integer, String> dsTrangThai = new HashMap<>();
 //        dsTrangThai.put(0, " hoạt động");
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
+//    @GetMapping("/san-pham")
+//    public ResponseEntity<?> index() {
+////        Pageable pageable = PageRequest.of(page, 5);
+////        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+////        model.addAttribute("list", list);
+////        model.addAttribute("searchForm", new SearchForm());
+//        return ResponseEntity.ok(spr.findAll());
+//    }
+
+    @PostMapping("/add/san-pham")
+    public ResponseEntity<?> add(@RequestBody @Valid SanPham sanPham) {
+        return ResponseEntity.ok(spr.save(sanPham));
+    }
 
     @GetMapping("/san-pham/hien-thi")
     public String hienThi(Model model) {
         model.addAttribute("load", sanPhamService.getAll());
         model.addAttribute("sp", new SanPham());
-        model.addAttribute("view", "../san_pham/index.jsp");
+        model.addAttribute("view", "../webapp/WEB-INF/view/san_pham/index.jsp");
         return "/san_pham/index";
     }
 
@@ -50,7 +64,7 @@ public class SanPhamController {
 
     @PostMapping("/san-pham/view-update/{id}")
     public String update(
-            @PathVariable Long id,Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result
+            @PathVariable Long id, Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result
     ) {
         Boolean hasError = result.hasErrors();
         if (hasError) {
@@ -69,7 +83,7 @@ public class SanPhamController {
     }
 
     @PostMapping("/san-pham/hien-thi-add")
-    public String add(Model model,@Valid @ModelAttribute("sanPham") SanPham sanPham,BindingResult result) {
+    public String add(Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result) {
         Boolean hasError = result.hasErrors();
         SanPham product = sanPhamService.getOne(sanPham.getMa());
         if (product != null) {
@@ -92,4 +106,5 @@ public class SanPhamController {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";
     }
+
 }

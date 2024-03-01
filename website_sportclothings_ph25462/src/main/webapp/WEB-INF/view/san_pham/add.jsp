@@ -38,15 +38,15 @@
         Tên Sản Phẩm: <form:input path="ten"/>
         <form:errors path="ten" cssStyle="color: red"/>
         <br/>
-        Tên Sản Phẩm: <form:input path="gia"/>
+        Gía Sản Phẩm: <form:input path="gia"/>
         <form:errors path="gia" cssStyle="color: red"/>
         <br/>
         Mô Tả Sản Phẩm: <form:textarea path="moTa"/>
         <form:errors path="moTa" cssStyle="color: red"/>
         <br/>
-        Người Tạo: <form:input path="nguoiTao"/>
-        <form:errors path="nguoiTao" cssStyle="color: red"/>
-        <br/>
+<%--        Người Tạo: <form:input path="nguoiTao"/>--%>
+<%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
+<%--        <br/>--%>
         TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
         <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
         <br/>

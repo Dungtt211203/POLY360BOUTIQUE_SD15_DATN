@@ -33,15 +33,20 @@
     <h1>THÊM/SỬA SẢN PHẨM</h1>
     <form:form method="post" modelAttribute="sanPham">
         Mã Sản Phẩm: <form:input path="ma"/>
+        <form:errors path="ma" cssStyle="color: red"/>
         <br/>
         Tên Sản Phẩm: <form:input path="ten"/>
+        <form:errors path="ten" cssStyle="color: red"/>
         <br/>
         Giá: <form:input path="gia"/>
+        <form:errors path="gia" cssStyle="color: red"/>
         <br/>
         Mô Tả Sản Phẩm: <form:textarea path="moTa"/>
+        <form:errors path="moTa" cssStyle="color: red"/>
         <br/>
-        Người Tạo: <form:input path="nguoiTao"/>
-        <br/>
+<%--        Người Tạo: <form:input path="nguoiTao"/>--%>
+<%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
+<%--        <br/>--%>
         TrangThai: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
         <form:radiobutton path="tt" value="1" />Khong Hoat Dong
         <br/>
