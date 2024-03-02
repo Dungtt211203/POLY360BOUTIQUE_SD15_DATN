@@ -49,6 +49,27 @@
                             <ul id="cartItems"></ul>
                         </div>
                     </div>
+
+                    <%--                    <div class="span8">--%>
+                    <%--                        <div class="account pull-right">--%>
+                    <%--                            <ul class="user-menu">--%>
+                    <%--                                &lt;%&ndash;                                <li><a href="<c:url value='/cart/view' />">Your Cart <b>(<span&ndash;%&gt;--%>
+                    <%--                                &lt;%&ndash;                                        id="countTotal">${sessionScope.cart == null ? '0' : sessionScope.cart.tongsl}</span>)</b></a>&ndash;%&gt;--%>
+                    <%--                                &lt;%&ndash;                                </li>&ndash;%&gt;--%>
+                    <%--                                <c:if test="${empty sessionScope.taikhoan}">--%>
+                    <%--                                    <li><a href="/poly360boutique/dang-nhap">Login</a></li>--%>
+                    <%--                                </c:if>--%>
+                    <%--                                <c:if test="${not empty sessionScope.taikhoan}">--%>
+                    <%--                                    <li><a href="/poly360boutique/logout">Logout</a></li>--%>
+                    <%--                                    <li><i>Welcome,</i> <b>${sessionScope.taikhoan.tenTK}</b></li>--%>
+                    <%--                                </c:if>--%>
+                    <%--                            </ul>--%>
+                    <%--                        </div>--%>
+                    <%--                    </div>--%>
+
+
+                </div>
+            </div>
         </nav>
     </div>
 </header>

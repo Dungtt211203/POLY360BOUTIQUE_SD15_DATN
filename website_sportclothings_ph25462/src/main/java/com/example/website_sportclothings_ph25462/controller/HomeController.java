@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -48,6 +45,19 @@ public class HomeController {
     }
 
 
+    @GetMapping("/san-pham/detail/{id}")
+    public String detail(@PathVariable("id") String id, Model model) {
+        HinhAnhSP hinhAnhSP = hinhAnhSPService.getOne(id);
+
+        Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);
+        model.addAttribute("hienthi", hinhAnhSPS);
+
+
+        model.addAttribute("detail", hinhAnhSP);
+        return "/template_home/detail";
+    }
+
+
     @GetMapping("/dang-nhap")
     public String dangNhap() {
 
@@ -56,9 +66,9 @@ public class HomeController {
 
     @GetMapping("/logout")
     public String doGetLogout(HttpSession session) {
-        session.removeAttribute("user");
+        session.removeAttribute("taikhoan");
         session.removeAttribute("cart");
-        return "/template_home/cart";
+        return "redirect:/poly360boutique/dang-nhap";
     }
 
     @PostMapping("/login")

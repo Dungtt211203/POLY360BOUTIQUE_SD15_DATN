@@ -26,14 +26,15 @@
         <div class="col-3 mt-3">
             <div class="card">
                 <div id="cartItems">
-                    <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block" alt=""
-                         style="min-width: 319px; min-height: 319px">
+
+                    <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
+                        <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block"
+                             alt="" style="min-width: 319px; min-height: 319px"></a>
                     <div class="card-body">
                         <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                            <%--                        <li class="list-group-item"> ${hienthis.sanPham.moTa }</li>--%>
-                            <%--<<<<<<< HEAD--%>
+
                         <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }
                                 <%--                        <fmt:formatNumber--%>
                                 <%--                                pattern="###,### VNĐ">--%>
@@ -41,16 +42,6 @@
                         </li>
                     </ul>
 
-                    <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào đây -->
-                </div>
-                <div class="button-container">
-                    <button class="btn1" style="background-color: whitesmoke; color: orange">Xem chi
-                        tiết
-                    </button>
-                    <button class="btn1" style="background-color: orange;color: #FFFFFF"
-                            onclick="addToCart()">Thêm vào
-                        giỏ hàng
-                    </button>
                 </div>
 
             </div>
@@ -59,7 +50,7 @@
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
+        <c:forEach begin="0" end="${hienthi.totalPages -1}" varStatus="loop">
             <li class="page-item"><a class="page-link"
                                      href="/poly360boutique/home?page=${loop.index}">${loop.index+1}</a>
             </li>

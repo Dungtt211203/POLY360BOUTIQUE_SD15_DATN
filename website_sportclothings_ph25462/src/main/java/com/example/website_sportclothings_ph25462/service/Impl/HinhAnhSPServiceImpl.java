@@ -31,7 +31,7 @@ public class HinhAnhSPServiceImpl implements HinhAnhSPService {
 
     @Override
     public HinhAnhSP getOne(String id) {
-        return hinhAnhSPRepository.findById(UUID.fromString(id)).orElse(null);
+        return hinhAnhSPRepository.findById(Long.valueOf(id)).orElse(null);
     }
 
     @Override
