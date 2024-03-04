@@ -14,4 +14,6 @@ public interface ChatLieuRepository extends JpaRepository<ChatLieu, Long> {
 
     @Query("select cl from ChatLieu cl where  cl.ma =?1")
     ChatLieu getSanPhamByMaSP(String maCl);
+
+    Page<ChatLieu> findAll(Pageable pageable);
 }

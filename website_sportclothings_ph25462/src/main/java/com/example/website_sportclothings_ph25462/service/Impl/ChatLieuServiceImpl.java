@@ -21,6 +21,11 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     }
 
     @Override
+    public Page<ChatLieu> getAll(Pageable pageable) {
+        return clr.findAll(pageable);
+    }
+
+    @Override
     public ChatLieu add(ChatLieu chatLieu) {
         return clr.save(chatLieu);
     }

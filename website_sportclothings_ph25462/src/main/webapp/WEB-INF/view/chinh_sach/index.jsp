@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POLY360BOUTIQUE</title>
     <link rel="icon" href="../../../svg/logohome.svg">
-    <link rel="stylesheet" href="../../../css/header.css">
 </head>
 <body>
 <jsp:include page="../template_home/header.jsp"/>
@@ -47,5 +46,6 @@ Khi khách hàng mua sản phẩm, cửa hàng sẽ áp dụng đổi hoặc tr�
 <br/>
 <b>Nếu có thắc mắc vui liên hệ đến số điện thoại: 0787189845</b>
 </span>
-<jsp:include page="../template_home/footer.jsp"/></body>
+<jsp:include page="../template_home/footer.jsp"/>
+</body>
 </html>

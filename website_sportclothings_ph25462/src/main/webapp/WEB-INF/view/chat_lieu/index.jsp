@@ -32,7 +32,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${load}" var="cl" varStatus="i">
+    <c:forEach items="${page.content}" var="cl" varStatus="i">
         <tr>
             <td>${i.index+1}</td>
             <td>${cl.id}</td>
@@ -43,12 +43,17 @@
                 <button class="btn btn-success"><a href="/chat-lieu/view-update/${cl.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
-
-
         </tr>
     </c:forEach>
     <button class="btn btn-primary"><a href="/chat-lieu/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=0">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number-1}"><<<</a></li>
+            <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number+1}">>>></a></li>
+            <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.totalPages-1}">Next</a></li>
+        </ul>
+    </nav>
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
