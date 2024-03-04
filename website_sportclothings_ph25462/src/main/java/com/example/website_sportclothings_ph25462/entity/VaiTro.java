@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Table(name = "vai_tro")
 @Entity
 @Getter
@@ -15,12 +13,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VaiTro {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_vai_tro")
     private String maVT;
+
     @Column(name = "ten_vai_tro")
     private String tenVT;
 }

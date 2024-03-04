@@ -4,9 +4,10 @@ import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,9 +26,12 @@ public class ChatLieuController {
     ChatLieuService chatLieuService;
 
     @GetMapping("/chat-lieu/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int cl) {
+        Pageable pageable = PageRequest.of(cl, 5);
+        Page<ChatLieu> page = chatLieuService.getAll(pageable);
         model.addAttribute("load", chatLieuService.getAll());
         model.addAttribute("cl", new ChatLieu());
+        model.addAttribute("page", page);
         model.addAttribute("view", "/chat_lieu/index.jsp");
         return "/chat_lieu/index";
     }

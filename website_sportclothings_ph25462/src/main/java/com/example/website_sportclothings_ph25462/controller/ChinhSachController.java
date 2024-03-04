@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/poly360boutique")
 public class ChinhSachController {
     @GetMapping("/chinh-sach")
-    public String hienThi(){
-        return "/chinh_sach/index";
+    public String index(){
+        return ("/chinh_sach/index");
     }
 }

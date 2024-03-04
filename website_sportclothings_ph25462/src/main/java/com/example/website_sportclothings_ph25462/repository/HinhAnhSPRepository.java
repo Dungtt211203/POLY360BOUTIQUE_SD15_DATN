@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface HinhAnhSPRepository extends JpaRepository<HinhAnhSP, UUID> {
+public interface HinhAnhSPRepository extends JpaRepository<HinhAnhSP, Long> {
 }

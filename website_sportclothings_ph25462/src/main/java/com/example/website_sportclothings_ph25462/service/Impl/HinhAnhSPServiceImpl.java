@@ -24,14 +24,14 @@ public class HinhAnhSPServiceImpl implements HinhAnhSPService {
     @Override
     public Page<HinhAnhSP> getData(Integer page) {
 
-        Pageable pageable = PageRequest.of(page, 8);
+        Pageable pageable = PageRequest.of(page, 4);
 
         return hinhAnhSPRepository.findAll(pageable);
     }
 
     @Override
     public HinhAnhSP getOne(String id) {
-        return hinhAnhSPRepository.findById(UUID.fromString(id)).orElse(null);
+        return hinhAnhSPRepository.findById(Long.valueOf(id)).orElse(null);
     }
 
     @Override

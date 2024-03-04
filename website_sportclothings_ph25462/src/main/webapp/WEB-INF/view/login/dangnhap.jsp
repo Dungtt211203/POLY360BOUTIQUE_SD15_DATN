@@ -2,14 +2,15 @@
 <html lang="zxx">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Ogani Template" />
-    <meta name="keywords" content="Ogani, unica, creative, html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Ogani Template"/>
+    <meta name="keywords" content="Ogani, unica, creative, html"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>POLY360BOUTIQUE</title>
-    <link rel="shortcut icon" type="image/png" href="/assets/images/z4754478488073_3d987c07976994288f3feae0cc9f3835_preview_rev_1.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png"
+          href="/assets/images/z4754478488073_3d987c07976994288f3feae0cc9f3835_preview_rev_1.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
     <link rel="icon" href="../../../svg/logohome.svg">
 </head>
 
@@ -27,7 +28,7 @@
         width: 1000px;
         overflow: hidden;
         background-color: orange;
-        border-radius:20px;
+        border-radius: 20px;
     }
 
     .image-container {
@@ -88,22 +89,30 @@
     </div>
 
     <div class="login-container">
-        <form onsubmit="return validateForm()">
+        <form action="/poly360boutique/login" method="post" onsubmit="return validateForm()">
             <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
             <br>
+            <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
+
             <span class="header-title">
                     <span style="color: red"></span>
                     <span style="font-size: 15px;">Tên tài khoản</span>
                 </span>
-            <input id="usernameLogin" type="text" class="form-control" placeholder="Tên tài khoản ..." required="" />
+            <input name="username" id="username" type="text" class="form-control" placeholder="Tên tài khoản..."
+                   required=""/>
             <br>
             <span class="header-title">
                     <span style="color: red"></span>
                     <span style="font-size: 15px;">Mật khẩu</span>
                 </span>
-            <input id="passwordLogin" type="password" class="form-control" placeholder="Mật khẩu ..." required="" />
+            <input name="password" id="password" type="password" class="form-control" placeholder="Mật khẩu..."
+                   required=""/>
             <br>
-            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 155px;">Đăng nhập</button>
+
+            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 155px;"
+                    type="submit">Đăng
+                nhập
+            </button>
         </form>
     </div>
 </div>

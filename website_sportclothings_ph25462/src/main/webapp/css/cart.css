@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 
@@ -28,6 +29,7 @@
     border-radius: 3px;
     transition: all 0.3s ease;
     height: 500px;
+
 }
 
 .card:hover img {
@@ -93,10 +95,18 @@
 }
 
 .btn1 {
-
     padding: 20px 30px;
     margin: 5px;
 }
-.card {
+.card{
     margin-top: 30px;
+
+}
+.pagination{
+    justify-content: center;
+    margin-top: 30px;
+
+}
+#cartItems{
+
 }

@@ -1,7 +1,6 @@
 package com.example.website_sportclothings_ph25462.service;
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
-import com.example.website_sportclothings_ph25462.entity.HinhAnhSP;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

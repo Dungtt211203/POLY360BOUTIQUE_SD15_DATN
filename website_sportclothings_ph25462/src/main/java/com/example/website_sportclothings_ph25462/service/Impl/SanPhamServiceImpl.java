@@ -1,6 +1,5 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
-import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
@@ -12,6 +11,7 @@ import java.util.UUID;
 
 @Service
 public class SanPhamServiceImpl implements SanPhamService {
+
     @Autowired
     SanPhamRepository spr;
 
@@ -39,4 +39,6 @@ public class SanPhamServiceImpl implements SanPhamService {
     public SanPham getOne(String maCL) {
         return spr.getSanPhamByMaSP(maCL);
     }
+
+
 }
