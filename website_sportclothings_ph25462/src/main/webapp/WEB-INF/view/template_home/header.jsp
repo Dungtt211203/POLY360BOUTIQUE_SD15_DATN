@@ -39,7 +39,7 @@
                     </div>
                     <div class="popuptext" id="myPopup">
                         <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
-                        <a>Đăng xuất</a>
+                        <a href="/poly360boutique/dang-ky">Đăng Ký</a>
                     </div>
                     <div class="dropdown">
                         <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
@@ -49,7 +49,6 @@
                             <ul id="cartItems"></ul>
                         </div>
                     </div>
-
                     <%--                    <div class="span8">--%>
                     <%--                        <div class="account pull-right">--%>
                     <%--                            <ul class="user-menu">--%>
@@ -66,8 +65,6 @@
                     <%--                            </ul>--%>
                     <%--                        </div>--%>
                     <%--                    </div>--%>
-
-
                 </div>
             </div>
         </nav>

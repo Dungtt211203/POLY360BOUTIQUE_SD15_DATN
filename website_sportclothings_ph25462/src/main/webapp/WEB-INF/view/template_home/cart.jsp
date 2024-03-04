@@ -35,15 +35,13 @@
                     </div>
                     <ul class="list-group list-group-flush">
 
-                        <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }
+                        <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia}
                                 <%--                        <fmt:formatNumber--%>
                                 <%--                                pattern="###,### VNĐ">--%>
                                 <%--                        </fmt:formatNumber>--%>
                         </li>
                     </ul>
-
                 </div>
-
             </div>
         </div>
     </c:forEach>
@@ -57,9 +55,7 @@
         </c:forEach>
     </ul>
 </nav>
-
 </div>
-
 <script src="src/main/webapp/js/cart.js"></script>
 </body>
 </html>
