@@ -35,8 +35,10 @@ public class ChiTietSP {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_ctsp")
     private String ma;
+
     @Column(name = "so_luong")
     private Integer soLuong;
 
@@ -45,7 +47,6 @@ public class ChiTietSP {
 
     @Column(name = "trang_thai")
     private Integer trangThai;
-
 
 
     @Column(name = "ngay_tao")

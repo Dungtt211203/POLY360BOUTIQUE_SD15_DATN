@@ -28,7 +28,7 @@
                 <div id="cartItems">
 
                     <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
-                        <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block"
+                        <img src="/img/${hienthis.uuTien}" class="card-img-top mx-auto d-block"
                              alt="" style="min-width: 319px; min-height: 319px"></a>
                     <div class="card-body">
                         <h5 class="card-title">${hienthis.sanPham.ten}</h5>

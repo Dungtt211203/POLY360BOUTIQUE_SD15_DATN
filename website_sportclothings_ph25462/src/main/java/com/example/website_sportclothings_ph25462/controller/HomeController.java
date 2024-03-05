@@ -24,10 +24,16 @@ public class HomeController {
     private HinhAnhSPService hinhAnhSPService;
 
     @Autowired
-    private ChiTietSanPhamService chiTietSanPhamService;
+    private ChiTietSPService chiTietSPService;
 
     @Autowired
     private TaiKhoanService taiKhoanService;
+
+    @Autowired
+    private MauSacService mauSacService;
+
+    @Autowired
+    private KichCoService kichCoService;
 
 
     @GetMapping("/home")
@@ -42,6 +48,22 @@ public class HomeController {
         model.addAttribute("sanpham", sanPhamList);
 
         return "/template_home/index";
+    }
+
+    @GetMapping("/chi-tiet-san-pham")
+    public String view(Model model) {
+
+        List<ChiTietSP> chiTietSPS = chiTietSPService.getAll();
+        model.addAttribute("chitietsanpham", chiTietSPS);
+
+        List<KichCo> kichCos = kichCoService.getAll();
+        model.addAttribute("kichco", kichCos);
+
+        List<MauSac> mauSacs = mauSacService.getAll();
+        model.addAttribute("mausac", mauSacs);
+
+
+        return "/chitietsp/index";
     }
 
 

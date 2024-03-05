@@ -46,4 +46,21 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
     private SanPham sanPham;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
+    private KichCo kichCo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mau_sac_id", referencedColumnName = "id")
+    private MauSac mauSac;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
+    private ChatLieu chatLieu;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
+    private ThuongHieu thuongHieu;
 }

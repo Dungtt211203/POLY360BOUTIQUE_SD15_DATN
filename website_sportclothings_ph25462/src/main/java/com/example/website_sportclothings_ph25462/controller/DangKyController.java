@@ -38,7 +38,7 @@ public class DangKyController {
 
         taiKhoanService.add(taiKhoan);
 
-        return "redirect:/poly360boutique/dang-ky";
+        return "login/dangnhap";
 
     }
 
