@@ -30,7 +30,8 @@ public class GioHangChiTiet {
     private Date ngaySua;
     @Column(name = "trang_thai")
     private Boolean tt;
-//    @OneToOne()
-//    @JoinColumn(name = "chi_tiet_san_pham_id")
-//    private ChiTietSanPham nguoiSoHuu;
+
+    @OneToOne()
+    @JoinColumn(name = "chi_tiet_san_pham_id")
+    private ChiTietSanPham chiTietSanPham;
 }

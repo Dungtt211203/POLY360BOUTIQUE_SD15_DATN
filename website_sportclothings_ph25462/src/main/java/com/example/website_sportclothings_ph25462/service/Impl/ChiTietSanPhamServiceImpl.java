@@ -35,4 +35,14 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     public List<ChiTietSanPham> getAll() {
         return chiTietSanPhamRepository.findAll();
     }
+
+    @Override
+    public List<ChiTietSanPham> getCTSPByIdSanPham(long id) {
+        return chiTietSanPhamRepository.getAllByIdSanPham(id);
+    }
+
+    @Override
+    public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
+        return chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
+    }
 }

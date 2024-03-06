@@ -10,14 +10,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -35,25 +37,31 @@ public class ChiTietSP {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @NotBlank(message = " không để trống mã")
+    @Length(min = 3, max = 50, message = " Không dưới 3 kí tự và quá 50 kí tự")
     @Column(name = "ma_ctsp")
     private String ma;
+
+    @NotNull(message = "Số lượng không được để trống")
     @Column(name = "so_luong")
     private Integer soLuong;
 
 //    @Column(name = "gia_hien_hanh")
 //    private Long giaHienHanh;
-
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-
-
+    @Temporal(TemporalType.DATE)
+    @NotNull(message = "không để trống ngày tạo")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Column(name = "ngay_tao")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ngayTao;
 
+    @Temporal(TemporalType.DATE)
+    @NotNull(message = "không để trống ngày sửa")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Column(name = "ngay_sua")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ngaySua;
 
     @ManyToOne(fetch = FetchType.EAGER)
