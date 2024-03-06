@@ -79,6 +79,11 @@
             <form:errors path="ma" cssStyle="color: red"/>
             <br/>
         </div>
+        <div>
+            TenSP: <form:select path="taiKhoanKH">
+            <form:options items="${taiKhoanKH}" itemLabel="hoTen"  />
+        </form:select><br>
+        </div>
         <div class="input">
             <label>Họ Khách Hàng</label>: <form:input path="ho"/>
             <form:errors path="ho" cssStyle="color: red"/>

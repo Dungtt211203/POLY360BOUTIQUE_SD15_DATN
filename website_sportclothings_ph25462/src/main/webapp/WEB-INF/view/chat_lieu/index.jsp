@@ -41,7 +41,7 @@
             <td>${cl.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
             <td>
                 <button class="btn btn-success"><a href="/chat-lieu/view-update/${cl.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
+-                <button class="btn btn-danger"><a href="/chat-lieu/remove/${cl.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 
