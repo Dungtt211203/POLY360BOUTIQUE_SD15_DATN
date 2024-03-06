@@ -28,11 +28,21 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
 
     @Override
     public ChiTietSanPham getOne(String id) {
-        return chiTietSanPhamRepository.findById(Long.valueOf(id)).orElse(null);
+        return chiTietSanPhamRepository.findById(UUID.fromString(id)).orElse(null);
     }
 
     @Override
     public List<ChiTietSanPham> getAll() {
         return chiTietSanPhamRepository.findAll();
+    }
+
+    @Override
+    public List<ChiTietSanPham> getCTSPByIdSanPham(long id) {
+        return chiTietSanPhamRepository.getAllByIdSanPham(id);
+    }
+
+    @Override
+    public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
+        return chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
     }
 }

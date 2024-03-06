@@ -40,5 +40,10 @@ public class SanPhamServiceImpl implements SanPhamService {
         return spr.getSanPhamByMaSP(maCL);
     }
 
+    @Override
+    public SanPham getById(long id) {
+        return spr.findById(id).orElse(null);
+    }
+
 
 }
