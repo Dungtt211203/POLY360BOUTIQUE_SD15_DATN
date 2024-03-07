@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.UUID;
@@ -33,10 +34,12 @@ public class ChiTietSanPham {
 
     @Column(name = "gia_hien_hanh")
     private Float gia;
-
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")
     private Date ngayTao;
-
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_sua")
     private Date ngaySua;
 
@@ -46,6 +49,12 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
     private SanPham sanPham;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
+    private ChatLieu chatLieu;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
+    private ThuongHieu thuongHieu;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "mau_sac_id", referencedColumnName = "id")

@@ -1,7 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.KhuyenMai;
-import com.example.website_sportclothings_ph25462.service.ChiTietSPService;
+import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
 import com.example.website_sportclothings_ph25462.service.KhuyenMaiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class CapNhatTrangThaiController {
     KhuyenMaiService khuyenMaiService;
 
     @Autowired
-    ChiTietSPService chiTietSPService;
+    ChiTietSanPhamService chiTietSPService;
 
     public void run() {
         LocalDateTime now = LocalDateTime.now();
@@ -26,4 +26,6 @@ public class CapNhatTrangThaiController {
             }
         }
     }
+}
+
 
