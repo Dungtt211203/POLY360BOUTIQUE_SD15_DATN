@@ -1,29 +1,27 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-import com.example.website_sportclothings_ph25462.entity.ChatLieu;
-import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
-import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
-import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
-import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
-import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
-import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
-import com.example.website_sportclothings_ph25462.repository.ThuongHieuRepository;
+import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.repository.*;
+import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.UUID;
 @Controller
 @RequestMapping("/chitietsp")
 public class ChiTietSPController {
 
     @Autowired
-    private ChiTietSPRepository repository;
+    private ChiTietSanPhamRepository repository;
+    @Autowired
+    private ChiTietSanPhamService chiTietSanPhamService;
 
     @Autowired
     private SanPhamRepository sanPhamRepository;
@@ -43,7 +41,7 @@ public class ChiTietSPController {
     @GetMapping("/hien-thi")
     public String view(Model model) {
         model.addAttribute("list", repository.findAll());
-        model.addAttribute("sp",new ChiTietSP());
+        model.addAttribute("sp",new ChiTietSanPham());
         model.addAttribute("view", "../chitietsp/index.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
@@ -54,20 +52,33 @@ public class ChiTietSPController {
     }
 
     @GetMapping("/viewadd")
-    public String hienThiAdd(@ModelAttribute("ctsp") ChiTietSP chiTietSP, Model model) {
+    public String hienThiAdd(@ModelAttribute("ctsp") ChiTietSanPham chiTietSP, Model model) {
         //   model.addAttribute("view", "../chitietsp/index.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
         model.addAttribute("mauSac", mauSacRepository.findAll());
         model.addAttribute("chatLieu", chatLieuRepository.findAll());
         model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
-        model.addAttribute("ctsp",new ChiTietSP());
+        model.addAttribute("ctsp",new ChiTietSanPham());
         return "chitietsp/add";
     }
     @PostMapping("/add")
-    public String add(ChiTietSP chiTietSp, Model model) {
-        model.addAttribute("sp",new ChiTietSP());
-        repository.save(chiTietSp);
+    public String add(Model model, @Valid @ModelAttribute("ctSanPham") ChiTietSanPham chiTietSP, BindingResult result) {
+//        Boolean hasError = result.hasErrors();
+//        ChiTietSanPham product = chiTietSanPhamService.getOne(chiTietSP.getMaChiTietSanPham());
+//        if (product != null) {
+//            hasError = true;
+//            model.addAttribute("mactspError", "Vui lòng không nhập trùng mã");
+//            model.addAttribute("view", "/chi_tiet_san_pham/add.jsp");
+//            return "/chi_tiet_san_pham/add";
+//        }
+//        if (hasError) {
+//            // Báo lỗi
+//            model.addAttribute("view", "/chi_tiet_san_pham/add.jsp");
+//            return "/chi_tiet_san_pham/add";
+//        }
+        model.addAttribute("ctsp",new ChiTietSanPham());
+        repository.save(chiTietSP);
         return "redirect:/chitietsp/hien-thi";
     }
 
@@ -79,21 +90,21 @@ public class ChiTietSPController {
 
     @GetMapping("/update/{id}")
     public String viewUpdate(@PathVariable Long id, Model model) {
-        ChiTietSP chiTietSp = repository.findById(id).orElse(null);
+        ChiTietSanPham chiTietSp = repository.findById(id).orElse(null);
      //   model.addAttribute("view", "../chitietsp/index.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
         model.addAttribute("mauSac", mauSacRepository.findAll());
         model.addAttribute("chatLieu", chatLieuRepository.findAll());
         model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
-        model.addAttribute("sp",new ChiTietSP());
+        model.addAttribute("sp",new ChiTietSanPham());
         model.addAttribute("chitietsp", chiTietSp);
         return "chitietsp/update";
     }
 
     @PostMapping("/update/{id}")
-    public String update(@ModelAttribute("chitietsp") ChiTietSP chiTietSp, Model model) {
-        model.addAttribute("sp",new ChiTietSP());
+    public String update(@ModelAttribute("chitietsp") ChiTietSanPham chiTietSp, Model model) {
+        model.addAttribute("sp",new ChiTietSanPham());
         repository.save(chiTietSp);
         return "redirect:/chitietsp/hien-thi";
     }

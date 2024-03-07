@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface ChiTietSanPhamRepository extends JpaRepository<ChiTietSanPham, UUID> {
+public interface ChiTietSanPhamRepository extends JpaRepository<ChiTietSanPham, Long> {
     @Query(
             value = "SELECT * FROM chi_Tiet_san_pham where san_pham_id = :id ",
             nativeQuery = true

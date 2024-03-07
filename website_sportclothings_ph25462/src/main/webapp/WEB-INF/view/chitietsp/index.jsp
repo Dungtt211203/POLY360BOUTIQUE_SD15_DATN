@@ -21,7 +21,6 @@
         <th>ID</th>
         <th>Mã CTSP</th>
         <th>Số lượng</th>
-
         <th>Ngày Tạo</th>
         <th>Ngày Sửa</th>
         <th>Sản Phẩm </th>
@@ -36,9 +35,8 @@
     <c:forEach items="${list}" var="ctsp">
         <tr>
             <td>${ctsp.id}</td>
-            <td>${ctsp.ma}</td>
+            <td>${ctsp.maChiTietSanPham}</td>
             <td>${ctsp.soLuong}</td>
-
             <td>${ctsp.ngayTao}</td>
             <td>${ctsp.ngaySua}</td>
             <td>${ctsp.sanPham.ten}</td>

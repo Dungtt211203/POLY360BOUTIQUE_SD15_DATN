@@ -25,7 +25,7 @@ public class ChiTietKhuyenMai {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_chi_tiet_san_pham", referencedColumnName = "id")
-    private ChiTietSP chiTietSP;
+    private ChiTietSanPham chiTietSP;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_khuyen_mai", referencedColumnName = "id")

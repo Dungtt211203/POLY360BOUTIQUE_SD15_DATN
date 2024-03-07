@@ -1,7 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietKhuyenMai;
-import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
 import com.example.website_sportclothings_ph25462.repository.ChiTietKhuyenMaiRepository;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.repository.KhuyenMaiRepository;
