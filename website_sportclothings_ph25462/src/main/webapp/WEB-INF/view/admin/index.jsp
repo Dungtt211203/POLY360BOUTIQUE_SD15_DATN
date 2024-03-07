@@ -92,7 +92,7 @@
                 <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-admin" href="#">Quản Lý khuyến mãi</a>
+                <a class="nav-link-admin" href="">Quản Lý khuyến mãi</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
