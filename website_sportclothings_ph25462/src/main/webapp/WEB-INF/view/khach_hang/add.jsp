@@ -76,8 +76,18 @@
     <form:form action="/khach-hang/hien-thi-add" method="post" modelAttribute="khachHang">
         <div class="input">
             <label>Mã Khách Hàng</label>: <form:input path="ma"/>
-            <form:errors path="ma" cssStyle="color: red"/>
+            <form:errors path="ma" cssStyle="color: #ff0000"/>
             <br/>
+        </div>
+    <div class="input">
+        TenSP: <form:select path="taiKhoanKH">
+        <form:options items="${taiKhoanKH}" itemLabel="ma"/>
+    </form:select><br>
+    </div>
+        <div class="input">
+            TenSP: <form:select path="vaiTro">
+            <form:options items="${vaiTro}" itemLabel="tenVT"/>
+        </form:select><br>
         </div>
         <div class="input">
             <label>Họ Khách Hàng</label>: <form:input path="ho"/>

@@ -12,4 +12,8 @@ public interface ChiTietSanPhamService {
     ChiTietSanPham getOne(String id);
 
     List<ChiTietSanPham> getAll();
+
+    List<ChiTietSanPham> getCTSPByIdSanPham(long id);
+
+    ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKchCo);
 }

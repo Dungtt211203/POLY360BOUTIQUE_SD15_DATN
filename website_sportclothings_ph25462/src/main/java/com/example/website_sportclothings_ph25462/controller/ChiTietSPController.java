@@ -21,18 +21,25 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/chitietsp")
 public class ChiTietSPController {
+
     @Autowired
     private ChiTietSPRepository repository;
+
     @Autowired
     private SanPhamRepository sanPhamRepository;
+
     @Autowired
     private KichCoRepository kichCoRepository;
+
     @Autowired
     private MauSacRepository mauSacRepository;
+
     @Autowired
     private ChatLieuRepository chatLieuRepository;
+
     @Autowired
     private ThuongHieuRepository thuongHieuRepository;
+
     @GetMapping("/hien-thi")
     public String view(Model model) {
         model.addAttribute("list", repository.findAll());
@@ -45,6 +52,7 @@ public class ChiTietSPController {
         model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
         return "/chitietsp/index";
     }
+
     @GetMapping("/viewadd")
     public String hienThiAdd(@ModelAttribute("ctsp") ChiTietSP chiTietSP, Model model) {
         //   model.addAttribute("view", "../chitietsp/index.jsp");

@@ -2,7 +2,10 @@ package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
 import com.example.website_sportclothings_ph25462.repository.KhachHangRepository;
+import com.example.website_sportclothings_ph25462.repository.TaiKhoanRepository;
+import com.example.website_sportclothings_ph25462.repository.VaiTroRepository;
 import com.example.website_sportclothings_ph25462.service.KhachHangService;
+import com.example.website_sportclothings_ph25462.service.TaiKhoanService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

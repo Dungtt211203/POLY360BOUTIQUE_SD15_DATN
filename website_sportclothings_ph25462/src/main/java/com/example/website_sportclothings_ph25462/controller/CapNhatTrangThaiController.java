@@ -18,6 +18,7 @@ public class CapNhatTrangThaiController {
 
     public void run() {
         LocalDateTime now = LocalDateTime.now();
+
         for (KhuyenMai khuyenMai : khuyenMaiService.getAll()) {
             if (khuyenMai.getTrangThai() == 1 && khuyenMai.getNgayTao().isBefore(now)) {
                 khuyenMai.setTrangThai(2L); //sắp diễn ra -> đang hoạt động//
@@ -25,4 +26,4 @@ public class CapNhatTrangThaiController {
             }
         }
     }
-}
+
