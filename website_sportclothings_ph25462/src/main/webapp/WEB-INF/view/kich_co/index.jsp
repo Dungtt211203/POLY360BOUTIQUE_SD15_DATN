@@ -13,8 +13,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+<style>
+    .table table-warning {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+    .table table-warning {
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+</style>
 <h1 style="text-align: center">QUẢN LÝ KÍCH CỠ</h1>
-<table class="table">
+<table class="table table-warning">
     <thead>
     <tr>
         <th>STT</th>
@@ -36,6 +51,7 @@
             <td>
                 <button class="btn btn-success"><a href="/kich-co/detail/${kc.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
                 <button class="btn btn-success"><a href="/kich-co/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+                <button class="btn btn-success"><a href="/kich-co/view-update/${kc.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-danger"><a href="/kich-co/remove/${kc.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 

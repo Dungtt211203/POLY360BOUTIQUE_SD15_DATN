@@ -45,36 +45,55 @@
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý sản phẩm</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý tài khoản</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản Lý khuyến mãi</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
-        </li>
+            <li class="nav-item" onclick="myDrowDown()">
+                <div class="nav-link-admin">Quản lý sản phẩm</div>
+            </li>
+            <div id="myDropdown" style="display: none;">
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/san-pham/hien-thi">Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/mau-sac/hien-thi">Màu sắc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/kich-co/hien-thi">Kích cỡ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/chat-lieu/hien-thi">Chất liệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/thuong-hieu/hien-thi">Thương hiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/chitietsp/hien-thi">Chi tiết sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-admin" href="/hinh-anh/hien-thi">Hình ảnh</a>
+                </li>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
+            </li>
+            <li class="nav-item" onclick="myFunction()">
+                <div class="nav-link-admin">Quản lý tài khoản</div>
+            </li>
+            <div id="myPopup" style="display: none">
+                <li class="nav-item nav-popup">
+                    <a class="nav-link-admin" href="/khach-hang/hien-thi">Khách hàng</a>
+                </li>
+                <li class="nav-item nav-popup">
+                    <a class="nav-link-admin" href="/nhan-vien/hien-thi">Nhân viên</a>
+                </li>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/khuyen-mai/hien-thi">Quản Lý khuyến mãi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
+            </li>
     </ul>
 </aside>
 

@@ -43,13 +43,6 @@
     .formAdd > form > .mb-3 > label {
         margin-top: 20px;
     }
-
-    .buttonSubmit {
-        margin-top: 50px;
-        margin-left: -50px;
-        text-align: center;
-    }
-
     .buttonSubmit > button {
         background-color: #FFFFFF;
         color: black;
@@ -57,7 +50,9 @@
         width: 120px;
         height: 40px;
         border-radius: 10px;
-        border: 0px;
+    .tt {
+        margin-top: 20px;
+
     }
 
     .radioButton {
