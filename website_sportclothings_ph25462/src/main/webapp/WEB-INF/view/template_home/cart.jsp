@@ -33,29 +33,29 @@
                     <div class="card-body">
                         <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
+<%--                    <ul class="list-group list-group-flush">--%>
 
-                        <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia}
-                                <%--                        <fmt:formatNumber--%>
-                                <%--                                pattern="###,### VNĐ">--%>
-                                <%--                        </fmt:formatNumber>--%>
-                        </li>
-                    </ul>
+<%--                        <li class="list-group-item">Gía tiền: ${hienthis.giá}--%>
+<%--                                &lt;%&ndash;                        <fmt:formatNumber&ndash;%&gt;--%>
+<%--                                &lt;%&ndash;                                pattern="###,### VNĐ">&ndash;%&gt;--%>
+<%--                                &lt;%&ndash;                        </fmt:formatNumber>&ndash;%&gt;--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
                 </div>
             </div>
         </div>
     </c:forEach>
-</div>
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <c:forEach begin="0" end="${hienthi.totalPages -1}" varStatus="loop">
-            <li class="page-item"><a class="page-link"
-                                     href="/poly360boutique/home?page=${loop.index}">${loop.index+1}</a>
-            </li>
-        </c:forEach>
-    </ul>
-</nav>
-</div>
+<%--</div>--%>
+<%--    <nav aria-label="Page navigation example">--%>
+<%--        <ul class="pagination">--%>
+<%--            <c:forEach begin="0" end="${hienthi.totalPages -1}" varStatus="loop">--%>
+<%--                <li class="page-item"><a class="page-link"--%>
+<%--                                         href="/poly360boutique/home?page=${loop.index}">${loop.index+1}</a>--%>
+<%--                </li>--%>
+<%--            </c:forEach>--%>
+<%--        </ul>--%>
+<%--    </nav>--%>
+<%--</div>--%>
 <script src="src/main/webapp/js/cart.js"></script>
 </body>
 </html>
