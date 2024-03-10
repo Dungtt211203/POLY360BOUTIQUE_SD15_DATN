@@ -26,13 +26,13 @@
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-banner" src="../../../img/imgbanner/bannerqao3.png" class="d-block w-100" alt="..." style="height: 44rem">
+                    <img class="img-banner" src="../../../img/imgbanner/bannerqao3.png" class="d-block w-100" alt="..." >
                 </div>
                 <div class="carousel-item">
-                    <img class="img-banner" src="../../../img/imgbanner/bannerqa2.png" class="d-block w-100" alt="..." style="height: 44rem">
+                    <img class="img-banner" src="../../../img/imgbanner/bannerqa2.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="img-banner" src="../../../img/imgbanner/bannerwelcome1.png" class="d-block w-100" alt="..." style="height: 44rem">
+                    <img class="img-banner" src="../../../img/imgbanner/bannerwelcome1.png" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"

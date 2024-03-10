@@ -47,7 +47,7 @@ public class KichCoController {
     public String hienThi(Model model) {
         model.addAttribute("load", kichCoService.getAll());
         model.addAttribute("kc", new KichCo());
-        model.addAttribute("view", "../kick_co/index.jsp");
+        model.addAttribute("view", "../kick_co/chinh-sach.jsp");
         return "/kich_co/index";
     }
 

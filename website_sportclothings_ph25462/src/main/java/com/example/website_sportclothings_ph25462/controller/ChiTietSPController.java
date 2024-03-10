@@ -42,7 +42,7 @@ public class ChiTietSPController {
     public String view(Model model) {
         model.addAttribute("list", repository.findAll());
         model.addAttribute("sp",new ChiTietSanPham());
-        model.addAttribute("view", "../chitietsp/index.jsp");
+        model.addAttribute("view", "../chitietsp/chinh-sach.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
         model.addAttribute("mauSac", mauSacRepository.findAll());
@@ -53,7 +53,7 @@ public class ChiTietSPController {
 
     @GetMapping("/viewadd")
     public String hienThiAdd(@ModelAttribute("ctsp") ChiTietSanPham chiTietSP, Model model) {
-        //   model.addAttribute("view", "../chitietsp/index.jsp");
+        //   model.addAttribute("view", "../chitietsp/chinh-sach.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
         model.addAttribute("mauSac", mauSacRepository.findAll());
@@ -91,7 +91,7 @@ public class ChiTietSPController {
     @GetMapping("/update/{id}")
     public String viewUpdate(@PathVariable Long id, Model model) {
         ChiTietSanPham chiTietSp = repository.findById(id).orElse(null);
-     //   model.addAttribute("view", "../chitietsp/index.jsp");
+     //   model.addAttribute("view", "../chitietsp/chinh-sach.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
         model.addAttribute("mauSac", mauSacRepository.findAll());
