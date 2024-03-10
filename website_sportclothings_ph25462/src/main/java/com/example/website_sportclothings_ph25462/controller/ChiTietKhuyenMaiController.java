@@ -25,7 +25,7 @@ public class ChiTietKhuyenMaiController {
     @GetMapping("/chi-tiet-khuyen-mai/hien-thi")
     public String hienThi(Model model) {
         model.addAttribute("listKmmct", chiTietKhuyenMaiRepository.findAll());
-        model.addAttribute("view", "../chi_tiet_khuyen_mai/index.jsp");
+        model.addAttribute("view", "../chi_tiet_khuyen_mai/chinh-sach.jsp");
         model.addAttribute("chiTietSP", chiTietSanPhamRepository.findAll());
         model.addAttribute("khuyenMai", khuyenMaiRepository.findAll());
 
@@ -35,7 +35,7 @@ public class ChiTietKhuyenMaiController {
     @GetMapping("/chi-tiet-khuyen-mai/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("ctkm") ChiTietKhuyenMai chiTietKhuyenMai, Model model) {
         model.addAttribute("listKmmct", chiTietKhuyenMaiRepository.findAll());
-        model.addAttribute("view", "../chi_tiet_khuyen_mai/index.jsp");
+        model.addAttribute("view", "../chi_tiet_khuyen_mai/chinh-sach.jsp");
         model.addAttribute("chiTietSP", chiTietSanPhamRepository.findAll());
         model.addAttribute("khuyenMai", khuyenMaiRepository.findAll());
         model.addAttribute("ctkm", new ChiTietKhuyenMai());
