@@ -64,21 +64,21 @@
 
         <div class="size">
             <p>Kích cỡ:</p>
-            <select name="size">
-                <c:forEach items="${size}" var="kichco">
-                    <option value="${kichco.id}" ${detail.kichCo.id == kichco.id ? "selected" : ""}>${kichco.ten}</option>
-                </c:forEach>
-            </select>
+            <%--            <select name="size">--%>
+            <%--                <c:forEach items="${size}" var="kichco">--%>
+            <%--                    <option value="${kichco.id}" ${detail.kichCo.id == kichco.id ? "selected" : ""}>${kichco.ten}</option>--%>
+            <%--                </c:forEach>--%>
+            <%--            </select>--%>
         </div>
 
 
         <div class="color">
             <p>Màu sắc:</p>
-            <select name="color">
-                <c:forEach items="${color}" var="ms">
-                    <option value="${ms.id}" ${detail.mauSac.id == ms.id ? "selected" : ""}>${ms.ten}</option>
-                </c:forEach>
-            </select>
+            <%--            <select name="color">--%>
+            <%--                <c:forEach items="${color}" var="ms">--%>
+            <%--                    <option value="${ms.id}" ${detail.mauSac.id == ms.id ? "selected" : ""}>${ms.ten}</option>--%>
+            <%--                </c:forEach>--%>
+            <%--            </select>--%>
         </div>
 
 
