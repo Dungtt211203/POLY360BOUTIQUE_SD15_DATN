@@ -19,11 +19,11 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<div style="display: flex;align-items: center">
+<div style="display: flex">
     <div>
         <jsp:include page="../admin/index.jsp"/>
     </div>
-    <div>
+    <div style="margin-left: 300px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ SẢN PHẨM</h1>
         <table class="ui celled table" style="width: 1000px;margin-top: 50px">
             <thead>

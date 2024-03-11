@@ -25,7 +25,7 @@ public class NhanVienController {
     public String hienThi(Model model) {
         model.addAttribute("load", nhanVienService.getAll());
         model.addAttribute("nv", new NhanVien());
-        model.addAttribute("view", "../nhan_vien/index.jsp");
+        model.addAttribute("view", "../nhan_vien/chinh-sach.jsp");
         return "/nhan_vien/index";
     }
 

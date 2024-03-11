@@ -60,7 +60,7 @@ public class ThuongHieuController {
     public String hienThi(Model model) {
         model.addAttribute("load", thuongHieuService.getAll());
         model.addAttribute("th", new ThuongHieu());
-        model.addAttribute("view", "../thuong_hieu/index.jsp");
+        model.addAttribute("view", "../thuong_hieu/chinh-sach.jsp");
         return "/thuong_hieu/index";
     }
 

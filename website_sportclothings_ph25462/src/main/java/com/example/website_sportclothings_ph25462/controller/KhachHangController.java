@@ -26,7 +26,7 @@ public class KhachHangController {
     public String hienThi(Model model) {
         model.addAttribute("load", khachHangService.getAll());
         model.addAttribute("kh", new KhachHang());
-        model.addAttribute("view", "../khach_hang/index.jsp");
+        model.addAttribute("view", "../khach_hang/chinh-sach.jsp");
         return "/khach_hang/index";
     }
 

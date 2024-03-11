@@ -8,10 +8,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POLY360BOUTIQUE</title>
-    <link rel="icon" href="../../../svg/logohome.svg">
+    <link rel="icon" href="src/main/webapp/svg/logohome.svg">
 </head>
 <body>
-<jsp:include page="../template_home/header.jsp"/>
+<jsp:include page="src/main/webapp/WEB-INF/view/template_home/header.jsp"/>
 <br/>
 <span style="font-size: 20px; text-align: center">
     <h2 style="text-align: center">Chính sách đổi - trả sản phẩm khi mua hàng</h2>
@@ -46,6 +46,6 @@ Khi khách hàng mua sản phẩm, cửa hàng sẽ áp dụng đổi hoặc tr�
 <br/>
 <b>Nếu có thắc mắc vui liên hệ đến số điện thoại: 0787189845</b>
 </span>
-<jsp:include page="../template_home/footer.jsp"/>
+<jsp:include page="src/main/webapp/WEB-INF/view/template_home/footer.jsp"/>
 </body>
 </html>
