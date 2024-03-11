@@ -91,7 +91,7 @@
     <div class="login-container">
         <form action="/poly360boutique/login" method="post" modelAttribute="taikhoan" mode
               onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #FFFFFF">POLY 360 BOUTIQUE</h3>
             <br>
             <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
 
@@ -112,10 +112,13 @@
 
             <p style="color: red; text-align: center; font-size: 19px;">${message}</p>
 
-            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 155px;"
+            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 160px;"
                     type="submit">Đăng
                 nhập
             </button>
+            <div style="text-align: center;font-size: 15px">
+                <h1>Bạn chưa có tài khoản? <a href="/poly360boutique/dang-ky" style="color: #FFFFFF">Đăng ký</a></h1>
+            </div>
         </form>
     </div>
 </div>
