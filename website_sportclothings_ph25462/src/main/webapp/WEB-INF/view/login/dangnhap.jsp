@@ -89,7 +89,8 @@
     </div>
 
     <div class="login-container">
-        <form action="/poly360boutique/login" method="post" onsubmit="return validateForm()">
+        <form action="/poly360boutique/login" method="post" modelAttribute="taikhoan" mode
+              onsubmit="return validateForm()">
             <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
             <br>
             <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
@@ -109,6 +110,8 @@
                    required=""/>
             <br>
 
+            <p style="color: red; text-align: center; font-size: 19px;">${message}</p>
+
             <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 155px;"
                     type="submit">Đăng
                 nhập
@@ -118,22 +121,22 @@
 </div>
 
 <script>
-    function validateForm() {
-        var username = document.getElementById("usernameLogin").value;
-        var password = document.getElementById("passwordLogin").value;
-
-        if (username.trim() === "") {
-            alert("Tên tài khoản không được để trống");
-            return false;
-        }
-
-        if (password.trim() === "") {
-            alert("Mật khẩu không được để trống");
-            return false;
-        }
-
-        return true;
-    }
+    // function validateForm() {
+    //     var username = document.getElementById("usernameLogin").value;
+    //     var password = document.getElementById("passwordLogin").value;
+    //
+    //     if (username.trim() === "") {
+    //         alert("Tên tài khoản không được để trống");
+    //         return false;
+    //     }
+    //
+    //     if (password.trim() === "") {
+    //         alert("Mật khẩu không được để trống");
+    //         return false;
+    //     }
+    //
+    //     return true;
+    // }
 </script>
 </body>
 </html>

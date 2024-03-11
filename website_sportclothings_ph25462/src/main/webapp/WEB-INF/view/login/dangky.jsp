@@ -85,7 +85,6 @@
 
 
 <body>
-
 <div class="container">
     <div class="image-container">
         <img src="../../../svg/logoLogin.png" alt="Nice Shoe Image">
@@ -93,7 +92,8 @@
 
     <div class="registration-container">
 
-        <form action="/poly360boutique/dang-ky/add" method="post" onsubmit="return validateForm()">
+        <form action="/poly360boutique/dang-ky/add" method="post"
+              onsubmit="return validateForm()">
             <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
             <br>
             <span class="header-title">
