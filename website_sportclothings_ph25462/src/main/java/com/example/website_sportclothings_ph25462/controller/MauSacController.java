@@ -41,7 +41,7 @@ public class MauSacController {
     public String hienThi(Model model) {
         model.addAttribute("load", mss.getAll());
         model.addAttribute("ms", new MauSac());
-        model.addAttribute("view", "../mau_sac/index.jsp");
+        model.addAttribute("view", "../mau_sac/chinh-sach.jsp");
         return "/mau_sac/index";
     }
 

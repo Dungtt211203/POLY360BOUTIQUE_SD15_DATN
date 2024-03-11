@@ -32,7 +32,7 @@ public class ChatLieuController {
         model.addAttribute("load", chatLieuService.getAll());
         model.addAttribute("cl", new ChatLieu());
         model.addAttribute("page", page);
-        model.addAttribute("view", "/chat_lieu/index.jsp");
+        model.addAttribute("view", "/chat_lieu/chinh-sach.jsp");
         return "/chat_lieu/index";
     }
 
@@ -110,7 +110,7 @@ public class ChatLieuController {
 //        model.addAttribute("load", chatLieuService.getAll());
 //        model.addAttribute("page", page);
 //        model.addAttribute("cl", cl);
-//        model.addAttribute("view", "/chat_lieu/index.jsp");
+//        model.addAttribute("view", "/chat_lieu/chinh-sach.jsp");
 //        model.addAttribute("list", list);
 //        return "/chat_lieu/index";
 //    }

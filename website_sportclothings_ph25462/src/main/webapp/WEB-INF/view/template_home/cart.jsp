@@ -28,14 +28,14 @@
                 <div id="cartItems">
 
                     <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
-                        <img src="/img/${hienthis.url}" class="card-img-top mx-auto d-block"
+                        <img src="/img/imgsanpham/${hienthis.url}" class="card-img-top mx-auto d-block"
                              alt="" style="min-width: 319px; min-height: 319px"></a>
                     <div class="card-body">
                         <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                     </div>
 <%--                    <ul class="list-group list-group-flush">--%>
 
-<%--                        <li class="list-group-item">Gía tiền: ${hienthis.giá}--%>
+<%--                        <li class="list-group-item">Gía tiền: ${hienthis.gia}--%>
 <%--                                &lt;%&ndash;                        <fmt:formatNumber&ndash;%&gt;--%>
 <%--                                &lt;%&ndash;                                pattern="###,### VNĐ">&ndash;%&gt;--%>
 <%--                                &lt;%&ndash;                        </fmt:formatNumber>&ndash;%&gt;--%>
@@ -45,17 +45,21 @@
             </div>
         </div>
     </c:forEach>
-<%--</div>--%>
-<%--    <nav aria-label="Page navigation example">--%>
-<%--        <ul class="pagination">--%>
-<%--            <c:forEach begin="0" end="${hienthi.totalPages -1}" varStatus="loop">--%>
-<%--                <li class="page-item"><a class="page-link"--%>
-<%--                                         href="/poly360boutique/home?page=${loop.index}">${loop.index+1}</a>--%>
-<%--                </li>--%>
-<%--            </c:forEach>--%>
-<%--        </ul>--%>
-<%--    </nav>--%>
-<%--</div>--%>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <c:if test="${hienthi.totalPages > 0}">
+            <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
+                <li class="page-item">
+                    <a class="page-link" href="/poly360boutique/home?page=${loop.index}">
+                            ${loop.index + 1}
+                    </a>
+                </li>
+            </c:forEach>
+        </c:if>
+    </ul>
+</nav>
+</div>
 <script src="src/main/webapp/js/cart.js"></script>
 </body>
 </html>

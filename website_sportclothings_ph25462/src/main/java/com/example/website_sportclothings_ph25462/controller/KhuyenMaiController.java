@@ -23,13 +23,13 @@ public class KhuyenMaiController {
     public String hienThi(Model model) {
         model.addAttribute("load", khuyenMaiService.getAll());
         model.addAttribute("km", new KhuyenMai());
-        model.addAttribute("view", "../khuyen_mai/index.jsp");
+        model.addAttribute("view", "../khuyen_mai/chinh-sach.jsp");
         return "/khuyen_mai/index";
     }
 
     @GetMapping("/khuyen-mai/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("khuyenMai") KhuyenMai khuyenMai, Model model) {
-        model.addAttribute("view", "../khuyen_mai/index.jsp");
+        model.addAttribute("view", "../khuyen_mai/chinh-sach.jsp");
         return "/khuyen_mai/add";
     }
 
