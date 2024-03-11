@@ -85,7 +85,6 @@
 
 
 <body>
-
 <div class="container">
     <div class="image-container">
         <img src="../../../svg/logoLogin.png" alt="Nice Shoe Image">
@@ -93,8 +92,9 @@
 
     <div class="registration-container">
 
-        <form action="/poly360boutique/dang-ky/add" method="post" onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
+        <form action="/poly360boutique/dang-ky/add" method="post"
+              onsubmit="return validateForm()">
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #FFFFFF">POLY 360 BOUTIQUE</h3>
             <br>
             <span class="header-title">
                     <span style="color: red"></span>
@@ -116,10 +116,12 @@
                 </span>
             <input name="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu..." required=""/>
             <br>
-            <button type="submit" class="btn btn-warning"
-                    style="color: white; background-color: black; margin-left: 190px;">Đăng
-                ký
+            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 180px;"
+                    type="submit">Đăng ký
             </button>
+            <div style="text-align: center;font-size: 15px">
+                <h1>Bạn đã có tài khoản? <a href="/poly360boutique/dang-nhap" style="color: #FFFFFF">Đăng nhập</a></h1>
+            </div>
         </form>
     </div>
 </div>
@@ -144,9 +146,6 @@
             alert("Mật khẩu không được để trống");
             return false;
         }
-
-        // Add more validation logic if needed
-
         return true;
     }
 </script>

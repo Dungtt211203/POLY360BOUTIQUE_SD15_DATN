@@ -15,6 +15,7 @@ public class DangKyController {
     @Autowired
     private TaiKhoanService taiKhoanService;
 
+
     @GetMapping("/dang-ky")
     public String hienThi() {
 
@@ -38,7 +39,7 @@ public class DangKyController {
 
         taiKhoanService.add(taiKhoan);
 
-        return "login/dangnhap";
+        return "redirect:/poly360boutique/dang-ky";
 
     }
 

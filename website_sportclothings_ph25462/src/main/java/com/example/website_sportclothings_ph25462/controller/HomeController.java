@@ -81,8 +81,9 @@ public class HomeController {
 
 
     @GetMapping("/dang-nhap")
-    public String dangNhap() {
+    public String dangNhap(Model model) {
 
+        model.addAttribute("taikhoan", new TaiKhoan());
         return ("/login/dangnhap");
     }
 
@@ -94,15 +95,26 @@ public class HomeController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        HttpSession session) {
-        TaiKhoan taiKhoan = taiKhoanService.checkLogin(username, password);
-        if (taiKhoan != null) {
-            session.setAttribute("taikhoan", taiKhoan);
+    public String login(
+
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+
+            Model model, @ModelAttribute(name = "taikhoan") TaiKhoan taiKhoan,
+            HttpSession session) {
+
+        TaiKhoan taiKhoans = taiKhoanService.checkLogin(username, password);
+
+        if (taiKhoans != null) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
             return "redirect:/poly360boutique/home";
+        } else {
+            session.setAttribute("taikhoanlogin", null);
         }
-        return "redirect:/poly360boutique/dang-nhap";
+
+        model.addAttribute("message", "Ten tai khoan hoac mat khau khong dung");
+
+        return ("/login/dangnhap");
     }
 
 

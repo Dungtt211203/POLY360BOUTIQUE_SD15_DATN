@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.Date;
@@ -36,12 +37,16 @@ public class TaiKhoan {
     @Column(name = "so_dien_thoai")
     private Integer sdt;
 
+    @NotBlank(message = "Email khong duoc de trong")
     @Column(name = "email")
     private String email;
 
+
+    @NotBlank(message = "Ten tai khoan khong duoc de trong")
     @Column(name = "ten_tai_khoan")
     private String tenTK;
 
+    @NotBlank(message = "Mat khau khong duoc de trong")
     @Column(name = "mat_khau")
     private String matKhau;
 
