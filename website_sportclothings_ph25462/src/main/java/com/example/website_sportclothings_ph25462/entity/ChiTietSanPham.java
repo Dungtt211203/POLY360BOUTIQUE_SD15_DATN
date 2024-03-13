@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "chi_tiet_san_pham")
 @Entity
@@ -31,7 +30,7 @@ public class ChiTietSanPham {
     @Column(name = "so_luong")
     private Integer soLuong;
 
-    @Column(name = "gia_hien_hanh")
+    @Column(name = "gia")
     private Float gia;
 
     @Column(name = "ngay_tao")
@@ -63,4 +62,9 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
     private ThuongHieu thuongHieu;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
+    private HinhAnhSP hinhAnhSP;
 }

@@ -24,7 +24,7 @@ public class HomeController {
     private HinhAnhSPService hinhAnhSPService;
 
     @Autowired
-    private ChiTietSPService chiTietSPService;
+    private ChiTietSanPhamService chiTietSanPhamService;
 
     @Autowired
     private TaiKhoanService taiKhoanService;
@@ -40,21 +40,15 @@ public class HomeController {
 
     public String index(@RequestParam(defaultValue = "0", name = "page") Integer page, Model model) {
 
-        Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(page);
-        model.addAttribute("hienthi", hinhAnhSPS);
+        Page<ChiTietSanPham> chiTietSanPhams = chiTietSanPhamService.getData(page);
+        model.addAttribute("hienthi", chiTietSanPhams);
 
 
         List<SanPham> sanPhamList = sanPhamService.getAll();
         model.addAttribute("sanpham", sanPhamList);
 
-        return "/template_home/index";
-    }
-
-    @GetMapping("/chi-tiet-san-pham")
-    public String view(Model model) {
-
-        List<ChiTietSP> chiTietSPS = chiTietSPService.getAll();
-        model.addAttribute("chitietsanpham", chiTietSPS);
+        List<HinhAnhSP> hinhAnhSPList = hinhAnhSPService.getAll();
+        model.addAttribute("hinhanh", hinhAnhSPList);
 
         List<KichCo> kichCos = kichCoService.getAll();
         model.addAttribute("kichco", kichCos);
@@ -63,21 +57,22 @@ public class HomeController {
         model.addAttribute("mausac", mauSacs);
 
 
-        return "/chitietsp/index";
+        return "/template_home/index";
     }
 
 
-    @GetMapping("/san-pham/detail/{id}")
-    public String detail(@PathVariable("id") String id, Model model) {
-        HinhAnhSP hinhAnhSP = hinhAnhSPService.getOne(id);
-
-        Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);
-        model.addAttribute("hienthi", hinhAnhSPS);
-
-
-        model.addAttribute("detail", hinhAnhSP);
-        return "/template_home/detail";
-    }
+//    @GetMapping("/san-pham/detail/{id}")
+//    public String detail(@PathVariable("id") String id, Model model) {
+//
+//        ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getOne(id);
+//
+//        Page<ChiTietSanPham> chi = hinhAnhSPService.getData(0);
+//        model.addAttribute("hienthi", hinhAnhSPS);
+//
+//
+//        model.addAttribute("detail", hinhAnhSP);
+//        return "/template_home/detail";
+//    }
 
 
     @GetMapping("/dang-nhap")
@@ -105,9 +100,15 @@ public class HomeController {
 
         TaiKhoan taiKhoans = taiKhoanService.checkLogin(username, password);
 
-        if (taiKhoans != null) {
+        if (taiKhoans != null && taiKhoans.getVaiTro() == 1) {
             session.setAttribute("taikhoanlogin", taiKhoans);
             return "redirect:/poly360boutique/home";
+        } else if (taiKhoans != null && taiKhoans.getVaiTro() == 3) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
+            return "redirect:/poly360boutique/admin";
+        } else if (taiKhoans != null && taiKhoans.getVaiTro() == 2) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
+            return "redirect:/poly360boutique/admin";
         } else {
             session.setAttribute("taikhoanlogin", null);
         }

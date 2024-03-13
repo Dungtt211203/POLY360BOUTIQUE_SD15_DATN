@@ -38,11 +38,11 @@ public class SanPham {
     @Column(name = "mo_ta")
     private String moTa;
 
-    @Column(name = "gia")
-    @DecimalMin(value = "79999", inclusive = false, message = " Giá bán không hợp lệ, nhập giá nhỏ nhất là 80000")
-    @DecimalMax(value = "9999999999.99", inclusive = false, message = " Giá bán không hợp lệ")
-    @NotNull(message = "* không để trống giá bán !")
-    private Double gia;
+//    @Column(name = "gia")
+//    @DecimalMin(value = "79999", inclusive = false, message = " Giá bán không hợp lệ, nhập giá nhỏ nhất là 80000")
+//    @DecimalMax(value = "9999999999.99", inclusive = false, message = " Giá bán không hợp lệ")
+//    @NotNull(message = "* không để trống giá bán !")
+//    private Double gia;
 
     //    @Temporal(TemporalType.DATE)
 //    @NotNull(message = "không để trống ngày tạo")
@@ -60,7 +60,18 @@ public class SanPham {
     @Column(name = "nguoi_tao")
     private String nguoiTao;
 
+    @Column(name = "ngay_tao")
+    private String ngayTao;
+
+    @Column(name = "ngay_sua")
+    private String ngaySua;
+
     @NotNull(message = "Trạng thái không được để trống")
     @Column(name = "trang_thai")
-    private Integer tt;
+    private Integer trangThai;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
+    private ThuongHieu thuongHieu;
+
 }

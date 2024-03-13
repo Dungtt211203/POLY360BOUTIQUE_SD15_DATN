@@ -3,7 +3,6 @@ package com.example.website_sportclothings_ph25462.service;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
 import org.springframework.data.domain.Page;
 
-import java.util.List;
 
 public interface ChiTietSanPhamService {
 
@@ -11,5 +10,4 @@ public interface ChiTietSanPhamService {
 
     ChiTietSanPham getOne(String id);
 
-    List<ChiTietSanPham> getAll();
 }

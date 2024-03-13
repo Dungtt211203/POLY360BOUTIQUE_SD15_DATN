@@ -38,9 +38,5 @@ public class HinhAnhSP {
     @Column(name = "uu_tien")
     private String uuTien;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
-    private SanPham sanPham;
-
 
 }

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class SanPhamServiceImpl implements SanPhamService {
@@ -36,7 +35,13 @@ public class SanPhamServiceImpl implements SanPhamService {
         spr.deleteById(id);
     }
 
+    @Override
+    public SanPham Detail(String id) {
+        return spr.findById(Long.valueOf(id)).orElse(null);
+    }
+
     public SanPham getOne(String maCL) {
+
         return spr.getSanPhamByMaSP(maCL);
     }
 
