@@ -1,9 +1,9 @@
 header {
     position: relative;
 }
-.active{
-    border-bottom: 5px solid orange;
-}
+/*.active{*/
+/*    border-bottom: 5px solid orange;*/
+/*}*/
 .dropdown-content {
     display: none;
     position: absolute;
@@ -41,8 +41,9 @@ header {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    min-height: 150px   ;
+    /*box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);*/
     z-index: 1;
     padding: 0;
     right: 0;
@@ -53,10 +54,7 @@ header {
     padding: 10px;
     text-decoration: none;
     display: block;
-    background-color: transparent;
-    border: none;
     width: 100%;
-    text-align: left;
     cursor: pointer;
 }
 

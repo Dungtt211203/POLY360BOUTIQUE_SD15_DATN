@@ -62,7 +62,7 @@
                 <a class="nav-link-admin" href="/kich-co/hien-thi" style="color: black;margin-left: 10px">Kích cỡ</a>
             </li>
             <li class="nav-item admin-menu-hover">
-                <a class="nav-link-admin" href="/chat-lieu/hien-thi" style="color: black;margin-left: 10px">Chất
+                <a class="nav-link-admin" href="/poly360boutique/chat-lieu/hien-thi" style="color: black;margin-left: 10px">Chất
                     liệu</a>
             </li>
             <li class="nav-item admin-menu-hover">
@@ -92,7 +92,7 @@
             </li>
         </div>
         <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
+            <a class="nav-link-admin" href="/hoa-don/hien-thi">Quản lý hóa đơn</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="">Quản Lý khuyến mãi</a>

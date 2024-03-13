@@ -9,7 +9,7 @@
                 <a style="color: orange;font-family:Arial, Helvetica, sans-serif;margin-top: 10px;text-decoration: none;font-size: 30px"
                    href="/poly360boutique/home">
                     POLY360BOUTIQUE</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 200px">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link active fw-bold menu_hover" aria-current="page"
@@ -29,7 +29,7 @@
                             <a class="nav-link fw-bold menu_hover" href="#" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold menu_hover" href="#" style="color: #2D2D2D">Chính Sách</a>
+                            <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach" style="color: #2D2D2D">Chính Sách</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search" style="gap: 10px;">
@@ -37,18 +37,19 @@
                                style="height: 40px;margin: unset;">
                         <button type="submit" class="btn btn-outline-warning">Search</button>
                     </form>
-                    <div onclick="myFunction()"><i class="fa-solid fa-user"
+                    <div onmouseover="myFunction()"><i class="fa-solid fa-user"
                                                    style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
                     </div>
                     <div class="popuptext" id="myPopup">
-                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
-                        <a href="/poly360boutique/dang-ky">Đăng Ký</a>
+                        <button class="btn btn-dark" style="width: 200px;height: 50px;margin-left: 50px"><a href="/poly360boutique/dang-nhap"  style="color: #FFFFFF;">Đăng nhập</a></button>
+                        <a href="/poly360boutique/dang-ky" style="margin-left: 100px;font-size: 20px">Đăng Ký</a>
                     </div>
                     <div class="dropdown">
                         <i class="fa-solid fa-cart-shopping"
                            style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
                         <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
                             <h3>Giỏ hàng</h3>
+                            <img src="../../../img/imgbanner/imagesgiohangtrong.png">
                             <ul id="cartItems"></ul>
                         </div>
                     </div>
@@ -90,8 +91,8 @@
     .show {
         display: flex !important;
         flex-direction: column;
-        position: relative;
-        top: 65px;
+        position: absolute;
+        top: 129px;
         width: 0;
         right: 80px;
         gap: 0px;
@@ -99,6 +100,9 @@
 
     .show button {
         width: 150px;
+    }
+    a:hover{
+        color: orange;
     }
 
 

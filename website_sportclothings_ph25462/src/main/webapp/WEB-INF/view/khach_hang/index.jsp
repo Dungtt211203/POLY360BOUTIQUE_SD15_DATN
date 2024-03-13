@@ -17,14 +17,43 @@
     button {
         width: 200px;
     }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e5e5e5;
+    }
 </style>
 <body>
 <div style="display: flex">
     <div>
         <jsp:include page="../admin/index.jsp"/>
     </div>
-    <div style="margin-left: 300px;margin-top: 100px">
+    <div style="margin-left: 200px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ KHÁCH HÀNG</h1>
+        <button class="btn btn-primary"><a href="/khach-hang/hien-thi-add"
+                                           style="text-decoration: none;color: #FFFFFF"><i
+                class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
         <table class="table-warning">
             <thead>
             <tr>
@@ -68,9 +97,6 @@
                     </td>
                 </tr>
             </c:forEach>
-            <button class="btn btn-primary"><a href="/khach-hang/hien-thi-add"
-                                               style="text-decoration: none;color: #FFFFFF"><i
-                    class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
             </tbody>
         </table>
     </div>

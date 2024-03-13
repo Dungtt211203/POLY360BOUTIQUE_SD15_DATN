@@ -13,6 +13,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e5e5e5;
+    }
+</style>
 <body>
 <div style="display: flex">
     <div>
@@ -20,7 +47,7 @@
     </div>
     <div style="margin-left: 300px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ MÀU SẮC</h1>
-        <table class="table">
+        <table style="width: 1000px">
             <thead>
             <tr>
                 <th>STT</th>

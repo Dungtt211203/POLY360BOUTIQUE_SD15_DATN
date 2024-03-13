@@ -3,12 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
 />
 <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+rel="stylesheet"
 />
 <link rel="icon" href="../../../svg/logohome.svg">
 <style>
@@ -66,18 +66,18 @@
 </style>
 <br>
 
-<body>
-<div class="formAdd">
-    <h1>THÊM/SỬA THƯƠNG HIỆU</h1>
-    <form:form action="/thuong-hieu/hien-thi-add" method="post" modelAttribute="thuongHieu">
-        Mã Thương Hiệu: <form:input path="ma"/>
-        <br/>
-        Tên Thương Hiệu: <form:input path="ten"/>
-        <br/>
-        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
-        <br/>
-        <form:button type="submit">Add</form:button>
-    </form:form>
-</div>
-</body>
+    <body>
+    <div class="formAdd">
+        <h1>THÊM/SỬA THƯƠNG HIỆU</h1>
+        <form:form action="/thuong-hieu/hien-thi-add" method="post" modelAttribute="thuongHieu">
+            Mã Thương Hiệu: <form:input path="ma"/>
+            <br/>
+            Tên Thương Hiệu: <form:input path="ten"/>
+            <br/>
+            Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
+            <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
+            <br/>
+            <form:button type="submit">Add</form:button>
+        </form:form>
+    </div>
+    </body>
