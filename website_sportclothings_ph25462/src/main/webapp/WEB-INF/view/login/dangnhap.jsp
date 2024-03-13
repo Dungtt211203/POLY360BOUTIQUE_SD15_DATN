@@ -93,18 +93,17 @@
               onsubmit="return validateForm()">
             <h3 style="text-align: center; font-weight: bold;font-size: 30px">POLY 360 BOUTIQUE</h3>
             <br>
-            <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
 
             <span class="header-title">
                     <span style="color: red"></span>
-                    <span style="font-size: 15px;">Tên tài khoản</span>
+                    <span style="font-size: 17px;">Tên tài khoản</span>
                 </span>
             <input name="username" id="username" type="text" class="form-control" placeholder="Tên tài khoản..."
                    required=""/>
             <br>
             <span class="header-title">
                     <span style="color: red"></span>
-                    <span style="font-size: 15px;">Mật khẩu</span>
+                    <span style="font-size: 17px;">Mật khẩu</span>
                 </span>
             <input name="password" id="password" type="password" class="form-control" placeholder="Mật khẩu..."
                    required=""/>
@@ -116,6 +115,9 @@
                     type="submit">Đăng
                 nhập
             </button>
+            <a href="/poly360boutique/dang-ky" style="color: white; margin-left: 110px ; font-size: 15px;">Bạn
+                chưa
+                có tài khoản? Đăng ký</a>
         </form>
     </div>
 </div>

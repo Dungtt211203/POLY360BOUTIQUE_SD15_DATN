@@ -117,9 +117,14 @@
             <input name="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu..." required=""/>
             <br>
             <button type="submit" class="btn btn-warning"
-                    style="color: white; background-color: black; margin-left: 190px;">Đăng
+                    style="color: white; background-color:#ff5e00; margin-left: 170px;">Đăng
                 ký
             </button>
+
+            <a href="/poly360boutique/dang-nhap" style="color: white; margin-left: 115px ; font-size: 15px;">Bạn
+                đã có
+                tài khoản? Đăng nhập</a>
+
         </form>
     </div>
 </div>
