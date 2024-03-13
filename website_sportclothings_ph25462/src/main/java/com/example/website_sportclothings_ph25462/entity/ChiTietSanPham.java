@@ -9,7 +9,6 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "chi_tiet_san_pham")
 @Entity
@@ -32,7 +31,7 @@ public class ChiTietSanPham {
     @Column(name = "so_luong")
     private Integer soLuong;
 
-    @Column(name = "gia_hien_hanh")
+    @Column(name = "gia")
     private Float gia;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
@@ -63,4 +62,17 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
     private KichCo kichCo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
+    private ChatLieu chatLieu;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
+    private ThuongHieu thuongHieu;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
+    private HinhAnhSP hinhAnhSP;
 }

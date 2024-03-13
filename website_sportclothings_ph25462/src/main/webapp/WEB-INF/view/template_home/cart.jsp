@@ -49,23 +49,56 @@
                                 </div>
                             </div>
                         </c:forEach>
-
-                    </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <c:if test="${hienthi.totalPages > 0}">
-                                <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
-                                    <li class="page-item">
-                                        <a class="page-link" href="/poly360boutique/home?page=${loop.index}">
-                                            ${loop.index + 1}
-                                        </a>
-                                    </li>
-                                </c:forEach>
-                            </c:if>
-                        </ul>
-                    </nav>
+                        <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
+                            <img src="/img/${hienthis.hinhAnhSP.uuTien}" class="card-img-top mx-auto d-block" alt=""
+                                style="min-width: 319px; min-height: 319px"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">${hienthis.sanPham.ten}</h5>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <c:if test="${hienthi.totalPages > 0}">
+                                    <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
+                                        <li class="page-item">
+                                            <a class="page-link" href="/poly360boutique/home?page=${loop.index}">
+                                                ${loop.index + 1}
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </c:if>
+                            </ul>
+                        </nav>
                     </div>
                     <script src="src/main/webapp/js/cart.js"></script>
                 </body>
+
+</html>
+<li class="list-group-item">Gía tiền: ${hienthis.gia }
+    <%-- <fmt:formatNumber--%>
+        <%-- pattern="###,### VNĐ">--%>
+            <%-- </fmt:formatNumber>--%>
+</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</c:forEach>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <c:forEach begin="0" end="${hienthi.totalPages -1}" varStatus="loop">
+            <li class="page-item"><a class="page-link"
+                    href="/poly360boutique/home?page=${loop.index}">${loop.index+1}</a>
+            </li>
+        </c:forEach>
+    </ul>
+</nav>
+
+</div>
+
+<script src="src/main/webapp/js/cart.js"></script>
+</body>
 
 </html>
