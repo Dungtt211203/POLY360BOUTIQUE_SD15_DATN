@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface ChiTietKhuyenMaiRepository extends JpaRepository<ChiTietKhuyenMai, UUID> {
+public interface ChiTietKhuyenMaiRepository extends JpaRepository<ChiTietKhuyenMai, Long> {
 }

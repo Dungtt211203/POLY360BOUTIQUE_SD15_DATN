@@ -49,31 +49,6 @@
         background-color: #5a8dee; /* Màu xanh nhạt */
         color: #6f42c1; /* Màu chữ đen */
     }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        font-family: Arial, sans-serif;
-        margin-top: 30px;
-    }
-
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    tr:hover {
-        background-color: #e5e5e5;
-    }
 </style>
 <body>
 
@@ -81,41 +56,39 @@
 <table class="table">
     <thead>
     <tr>
-        <th>STT</th>
+
         <th>ID</th>
         <th>Mã Khuyến Mại Chi Tiết</th>
-        <th>Chi Tiết Sản Phẩm</th>
+        <th>Hình Thức Giảm</th>
+        <th>Giá Trị Giảm</th>
+        <th>Sản Phẩm</th>
         <th>Khuyến Mại</th>
-        <th>Ngày bắt Đầu</th>
-        <th>Trạng Thái</th>
+        <%--        <th>Ngày bắt Đầu</th>--%>
+
         <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${listKmmct}" var="ctkm" varStatus="i">
         <tr>
-            <td>${i.index+1}</td>
+
             <td>${ctkm.id}</td>
             <td>${ctkm.maChiTietKhuyenMai}</td>
-            <td>${ctkm.chiTietSP.sanPham.ten}</td>
-            <td>${ctkm.khuyenMai.tenKhuyenMai}</td>
-            <td>${ctkm.ngayBatDau}</td>
             <td>
                 <c:choose>
-                    <c:when test="${ctkm.trangThai == 1}">
-                        <span class="badges bg-lightyellow">Sắp diễn ra</span>
+                    <c:when test="${ctkm.hinhThucGiam == 1}">
+                        <span class="badges bg-lightyellow">Giảm theo %</span>
                     </c:when>
-                    <c:when test="${ctkm.trangThai == 2}">
-                        <span class="badges bg-lightblue">Đang hoạt động</span>
-                    </c:when>
-                    <c:when test="${ctkm.trangThai == 3}">
-                        <span class="badges bg-lightviolet">Ngừng hoạt động</span>
-                    </c:when>
-                    <c:when test="${ctkm.trangThai == 4}">
-                        <span class="badges bg-lightgreen">Hết hạn</span>
+                    <c:when test="${ctkm.hinhThucGiam == 0}">
+                        <span class="badges bg-lightyellow">Giảm theo thành viên</span>
                     </c:when>
                 </c:choose>
             </td>
+            <td>${ctkm.giaTriGiam}</td>
+            <td>${ctkm.chiTietSP.sanPham.ten}</td>
+            <td>${ctkm.khuyenMai.tenKhuyenMai}</td>
+                <%--            <td>${ctkm.ngayBatDau}</td>--%>
+
 
             <td>
                 <button class="btn btn-success"><a href="/chi-tiet-khuyen-mai/view-update/${ctkm.id}"
@@ -127,8 +100,7 @@
 
         </tr>
     </c:forEach>
-    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi-add"
-                                       style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

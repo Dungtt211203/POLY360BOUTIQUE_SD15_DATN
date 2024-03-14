@@ -44,4 +44,8 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
         return chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
     }
+    @Override
+    public void save(ChiTietSanPham chiTietSP) {
+        chiTietSanPhamRepository.save(chiTietSP);
+    }
 }

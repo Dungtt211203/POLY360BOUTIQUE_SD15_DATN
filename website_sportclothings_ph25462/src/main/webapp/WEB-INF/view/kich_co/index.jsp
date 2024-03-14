@@ -36,18 +36,17 @@
     }
 
     tr:hover {
-        background-color: #e5e5e5;
+        background-color: orange;
     }
 </style>
 <body>
-
 <div style="display: flex">
     <div>
         <jsp:include page="../admin/index.jsp"/>
     </div>
     <div style="margin-left: 300px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ KÍCH CỠ</h1>
-        <table class="table">
+        <table style="width: 1000px">
             <thead>
             <tr>
                 <th>STT</th>

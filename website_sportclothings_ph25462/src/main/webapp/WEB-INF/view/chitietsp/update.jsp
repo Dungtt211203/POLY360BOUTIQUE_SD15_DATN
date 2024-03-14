@@ -23,28 +23,41 @@
 <body>
 
 <form:form method="post" action="/chitietsp/update/${chitietsp.id}" modelAttribute="sp">
-    ID:<form:input path="id" value="${chitietsp.id}"/><br>
-    Ma:<form:input path="ma" value="${chitietsp.ma}"/><br>
-    SoLuong:<form:input path="soLuong" value="${chitietsp.soLuong}"/><br>
+    ID:
+    <form:input path="id" value="${chitietsp.id}"/><br>
+    Ma:
+    <form:input path="ma" value="${chitietsp.ma}"/><br>
+    SoLuong:
+    <form:input path="soLuong" value="${chitietsp.soLuong}"/><br>
+    Giá Gốc:
+    <form:input path="giaGoc" value="${chitietsp.giaGoc}"/><br>
+    Giá Hiện Hành:
+    <form:input path="giaHienHanh" value="${chitietsp.giaHienHanh}"/><br>
+    NgayTao:
+    <form:input path="ngayTao" type="datetime-local" value="${chitietsp.ngayTao}"/><br>
+    NgaySua:
+    <form:input path="ngaySua" type="datetime-local" value="${chitietsp.ngaySua}"/><br>
+    TenSP:
+    <form:select path="sanPham">
+        <form:options items="${sanPham}" itemLabel="ten"/>
+    </form:select><br>
+    KichCo:
+    <form:select path="kichCo">
+        <form:options items="${kichCo}" itemLabel="ten"/>
+    </form:select><br>
+    Mau Sac:
+    <form:select path="mauSac">
+        <form:options items="${mauSac}" itemLabel="ten"/>
+    </form:select><br>
+    ChatLieu:
+    <form:select path="chatLieu">
+        <form:options items="${chatLieu}" itemLabel="ten"/>
+    </form:select><br>
+    ThuongHieu:
+    <form:select path="thuongHieu">
+        <form:options items="${thuongHieu}" itemLabel="ten"/>
+    </form:select><br>
 
-    NgayTao:<form:input path="ngayTao" value="${chitietsp.ngayTao}"/><br>
-    NgaySua:<form:input path="ngaySua" value="${chitietsp.ngaySua}"/><br>
-
-    TenSP: <form:select path="sanPham">
-    <form:options items="${sanPham}" itemLabel="ten"  />
-</form:select><br>
-    KichCo: <form:select path="kichCo">
-    <form:options items="${kichCo}" itemLabel="ten" />
-</form:select><br>
-    Mau Sac: <form:select path="mauSac">
-    <form:options items="${mauSac}" itemLabel="ten" />
-</form:select><br>
-    ChatLieu: <form:select path="chatLieu">
-    <form:options items="${chatLieu}" itemLabel="ten" />
-</form:select><br>
-    ThuongHieu: <form:select path="thuongHieu">
-    <form:options items="${thuongHieu}" itemLabel="ten" />
-</form:select><br>
     <form:button class="btn btn-primary">Update</form:button>
 </form:form>
 </form>

@@ -15,7 +15,7 @@
 </head>
 <style>
     button {
-        width: 200px;
+        width: 100px;
     }
 
 
@@ -72,71 +72,82 @@
     }
 
     tr:hover {
-        background-color: #e5e5e5;
+        background-color: orange;
+    }
+    .table tbody tr:hover {
+        cursor: pointer;
     }
 </style>
 <body>
+<div style="display: flex">
+    <div>
+        <jsp:include page="../admin/index.jsp"/>
+    </div>
+    <div style="margin-left: 300px;margin-top: 100px">
+        <h1 style="text-align: center;color: black">QUẢN LÝ KHUYẾN MẠI</h1>
+        <table style="width: 1000px">
+            <thead>
+            <tr>
+                <th>STT</th>
+                <th>ID</th>
+                <th>Mã Khuyến Mại</th>
+                <th>Tên Khuyến Mại</th>
+                <%--        <th>Giá Trị</th>--%>
+                <th>Ngày Tạo</th>
+                <th>Ngày Kết Thúc</th>
+                <th>Ngày Cập Nhật</th>
+                <th>Trạng Thái</th>
+                <th colspan="2">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${load}" var="km" varStatus="i">
+                <tr>
+                    <td>${i.index+1}</td>
+                    <td>${km.id}</td>
+                    <td>${km.maKhuyenMai}</td>
+                    <td>${km.tenKhuyenMai}</td>
+                        <%--            <td>${km.giaTri}</td>--%>
+                    <td>${km.ngayTao}</td>
+                    <td>${km.ngayKetThuc}</td>
+                    <td>${km.ngayCapNhat}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${km.trangThai == 1}">
+                                <span class="badges bg-lightyellow">Sắp diễn ra</span>
+                            </c:when>
+                            <c:when test="${km.trangThai == 2}">
+                                <span class="badges bg-lightblue">Đang hoạt động</span>
+                            </c:when>
+                            <c:when test="${km.trangThai == 3}">
+                                <span class="badges bg-lightviolet">Ngừng hoạt động</span>
+                            </c:when>
+                            <c:when test="${km.trangThai == 4}">
+                                <span class="badges bg-lightgreen">Hết hạn</span>
+                            </c:when>
+                        </c:choose>
+                    </td>
 
-<h1 style="text-align: center">QUẢN LÝ KHUYẾN MẠI</h1>
-<table class="table">
-    <thead>
-    <tr>
-        <th>STT</th>
-        <th>ID</th>
-        <th>Mã Khuyến Mại</th>
-        <th>Tên Khuyến Mại</th>
-        <th>Giá Trị</th>
-        <th>Ngày Tạo</th>
-        <th>Ngày Kết Thúc</th>
-        <th>Ngày Cập Nhật</th>
-        <th>Trạng Thái</th>
-        <th colspan="2">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${load}" var="km" varStatus="i">
-        <tr>
-            <td>${i.index+1}</td>
-            <td>${km.id}</td>
-            <td>${km.maKhuyenMai}</td>
-            <td>${km.tenKhuyenMai}</td>
-            <td>${km.giaTri}</td>
-            <td>${km.ngayTao}</td>
-            <td>${km.ngayKetThuc}</td>
-            <td>${km.ngayCapNhat}</td>
-            <td>
-                <c:choose>
-                    <c:when test="${km.trangThai == 1}">
-                        <span class="badges bg-lightyellow">Sắp diễn ra</span>
-                    </c:when>
-                    <c:when test="${km.trangThai == 2}">
-                        <span class="badges bg-lightblue">Đang hoạt động</span>
-                    </c:when>
-                    <c:when test="${km.trangThai == 3}">
-                        <span class="badges bg-lightviolet">Ngừng hoạt động</span>
-                    </c:when>
-                    <c:when test="${km.trangThai == 4}">
-                        <span class="badges bg-lightgreen">Hết hạn</span>
-                    </c:when>
-                </c:choose>
-            </td>
-
-            <td>
-                <button class="btn btn-success"><a href="/khuyen-mai/view-update/${km.id}"
-                                                   style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-danger"><a href="/khuyen-mai/remove/${km.id}"
-                                                  style="text-decoration: none;color: #FFFFFF">Remove</a></button>
-            </td>
+                    <td>
+                        <a href="/khuyen-mai/view-update/${km.id}" style="color: black"> <i
+                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                        <a href="/khuyen-mai/remove/${km.id}" style="color: black"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
 
 
-        </tr>
-    </c:forEach>
-    <button class="btn btn-primary"><a href="/khuyen-mai/hien-thi-add"
-                                       style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-    </tbody>
-</table>
+                </tr>
+            </c:forEach>
+            <button  class="btn btn-outline-warning"><a href="/khuyen-mai/hien-thi-add"
+                                               style="text-decoration: none;color: black"><i
+                    class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
+            </tbody>
+        </table>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -30,7 +30,9 @@ public class ChiTietSanPham {
     @Column(name = "so_luong")
     private Integer soLuong;
     @Column(name = "gia_hien_hanh")
-    private Float gia;
+    private Long giaHienHanh;
+    @Column(name = "gia_goc")
+    private Long giaGoc;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")

@@ -23,6 +23,12 @@ public class ChiTietKhuyenMai {
     @Column(name = "ma_chi_tiet_khuyen_mai")
     private String maChiTietKhuyenMai;
 
+    @Column(name = "hinh_thuc_giam")
+    private Integer hinhThucGiam; //1 theo % : 2 theo hóa đơn thành viên//
+
+    @Column(name = "gia_tri_giam")
+    private Long giaTriGiam;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_chi_tiet_san_pham", referencedColumnName = "id")
     private ChiTietSanPham chiTietSP;

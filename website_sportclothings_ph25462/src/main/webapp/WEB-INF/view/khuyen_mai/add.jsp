@@ -84,11 +84,11 @@
             <form:errors path="tenKhuyenMai" cssStyle="color: red"/>
             <br/>
         </div>
-        <div class="input">
-            <label>Giá Trị</label>: <form:input path="giaTri"/>
-            <form:errors path="giaTri" cssStyle="color: red"/>
-            <br/>
-        </div>
+        <%--        <div class="input">--%>
+        <%--            <label>Giá Trị</label>: <form:input path="giaTri"/>--%>
+        <%--            <form:errors path="giaTri" cssStyle="color: red"/>--%>
+        <%--            <br/>--%>
+        <%--        </div>--%>
         <div class="input">
             <label>Ngày Tạo</label>: <form:input type="datetime-local" path="ngayTao"/>
             <form:errors path="ngayTao" cssStyle="color: red"/>
@@ -108,10 +108,10 @@
         <div class="form-group">
             <label for="trangThai">Trạng thái :</label>
             <select id="trangThai" name="trangThai" class="form-control" required>
-                <option value="1" <c:if test="${khachHang.trangThai == 1}">selected</c:if>>Sắp diễn ra</option>
-                <option value="2" <c:if test="${khachHang.trangThai == 2}">selected</c:if>>Đang hoạt động</option>
-                <option value="3" <c:if test="${khachHang.trangThai == 3}">selected</c:if>>Ngừng hoạt động</option>
-                <option value="4" <c:if test="${khachHang.trangThai == 4}">selected</c:if>>Hết hạn</option>
+                <option value="1" <c:if test="${khuyenMai.trangThai == 1}">selected</c:if>>Sắp diễn ra</option>
+                <option value="2" <c:if test="${khuyenMai.trangThai == 2}">selected</c:if>>Đang hoạt động</option>
+                <option value="3" <c:if test="${khuyenMai.trangThai == 3}">selected</c:if>>Ngừng hoạt động</option>
+                <option value="4" <c:if test="${khuyenMai.trangThai == 4}">selected</c:if>>Hết hạn</option>
             </select>
         </div>
         <form:button type="submit" class="btn btn-success" id="but">ADD</form:button>

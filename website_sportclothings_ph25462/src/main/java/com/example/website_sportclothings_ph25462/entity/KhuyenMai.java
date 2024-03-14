@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "khuyen_mai")
 @Entity
@@ -23,8 +24,6 @@ public class KhuyenMai {
     private String maKhuyenMai;
     @Column(name = "ten_khuyen_mai")
     private String tenKhuyenMai;
-    @Column(name = "gia_tri")
-    private Float giaTri;
     @Column(name = "ngay_tao")
     private LocalDateTime ngayTao;
     @Column(name = "ngay_ket_thuc")
@@ -33,5 +32,8 @@ public class KhuyenMai {
     private LocalDateTime ngayCapNhat;
     @Column(name = "trang_thai")
     private Long trangThai;
+
+    @OneToMany(mappedBy = "khuyenMai", fetch = FetchType.EAGER)
+    private List<ChiTietKhuyenMai> chiTietKhuyenMaiList;
 
 }
