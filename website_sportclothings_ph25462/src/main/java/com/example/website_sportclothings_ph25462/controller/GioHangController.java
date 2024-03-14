@@ -83,7 +83,7 @@ public class GioHangController {
         model.addAttribute("carts", items);
 
         for (GioHangChiTiet gioHangChiTiet: items) {
-            tongTien +=  gioHangChiTiet.getSoLuong() * gioHangChiTiet.getChiTietSanPham().getGia();
+            tongTien +=  gioHangChiTiet.getSoLuong() * gioHangChiTiet.getChiTietSanPham().getGiaGoc();
         }
         model.addAttribute("tongTien", tongTien);
 

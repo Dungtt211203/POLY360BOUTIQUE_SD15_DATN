@@ -78,7 +78,7 @@
                     <td>${sp.moTa}</td>
                         <%--            <td>${sp.ngayTao}</td>--%>
                         <%--            <td>${sp.nguoiTao}</td>--%>
-                    <td>${sp.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
+                    <td>${sp.trangThai==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
                         <a href="/san-pham/view-update/${sp.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>

@@ -37,7 +37,7 @@
     <c:forEach items="${list}" var="ctsp">
         <tr>
             <td>${ctsp.id}</td>
-            <td>${ctsp.ma}</td>
+            <td>${ctsp.maChiTietSanPham}</td>
             <td>${ctsp.soLuong}</td>
             <td>${ctsp.giaGoc}</td>
             <td>${ctsp.giaHienHanh}</td>

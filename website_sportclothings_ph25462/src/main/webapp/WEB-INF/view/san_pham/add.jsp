@@ -92,8 +92,8 @@
         <%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
         <%--        <br/>--%>
         <div class="tt">
-            TrangThai: <form:radiobutton path="tt" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat Dong
-            <form:radiobutton path="tt" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
+            TrangThai: <form:radiobutton path="trangThai" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat Dong
+            <form:radiobutton path="trangThai" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
             <br/>
         </div>
         <form:button type="submit" id="but">Add</form:button>

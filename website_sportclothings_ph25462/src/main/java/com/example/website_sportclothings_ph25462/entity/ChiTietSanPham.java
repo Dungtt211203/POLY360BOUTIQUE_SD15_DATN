@@ -32,8 +32,6 @@ public class ChiTietSanPham {
     private Long giaHienHanh;
     @Column(name = "gia_goc")
     private Long giaGoc;
-    @Column(name = "gia")
-    private Float gia;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")
@@ -62,7 +60,7 @@ public class ChiTietSanPham {
     @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
     private KichCo kichCo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
     private HinhAnhSP hinhAnhSP;
 }
