@@ -76,6 +76,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Quản Lý khuyến mãi</a>
+            <a class="nav-link-admin" href="/khuyen-mai/hien-thi">Quản Lý khuyến mãi</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
