@@ -1,9 +1,19 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-public class DiaChiController {
-<<<<<<< Updated upstream
-=======
+import com.example.website_sportclothings_ph25462.entity.DiaChi;
+import com.example.website_sportclothings_ph25462.entity.TaiKhoan;
+import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
+import com.example.website_sportclothings_ph25462.repository.TaiKhoanRepository;
+import com.example.website_sportclothings_ph25462.service.DiaChiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
+@Controller
+public class DiaChiController {
     @Autowired
     private TaiKhoanRepository taiKhoanRepository;
 
@@ -42,7 +52,8 @@ public class DiaChiController {
             diaChiService.updateOtherAddressesToNonPrimary(taiKhoanKH.getId(), diaChi.getId());
 
         }
+
+
         return "redirect:/showCheckout";
     }
->>>>>>> Stashed changes
 }

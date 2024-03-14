@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link
@@ -81,23 +81,24 @@
             <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
-<%--        Giá: <form:input path="gia"/>--%>
-<%--        <form:errors path="gia" cssStyle="color: red"/>--%>
-<%--        <br/>--%>
+        Giá: <form:input path="gia"/>
+        <form:errors path="gia" cssStyle="color: red"/>
+        <br/>
         <div class="input">
             Mô Tả Sản Phẩm: <form:textarea path="moTa" cssStyle="margin-right: 130px"/>
             <form:errors path="moTa" cssStyle="color: red"/>
             <br/>
         </div>
-<%--        Người Tạo: <form:input path="nguoiTao"/>--%>
-<%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
-<%--        <br/>--%>
+        <%--        Người Tạo: <form:input path="nguoiTao"/>--%>
+        <%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
+        <%--        <br/>--%>
         <div class="tt">
             TrangThai: <form:radiobutton path="tt" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat Dong
             <form:radiobutton path="tt" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
             <br/>
         </div>
-        <form:button type="submit" id="but" onclick="return confirm('Bạn có chắc chắn muốn sửa sản phẩm này?')">Update</form:button>
+        <form:button type="submit" id="but"
+                     onclick="return confirm('Bạn có chắc chắn muốn sửa sản phẩm này?')">Update</form:button>
     </form:form>
 </div>
 </body>

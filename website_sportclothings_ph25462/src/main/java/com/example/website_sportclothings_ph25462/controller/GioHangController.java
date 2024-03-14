@@ -9,9 +9,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +55,6 @@ public class GioHangController {
         return "redirect:/poly360boutique/thuong-hieu-nike";
     }
 
-<<<<<<< Updated upstream
-=======
 //    @GetMapping("/gio-hang")
 //    public String chinhSuaGioHang(Model model){
 //        List<GioHangChiTiet> items = cartItems(model);
@@ -126,7 +122,4 @@ public class GioHangController {
         return "redirect:/gio-hang";
 
     }
-
-
->>>>>>> Stashed changes
 }

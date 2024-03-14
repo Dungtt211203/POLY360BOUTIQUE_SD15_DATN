@@ -53,7 +53,7 @@ public class HomeController {
     @GetMapping("/chi-tiet-san-pham")
     public String view(Model model) {
 
-        List<ChiTietSanPham> chiTietSPS = chiTietSanPhamService.getAll();
+        List<ChiTietSanPham> chiTietSPS = chiTietSPService.getAll();
         model.addAttribute("chitietsanpham", chiTietSPS);
 
         List<KichCo> kichCos = kichCoService.getAll();
