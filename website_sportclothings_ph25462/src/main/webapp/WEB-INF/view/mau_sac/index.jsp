@@ -19,9 +19,8 @@
     <tr>
         <th>STT</th>
         <th>ID</th>
+        <th>Mã Màu Sắc</th>
         <th>Tên Màu Sắc</th>
-        <th>Ngày Tạo</th>
-        <th>Ngày Sửa</th>
         <th>Trạng Thái</th>
         <th colspan="2">Action</th>
     </tr>
@@ -31,17 +30,14 @@
         <tr>
             <td>${i.index+1}</td>
             <td>${ms.id}</td>
+            <td>${ms.ma}</td>
             <td>${ms.ten}</td>
-            <td>${ms.ngayTao}</td>
-            <td>${ms.ngaySua}</td>
             <td>${ms.tt}</td>
             <td>
-                <button class="btn btn-success"><a href="/mau-sac/detail/${ms.id}" style="text-decoration: none;color: #FFFFFF">Detail</a></button>
+                <button class="btn btn-success"><a href="/mau-sac/view-update/${ms.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
                 <button class="btn btn-success"><a href="/mau-sac/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
                 <button class="btn btn-danger"><a href="/mau-sac/remove/${ms.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
-
-
         </tr>
     </c:forEach>
     </tbody>

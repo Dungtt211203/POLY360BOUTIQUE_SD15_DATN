@@ -32,7 +32,7 @@
             text-decoration: none;
         }
         .nav-link-admin:hover{
-            color: #0066ff;
+            color: black;
         }
 
     </style>
@@ -41,22 +41,36 @@
 <aside>
     <img class="image-logo" src="../../../svg/logohome.svg" width="100px" height="100px">
     <h1>POLY360BOUTIQUE</h1>
-    <ul class="nav flex-column">
+    <ul class="nav flex-column" style="gap: 20px">
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Trang chủ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
             <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
+            <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý tài khoản</a>
+            <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
+        </li>
+        <li class="nav-item" onclick="myFunction()">
+            <div class="nav-link-admin">Quản lý tài khoản</div>
+        </li>
+        <div id="myPopup" style="display: none">
+            <li class="nav-item nav-popup">
+                <a class="nav-link-admin" href="#">Khách hàng</a>
+            </li>
+            <li class="nav-item nav-popup">
+                <a class="nav-link-admin" href="#">Nhân viên</a>
+            </li>
+        </div>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
         </li>
@@ -73,5 +87,18 @@
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>
+<style>
+    .show{
+        display: flex!important;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
 </body>
 </html>
