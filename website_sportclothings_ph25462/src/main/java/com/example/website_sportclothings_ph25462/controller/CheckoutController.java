@@ -17,9 +17,6 @@ public class CheckoutController {
 //    @Autowired
 //    private GioHangChiTietService gioHangChiTietService;
 
-    @Autowired
-    private DiaChiRepository diaChiRepository;
-
     @GetMapping("/showCheckout")
     public String showCheckout(Model model) {
         try {
@@ -27,7 +24,6 @@ public class CheckoutController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return "/dia_chi/checkout";
     }
 

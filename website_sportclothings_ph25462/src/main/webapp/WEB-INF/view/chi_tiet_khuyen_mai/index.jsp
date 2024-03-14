@@ -100,7 +100,8 @@
 
         </tr>
     </c:forEach>
-    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi-add" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi-add"
+                                       style="text-decoration: none;color: #FFFFFF">ADD</a></button>
     </tbody>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
