@@ -57,4 +57,76 @@ public class GioHangController {
         return "redirect:/poly360boutique/thuong-hieu-nike";
     }
 
+<<<<<<< Updated upstream
+=======
+//    @GetMapping("/gio-hang")
+//    public String chinhSuaGioHang(Model model){
+//        List<GioHangChiTiet> items = cartItems(model);
+//        Float tongTien = 0F;
+//        model.addAttribute("carts", items);
+//
+//        for (GioHangChiTiet gioHangChiTiet: items) {
+//            tongTien +=  gioHangChiTiet.getSoLuong() * gioHangChiTiet.getChiTietSanPham().getGia();
+//        }
+//        model.addAttribute("tongTien", tongTien);
+//
+//        return "/gio_hang/gio-hang-index";
+//    }
+
+    @ModelAttribute(name = "carts")
+    public List<GioHangChiTiet> cartItems(Model model) {
+        List<GioHangChiTiet> items = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
+        if(items == null){
+            items = new ArrayList<>();
+        }
+
+        return items;
+    } // thiếu giở hàng khi đăng nhập của khách hàng
+
+
+    @GetMapping("/shopping-cart/remove/{idOrIndex}")
+    public String xoaSPTrongGioHang(@PathVariable("idOrIndex") int idOrIndex, Model model) {
+
+        List<GioHangChiTiet> items = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
+        items.remove(idOrIndex);
+        model.addAttribute("carts", items);
+        return "redirect:/gio-hang";
+
+    }
+
+
+    @GetMapping("/shopping-cart/up/{idOrIndex}")
+    public String congMotSanPham(@PathVariable("idOrIndex") int idOrIndex, Model model) {
+
+        List<GioHangChiTiet> items = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
+        GioHangChiTiet cartItem = items.get(idOrIndex);
+        cartItem.setSoLuong(cartItem.getSoLuong() + 1);
+        items.set(idOrIndex, cartItem);
+        model.addAttribute("carts", items);
+        return "redirect:/gio-hang";
+
+    }
+
+
+    @GetMapping("/shopping-cart/down/{idOrIndex}")  // lấy id hoặc index
+    public String truMotSanPham(@PathVariable("idOrIndex") int idOrIndex, Model model) {
+
+
+        // get theo index khi chưa đăng nhập
+        List<GioHangChiTiet> items = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
+        GioHangChiTiet cartItem = items.get(idOrIndex);
+        cartItem.setSoLuong(cartItem.getSoLuong() - 1);
+        if(cartItem.getSoLuong() == 0){
+            items.remove(idOrIndex);
+            model.addAttribute("carts", items);
+            return "redirect:/gio-hang";
+        }
+        items.set(idOrIndex, cartItem);
+        model.addAttribute("carts", items);
+        return "redirect:/gio-hang";
+
+    }
+
+
+>>>>>>> Stashed changes
 }

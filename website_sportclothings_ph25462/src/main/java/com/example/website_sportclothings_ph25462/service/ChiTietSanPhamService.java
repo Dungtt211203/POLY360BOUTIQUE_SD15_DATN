@@ -4,6 +4,10 @@ import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 public interface ChiTietSanPhamService {
 

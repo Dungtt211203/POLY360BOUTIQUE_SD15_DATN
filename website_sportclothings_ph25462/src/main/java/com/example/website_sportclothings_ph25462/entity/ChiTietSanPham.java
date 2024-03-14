@@ -32,8 +32,13 @@ public class ChiTietSanPham {
     @Column(name = "so_luong")
     private Integer soLuong;
 
+<<<<<<< Updated upstream
     @Column(name = "gia_hien_hanh")
     private Float gia;
+=======
+//    @Column(name = "gia")
+//    private Float gia;
+>>>>>>> Stashed changes
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")
@@ -63,4 +68,11 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
     private KichCo kichCo;
+<<<<<<< Updated upstream
+=======
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
+    private HinhAnhSP hinhAnhSP;
+>>>>>>> Stashed changes
 }
