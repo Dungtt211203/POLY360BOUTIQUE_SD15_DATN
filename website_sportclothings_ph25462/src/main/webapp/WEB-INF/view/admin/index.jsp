@@ -62,7 +62,7 @@
                 <a class="nav-link-admin" href="/kich-co/hien-thi" style="color: black;margin-left: 10px">Kích cỡ</a>
             </li>
             <li class="nav-item admin-menu-hover">
-                <a class="nav-link-admin" href="/chat-lieu/hien-thi" style="color: black;margin-left: 10px">Chất
+                <a class="nav-link-admin" href="/poly360boutique/chat-lieu/hien-thi" style="color: black;margin-left: 10px">Chất
                     liệu</a>
             </li>
             <li class="nav-item admin-menu-hover">
@@ -92,11 +92,19 @@
             </li>
         </div>
         <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
+            <a class="nav-link-admin" href="/hoa-don/hien-thi">Quản lý hóa đơn</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="">Quản Lý khuyến mãi</a>
+        <li class="nav-item" onclick="myKhuyenMai()">
+            <div class="nav-link-admin">Quản lý khuyến mãi</div>
         </li>
+        <div id="myKhuyenMai" style="display: none;background-color: #FFFFFF;border-radius: 20px">
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/khuyen-mai/hien-thi" style="color: black;margin-left: 20px">Khuyến Mại</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/chi-tiet-khuyen-mai/hien-thi" style="color: black;margin-left: 20px">Khuyến Mại Chi Tiết</a>
+            </li>
+        </div>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
         </li>
@@ -116,6 +124,10 @@
     function myDrowDown() {
         var dropDown = document.getElementById("myDropdown");
         dropDown.classList.toggle("show");
+    }
+    function myKhuyenMai() {
+        var khuyenMai = document.getElementById("myKhuyenMai");
+        khuyenMai.classList.toggle("show");
     }
 </script>
 <style>

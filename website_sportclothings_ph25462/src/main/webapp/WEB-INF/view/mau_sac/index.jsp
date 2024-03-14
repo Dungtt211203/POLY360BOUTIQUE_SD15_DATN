@@ -13,6 +13,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: orange;
+    }
+    .phantrang{
+        margin-top: 50px;
+        margin-left: 750px;
+    }
+</style>
 <body>
 <div style="display: flex">
     <div>
@@ -20,7 +51,7 @@
     </div>
     <div style="margin-left: 300px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ MÀU SẮC</h1>
-        <table class="table">
+        <table style="width: 1000px">
             <thead>
             <tr>
                 <th>STT</th>
@@ -32,7 +63,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${load}" var="ms" varStatus="i">
+            <c:forEach items="${page.content}" var="ms" varStatus="i">
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${ms.id}</td>
@@ -52,7 +83,21 @@
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
             </tbody>
         </table>
+            <nav aria-label="...">
+                <ul class="pagination" style="margin-left: 700px">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="/mau-sac/hien-thi?ms=0">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="/mau-sac/hien-thi?ms=${page.number-1}"><<<</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="/mau-sac/hien-thi?ms=${page.number+1}">>>></a>
+                    <li class="page-item">
+                        <a class="page-link" href="/mau-sac/hien-thi?ms=${page.totalPages+1}">Next</a>
+                    </li>
+                </ul>
+            </nav>
     </div>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

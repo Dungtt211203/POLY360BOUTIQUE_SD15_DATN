@@ -37,9 +37,8 @@ public class DiaChi {
     @JoinColumn(name = "tai_khoan_id")
     private TaiKhoan taiKhoanKH;
 
-    @Column(name="district_id")
+    @Column(name = "district_id")
     private Integer districtID; // mã huyện
-
     @Column(name="Ward_code")
     private Integer wardCode; // mã phường xã
 }

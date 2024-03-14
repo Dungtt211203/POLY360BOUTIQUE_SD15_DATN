@@ -8,10 +8,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POLY360BOUTIQUE</title>
-    <link rel="icon" href="src/main/webapp/svg/logohome.svg">
+    <link rel="icon" href="../../../svg/logohome.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+          href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="../../../css/index.css">
+
 </head>
 <body>
-<jsp:include page="src/main/webapp/WEB-INF/view/template_home/header.jsp"/>
+<div>
+    <jsp:include page="../template_home/header.jsp"/>
+</div>
 <br/>
 <span style="font-size: 20px; text-align: center">
     <h2 style="text-align: center">Chính sách đổi - trả sản phẩm khi mua hàng</h2>
@@ -46,6 +59,11 @@ Khi khách hàng mua sản phẩm, cửa hàng sẽ áp dụng đổi hoặc tr�
 <br/>
 <b>Nếu có thắc mắc vui liên hệ đến số điện thoại: 0787189845</b>
 </span>
-<jsp:include page="src/main/webapp/WEB-INF/view/template_home/footer.jsp"/>
+<div>
+    <jsp:include page="../template_home/footer.jsp"/>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

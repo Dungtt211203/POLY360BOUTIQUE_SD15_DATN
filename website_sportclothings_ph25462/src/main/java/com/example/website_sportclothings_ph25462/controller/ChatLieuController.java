@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 //@RestController
 //@RequiredArgsConstructor
 //@Slf4j
+@RequestMapping("/poly360boutique")
 public class ChatLieuController {
     @Autowired
     ChatLieuRepository clr;
@@ -44,7 +45,6 @@ public class ChatLieuController {
 //        model.addAttribute("searchForm", new SearchForm());
         return ResponseEntity.ok(clr.findAll());
     }
-
     @GetMapping("/chat-lieu/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
         return ("/chat_lieu/add");

@@ -81,33 +81,46 @@
             <br/>
         </div>
 
-        Sản Phẩm Chi Tiết:
-        <form:select path="chiTietSP">
-            <form:options items="${chiTietSP.sanPham}" itemLabel="ten"/>
-        </form:select>
-
-
-        Khuyến Mại:
-        <form:select path="khuyenMai">
-            <form:options items="${khuyenMai}" itemLabel="tenKhuyenMai"/>
-        </form:select><br>
-
-        <div class="input">
-            <label>Ngày Bắt Đầu</label>:
-            <form:input path="ngayBatDau"/>
-            <form:errors path="ngayBatDau" cssStyle="color: red"/>
+        <div id="hinhThucGiam">
+            <label class="htg">Hình Thức giảm: </label>
+            <form:radiobutton path="hinhThucGiam" value="1" checked="true" class="radio1"/>
+            <span class="sp_next">Giảm theo %</span>
+            <br>
+            <form:radiobutton path="hinhThucGiam" value="0" class="radio"/> <span
+                class="sp_next">Giảm theo thành viên</span>
             <br/>
         </div>
-        <div class="form-group">
-            <label for="trangThai">Trạng thái :</label>
-            <select id="trangThai" name="trangThai" class="form-control" required>
-                <option value="1" <c:if test="${khachHang.trangThai == 1}">selected</c:if>>Sắp diễn ra</option>
-                <option value="2" <c:if test="${khachHang.trangThai == 2}">selected</c:if>>Đang hoạt động</option>
-                <option value="3" <c:if test="${khachHang.trangThai == 3}">selected</c:if>>Ngừng hoạt động</option>
-                <option value="4" <c:if test="${khachHang.trangThai == 4}">selected</c:if>>Hết hạn</option>
-            </select>
+
+        <div class="input">
+            <label>Giá Trị Giảm</label>:
+            <form:input path="giaTriGiam"/>
+            <form:errors path="giaTriGiam" cssStyle="color: red"/>
+            <br/>
         </div>
+
+        <form:select path="chiTietSP">
+            <option value="">Chọn Một Sản Phẩm</option>
+            <form:options items="${chiTietSP}" itemLabel="sanPham.ten" itemValue="id"/>
+        </form:select><br>
+
+
+        <form:select path="khuyenMai">
+            <option value="">Chọn Một Khuyến Mãi</option>
+            <form:options items="${khuyenMai}" itemLabel="tenKhuyenMai" itemValue="id"/>
+        </form:select><br>
+
+
+        <%--        <div class="input">--%>
+        <%--            <label>Ngày Bắt Đầu</label>: <form:input type="datetime-local" path="ngayBatDau"/>--%>
+        <%--            <form:errors path="ngayBatDau" cssStyle="color: red"/>--%>
+        <%--            <br/>--%>
+        <%--        </div>--%>
         <form:button type="submit" class="btn btn-success" id="but">ADD</form:button>
+
     </form:form>
+    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi"
+                                       style="text-decoration: none;color: #FFFFFF">QUAY LẠI</a></button>
+
+
 </div>
 </body>

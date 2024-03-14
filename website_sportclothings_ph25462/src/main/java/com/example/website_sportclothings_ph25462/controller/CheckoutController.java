@@ -12,7 +12,8 @@ import java.util.List;
 
 @Controller
 public class CheckoutController {
-
+    @Autowired
+    private DiaChiRepository diaChiRepository;
 //    @Autowired
 //    private GioHangChiTietService gioHangChiTietService;
 
@@ -21,15 +22,13 @@ public class CheckoutController {
 
     @GetMapping("/showCheckout")
     public String showCheckout(Model model) {
-
         try {
             model.addAttribute("diaChiList", diaChiRepository.findAll()); // phải hiển thị địa chỉ theo khách hàng dang đăng nhập.
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-        return "/checkout/checkout";
+        return "/dia_chi/checkout";
     }
 
 }

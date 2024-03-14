@@ -8,12 +8,12 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +63,19 @@ public class GioHangController {
 
     }
 
+//    @GetMapping("/gio-hang")
+//    public String chinhSuaGioHang(Model model){
+//        List<GioHangChiTiet> items = cartItems(model);
+//        Float tongTien = 0F;
+//        model.addAttribute("carts", items);
+//
+//        for (GioHangChiTiet gioHangChiTiet: items) {
+//            tongTien +=  gioHangChiTiet.getSoLuong() * gioHangChiTiet.getChiTietSanPham().getGia();
+//        }
+//        model.addAttribute("tongTien", tongTien);
+//
+//        return "/gio_hang/gio-hang-index";
+//    }
     @GetMapping("/gio-hang")
     public String chinhSuaGioHang(Model model){
         List<GioHangChiTiet> items = cartItems(model);
@@ -76,7 +89,6 @@ public class GioHangController {
 
         return "/gio_hang/gio-hang-index";
     }
-
     @ModelAttribute(name = "carts")
     public List<GioHangChiTiet> cartItems(Model model) {
         List<GioHangChiTiet> items = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
@@ -130,6 +142,4 @@ public class GioHangController {
         return "redirect:/gio-hang";
 
     }
-
-
 }

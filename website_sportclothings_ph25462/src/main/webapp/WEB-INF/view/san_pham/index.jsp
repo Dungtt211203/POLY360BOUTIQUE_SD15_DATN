@@ -18,6 +18,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e5e5e5;
+    }
+</style>
 <body>
 <div style="display: flex">
     <div>
@@ -25,14 +52,14 @@
     </div>
     <div style="margin-left: 300px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ SẢN PHẨM</h1>
-        <table class="ui celled table" style="width: 1000px;margin-top: 50px">
+        <table  style="width: 1000px;margin-top: 50px">
             <thead>
             <tr>
                 <th>STT</th>
                 <th>ID</th>
                 <th>Mã Sản Phẩm</th>
                 <th>Tên Sản Phẩm</th>
-                <%--        <th>Gíá Sản Phẩm</th>--%>
+<%--                <th>Gíá Sản Phẩm</th>--%>
                 <th>Mô Tả</th>
                 <%--        <th>Ngày Tạo</th>--%>
                 <%--        <th>Người Tạo</th>--%>
@@ -47,7 +74,7 @@
                     <td>${sp.id}</td>
                     <td>${sp.ma}</td>
                     <td>${sp.ten}</td>
-                        <%--            <td>${sp.gia}</td>--%>
+<%--                    <td>${sp.gia}</td>--%>
                     <td>${sp.moTa}</td>
                         <%--            <td>${sp.ngayTao}</td>--%>
                         <%--            <td>${sp.nguoiTao}</td>--%>
@@ -55,12 +82,12 @@
                     <td>
                         <a href="/san-pham/view-update/${sp.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/san-pham/remove/${sp.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/san-pham/remove/${sp.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
             <button type="button" class="btn btn-primary" style="width: 100px;"><a href="/san-pham/hien-thi-add"
-                                                                                   style="color: #FFFFFF;text-decoration: none"><i
+                                                                                   style="color: #FFFFFF;text-decoration: none" ><i
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
 
 

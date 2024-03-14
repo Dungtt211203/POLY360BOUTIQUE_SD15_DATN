@@ -1,16 +1,19 @@
 package com.example.website_sportclothings_ph25462.service;
-
 import com.example.website_sportclothings_ph25462.entity.DiaChi;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface DiaChiService {
 
-    public DiaChi addDiaChi( DiaChi diaChi);
+    DiaChi addDiaChi( DiaChi diaChi);
 
-    public DiaChi findAddressById(Long id);
+    DiaChi findAddressById(Long id);
 
-    public DiaChi updateAddress(DiaChi address);
+    DiaChi updateAddress(DiaChi address);
 
-    public void deleteAddress(Long id);
+    void deleteAddress(Long id);
 
-    public void updateOtherAddressesToNonPrimary(Long khachHangId, Long currentAddressId);
+    void updateOtherAddressesToNonPrimary(Long khachHangId, Long currentAddressId);
 }
+
+

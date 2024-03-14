@@ -80,7 +80,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA CHẤT LIỆU</h1>
-    <form:form action="/chat-lieu/hien-thi-add" method="post" modelAttribute="chatLieu">
+    <form:form action="/poly360boutique/chat-lieu/hien-thi-add" method="post" modelAttribute="chatLieu">
         <div class="input">
             <label>Mã Chất Liệu</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>

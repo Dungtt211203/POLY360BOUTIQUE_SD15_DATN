@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 
 @Service
@@ -42,6 +43,10 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     @Override
     public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
         return chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
+    }
+    @Override
+    public void save(ChiTietSanPham chiTietSP) {
+        chiTietSanPhamRepository.save(chiTietSP);
     }
 }
 
