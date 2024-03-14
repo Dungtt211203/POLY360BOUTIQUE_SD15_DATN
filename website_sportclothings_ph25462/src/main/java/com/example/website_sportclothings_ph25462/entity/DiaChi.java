@@ -39,7 +39,6 @@ public class DiaChi {
 
     @Column(name = "district_id")
     private Integer districtID; // mã huyện
-
-    @Column(name = "Ward_code")
+    @Column(name="Ward_code")
     private Integer wardCode; // mã phường xã
 }

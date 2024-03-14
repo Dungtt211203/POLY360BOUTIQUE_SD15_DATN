@@ -1,5 +1,4 @@
 package com.example.website_sportclothings_ph25462.service;
-
 import com.example.website_sportclothings_ph25462.entity.DiaChi;
 import org.springframework.stereotype.Service;
 
@@ -16,3 +15,5 @@ public interface DiaChiService {
 
     void updateOtherAddressesToNonPrimary(Long khachHangId, Long currentAddressId);
 }
+
+

@@ -54,12 +54,12 @@
         <%--            &lt;%&ndash;            <i class="fas fa-star-half-alt"></i>&ndash;%&gt;--%>
         <%--        </div>--%>
 
-        <div class="price">${detail.sanPham.gia}
+            <div class="price">${detail.sanPham.gia}
 
-            <fmt:formatNumber
-                    pattern="###,### VNĐ">
-            </fmt:formatNumber>
-        </div>
+                <fmt:formatNumber
+                        pattern="###,### VNĐ">
+                </fmt:formatNumber>
+            </div>
 
 
         <div class="size">

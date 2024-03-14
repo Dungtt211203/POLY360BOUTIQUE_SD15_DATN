@@ -60,7 +60,18 @@ public class SanPham {
     @Column(name = "nguoi_tao")
     private String nguoiTao;
 
+    @Column(name = "ngay_tao")
+    private String ngayTao;
+
+    @Column(name = "ngay_sua")
+    private String ngaySua;
+
     @NotNull(message = "Trạng thái không được để trống")
     @Column(name = "trang_thai")
-    private Integer tt;
+    private Integer trangThai;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
+    private ThuongHieu thuongHieu;
+
 }

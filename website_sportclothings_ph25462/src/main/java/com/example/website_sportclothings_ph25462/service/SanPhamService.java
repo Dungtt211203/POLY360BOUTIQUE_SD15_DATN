@@ -13,6 +13,8 @@ public interface SanPhamService {
 
     void remove(Long id);
 
+    SanPham Detail(String id);
+
     SanPham update(Long id);
 
     SanPham getOne(String maCL);

@@ -53,7 +53,6 @@ public class TaiKhoan {
     @Column(name = "trang_thai")
     private Boolean tt;
 
-    @OneToOne()
-    @JoinColumn(name = "vai_tro_id")
-    private VaiTro vaiTro;
+    @Column(name = "vai_tro")
+    private Integer vaiTro;
 }

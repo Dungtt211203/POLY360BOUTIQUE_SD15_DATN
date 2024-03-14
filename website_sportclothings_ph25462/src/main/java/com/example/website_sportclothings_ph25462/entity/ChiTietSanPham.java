@@ -9,7 +9,6 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "chi_tiet_san_pham")
 @Entity
@@ -33,6 +32,8 @@ public class ChiTietSanPham {
     private Long giaHienHanh;
     @Column(name = "gia_goc")
     private Long giaGoc;
+    @Column(name = "gia")
+    private Float gia;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")

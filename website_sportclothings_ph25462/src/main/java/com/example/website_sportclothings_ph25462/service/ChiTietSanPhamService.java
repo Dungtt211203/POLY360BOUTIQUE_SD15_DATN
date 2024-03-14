@@ -4,7 +4,6 @@ import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public interface ChiTietSanPhamService {

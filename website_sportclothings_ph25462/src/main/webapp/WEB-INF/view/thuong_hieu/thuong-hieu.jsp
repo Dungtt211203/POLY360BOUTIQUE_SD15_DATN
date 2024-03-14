@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +19,72 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="icon" href="../../../svg/logohome.svg">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+
+        // thông báo Xác nhận  form add to Card
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var form = document.getElementById("formThemGioHang");
+
+            form.addEventListener("submit", function (event) {
+
+
+                // Kiểm tra các trường cần thiết ở đây (màu sắc, kích thước, số lượng)
+                var selectedColor = document.querySelector('input[name="mauSac"]:checked');
+                var selectedSize = document.querySelector('input[name="size"]:checked');
+                var quantity = document.getElementById("soLuong").value;
+
+
+                // Kiểm tra xem có trường nào bỏ trống không
+                if (!selectedColor || !selectedSize || quantity.trim() === "") {
+                    console.log('Validation failed');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi!',
+                        text: 'Vui Lòng Chọn Màu Sắc Sản Phẩm. ',
+                    });
+                    event.preventDefault(); // Ngăn chặn sự kiện submit
+                } else {
+                    console.log('Validation passed');
+                    event.preventDefault();
+                    // Hiển thị hộp thoại xác nhận
+                    Swal.fire({
+                        icon: 'question',
+                        title: 'Xác nhận',
+                        text: 'Bạn có chắc chắn muốn thêm sản phẩm vào giỏ hàng?',
+                        showCancelButton: true,
+                        confirmButtonText: 'Đồng ý',
+                        cancelButtonText: 'Hủy bỏ',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Người dùng đã xác nhận, có thể submit form
+
+                            // form.submit();
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Thành Công',
+                                text: 'Đã thêm sản phẩm vào giỏ hàng. ',
+                            }).then((result) => {
+                                form.submit().then((result) => {
+                                    window.location.reload();
+                                })
+
+                            });
+
+                        } else {
+                            event.preventDefault(); // Ngăn chặn sự kiện submit nếu người dùng không xác nhận
+                            console.log('Form submission canceled');
+                        }
+                    });
+                }
+            });
+        });
+
+
+    </script>
+
 </head>
 <body>
 <header>
@@ -32,10 +100,10 @@
                 <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img class="img-th"  src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img class="img-th"  src="../../../img/ctsp12.3ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/ctsp12.3ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
                 <img class="img-th" src="../../../img/ctsp12.4ao.png" onclick="showImg(this.src)">
@@ -44,7 +112,8 @@
     </div>
 
     <div class="right">
-        <div class="pname">T-Shirts for Men</div>
+        <div class="pname">${sanPham.ten}</div>
+
         <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -52,29 +121,77 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
         </div>
-        <div class="price">500.000 VNĐ</div>
-        <div class="size">
-            <p>Size :</p>
-            <div class="psize active">M</div>
-            <div class="psize">L</div>
-            <div class="psize">XL</div>
-            <div class="psize">XXL</div>
-        </div>
-        <div class="quantity">
-            <p>Quantity :</p>
-            <input type="number" min="1" max="100" value="1">
-        </div>
-        <div class="btn-box">
-            <button class="cart-btn">Add to Cart</button>
-            <button class="buy-btn">Buy Now</button>
-        </div>
+        <div class="price">${sanPham.gia} .đ</div>
+
+
+        <form id="formThemGioHang" method="post" action="/add-to-cart/${sanPham.id}">
+
+
+            <div class="size">
+                <p class="d-flex align-items-center mb-0 text-dark ft-medium">Màu:</p>
+                <div class="product-color text-left">
+                    <c:forEach var="color" items="${listMauSac}" varStatus="colorState">
+                        <div class="form-check size-option form-option form-check-inline mb-2">
+
+                            <input type="radio" class="form-check-input " id="mauSac" name="mauSac" value="${color.id}">
+                            <span style="color: ${color.ma}">
+                                    ${color.ten}
+                            </span>
+
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+
+
+            <div class="size">
+                <p class="d-flex align-items-center mb-0 text-dark ft-medium">Size:</p>
+                <div class="text-left pb-0 pt-2">
+                    <c:forEach var="size" items="${listKichCo}" varStatus="sizeState">
+                        <div class="form-check size-option form-option form-check-inline mb-2">
+                            <input class="psize" type="radio" id="size" name="size" value="${size.id}">
+                            <span>${size.ten}</span>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="quantity">
+                <p>Quantity :</p>
+
+                <select class="mb-2 custom-select" id="soLuong" name="soLuong">
+                    <option value="1" selected="">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+
+            </div>
+            <div class="btn-box">
+                <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
+                <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+            </div>
+
+        </form>
+
+
+        <%--        <div class="size">--%>
+        <%--            <p>Size :</p>--%>
+        <%--            <div class="psize active">M</div>--%>
+        <%--            <div class="psize">L</div>--%>
+        <%--            <div class="psize">XL</div>--%>
+        <%--            <div class="psize">XXL</div>--%>
+        <%--        </div>--%>
+
     </div>
 </div>
 <jsp:include page="../template_home/footer.jsp"/>
 
 <script type="text/javascript">
     let bigImg = document.querySelector('.big-img img');
-    function showImg(pic){
+
+    function showImg(pic) {
         bigImg.src = pic;
     }
 

@@ -1,6 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" type="text/css" href="../../../css/header.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <%@ page pageEncoding="utf-8" %>
 <header>
     <div>
@@ -12,12 +11,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 200px">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active fw-bold menu_hover" aria-current="page"
-                               href="/poly360boutique/home"
+                            <a class="nav-link active" aria-current="page" href="/poly360boutique/home"
                                style="color: #2D2D2D">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold menu_hover" href="#" style="color: #2D2D2D">Thương Hiệu
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Thương Hiệu
                                 <div class="dropdown-content">
                                     <a href="/poly360boutique/thuong-hieu-nike">Nike</a>
                                     <a href="/poly360boutique/thuong-hieu-nike">Adidas</a>
@@ -26,7 +24,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold menu_hover" href="#" style="color: #2D2D2D">Sản Phẩm</a>
+                            <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach" style="color: #2D2D2D">Chính Sách</a>
@@ -43,14 +41,31 @@
                     <div class="popuptext" id="myPopup">
                         <button class="btn btn-dark" style="width: 200px;height: 50px;margin-left: 50px"><a href="/poly360boutique/dang-nhap"  style="color: #FFFFFF;">Đăng nhập</a></button>
                         <a href="/poly360boutique/dang-ky" style="margin-left: 100px;font-size: 20px">Đăng Ký</a>
+                    <div onclick="myFunction()"><i class="far fa-user"
+                                                   style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
+                    </div>
+                    <div class="popuptext" id="myPopup">
+                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
+                        <a>Đăng xuất</a>
                     </div>
                     <div class="dropdown">
-                        <i class="fa-solid fa-cart-shopping"
+                        <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
                            style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
                         <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
                             <h3>Giỏ hàng</h3>
                             <img src="../../../img/imgbanner/imagesgiohangtrong.png">
                             <ul id="cartItems"></ul>
+                            <c:forEach var="gioHangChiTiet" items="${carts}">
+                                <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
+                                <div class="col">
+                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.gia}.đ</span></h6>
+                                    <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
+                                    <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
+                                    <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
+                                </div>
+                            </c:forEach>
+                            <a href="/showCheckout" class="btn buy-btn">Buy Now</a>
+                            <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
                         </div>
                     </div>
                     <%--                    <div class="span8">--%>
@@ -69,14 +84,13 @@
                     <%--                            </ul>--%>
                     <%--                        </div>--%>
                     <%--                    </div>--%>
+
+
                 </div>
             </div>
         </nav>
     </div>
 </header>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 <script>
     function myFunction() {
         var popup = document.getElementById("myPopup");
@@ -104,6 +118,5 @@
     a:hover{
         color: orange;
     }
-
-
 </style>
+

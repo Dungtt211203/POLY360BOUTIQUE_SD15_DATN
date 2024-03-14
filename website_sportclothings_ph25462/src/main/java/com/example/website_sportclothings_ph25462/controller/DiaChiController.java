@@ -23,10 +23,8 @@ public class DiaChiController {
     @Autowired
     private DiaChiService diaChiService;
 
-
     @PostMapping("/create_address")
     public String createAddress(@ModelAttribute("address") DiaChi diaChi) {
-
 
         TaiKhoan taiKhoanKH = taiKhoanRepository.findById(1L).orElse(null);
 
@@ -46,9 +44,7 @@ public class DiaChiController {
             diaChiService.addDiaChi(diaChi);
         } else if (diaChi.getTrangThai() == 1) {
             diaChi.setTrangThai(1);
-
             diaChiService.addDiaChi(diaChi);
-
             diaChiService.updateOtherAddressesToNonPrimary(taiKhoanKH.getId(), diaChi.getId());
 
         }

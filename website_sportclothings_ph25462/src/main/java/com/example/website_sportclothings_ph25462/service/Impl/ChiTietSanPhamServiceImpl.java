@@ -9,8 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
 
 @Service
 public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
@@ -20,7 +20,7 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
 
     @Override
     public Page<ChiTietSanPham> getData(Integer page) {
-        Pageable pageable = PageRequest.of(page, 1);
+        Pageable pageable = PageRequest.of(page, 4);
 
         return chiTietSanPhamRepository.findAll(pageable);
     }
@@ -49,3 +49,4 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
         chiTietSanPhamRepository.save(chiTietSP);
     }
 }
+
