@@ -9,7 +9,12 @@ import java.util.List;
 @Service
 public interface MauSacService {
     List<MauSac> getAll();
-    void  add(MauSac mauSac);
+
+    void add(MauSac mauSac);
 
     void remove(Long id);
+
+    MauSac update(Long id);
+
+    MauSac getOne(String maMS);
 }
