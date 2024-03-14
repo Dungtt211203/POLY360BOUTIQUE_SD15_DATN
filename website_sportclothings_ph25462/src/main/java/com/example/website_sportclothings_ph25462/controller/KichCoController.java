@@ -2,12 +2,16 @@ package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
+import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.KichCoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,12 +46,13 @@ public class KichCoController {
 ////        model.addAttribute("searchForm", new SearchForm());
 //        return ResponseEntity.ok(kcr.findAll());
 //    }
-
     @GetMapping("/kich-co/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int kc) {
+        Pageable pageable = PageRequest.of(kc, 5);
+        Page<KichCo> page = kichCoService.getAll(pageable);
         model.addAttribute("load", kichCoService.getAll());
         model.addAttribute("kc", new KichCo());
-        model.addAttribute("view", "../kick_co/chinh-sach.jsp");
+        model.addAttribute("page", page);
         return "/kich_co/index";
     }
 
@@ -77,10 +82,12 @@ public class KichCoController {
     public String hienThiAdd(@ModelAttribute("kichCo") KichCo kichCo) {
         return ("/kich_co/add");
     }
+
     @PostMapping("/add/kích-co")
     public ResponseEntity<?> add(@RequestBody @Valid KichCo kichCo) {
         return ResponseEntity.ok(kcr.save(kichCo));
     }
+
     @PostMapping("/kich-co/hien-thi-add")
     public String add(Model model, @Valid @ModelAttribute("kichCo") KichCo kichCo, BindingResult result) {
         Boolean hasError = result.hasErrors();

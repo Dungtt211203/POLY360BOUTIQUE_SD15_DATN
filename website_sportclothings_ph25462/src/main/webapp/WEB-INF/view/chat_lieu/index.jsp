@@ -40,7 +40,7 @@
     }
 
     tr:hover {
-        background-color: #e5e5e5;
+        background-color: orange;
     }
 </style>
 <body>
@@ -49,8 +49,12 @@
         <jsp:include page="../admin/index.jsp"/>
     </div>
     <div style="margin-left: 300px;margin-top: 100px">
-        <h1 style="text-align: center;color: black">QUẢN LÝ CHẤT LIỆU</h1>
-        <table class="table">
+        <h1 style="text-align: center;color: black;font-size: 30px">QUẢN LÝ CHẤT LIỆU</h1>
+        <form class="d-flex" role="search" style="width: 500px;margin-bottom: 30px;margin-top: 30px">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <table style="width: 1000px">
             <thead>
             <tr>
                 <th>STT</th>
@@ -70,32 +74,32 @@
                     <td>${cl.ten}</td>
                     <td>${cl.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/poly360boutique/chat-lieu/view-update/${cl.id}" style="color: black"> <i
+                        <a href="/chat-lieu/view-update/${cl.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/poly360boutique/chat-lieu/remove/${cl.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/chat-lieu/remove/${cl.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
-            <button class="btn btn-primary"><a href="/poly360boutique/chat-lieu/hien-thi-add"
-                                               style="text-decoration: none;color: #FFFFFF"><i
-                    class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
-            <nav aria-label="Page navigation example" style="margin-left: 700px">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=0">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=${page.number-1}"><<<</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
-                    </li>
-                    <li class="page-item"><a class="page-link"
-                                             href="/poly360boutique/chat-lieu/hien-thi?cl=${page.totalPages-1}">Next</a></li>
-                </ul>
-            </nav>
+                <button class="btn btn-primary"><a href="/chat-lieu/hien-thi-add"
+                                                   style="text-decoration: none;color: #FFFFFF"><i
+                        class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             </tbody>
         </table>
         <%--        <form class="d-flex" role="search" name="search" action="/chat-lieu/search">--%>
         <%--            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="key">--%>
         <%--            <button class="btn btn-outline-success" type="submit">Search</button>--%>
         <%--        </form>--%>
+        <nav aria-label="Page navigation example" style="margin-left: 700px;margin-top: 50px">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="/chat-lieu/hien-thi?cl=0">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number-1}"><<<</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
+                </li>
+                <li class="page-item"><a class="page-link"
+                                         href="/chat-lieu/hien-thi?cl=${page.totalPages-1}">Next</a></li>
+            </ul>
+        </nav>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

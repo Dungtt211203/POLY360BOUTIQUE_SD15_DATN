@@ -58,7 +58,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${load}" var="kc" varStatus="i">
+            <c:forEach items="${page.content}" var="kc" varStatus="i">
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${kc.id}</td>
@@ -77,6 +77,19 @@
                     class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             </tbody>
         </table>
+        <nav aria-label="...">
+            <ul class="pagination" style="margin-left: 700px;margin-top: 30px">
+                <li class="page-item disabled">
+                    <a class="page-link" href="/kich-co/hien-thi?kc=0">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/kich-co/hien-thi?kc=${page.number-1}"><<<</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/kich-co/hien-thi?kc=${page.number+1}">>>></a>
+                <li class="page-item">
+                    <a class="page-link" href="/kich-co/hien-thi?kc=${page.totalPages+1}">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

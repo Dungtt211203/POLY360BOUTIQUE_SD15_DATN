@@ -5,6 +5,8 @@ import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.MauSacRepository;
 import com.example.website_sportclothings_ph25462.service.MauSacService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,12 +23,16 @@ public class MauSacServiceImpl implements MauSacService {
     }
 
     @Override
+    public Page<MauSac> getAll(Pageable pageable) {
+        return msr.findAll(pageable);
+    }
+
+    @Override
     public void add(MauSac mauSac) {
         msr.save(mauSac);
     }
 
     @Override
-
     public MauSac update(Long id) {
         return msr.findById(id).orElse(null);
     }
@@ -35,6 +41,7 @@ public class MauSacServiceImpl implements MauSacService {
     public void remove(Long id) {
         msr.deleteById(id);
     }
+
     public MauSac getOne(String maMS) {
         return msr.getSanPhamByMaMS(maMS);
     }
