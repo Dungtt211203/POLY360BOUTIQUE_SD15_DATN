@@ -119,7 +119,7 @@
                 <option value="4" <c:if test="${khuyenMai.trangThai == 4}">selected</c:if>>Hết hạn</option>
             </select>
         </div>
-        <form:button type="submit" class="btn btn-success" id="but">CẬP NHẬT</form:button>
+        <form:button type="submit" class="btn btn-success" id="but">Update</form:button>
     </form:form>
 </div>
 </body>

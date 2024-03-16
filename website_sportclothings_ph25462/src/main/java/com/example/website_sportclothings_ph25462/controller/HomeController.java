@@ -24,7 +24,7 @@ public class HomeController {
     private HinhAnhSPService hinhAnhSPService;
 
     @Autowired
-    private ChiTietSanPhamService chiTietSPService;
+    private ChiTietSanPhamService chiTietSanPhamService;
 
     @Autowired
     private TaiKhoanService taiKhoanService;
@@ -53,7 +53,7 @@ public class HomeController {
     @GetMapping("/chi-tiet-san-pham")
     public String view(Model model) {
 
-        List<ChiTietSanPham> chiTietSPS = chiTietSPService.getAll();
+        List<ChiTietSanPham> chiTietSPS = chiTietSanPhamService.getAll();
         model.addAttribute("chitietsanpham", chiTietSPS);
 
         List<KichCo> kichCos = kichCoService.getAll();

@@ -35,6 +35,7 @@ public class MauSacServiceImpl implements MauSacService {
     public void remove(Long id) {
         msr.deleteById(id);
     }
+
     public MauSac getOne(String maMS) {
         return msr.getSanPhamByMaMS(maMS);
     }

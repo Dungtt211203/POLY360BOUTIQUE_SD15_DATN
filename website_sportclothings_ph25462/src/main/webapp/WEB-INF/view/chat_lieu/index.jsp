@@ -70,24 +70,24 @@
                     <td>${cl.ten}</td>
                     <td>${cl.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/poly360boutique/chat-lieu/view-update/${cl.id}" style="color: black"> <i
+                        <a href="/chat-lieu/view-update/${cl.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/poly360boutique/chat-lieu/remove/${cl.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/chat-lieu/remove/${cl.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa chất liệu này?')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
-            <button class="btn btn-primary"><a href="/poly360boutique/chat-lieu/hien-thi-add"
+            <button class="btn btn-primary"><a href="/chat-lieu/hien-thi-add"
                                                style="text-decoration: none;color: #FFFFFF"><i
                     class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             <nav aria-label="Page navigation example" style="margin-left: 700px">
                 <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=0">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=${page.number-1}"><<<</a>
+                    <li class="page-item disabled"><a class="page-link" href="/chat-lieu/hien-thi?cl=0">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number-1}"><<<</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="/poly360boutique/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
+                    <li class="page-item"><a class="page-link" href="/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
                     </li>
                     <li class="page-item"><a class="page-link"
-                                             href="/poly360boutique/chat-lieu/hien-thi?cl=${page.totalPages-1}">Next</a></li>
+                                             href="/chat-lieu/hien-thi?cl=${page.totalPages+1}">Next</a></li>
                 </ul>
             </nav>
             </tbody>
