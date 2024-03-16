@@ -47,7 +47,7 @@ public class NhanVien {
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "dia_chi")
     private String diaChi;
-    @Pattern(regexp="^0\\\\d{9}$", message="Số điện thoại không hợp lệ")
+    @Pattern(regexp = "^0\\\\d{9}$", message = "Số điện thoại không hợp lệ")
     @Column(name = "so_dien_thoai")
     private String sdt;
     @NotBlank(message = "không để trống email")

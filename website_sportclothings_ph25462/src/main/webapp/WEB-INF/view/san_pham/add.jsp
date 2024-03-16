@@ -96,7 +96,7 @@
             <form:radiobutton path="trangThai" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
             <br/>
         </div>
-        <form:button type="submit" id="but">Add</form:button>
+        <form:button type="submit" id="but" onclick="return confirm('Bạn có chắc chắn muốn thêm sản phẩm này?')">Add</form:button>
     </form:form>
 </div>
 </body>

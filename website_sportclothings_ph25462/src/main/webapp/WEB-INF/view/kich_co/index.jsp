@@ -68,7 +68,7 @@
                     <td>
                         <a href="/kich-co/view-update/${kc.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/kich-co/remove/${kc.id}" style="color: black"><i
+                        <a href="/kich-co/remove/${kc.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa kích cỡ này?')" ><i
                                 class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>

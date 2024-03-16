@@ -74,16 +74,23 @@
 <div class="formAdd">
     <h1>THÊM/SỬA CHẤT LIỆU</h1>
     <form:form method="post" modelAttribute="chatLieu">
-        Mã Màu Sắc: <form:input path="ma"/>
-        <form:errors path="ma"  cssStyle="color: red"/>
-        <br/>
-        Tên Màu Sắc: <form:input path="ten"/>
-        <form:errors path="ten" cssStyle="color: red"/>
-        <br/>
-        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
-        <br/>
-        <form:button type="submit">Update</form:button>
+        <div class="input">
+            Mã Chất Liệu: <form:input path="ma"/>
+            <form:errors path="ma" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            Tên Chất Liệu: <form:input path="ten"/>
+            <form:errors path="ten" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="tt">
+            TrangThai: <form:radiobutton path="tt" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat Dong
+            <form:radiobutton path="tt" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
+            <br/>
+        </div>
+        <form:button type="submit" id="but"
+                     onclick="return confirm('Bạn có chắc chắn muốn sửa chất liệu này?')">Update</form:button>
     </form:form>
 </div>
 
