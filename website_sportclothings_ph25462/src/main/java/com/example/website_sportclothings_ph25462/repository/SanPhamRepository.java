@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.repository;
 
+import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,4 +18,6 @@ public interface SanPhamRepository extends JpaRepository<SanPham, Long> {
 
     @Query("select sp from SanPham sp where  sp.ma =?1")
     SanPham getSanPhamByMaSP(String maSP);
+
+    Page<SanPham> findAll(Pageable pageable);
 }

@@ -60,7 +60,7 @@ public class ChiTietSanPham {
     @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
     private KichCo kichCo;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
-    private HinhAnhSP hinhAnhSP;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
+//    private HinhAnhSP hinhAnhSP;
 }
