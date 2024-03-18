@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChatLieu;
+import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImpl;
@@ -8,6 +9,9 @@ import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,18 +46,29 @@ public class SanPhamController {
 //        return ResponseEntity.ok(spr.findAll());
 //    }
 
+
+    @GetMapping("/san-pham/hien-thi")
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int sp) {
+        Pageable pageable = PageRequest.of(sp, 5);
+        Page<SanPham> page = sanPhamService.getAll(pageable);
+        model.addAttribute("load", sanPhamService.getAll());
+        model.addAttribute("sp", new SanPham());
+        model.addAttribute("page", page);
+        return "/san_pham/index";
+    }
+
     @PostMapping("/add/san-pham")
     public ResponseEntity<?> add(@RequestBody @Valid SanPham sanPham) {
         return ResponseEntity.ok(spr.save(sanPham));
     }
 
-    @GetMapping("/san-pham/hien-thi")
-    public String hienThi(Model model) {
-        model.addAttribute("load", sanPhamService.getAll());
-        model.addAttribute("sp", new SanPham());
-        model.addAttribute("view", "../webapp/WEB-INF/view/san_pham/index.jsp");
-        return "/san_pham/index";
-    }
+//    @GetMapping("/san-pham/hien-thi")
+//    public String hienThi(Model model) {
+//        model.addAttribute("load", sanPhamService.getAll());
+//        model.addAttribute("sp", new SanPham());
+//        model.addAttribute("view", "../webapp/WEB-INF/view/san_pham/index.jsp");
+//        return "/san_pham/index";
+//    }
 
     @GetMapping("/san-pham/view-update/{id}")
     public String update(@PathVariable Long id,
