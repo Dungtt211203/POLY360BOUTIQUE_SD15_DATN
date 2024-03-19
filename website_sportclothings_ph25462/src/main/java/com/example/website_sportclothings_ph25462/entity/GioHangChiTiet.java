@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "gio_hang_chi_tiet")
 @Entity
@@ -30,8 +29,12 @@ public class GioHangChiTiet {
     private Date ngaySua;
     @Column(name = "trang_thai")
     private Boolean tt;
-
     @OneToOne()
     @JoinColumn(name = "chi_tiet_san_pham_id")
     private ChiTietSanPham chiTietSanPham;
+    @OneToOne()
+    @JoinColumn(name = "gio_hang_id")
+    private GioHang gioHang;
+
+
 }

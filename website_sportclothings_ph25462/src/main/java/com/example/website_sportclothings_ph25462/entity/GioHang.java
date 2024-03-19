@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "gio_hang")
 @Entity
@@ -32,5 +31,5 @@ public class GioHang {
     private Boolean tt;
     @OneToOne()
     @JoinColumn(name = "nguoi_so_huu")
-    private KhachHang nguoiSoHuu;
+    private KhachHang khachHang;
 }
