@@ -41,32 +41,30 @@
                     <div class="popuptext" id="myPopup">
                         <button class="btn btn-dark" style="width: 200px;height: 50px;margin-left: 50px"><a href="/poly360boutique/dang-nhap"  style="color: #FFFFFF;">Đăng nhập</a></button>
                         <a href="/poly360boutique/dang-ky" style="margin-left: 100px;font-size: 20px">Đăng Ký</a>
-                    <div onclick="myFunction()"><i class="far fa-user"
-                                                   style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
                     </div>
-                    <div class="popuptext" id="myPopup">
-                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
-                        <a>Đăng xuất</a>
-                    </div>
-                    <div class="dropdown">
-                        <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
-                           style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
-                        <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
-                            <h3>Giỏ hàng</h3>
-                            <img src="../../../img/imgbanner/imagesgiohangtrong.png">
-                            <ul id="cartItems"></ul>
-                            <c:forEach var="gioHangChiTiet" items="${carts}">
-                                <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
-                                <div class="col">
-                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.gia}.đ</span></h6>
-                                    <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
-                                    <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
-                                    <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
-                                </div>
-                            </c:forEach>
-                            <a href="/showCheckout" class="btn buy-btn">Buy Now</a>
-                            <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
-                        </div>
+                        <div class="dropdown">
+                            <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
+                               style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
+                            <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
+                                <h3>Giỏ hàng</h3>
+                                <img src="../../../img/imgbanner/imagesgiohangtrong.png">
+                                <ul id="cartItems"></ul>
+                                <c:forEach var="gioHangChiTiet" items="${carts}">
+                                    <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
+                                    <div class="col">
+                                        <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.giaGoc}.đ</span></h6>
+                                        <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
+                                        <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
+                                        <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
+                                    </div>
+                                </c:forEach>
+                                <a href="/showCheckout" class="btn buy-btn">Buy Now</a>
+                                <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
+                            </div>
+<%--                    <div class="popuptext" id="myPopup1">--%>
+<%--                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>--%>
+<%--                        <a>Đăng xuất</a>--%>
+<%--                    </div>--%>
                     </div>
                     <%--                    <div class="span8">--%>
                     <%--                        <div class="account pull-right">--%>
@@ -94,6 +92,10 @@
 <script>
     function myFunction() {
         var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+    function myFunction1() {
+        var popup = document.getElementById("myPopup1");
         popup.classList.toggle("show");
     }
 

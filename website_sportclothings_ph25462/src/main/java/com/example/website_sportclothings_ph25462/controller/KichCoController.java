@@ -26,6 +26,7 @@ import java.util.UUID;
 //@RestController
 //@RequiredArgsConstructor
 //@Slf4j
+@RequestMapping("/admin")
 public class KichCoController {
     @Autowired
     KichCoRepository kcr;

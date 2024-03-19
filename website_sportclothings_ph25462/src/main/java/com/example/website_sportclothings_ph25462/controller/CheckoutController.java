@@ -56,6 +56,7 @@ public class CheckoutController {
         }
         try {
             model.addAttribute("diaChiList", diaChiRepository.getAllByKH(taiKhoan.getId()));
+            System.out.println("xxxxxxxxxxxxxx  " + diaChiRepository.getAllByKH(taiKhoan.getId()).get(0).getHoTen());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -139,6 +140,5 @@ public class CheckoutController {
 
         return gioHangChiTietList;
     }
-
 
 }

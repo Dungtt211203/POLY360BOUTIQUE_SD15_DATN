@@ -27,7 +27,7 @@ public class ChiTietSanPham {
     @Column(name = "id")
     private Long id;
     @Column(name = "ma_ctsp")
-    private String ma;
+    private String maChiTietSanPham;
     @Column(name = "so_luong")
     private Integer soLuong;
 

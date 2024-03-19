@@ -63,6 +63,7 @@ public class HomeController {
     @GetMapping("/san-pham/detail/{id}")
     public String detail(@PathVariable("id") String id, Model model) {
 
+
         try {
             HinhAnhSP hinhAnhSP = hinhAnhSPService.getOne(id);
             Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);

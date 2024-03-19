@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -155,7 +156,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../../../js/themNhanhDiaChi.js"></script>
+    <script src="../../../js/themNhanhDIaChi.js"></script>
 
 </head>
 <body>
@@ -175,7 +176,7 @@
                 </div>
             </div>
         </div>
-        <form action="#" id="checkoutForm" method="post">
+        <form action="/checkout/process" id="checkoutForm" method="post">
             <div class="row justify-content-between">
                 <div class="col-12 col-lg-7 col-md-12">
                     <!-- Checkout Form -->
@@ -193,7 +194,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="text-dark">Email </label>
-                                <input disabled type="email" class="form-control"/>
+                                <input disabled type="email"  id="hienThiEmail" class="form-control"/>
                             </div>
                         </div>
 
@@ -209,16 +210,18 @@
                             <div class="form-group d-flex align-items-center">
                                 <div class="flex-grow-1">
 
-                                    <select name="address" id="idDiaChi" class="form-control" onchange="updateShippingFee(this)">
+                                    <select name="address" id="idDiaChi" class="form-control"
+                                            onchange="updateShippingFee(this)">
                                         <c:forEach var="diaChi" items="${diaChiList}">
                                             <option value="${diaChi.thanhPho}"
                                                     data-districtID="${diaChi.districtID}"
                                                     data-wardCode="${diaChi.wardCode}"
-                                                    data-SDT="0333484685"
-                                                    data-ten="Hoang Van Be"
-                                                    data-id="1">
+                                                    data-SDT="${diaChi.sdt}"
+                                                    data-ten="${diaChi.hoTen}"
+                                                    data-email="${diaChi.taiKhoanKH.email}"
+                                                    data-id="${diaChi.id}">
 
-                                                <c:out value="${diaChi.phuongXa} - ${diaChi.quanHuyen} - ${diaChi.thanhPho}"/>
+                                                <c:out value=" ${diaChi.hoTen} - ${diaChi.diaChi}- ${diaChi.phuongXa} - ${diaChi.quanHuyen} - ${diaChi.thanhPho}"/>
                                             </option>
                                         </c:forEach>
                                     </select>
@@ -227,7 +230,7 @@
                                 </div>
                             </div>
                             <button type="button" id="openModalBtn">Thêm Địa Chỉ</button>
-                            <button type="button" id="suaDiaChi" class="btn btn-danger">Sửa Địa Chỉ</button>
+                            <%--                            <button type="button" id="suaDiaChi" class="btn btn-danger">Sửa Địa Chỉ</button>--%>
 
 
                         </div>
@@ -237,7 +240,7 @@
 
                     <div class="row mb-4">
                         <div class="col-12 d-block">
-                            <input id="createaccount" class="checkbox-custom" name="createaccount" type="checkbox">
+                            <%--                            <input id="createaccount" class="checkbox-custom" name="createaccount" type="checkbox">--%>
                             <!--                                <label for="createaccount" class="checkbox-custom-label">Thêm tài khoản mới</label>-->
                         </div>
                     </div>
@@ -251,20 +254,26 @@
                     <div class="d-block mb-3">
                         <h4 class="mb-4">Các mặt hàng:</h4>
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x mb-4">
-                            <li class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <%--                                <h5 class="mb-1" th:text="'Tên Sản Phẩm: '+ ${carts.productName}"></h5>--%>
-                                        <%--                                <p class="mb-1" th:text="'Số lượng: ' + ${carts.quantity}"></p>--%>
-                                        <%--                                <p class="mb-1" th:text="'Kích cỡ: ' + ${carts.productSize}"></p>--%>
-                                        <%--                                <p class="mb-1" th:text="'Màu sắc : ' + ${carts.productColor}"></p>--%>
-                                        <%--                                <p class="mb-1" th:text="'Đơn Giá : ' + ${carts.productPrice} + '.₫'"></p>--%>
+                            <c:forEach var="gioHangCT" items="${carts}">
+                                <li class="list-group-item">
 
+
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="mb-1">${gioHangCT.chiTietSanPham.sanPham.ten}</h5>
+                                            <p class="mb-1">Số lượng: ${gioHangCT.soLuong}</p>
+                                            <p class="mb-1">Kích cỡ:  ${gioHangCT.chiTietSanPham.kichCo.ten}</p>
+                                            <p class="mb-1">Màu sắc : ${gioHangCT.chiTietSanPham.mauSac.ten}</p>
+                                            <p class="mb-1">Đơn Giá : ${gioHangCT.chiTietSanPham.giaHienHanh} .₫</p>
+
+
+                                        </div>
 
                                     </div>
 
-                                </div>
-                            </li>
+
+                                </li>
+                            </c:forEach>
                         </ul>
                     </div>
 
@@ -283,7 +292,7 @@
 
                             <!-- Thêm thông tin tổng cộng vào đây -->
                             <li class="list-group-item d-flex justify-content-between text-dark fs-sm ft-regular">
-                                <span>Tổng</span> <span class="ml-auto text-dark ft-medium" id="tongTien">100</span>
+                                <span>Tổng</span> <span class="ml-auto text-dark ft-medium" id="tongTien">${totalAmount}</span>
                                 <input type="number" id="tongTienPC" value="999" style="display: none">
 
                             </li>
@@ -308,7 +317,7 @@
                                       id="hienThiTongTien" name="hienThiTongTien"></span>
 
                                 <input name="tongTien" style="display: none"
-                                       value="6">
+                                       value="${totalAmount}">
                             </li>
 
 
@@ -341,7 +350,7 @@
                             <input type="text" id="hoTen" name="hoTen" required>
 
                             <label for="soDienThoai">Số Điện Thoại:</label>
-                            <input type="text" id="soDienThoai" name="soDienThoai" required>
+                            <input type="text" id="soDienThoai" name="sdt" required>
 
                             <label for="diaChi">Địa Chỉ:</label>
                             <input type="text" id="diaChi" name="diaChi" required>
@@ -378,8 +387,8 @@
                                 <option value="" selected>Chọn phường xã</option>
                             </select>
 
-                            <input type="text" name="thanhPho" value="" style="display: none;">
-                            <input type="text" name="quanHuyen" value="" style="display: none;">
+                            <input type="text" id="thanhPho" name="thanhPho" value="" style="display: none;">
+                            <input type="text" id="quanHuyen" name="quanHuyen" value="" style="display: none;">
                             <input type="text" name="phuongXa" value="" style="display: none;">
 
                             <!-- Tương tự cho các trường khác -->
@@ -423,3 +432,4 @@
 
 </body>
 </html>
+

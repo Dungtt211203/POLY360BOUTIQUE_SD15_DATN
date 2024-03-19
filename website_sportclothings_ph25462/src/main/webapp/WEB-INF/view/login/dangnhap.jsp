@@ -89,12 +89,11 @@
             </div>
 
             <div class="login-container">
-                <form action="/poly360boutique/login" method="post" modelAttribute="taikhoan" mode
-                    onsubmit="return validateForm()">
+                <form action="/login" method="post" modelAttribute="taikhoan" mode onsubmit="return validateForm()">
                     <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #FFFFFF">POLY 360 BOUTIQUE
                     </h3>
                     <br>
-
+                    <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
                     <span class="header-title">
                         <span style="color: red"></span>
                         <span style="font-size: 17px;">Tên tài khoản</span>

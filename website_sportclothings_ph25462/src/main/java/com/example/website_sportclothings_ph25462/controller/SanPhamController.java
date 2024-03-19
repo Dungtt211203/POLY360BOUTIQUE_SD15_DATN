@@ -21,6 +21,7 @@ import java.util.UUID;
 @Controller
 //@RestController
 //@Slf4j
+@RequestMapping("/admin")
 public class SanPhamController {
     @Autowired
     SanPhamRepository spr;
