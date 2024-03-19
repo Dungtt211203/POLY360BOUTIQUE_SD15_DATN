@@ -22,6 +22,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("/admin")
 public class ThuongHieuController {
 
     @Autowired

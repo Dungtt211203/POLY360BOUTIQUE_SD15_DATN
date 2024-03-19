@@ -229,7 +229,7 @@ $(document).ready(function () {
     //Hiển Thị Tỉnh
     function updateProvinceSelect(provinceList) {
         var selectElement = $('select[name="idTinhThanhPho"]');
-        var inputTenTinh = $('input[name="tinhThanhPho"]');
+        var inputTenTinh = $('input[name="thanhPho"]');
         selectElement.empty(); // Xóa tất cả các option hiện tại
 
         // Thêm option mặc định
@@ -391,17 +391,20 @@ function updateShippingFee(selectElement) {
 
     // gán tổng tiền
     var inputTongTien = $('input[name="tongTien"]').val();
-    //$('#hienThiTongTien').text(inputTongTien);
+    //
+    // $('#hienThiTongTien').text(inputTongTien);
 
 
     //gán tên với SDT
     var tenKhachHang = selectedOption.getAttribute('data-ten');
     var SDTKhachHang = selectedOption.getAttribute('data-SDT');
     var idSoDiaChi = selectedOption.getAttribute('data-id');
+    var email = selectedOption.getAttribute('data-email');
 
 
     $('#hienThiTen').val(tenKhachHang);
     $('#hienThiSDT').val(SDTKhachHang);
+    $('#hienThiEmail').val(email);
 
     // Sự kiện khi nút "Sửa Địa Chỉ" được click
     $('#suaDiaChi').click(function () {

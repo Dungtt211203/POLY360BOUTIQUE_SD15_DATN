@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+
 import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
 import com.example.website_sportclothings_ph25462.entity.HoaDon;
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
@@ -10,6 +11,7 @@ import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
 import com.example.website_sportclothings_ph25462.service.HoaDonChiTietService;
 import com.example.website_sportclothings_ph25462.service.KhachHangService;
 import jakarta.servlet.http.HttpSession;
+import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,6 +58,7 @@ public class CheckoutController {
         }
         try {
             model.addAttribute("diaChiList", diaChiRepository.getAllByKH(taiKhoan.getId()));
+            System.out.println("xxxxxxxxxxxxxx  " + diaChiRepository.getAllByKH(taiKhoan.getId()).get(0).getHoTen());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -139,6 +142,5 @@ public class CheckoutController {
 
         return gioHangChiTietList;
     }
-
 
 }

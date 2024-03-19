@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 //@RestController
 //@Slf4j
+@RequestMapping("/admin")
 public class MauSacController {
     @Autowired
     MauSacRepository msr;

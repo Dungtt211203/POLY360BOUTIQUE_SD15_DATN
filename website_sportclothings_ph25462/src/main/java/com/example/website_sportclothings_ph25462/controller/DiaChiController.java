@@ -5,6 +5,7 @@ import com.example.website_sportclothings_ph25462.entity.DiaChi;
 import com.example.website_sportclothings_ph25462.entity.TaiKhoan;
 import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
 import com.example.website_sportclothings_ph25462.repository.TaiKhoanRepository;
+import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
 import com.example.website_sportclothings_ph25462.service.DiaChiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,10 +26,13 @@ public class DiaChiController {
     @Autowired
     private DiaChiService diaChiService;
 
+    @Autowired
+    private TaiKhoanDangDangNhap taiKhoanDangDangNhap;
+
 
     @PostMapping("/create_address")
     public String createAddress(@ModelAttribute("address") DiaChi diaChi) {
-        TaiKhoan taiKhoanKH = taiKhoanRepository.findById(1L).orElse(null);
+        TaiKhoan taiKhoanKH =  taiKhoanDangDangNhap.getCurrentNguoiDung();
 
         List<DiaChi> diaChiList = diaChiRepository.findAll();
 

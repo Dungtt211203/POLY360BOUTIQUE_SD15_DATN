@@ -27,7 +27,6 @@
         <div class="col-3 mt-3">
             <div class="card">
                 <div id="cartItems">
-
                     <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
                         <img src="/img/imgsanpham/${hienthis.url}" class="card-img-top mx-auto d-block"
                              alt="" style="min-width: 319px; min-height: 319px"></a>
@@ -48,19 +47,19 @@
     </c:forEach>
 </div>
 
-<%--<nav aria-label="Page navigation example">--%>
-<%--    <ul class="pagination">--%>
-<%--        <c:if test="${hienthi.totalPages > 0}">--%>
-<%--            <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">--%>
-<%--                <li class="page-item">--%>
-<%--                    <a class="page-link" href="/poly360boutique/home?page=${loop.index}">--%>
-<%--                            ${loop.index + 1}--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--            </c:forEach>--%>
-<%--        </c:if>--%>
-<%--    </ul>--%>
-<%--</nav>--%>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <c:if test="${hienthi.totalPages > 0}">
+            <c:forEach begin="0" end="${hienthi.totalPages - 1}" varStatus="loop">
+                <li class="page-item">
+                    <a class="page-link" href="/poly360boutique/home?page=${loop.index}">
+                            ${loop.index + 1}
+                    </a>
+                </li>
+            </c:forEach>
+        </c:if>
+    </ul>
+</nav>
 
 </div>
 
