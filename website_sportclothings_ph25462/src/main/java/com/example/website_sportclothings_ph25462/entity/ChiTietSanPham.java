@@ -24,30 +24,40 @@ public class ChiTietSanPham {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_ctsp")
     private String maChiTietSanPham;
+
     @Column(name = "so_luong")
     private Integer soLuong;
+
     @Column(name = "gia_hien_hanh")
     private Long giaHienHanh;
+
     @Column(name = "gia_goc")
     private Long giaGoc;
+
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_tao")
     private Date ngayTao;
+
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(name = "ngay_sua")
     private Date ngaySua;
+
     @Column(name = "trang_thai")
     private Integer trangThai;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
     private SanPham sanPham;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
     private ChatLieu chatLieu;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "thuong_hieu_id", referencedColumnName = "id")
     private ThuongHieu thuongHieu;

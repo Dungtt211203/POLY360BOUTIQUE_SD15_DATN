@@ -1,8 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
 import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
-import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
