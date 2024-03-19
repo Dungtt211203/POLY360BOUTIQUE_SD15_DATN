@@ -38,16 +38,6 @@ public class ChiTietSanPham {
     @Column(name = "gia_goc")
     private Long giaGoc;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="dd-MM-yyyy")
-    @Column(name = "ngay_tao")
-    private Date ngayTao;
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="dd-MM-yyyy")
-    @Column(name = "ngay_sua")
-    private Date ngaySua;
-
     @Column(name = "trang_thai")
     private Integer trangThai;
     @Column(name = "ngay_tao")
@@ -64,7 +54,9 @@ public class ChiTietSanPham {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "mau_sac_id", referencedColumnName = "id")
     private MauSac mauSac;
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
+    private KichCo kichCo;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "chat_lieu_id", referencedColumnName = "id")
     private ChatLieu chatLieu;
