@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-import com.example.website_sportclothings_ph25462.entity.ChiTietSP;
+import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
 import com.example.website_sportclothings_ph25462.entity.TaiKhoan;
 import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
@@ -16,12 +17,12 @@ import java.util.List;
 
 @Controller
 public class GioHangController {
+//
+//    @Autowired
+//    private SanPhamService sanPhamService;
 
     @Autowired
-    private SanPhamService sanPhamService;
-
-    @Autowired
-    private ChiTietSPService chiTietSanPhamService;
+    private ChiTietSanPhamService chiTietSanPhamService;
 
     @Autowired
     HttpSession session;
@@ -55,7 +56,7 @@ public class GioHangController {
 
                 gioHangChiTiet = new GioHangChiTiet();
                 gioHangChiTiet.setSoLuong(soLuong);
-                ChiTietSP chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
+                ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
                 gioHangChiTiet.setChiTietSanPham(chiTietSanPham); //
                 gioHangChiTiet.setGioHang(gioHangService.kiemTraGioHangCuaKhachHang(khachHang));
                 gioHangChiTietService.add(gioHangChiTiet);
@@ -69,7 +70,7 @@ public class GioHangController {
 
 
         if (taiKhoan == null) { // khách hàng không đămg nhập lưu vào session.
-            ChiTietSP chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
+            ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
             List<GioHangChiTiet> gioHangChiTietSession = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
 
 

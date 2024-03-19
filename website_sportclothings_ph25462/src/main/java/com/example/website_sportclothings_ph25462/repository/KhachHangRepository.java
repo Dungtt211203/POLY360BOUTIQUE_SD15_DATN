@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 
 public interface KhachHangRepository extends JpaRepository<KhachHang, Long> {
@@ -12,4 +13,10 @@ public interface KhachHangRepository extends JpaRepository<KhachHang, Long> {
 
     @Query("select kh from KhachHang kh where  kh.ma =?1")
     KhachHang getSanPhamByMaKH(String maKH);
+
+//    @Query(value = "select * from khach_hang where tai_khoan_id = :idTK",nativeQuery = true)
+//    KhachHang getKhachHangByIdTaiKhoan(Long idTK);
+
+    @Query(value = "SELECT kh.* FROM tai_khoan tk INNER JOIN khach_hang kh ON tk.id = kh.tai_khoan_id  WHERE tk.id = :idTK  ", nativeQuery = true)
+    KhachHang getKhachHangByIdTaiKhoan(@Param("idTK") Long idTK);
 }

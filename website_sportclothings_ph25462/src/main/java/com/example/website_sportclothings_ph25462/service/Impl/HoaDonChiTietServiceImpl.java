@@ -1,7 +1,7 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.*;
-import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
+import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.repository.HoaDonChiTietRepository;
 import com.example.website_sportclothings_ph25462.repository.HoaDonRepository;
 import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
@@ -22,7 +22,7 @@ public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
     private HoaDonRepository hoaDonRepository;
 
     @Autowired
-    private ChiTietSPRepository chiTietSPRepository;
+    private ChiTietSanPhamRepository chiTietSPRepository;
 
     @Autowired
     private TaiKhoanDangDangNhap taiKhoanDangDangNhap;

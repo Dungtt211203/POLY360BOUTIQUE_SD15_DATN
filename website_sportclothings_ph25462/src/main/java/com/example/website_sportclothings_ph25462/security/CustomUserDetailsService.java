@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + taiKhoan.getVaiTro().getTenVT().toUpperCase()));
 
         // dung ham constructor nay thi mac dinh cac gia tri accountNonExpired, accountNonLocked, credentialsNonExpired, enabled = true;
-        User user = new org.springframework.security.core.userdetails.User(
+        User user = new User(
                 username,
                 taiKhoan.getMatKhau(),
                 authorities

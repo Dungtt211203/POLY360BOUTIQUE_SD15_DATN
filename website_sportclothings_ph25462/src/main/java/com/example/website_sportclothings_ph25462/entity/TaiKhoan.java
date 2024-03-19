@@ -40,19 +40,18 @@ public class TaiKhoan {
     @NotBlank(message = "Email khong duoc de trong")
     @Column(name = "email")
     private String email;
-
-
     @NotBlank(message = "Ten tai khoan khong duoc de trong")
     @Column(name = "ten_tai_khoan")
     private String tenTK;
-
     @NotBlank(message = "Mat khau khong duoc de trong")
+
     @Column(name = "mat_khau")
     private String matKhau;
 
     @Column(name = "trang_thai")
     private Boolean tt;
 
-    @Column(name = "vai_tro")
-    private Integer vaiTro;
+    @OneToOne()
+    @JoinColumn(name = "vai_tro_id")
+    private VaiTro vaiTro;
 }

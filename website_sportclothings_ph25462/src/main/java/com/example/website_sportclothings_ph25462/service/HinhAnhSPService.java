@@ -10,9 +10,11 @@ import java.util.List;
 
 public interface HinhAnhSPService {
 
-    List<HinhAnhSP> getAll();
+    Page<HinhAnhSP> getData(Integer page);
 
     HinhAnhSP getOne(String id);
+
+    List<HinhAnhSP> getAll();
 
 
 }
