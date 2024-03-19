@@ -4,20 +4,20 @@ package com.example.website_sportclothings_ph25462.controller;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
 import com.example.website_sportclothings_ph25462.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
-@RequestMapping("/chitietsp")
+@RequestMapping("/admin/chitietsp")
 public class ChiTietSPController {
     @Autowired
-    private ChiTietSanPhamRepository repository;
+    private ChiTietSanPhamRepository chiTietSanPhamRepository;
     @Autowired
     private SanPhamRepository sanPhamRepository;
     @Autowired
@@ -28,9 +28,11 @@ public class ChiTietSPController {
     private ChatLieuRepository chatLieuRepository;
     @Autowired
     private ThuongHieuRepository thuongHieuRepository;
+
+
     @GetMapping("/hien-thi")
     public String view(Model model) {
-        model.addAttribute("list", repository.findAll());
+        model.addAttribute("list", chiTietSanPhamRepository.findAll());
         model.addAttribute("sp",new ChiTietSanPham());
         model.addAttribute("view", "../chitietsp/index.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
@@ -54,19 +56,19 @@ public class ChiTietSPController {
     @PostMapping("/add")
     public String add(ChiTietSanPham chiTietSp, Model model) {
         model.addAttribute("sp",new ChiTietSanPham());
-        repository.save(chiTietSp);
+        chiTietSanPhamRepository.save(chiTietSp);
         return "redirect:/chitietsp/hien-thi";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable(name = "id") Long id) {
-        repository.deleteById(id);
+        chiTietSanPhamRepository.deleteById(id);
         return "redirect:/chitietsp/hien-thi";
     }
 
     @GetMapping("/update/{id}")
     public String viewUpdate(@PathVariable Long id, Model model) {
-        ChiTietSanPham chiTietSp = repository.findById(id).orElse(null);
+        ChiTietSanPham chiTietSp = chiTietSanPhamRepository.findById(id).orElse(null);
         //   model.addAttribute("view", "../chitietsp/index.jsp");
         model.addAttribute("sanPham", sanPhamRepository.findAll());
         model.addAttribute("kichCo", kichCoRepository.findAll());
@@ -82,9 +84,34 @@ public class ChiTietSPController {
     public String update(@PathVariable Long id,@ModelAttribute("chitietsp") ChiTietSanPham chiTietSp, Model model) {
         model.addAttribute("sp",new ChiTietSanPham());
         chiTietSp.setId(id);
-        repository.save(chiTietSp);
+        chiTietSanPhamRepository.save(chiTietSp);
         return "redirect:/chitietsp/hien-thi";
     }
+
+    @GetMapping("/kiemTraSoLuongSanPham/{idSanPham}/{idMauSac}/{idKichCo}")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> kiemTraSoLuongSanPham(@PathVariable("idSanPham") Long idSanPham,
+                                                                     @PathVariable("idMauSac") Integer idMauSac, @PathVariable("idKichCo") Integer idKichCo) {
+        System.out.printf("ok dến đây zoi zzzzzz" + idSanPham + "/ " + idKichCo);
+        Map<String, Object> response = new HashMap<>();
+        Long soLuongSPConLai = 0L;
+        try {
+            soLuongSPConLai = chiTietSanPhamRepository.getSanPhamChiTietByIdSPAndIdSizeAndIdMauSac(idSanPham, idMauSac, idKichCo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.printf("xxxxxxxxxxxxxxxx " + soLuongSPConLai);
+        if (soLuongSPConLai == null) {
+            soLuongSPConLai = 0L;
+        }
+
+
+        response.put("soLuongSPConLai", soLuongSPConLai);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+
+    }
+
 
 }
 

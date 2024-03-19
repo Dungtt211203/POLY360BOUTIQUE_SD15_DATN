@@ -90,7 +90,7 @@
             <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
             <br/>
         </div>
-        <form:button type="submit" class="btn btn-success" id="but">Add</form:button>
+        <form:button type="submit" class="btn btn-success" id="but" onclick="return confirm('Bạn có chắc chắn muốn thêm màu sắc này?')">Add</form:button>
     </form:form>
 </div>
 

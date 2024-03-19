@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 //@RestController
 //@RequiredArgsConstructor
 //@Slf4j
-@RequestMapping("/poly360boutique")
+@RequestMapping("/admin")
 public class ChatLieuController {
     @Autowired
     ChatLieuRepository clr;

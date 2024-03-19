@@ -81,9 +81,11 @@
             <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
-<%--        Giá: <form:input path="gia"/>--%>
-<%--        <form:errors path="gia" cssStyle="color: red"/>--%>
-<%--        <br/>--%>
+        <div class="input">
+            Giá: <form:input path="gia"/>
+            <form:errors path="gia" cssStyle="color: red"/>
+            <br/>
+        </div>
         <div class="input">
             Mô Tả Sản Phẩm: <form:textarea path="moTa" cssStyle="margin-right: 130px"/>
             <form:errors path="moTa" cssStyle="color: red"/>

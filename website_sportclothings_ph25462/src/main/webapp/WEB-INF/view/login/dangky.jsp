@@ -116,6 +116,49 @@
                         <span style="color: red"></span>
                         <span style="font-size: 17px;">Mật khẩu</span>
                     </span>
+                    <input name="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu..."
+                        required="" />
+                    <br>
+                    <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 180px;"
+                        type="submit">Đăng ký
+                    </button>
+                    <div style="text-align: center;font-size: 15px">
+                        <h1>Bạn đã có tài khoản? <a href="/poly360boutique/dang-nhap" style="color: #FFFFFF">Đăng
+                                nhập</a></h1>
+                    </div>
+                    <button type="submit" class="btn btn-warning"
+                        style="color: white; background-color:#ff5e00; margin-left: 170px;">Đăng
+                        ký
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script>
+            function validateForm() {
+                var username = document.getElementById("usernameRegis").value;
+                var email = document.getElementById("emailRegis").value;
+                var password = document.getElementById("passwordRegis").value;
+
+                if (username.trim() === "") {
+                    alert("Tên tài khoản không được để trống");
+                    return false;
+                }
+
+                if (email.trim() === "") {
+                    alert("Email không được để trống");
+                    return false;
+                }
+
+                if (password.trim() === "") {
+                    alert("Mật khẩu không được để trống");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </body>
+
+    </html>
             <input name="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu..."
                    required=""/>
             <br>

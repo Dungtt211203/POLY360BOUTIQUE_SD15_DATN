@@ -20,4 +20,8 @@ public interface KhachHangService {
     Page<KhachHang> search(String key, Pageable pageable);
 
     KhachHang getOne(String maKH);
+
+    KhachHang getOneById(Long id);
+
+    KhachHang getKHByIdTaiKhoan(Long id);
 }

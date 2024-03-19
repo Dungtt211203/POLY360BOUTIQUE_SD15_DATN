@@ -1,9 +1,11 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+
 import com.example.website_sportclothings_ph25462.entity.DiaChi;
 import com.example.website_sportclothings_ph25462.entity.TaiKhoan;
 import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
 import com.example.website_sportclothings_ph25462.repository.TaiKhoanRepository;
+import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
 import com.example.website_sportclothings_ph25462.service.DiaChiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @Controller
 public class DiaChiController {
+
     @Autowired
     private TaiKhoanRepository taiKhoanRepository;
 
@@ -23,18 +26,20 @@ public class DiaChiController {
     @Autowired
     private DiaChiService diaChiService;
 
+    @Autowired
+    private TaiKhoanDangDangNhap taiKhoanDangDangNhap;
+
+
     @PostMapping("/create_address")
     public String createAddress(@ModelAttribute("address") DiaChi diaChi) {
-
-        TaiKhoan taiKhoanKH = taiKhoanRepository.findById(1L).orElse(null);
-
-        System.out.printf("zzzzzzzzzzz" + taiKhoanKH.getHoTen());
+        TaiKhoan taiKhoanKH =  taiKhoanDangDangNhap.getCurrentNguoiDung();
 
         List<DiaChi> diaChiList = diaChiRepository.findAll();
 
         diaChi.setTaiKhoanKH(taiKhoanKH);
 
-
+        diaChi.setTinh(diaChi.getThanhPho());
+        diaChi.setMa("DC" + diaChiRepository.idMax() + 1);
         if (diaChiList.isEmpty()) {
             diaChi.setTrangThai(1);
             diaChiService.addDiaChi(diaChi);
@@ -44,12 +49,15 @@ public class DiaChiController {
             diaChiService.addDiaChi(diaChi);
         } else if (diaChi.getTrangThai() == 1) {
             diaChi.setTrangThai(1);
+
             diaChiService.addDiaChi(diaChi);
-            diaChiService.updateOtherAddressesToNonPrimary(taiKhoanKH.getId(), diaChi.getId());
+
+            diaChiService.updateOtherAddressesToNonPrimary(1L, diaChi.getId());
 
         }
 
 
-        return "redirect:/showCheckout";
+        return "redirect:/checkout/show";
     }
+
 }

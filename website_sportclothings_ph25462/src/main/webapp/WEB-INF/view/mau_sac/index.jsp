@@ -69,11 +69,11 @@
                     <td>${ms.id}</td>
                     <td>${ms.ma}</td>
                     <td>${ms.ten}</td>
-                    <td>${ms.tt}</td>
+                    <td>${ms.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
                         <a href="/mau-sac/view-update/${ms.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/mau-sac/remove/${ms.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/mau-sac/remove/${ms.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa màu sắc này?')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
 
