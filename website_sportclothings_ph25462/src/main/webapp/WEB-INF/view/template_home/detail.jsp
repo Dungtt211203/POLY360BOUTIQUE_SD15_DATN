@@ -122,27 +122,27 @@
 <div class="flex-box">
     <div class="left">
         <div class="big-img">
-            <img src="../../../img/sp12ao.png">
+            <img src="../../../img/imgsanpham/sp12ao.png">
         </div>
         <div class="images">
             <div class="small-img">
-                <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
 
-                <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img class="img-th" src="../../../img/ctsp12.3ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
 
-                <img class="img-th" src="../../../img/ctsp12.2ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
             </div>
             <div class="small-img">
-                <img class="img-th" src="../../../img/ctsp12.3ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
 
             </div>
             <div class="small-img">
-                <img class="img-th" src="../../../img/ctsp12.4ao.png" onclick="showImg(this.src)">
+                <img class="img-th" src="../../../img/imgsanpham/ctsp12.4ao.png" onclick="showImg(this.src)">
             </div>
         </div>
     </div>
@@ -151,7 +151,6 @@
 
         <div class="pname">${sanPham.ten}</div>
         <div class="ratings">Số Lượng: <h6 id="soLuongConLai">0</h6></div>
-
         <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -192,7 +191,6 @@
             </div>
             <div class="quantity">
                 <p>Quantity :</p>
-
                 <select class="mb-2 custom-select" id="soLuong" name="soLuong">
                     <option value="1" selected="">1</option>
                     <option value="2">2</option>

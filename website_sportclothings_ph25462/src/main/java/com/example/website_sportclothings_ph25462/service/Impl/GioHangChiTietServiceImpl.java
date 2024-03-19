@@ -1,12 +1,13 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.*;
-import com.example.website_sportclothings_ph25462.repository.ChiTietSPRepository;
+import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.repository.GioHangChiTietRepository;
 import com.example.website_sportclothings_ph25462.repository.GioHangRepository;
 import com.example.website_sportclothings_ph25462.repository.KhachHangRepository;
 import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
 import com.example.website_sportclothings_ph25462.service.ChiTietSPService;
+import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
 import com.example.website_sportclothings_ph25462.service.GioHangService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GioHangChiTietServiceImpl {
+public class GioHangChiTietServiceImpl implements GioHangChiTietService {
 
     @Autowired
     private GioHangChiTietRepository gioHangChiTietRepository;
@@ -32,14 +33,14 @@ public class GioHangChiTietServiceImpl {
     @Autowired
     private HttpSession session;
 
-    @Autowired
-    private ChiTietSPRepository chiTietSanPhamRepository;
+//    @Autowired
+//    private ChiTietSanPhamRepository chiTietSanPhamRepository;
 
     @Autowired
     private GioHangService gioHangService;
 
-    @Autowired
-    private ChiTietSPService chiTietSanPhamService;
+//    @Autowired
+//    private ChiTietSPService chiTietSanPhamService;
 
 
     @Override
@@ -103,7 +104,7 @@ public class GioHangChiTietServiceImpl {
 //                        Integer idMauSac = mauSacRepository.getMauSacByTen(item.getProductColor()).getId();
 //                        Integer idKichCo = kichCoRepository.getKichCoByTen(item.getProductSize()).getId();
 
-                        ChiTietSP chiTietSanPham = item.getChiTietSanPham();
+                        ChiTietSanPham chiTietSanPham = item.getChiTietSanPham();
                         System.out.printf("có id ccccccccc " + chiTietSanPham.getId());
 
                         //    tìm giỏ hàng chi tiết xem đã có hay chưa

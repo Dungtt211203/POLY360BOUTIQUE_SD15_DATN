@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.service;
 
+import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
 import org.springframework.stereotype.Service;
 

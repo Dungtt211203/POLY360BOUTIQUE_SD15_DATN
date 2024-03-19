@@ -80,9 +80,11 @@
             <form:errors path="ten" cssStyle="color: red"/>
             <br/>
         </div>
-<%--        Gía Sản Phẩm: <form:input path="gia"/>--%>
-<%--        <form:errors path="gia" cssStyle="color: red"/>--%>
-<%--        <br/>--%>
+        <div class="input">
+            Gía Sản Phẩm: <form:input path="gia"/>
+            <form:errors path="gia" cssStyle="color: red"/>
+            <br/>
+        </div>
         <div class="input">
             Mô Tả Sản Phẩm: <form:textarea path="moTa" cssStyle="margin-right: 135px"/>
             <form:errors path="moTa" cssStyle="color: red"/>
@@ -92,11 +94,13 @@
         <%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
         <%--        <br/>--%>
         <div class="tt">
-            TrangThai: <form:radiobutton path="trangThai" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat Dong
+            TrangThai: <form:radiobutton path="trangThai" value="0" checked="true" cssStyle="margin-left: -30px"/>Hoat
+            Dong
             <form:radiobutton path="trangThai" value="1" cssStyle="margin-left: 50px"/>Khong Hoat Dong
             <br/>
         </div>
-        <form:button type="submit" id="but" onclick="return confirm('Bạn có chắc chắn muốn thêm sản phẩm này?')">Add</form:button>
+        <form:button type="submit" id="but"
+                     onclick="return confirm('Bạn có chắc chắn muốn thêm sản phẩm này?')">Add</form:button>
     </form:form>
 </div>
 </body>

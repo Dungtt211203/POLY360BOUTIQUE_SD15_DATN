@@ -120,9 +120,6 @@
                         <h1>Bạn chưa có tài khoản? <a href="/poly360boutique/dang-ky" style="color: #FFFFFF">Đăng ký</a>
                         </h1>
                     </div>
-                    <a href="/poly360boutique/dang-ky" style="color: white; margin-left: 110px ; font-size: 15px;">Bạn
-                        chưa
-                        có tài khoản? Đăng ký</a>
                 </form>
             </div>
         </div>
