@@ -26,38 +26,40 @@ public class ChiTietSanPham {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_ctsp")
     private String maChiTietSanPham;
+
     @Column(name = "so_luong")
     private Integer soLuong;
 
     @Column(name = "gia_hien_hanh")
     private Long giaHienHanh;
-
     @Column(name = "gia_goc")
-    private Long
-            giaGoc;
+    private Long giaGoc;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @Column(name = "ngay_tao")
+    private Date ngayTao;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @Column(name = "ngay_sua")
+    private Date ngaySua;
 
     @Column(name = "trang_thai")
     private Integer trangThai;
-
-
     @Column(name = "ngay_tao")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime ngayTao;
-
     @Column(name = "ngay_sua")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime ngaySua;
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
     @JoinColumn(name = "san_pham_id", referencedColumnName = "id")
     private SanPham sanPham;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
-    private KichCo kichCo;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "mau_sac_id", referencedColumnName = "id")

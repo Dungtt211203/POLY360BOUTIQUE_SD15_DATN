@@ -43,6 +43,14 @@ public class HomeController {
 
     @Autowired
     private GioHangService gioHangService;
+    @Autowired
+    private TaiKhoanService taiKhoanService;
+
+    @Autowired
+    private MauSacService mauSacService;
+
+    @Autowired
+    private KichCoService kichCoService;
 
 
     @GetMapping("/home")
@@ -82,17 +90,36 @@ public class HomeController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    @GetMapping("/chi-tiet-san-pham")
+    public String view(Model model) {
 
+        List<ChiTietSanPham> chiTietSPS = chiTietSanPhamService.getAll();
+        model.addAttribute("chitietsanpham", chiTietSPS);
+
+        List<KichCo> kichCos = kichCoService.getAll();
+        model.addAttribute("kichco", kichCos);
+
+        List<MauSac> mauSacs = mauSacService.getAll();
+        model.addAttribute("mausac", mauSacs);
+
+
+        return "/chitietsp/index";
+    }
+
+
+    @GetMapping("/san-pham/detail/{id}")
+    public String detail(@PathVariable("id") String id, Model model) {
+        HinhAnhSP hinhAnhSP = hinhAnhSPService.getOne(id);
+        Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);
+        model.addAttribute("hienthi", hinhAnhSPS);
+        model.addAttribute("detail", hinhAnhSP);
         return "/template_home/detail";
     }
 
 
     @GetMapping("/dang-nhap")
-
     public String dangNhap(Model model) {
-
         model.addAttribute("taikhoan", new TaiKhoan());
-
         return ("/login/dangnhap");
     }
 
@@ -134,4 +161,37 @@ public class HomeController {
     }
 
 }
+    @PostMapping("/login")
+    public String login(
 
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+
+            Model model, @ModelAttribute(name = "taikhoan") TaiKhoan taiKhoan,
+            HttpSession session) {
+
+        TaiKhoan taiKhoans = taiKhoanService.checkLogin(username, password);
+
+        if (taiKhoans != null && taiKhoans.getVaiTro() == 2) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
+            return "redirect:/poly360boutique/home";
+
+        } else if (taiKhoans != null && taiKhoans.getVaiTro() == 1) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
+            return ("/admin/index");
+
+        } else if (taiKhoans != null && taiKhoans.getVaiTro() == 3) {
+            session.setAttribute("taikhoanlogin", taiKhoans);
+            return ("/admin/index");
+
+        } else {
+            session.setAttribute("taikhoanlogin", null);
+        }
+
+        model.addAttribute("message", "Ten tai khoan hoac mat khau khong dung");
+
+        return ("/login/dangnhap");
+    }
+
+
+}
