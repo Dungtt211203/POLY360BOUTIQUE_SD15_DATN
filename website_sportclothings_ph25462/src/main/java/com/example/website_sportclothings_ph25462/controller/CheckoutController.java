@@ -1,6 +1,5 @@
 package com.example.website_sportclothings_ph25462.controller;
 
-
 import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
 import com.example.website_sportclothings_ph25462.entity.HoaDon;
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
@@ -11,11 +10,15 @@ import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
 import com.example.website_sportclothings_ph25462.service.HoaDonChiTietService;
 import com.example.website_sportclothings_ph25462.service.KhachHangService;
 import jakarta.servlet.http.HttpSession;
-import com.example.website_sportclothings_ph25462.repository.DiaChiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -58,7 +61,6 @@ public class CheckoutController {
         }
         try {
             model.addAttribute("diaChiList", diaChiRepository.getAllByKH(taiKhoan.getId()));
-            System.out.println("xxxxxxxxxxxxxx  " + diaChiRepository.getAllByKH(taiKhoan.getId()).get(0).getHoTen());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,17 +72,23 @@ public class CheckoutController {
     @PostMapping("/process")
     public String processCheckout(@RequestParam String address, String shippingFee, Model model) {
 
+//        try {
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
         TaiKhoan taiKhoan = taiKhoanDangDangNhap.getCurrentNguoiDung();
         if (taiKhoan == null) {
             return "redirect:/login";
         }
 
-        KhachHang khachHang = khachHangService.getOneById(1L);
+        KhachHang khachHang = khachHangService.getKHByIdTaiKhoan(taiKhoanDangDangNhap.getCurrentNguoiDung().getId());
         List<GioHangChiTiet> carts = gioHangChiTietService.getAllByKhachHang(khachHang);
 
         if (carts != null && !carts.isEmpty()) {
             Long phiVanChuyen = 30000L; // tạm để mạc định phí GH = 30k
             try {
+                System.out.printf("zzzzzzzzzzzzzzz tới đây z trong cart "+ address);
                 phiVanChuyen = Long.parseLong(shippingFee);
 
             } catch (Exception e) {
@@ -97,6 +105,7 @@ public class CheckoutController {
 
             return "redirect:/checkout/success/" + order.getId();
         } else {
+            System.out.printf("zzzzzzzzzzzzzzz tới đây ngoài "+ address);
             return "redirect:/checkout/show";
         }
     }
@@ -142,5 +151,6 @@ public class CheckoutController {
 
         return gioHangChiTietList;
     }
+
 
 }

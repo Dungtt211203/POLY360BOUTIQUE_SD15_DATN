@@ -93,7 +93,7 @@ public class ChatLieuController {
             return "/chat_lieu/add";
         }
         chatLieuService.add(chatLieu);
-        return "redirect:/chat-lieu/hien-thi";
+        return "redirect:/admin/chat-lieu/hien-thi";
     }
 
 

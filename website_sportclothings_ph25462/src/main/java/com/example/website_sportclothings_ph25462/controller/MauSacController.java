@@ -71,7 +71,7 @@ public class MauSacController {
         }
         mauSac.setId(id);
         mauSacService.add(mauSac);
-        return "redirect:/mau-sac/hien-thi";
+        return "redirect:/admin/mau-sac/hien-thi";
     }
 
     @GetMapping("/mau-sac/hien-thi-add")
@@ -100,12 +100,12 @@ public class MauSacController {
             return "/mau_sac/add";
         }
         mauSacService.add(mauSac);
-        return "redirect:/mau-sac/hien-thi";
+        return "redirect:/admin/mau-sac/hien-thi";
     }
 
     @GetMapping("/mau-sac/remove/{id}")
     public String remove(@PathVariable("id") Long id) {
         mauSacService.remove(id);
-        return "redirect:/mau-sac/hien-thi";
+        return "redirect:/admin/mau-sac/hien-thi";
     }
 }

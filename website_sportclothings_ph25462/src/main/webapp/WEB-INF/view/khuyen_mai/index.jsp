@@ -129,9 +129,9 @@
                     </td>
 
                     <td>
-                        <a href="/khuyen-mai/view-update/${km.id}" style="color: black"> <i
+                        <a href="/admin/khuyen-mai/view-update/${km.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/khuyen-mai/remove/${km.id}" style="color: black"><i
+                        <a href="/admin/khuyen-mai/remove/${km.id}" style="color: black"><i
                                 class="fa-solid fa-trash"></i></a>
                     </td>
 

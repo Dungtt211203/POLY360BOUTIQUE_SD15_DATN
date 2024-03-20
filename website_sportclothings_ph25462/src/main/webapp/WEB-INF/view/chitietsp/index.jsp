@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1 style="text-align: center">QUẢN LÝ CHI TIẾT SẢN PHẨM</h1>
-<button class="btn btn-primary"><a href="/chitietsp/viewadd" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
+<button class="btn btn-primary"><a href="/admin/chitietsp/viewadd" style="text-decoration: none;color: #FFFFFF">ADD</a></button>
 <table class="table">
     <thead>
     <tr>
@@ -37,7 +37,7 @@
     <c:forEach items="${list}" var="ctsp">
         <tr>
             <td>${ctsp.id}</td>
-            <td>${ctsp.maChiTietSanPham}</td>
+            <td>${ctsp.ma}</td>
             <td>${ctsp.soLuong}</td>
             <td>${ctsp.giaGoc}</td>
             <td>${ctsp.giaHienHanh}</td>
@@ -49,11 +49,9 @@
             <td>${ctsp.chatLieu.ten}</td>
             <td>${ctsp.thuongHieu.ten}</td>
             <td>
-                <button class="btn btn-primary"><a href="/chitietsp/update/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-danger"><a href="/chitietsp/delete/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
+                <button class="btn btn-primary"><a href="/admin/chitietsp/update/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Update</a></button>
+                <button class="btn btn-danger"><a href="/admin/chitietsp/delete/${ctsp.id}" style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
-
-
         </tr>
     </c:forEach>
 

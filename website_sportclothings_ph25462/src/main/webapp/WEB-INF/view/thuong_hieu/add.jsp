@@ -79,7 +79,7 @@ rel="stylesheet"
     <body>
     <div class="formAdd">
         <h1>THÊM/SỬA THƯƠNG HIỆU</h1>
-        <form:form action="/thuong-hieu/hien-thi-add" method="post" modelAttribute="thuongHieu">
+        <form:form action="/admin/thuong-hieu/hien-thi-add" method="post" modelAttribute="thuongHieu">
             <div class="input">
                 <label>Mã Thương Hiệu</label>: <form:input path="ma"/>
                 <form:errors path="ma" cssStyle="color: red"/>

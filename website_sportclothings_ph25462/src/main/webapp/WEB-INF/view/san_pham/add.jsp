@@ -69,7 +69,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA SẢN PHẤM</h1>
-    <form:form action="/san-pham/hien-thi-add" method="post" modelAttribute="sanPham">
+    <form:form action="/admin/san-pham/hien-thi-add" method="post" modelAttribute="sanPham">
         <div class="input">
             Mã Sản Phẩm: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>

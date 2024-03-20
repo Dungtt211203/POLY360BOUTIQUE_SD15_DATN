@@ -117,7 +117,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "POST",
-                            url: "/admin/donHang/XacNhanDonHangChoGiao",
+                            url: "/admin/donHang/xacNhanDonHangDangGiao",
                             contentType: "application/json",
                             data: JSON.stringify(selectedItems),
                             success: function (response) {

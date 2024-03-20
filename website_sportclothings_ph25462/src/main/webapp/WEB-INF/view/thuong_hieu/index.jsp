@@ -68,15 +68,15 @@
                     <td>${th.ten}</td>
                     <td>${th.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/thuong-hieu/view-update/${th.id}" style="color: black"> <i
+                        <a href="/admin/thuong-hieu/view-update/${th.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/thuong-hieu/remove/${th.id}" style="color: black"
+                        <a href="/admin/thuong-hieu/remove/${th.id}" style="color: black"
                            onclick="return confirm('Bạn có chắc chắn muốn xóa thương hiệu này?')"><i
                                 class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
-            <button class="btn btn-primary"><a href="/thuong-hieu/hien-thi-add"
+            <button class="btn btn-primary"><a href="/admin/thuong-hieu/hien-thi-add"
                                                style="text-decoration: none;color: #FFFFFF"><i
                     class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             </tbody>

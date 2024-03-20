@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KHUYẾN MẠI CHI TIẾT</h1>
-    <form:form action="/chi-tiet-khuyen-mai/hien-thi-add" method="post" modelAttribute="ctkm">
+    <form:form action="/admin/chi-tiet-khuyen-mai/hien-thi-add" method="post" modelAttribute="ctkm">
         <div class="input">
             <label>Mã Khuyến Mại Chi Tiết</label>:
             <form:input path="maChiTietKhuyenMai"/>

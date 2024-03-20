@@ -41,7 +41,7 @@ public class KhuyenMaiController {
 
         }
         khuyenMaiService.add(khuyenMai);
-        return "redirect:/khuyen-mai/hien-thi";
+        return "redirect:/admin/khuyen-mai/hien-thi";
     }
 
     @GetMapping("/khuyen-mai/view-update/{id}")
@@ -59,12 +59,12 @@ public class KhuyenMaiController {
         }
         khuyenMai.setId(id);
         khuyenMaiService.add(khuyenMai);
-        return "redirect:/khuyen-mai/hien-thi";
+        return "redirect:/admin/khuyen-mai/hien-thi";
     }
 
     @GetMapping("/khuyen-mai/remove/{id}")
     public String delete(@PathVariable("id") Long id) {
         khuyenMaiService.remove(id);
-        return "redirect:/khuyen-mai/hien-thi";
+        return "redirect:/admin/khuyen-mai/hien-thi";
     }
 }

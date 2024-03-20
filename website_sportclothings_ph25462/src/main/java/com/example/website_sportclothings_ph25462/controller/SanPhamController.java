@@ -90,7 +90,7 @@ public class SanPhamController {
         }
         sanPham.setId(id);
         sanPhamService.add(sanPham);
-        return "redirect:/san-pham/hien-thi";
+        return "redirect:/admin/san-pham/hien-thi";
     }
 
     @GetMapping("/san-pham/hien-thi-add")
@@ -114,7 +114,7 @@ public class SanPhamController {
             return "/san_pham/add";
         }
         sanPhamService.add(sanPham);
-        return "redirect:/san-pham/hien-thi";
+        return "redirect:/admin/san-pham/hien-thi";
     }
 
     @GetMapping("/san-pham/remove/{id}")

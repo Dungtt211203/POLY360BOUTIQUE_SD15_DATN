@@ -10,7 +10,6 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Table(name = "chi_tiet_san_pham")
 @Entity
@@ -28,7 +27,7 @@ public class ChiTietSanPham {
     private Long id;
 
     @Column(name = "ma_ctsp")
-    private String maChiTietSanPham;
+    private String ma;
 
     @Column(name = "so_luong")
     private Integer soLuong;

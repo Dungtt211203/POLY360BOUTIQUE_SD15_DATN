@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA MÀU SẮC</h1>
-    <form:form action="/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
+    <form:form action="/admin/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
         <div class="input">
             <label>Mã Màu Sắc</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>

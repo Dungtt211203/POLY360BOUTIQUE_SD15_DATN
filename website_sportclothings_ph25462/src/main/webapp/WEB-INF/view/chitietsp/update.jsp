@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<form:form method="post" action="/chitietsp/update/${chitietsp.id}" modelAttribute="sp">
+<form:form method="post" action="/admin/chitietsp/update/${chitietsp.id}" modelAttribute="sp">
     ID:
     <form:input path="id" value="${chitietsp.id}"/><br>
     Ma:

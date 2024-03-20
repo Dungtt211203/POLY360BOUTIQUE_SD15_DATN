@@ -87,22 +87,22 @@
                                         </td>
                                     </tr>
                                 </c:forEach>
-                                <button class="btn btn-primary"><a href="/chat-lieu/hien-thi-add"
+                                <button class="btn btn-primary"><a href="/admin/chat-lieu/hien-thi-add"
                                         style="text-decoration: none;color: #FFFFFF"><i
                                             class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
                                 <nav aria-label="Page navigation example" style="margin-left: 700px">
                                     <ul class="pagination">
                                         <li class="page-item disabled"><a class="page-link"
-                                                href="/chat-lieu/hien-thi?cl=0">Previous</a></li>
+                                                href="/admin/chat-lieu/hien-thi?cl=0">Previous</a></li>
                                         <li class="page-item"><a class="page-link"
-                                                href="/chat-lieu/hien-thi?cl=${page.number-1}">
-                                                <<<< /a>
+                                                href="/admin/chat-lieu/hien-thi?cl=${page.number-1}">
+                                                <<<< </a>
                                         </li>
                                         <li class="page-item"><a class="page-link"
-                                                href="/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
+                                                href="/admin/chat-lieu/hien-thi?cl=${page.number+1}">>>></a>
                                         </li>
                                         <li class="page-item"><a class="page-link"
-                                                href="/chat-lieu/hien-thi?cl=${page.totalPages+1}">Next</a></li>
+                                                href="/admin/chat-lieu/hien-thi?cl=${page.totalPages+1}">Next</a></li>
                                     </ul>
                                 </nav>
                             </tbody>

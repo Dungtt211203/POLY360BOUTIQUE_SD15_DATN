@@ -28,5 +28,5 @@ public interface ChiTietSanPhamRepository extends JpaRepository<ChiTietSanPham, 
     ChiTietSanPham getAllByIdSanPhamAndIdMauSacAndIdKichCo(@Param("idSP") long idSP, @Param("idMauSac") long idMauSac, @Param("idKichCo") long idKichCo);
 
     @Query(value = "SELECT so_luong FROM Chi_tiet_san_pham WHERE san_pham_id = :idSanPham AND mau_sac_id = :idMauSac AND kich_co_id = :idKichCo", nativeQuery = true)
-    Long getSanPhamChiTietByIdSPAndIdSizeAndIdMauSac(@Param("idSanPham") Long idSanPham, @Param("idMauSac") int idMauSac, @Param("idKichCo") int idKichCo);
+    Long getSanPhamChiTietByIdSPAndIdSizeAndIdMauSac(@Param("idSanPham") Long idSanPham, @Param("idMauSac") Long idMauSac, @Param("idKichCo") Long idKichCo);
 }

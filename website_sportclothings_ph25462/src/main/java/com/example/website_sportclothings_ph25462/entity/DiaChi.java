@@ -17,6 +17,7 @@ public class DiaChi {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "ma_dia_chi")
     private String ma;
     @Column(name = "phuong_xa")

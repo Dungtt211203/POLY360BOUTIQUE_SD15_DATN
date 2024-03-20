@@ -30,6 +30,11 @@ public class DonHangController {
 
     @GetMapping("/getAll")
     public String hienThi(Model model) {
+        TaiKhoan taiKhoan = taiKhoanDangDangNhap.getCurrentNguoiDung();
+        if(taiKhoan == null){
+            return "redirect:/login";
+        }
+
         List<HoaDon> hoaDonList = hoaDonService.getAllByKhachHang();
         model.addAttribute("donHangList", hoaDonList);
         return "/don_hang/don-hang";

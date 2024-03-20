@@ -76,7 +76,7 @@ public class KichCoController {
         }
         kichCo.setId(id);
         kichCoService.add(kichCo);
-        return "redirect:/kich-co/hien-thi";
+        return "redirect:/admin/kich-co/hien-thi";
     }
 
     @GetMapping("/kich-co/hien-thi-add")
@@ -105,12 +105,12 @@ public class KichCoController {
             return "/kich_co/add";
         }
         kichCoService.add(kichCo);
-        return "redirect:/kich-co/hien-thi";
+        return "redirect:/admin/kich-co/hien-thi";
     }
 
     @GetMapping("/kich-co/remove/{id}")
     public String remove(@PathVariable("id") Long id) {
         kichCoService.remove(id);
-        return "redirect:/kich-co/hien-thi";
+        return "redirect:/admin/kich-co/hien-thi";
     }
 }

@@ -31,7 +31,7 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
             response.sendRedirect("/poly360boutique/home");
         } else if (roleList.get(0).equalsIgnoreCase("ROLE_ADMIN")) {
 
-            response.sendRedirect("/poly360boutique/admin");
+            response.sendRedirect("/admin/poly360boutique/dashboard");
         } else {
             response.sendRedirect("/logout");
 

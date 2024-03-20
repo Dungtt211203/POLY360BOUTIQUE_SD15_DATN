@@ -55,7 +55,7 @@ public class KhachHangController {
         }
         khachHang.setId(id);
         khachHangService.add(khachHang);
-        return "redirect:/khach-hang/hien-thi";
+        return "redirect:/admin/khach-hang/hien-thi";
     }
 
     @PostMapping("/khach-hang/hien-thi-add")
@@ -74,13 +74,13 @@ public class KhachHangController {
             return "/khach_hang/add";
         }
         khachHangService.add(khachHang);
-        return "redirect:/khach-hang/hien-thi";
+        return "redirect:/admin/khach-hang/hien-thi";
     }
 
     @GetMapping("/khach-hang/remove/{id}")
     public String remove(@PathVariable("id") Long id) {
         khachHangService.remove(id);
-        return "redirect:/khach-hang/hien-thi";
+        return "redirect:/admin/khach-hang/hien-thi";
     }
 
 //    @GetMapping("/search")

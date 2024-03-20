@@ -11,7 +11,13 @@ public interface ChiTietKhuyenMaiService {
 
     ChiTietKhuyenMai add(ChiTietKhuyenMai chiTietKhuyenMai);
 
-    ChiTietKhuyenMai update(Long id);
+    ChiTietKhuyenMai update(ChiTietKhuyenMai chiTietKhuyenMai, Long id);
+
+
+    ChiTietKhuyenMai getChiTietKhuyenMaiById(Long id);
+
+    ChiTietKhuyenMai getOne(String maCtkm);
+
 
     void remove(Long id);
 }

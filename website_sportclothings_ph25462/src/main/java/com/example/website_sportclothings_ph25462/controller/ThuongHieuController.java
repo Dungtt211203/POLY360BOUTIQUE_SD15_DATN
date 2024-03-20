@@ -94,7 +94,7 @@ public class ThuongHieuController {
             return "/thuong_hieu/add";
         }
         thuongHieuService.add(thuongHieu);
-        return "redirect:/thuong-hieu/hien-thi";
+        return "redirect:/admin/thuong-hieu/hien-thi";
     }
 
     @GetMapping("/thuong-hieu/remove/{id}")
@@ -121,7 +121,7 @@ public class ThuongHieuController {
         }
         thuongHieu.setId(id);
         thuongHieuService.add(thuongHieu);
-        return "redirect:/thuong-hieu/hien-thi";
+        return "redirect:/admin/thuong-hieu/hien-thi";
     }
 
 }

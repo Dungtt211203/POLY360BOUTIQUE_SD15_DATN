@@ -51,7 +51,7 @@
     </div>
     <div style="margin-left: 200px;margin-top: 100px">
         <h1 style="text-align: center;color: black">QUẢN LÝ KHÁCH HÀNG</h1>
-        <button class="btn btn-primary"><a href="/khach-hang/hien-thi-add"
+        <button class="btn btn-primary"><a href="/admin/khach-hang/hien-thi-add"
                                            style="text-decoration: none;color: #FFFFFF"><i
                 class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
         <table class="table-warning">
@@ -90,9 +90,9 @@
                     <td>${kh.email}</td>
                     <td>${kh.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/khach-hang/view-update/${kh.id}" style="color: black"> <i
+                        <a href="/admin/khach-hang/view-update/${kh.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/khach-hang/remove/${kh.id}" style="color: black"><i
+                        <a href="/admin/khach-hang/remove/${kh.id}" style="color: black"><i
                                 class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>

@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA NHÂN VIÊN</h1>
-    <form:form action="/nhan-vien/hien-thi-add" method="post" modelAttribute="nhanVien">
+    <form:form action="/admin/nhan-vien/hien-thi-add" method="post" modelAttribute="nhanVien">
         <div class="input">
             <label>Mã Nhân Viên</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>

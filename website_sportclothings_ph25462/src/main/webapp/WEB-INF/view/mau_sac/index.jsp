@@ -71,14 +71,14 @@
                     <td>${ms.ten}</td>
                     <td>${ms.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/mau-sac/view-update/${ms.id}" style="color: black"> <i
+                        <a href="/admin/mau-sac/view-update/${ms.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/mau-sac/remove/${ms.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa màu sắc này?')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/admin/mau-sac/remove/${ms.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa màu sắc này?')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
 
             </c:forEach>
-            <button class="btn btn-primary"><a href="/mau-sac/hien-thi-add"
+            <button class="btn btn-primary"><a href="/admin/mau-sac/hien-thi-add"
                                                style="text-decoration: none;color: #ffffff"><i
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
             </tbody>
@@ -86,13 +86,13 @@
             <nav aria-label="...">
                 <ul class="pagination" style="margin-left: 700px">
                     <li class="page-item disabled">
-                        <a class="page-link" href="/mau-sac/hien-thi?ms=0">Previous</a>
+                        <a class="page-link" href="/admin/mau-sac/hien-thi?ms=0">Previous</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="/mau-sac/hien-thi?ms=${page.number-1}"><<<</a>
+                    <li class="page-item"><a class="page-link" href="/admin/mau-sac/hien-thi?ms=${page.number-1}"><<<</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="/mau-sac/hien-thi?ms=${page.number+1}">>>></a>
+                    <li class="page-item"><a class="page-link" href="/admin/mau-sac/hien-thi?ms=${page.number+1}">>>></a>
                     <li class="page-item">
-                        <a class="page-link" href="/mau-sac/hien-thi?ms=${page.totalPages+1}">Next</a>
+                        <a class="page-link" href="/admin/mau-sac/hien-thi?ms=${page.totalPages+1}">Next</a>
                     </li>
                 </ul>
             </nav>

@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Controller
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class ThongKeController {
     @Autowired
     HoaDonService hoaDonService;

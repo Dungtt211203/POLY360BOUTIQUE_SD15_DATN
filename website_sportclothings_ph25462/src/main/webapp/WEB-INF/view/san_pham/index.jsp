@@ -80,13 +80,13 @@
                         <%--            <td>${sp.nguoiTao}</td>--%>
                     <td>${sp.trangThai==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/san-pham/view-update/${sp.id}" style="color: black"> <i
+                        <a href="/admin/san-pham/view-update/${sp.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/san-pham/remove/${sp.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/admin/san-pham/remove/${sp.id}" style="color: black" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
-            <button type="button" class="btn btn-primary" style="width: 100px;"><a href="/san-pham/hien-thi-add"
+            <button type="button" class="btn btn-primary" style="width: 100px;"><a href="/admin/san-pham/hien-thi-add"
                                                                                    style="color: #FFFFFF;text-decoration: none" ><i
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
 
@@ -96,13 +96,13 @@
         <nav aria-label="...">
             <ul class="pagination" style="margin-left: 700px">
                 <li class="page-item disabled">
-                    <a class="page-link" href="/san-pham/hien-thi?sp=0">Previous</a>
+                    <a class="page-link" href="/admin/san-pham/hien-thi?sp=0">Previous</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="/san-pham/hien-thi?sp=${page.number-1}"><<<</a>
+                <li class="page-item"><a class="page-link" href="/admin/san-pham/hien-thi?sp=${page.number-1}"><<<</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="/san-pham/hien-thi?sp=${page.number+1}">>>></a>
+                <li class="page-item"><a class="page-link" href="/admin/san-pham/hien-thi?sp=${page.number+1}">>>></a>
                 <li class="page-item">
-                    <a class="page-link" href="/san-pham/hien-thi?sp=${page.totalPages+1}">Next</a>
+                    <a class="page-link" href="/admin/san-pham/hien-thi?sp=${page.totalPages+1}">Next</a>
                 </li>
             </ul>
         </nav>

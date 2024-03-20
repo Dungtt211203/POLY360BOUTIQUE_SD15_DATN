@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KHUYẾN MẠI</h1>
-    <form:form action="/khuyen-mai/hien-thi-add" method="post" modelAttribute="khuyenMai">
+    <form:form action="/admin/khuyen-mai/hien-thi-add" method="post" modelAttribute="khuyenMai">
         <div class="input">
             <label>Mã Khuyến Mại</label>: <form:input path="maKhuyenMai"/>
             <form:errors path="maKhuyenMai" cssStyle="color: red"/>

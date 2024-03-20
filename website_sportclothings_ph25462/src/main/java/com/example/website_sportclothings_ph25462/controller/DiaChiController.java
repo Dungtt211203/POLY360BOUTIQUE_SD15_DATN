@@ -30,16 +30,27 @@ public class DiaChiController {
     private TaiKhoanDangDangNhap taiKhoanDangDangNhap;
 
 
+
+
+
     @PostMapping("/create_address")
     public String createAddress(@ModelAttribute("address") DiaChi diaChi) {
-        TaiKhoan taiKhoanKH =  taiKhoanDangDangNhap.getCurrentNguoiDung();
+
+        TaiKhoan taiKhoanKH = taiKhoanDangDangNhap.getCurrentNguoiDung();
 
         List<DiaChi> diaChiList = diaChiRepository.findAll();
 
         diaChi.setTaiKhoanKH(taiKhoanKH);
 
         diaChi.setTinh(diaChi.getThanhPho());
-        diaChi.setMa("DC" + diaChiRepository.idMax() + 1);
+//        diaChi.setMa("DC" + diaChiRepository.idMax() + 1);
+        try {
+            System.out.printf("///// dc " + diaChi.getId());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         if (diaChiList.isEmpty()) {
             diaChi.setTrangThai(1);
             diaChiService.addDiaChi(diaChi);
@@ -52,8 +63,7 @@ public class DiaChiController {
 
             diaChiService.addDiaChi(diaChi);
 
-            diaChiService.updateOtherAddressesToNonPrimary(1L, diaChi.getId());
-
+            diaChiService.updateOtherAddressesToNonPrimary(taiKhoanKH.getId(), diaChi.getId());
         }
 
 

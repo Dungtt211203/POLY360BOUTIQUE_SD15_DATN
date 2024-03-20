@@ -91,16 +91,16 @@
 
 
             <td>
-                <button class="btn btn-success"><a href="/chi-tiet-khuyen-mai/view-update/${ctkm.id}"
+                <button class="btn btn-success"><a href="/admin/chi-tiet-khuyen-mai/view-update/${ctkm.id}"
                                                    style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-danger"><a href="/chi-tiet-khuyen-mai/remove/${ctkm.id}"
+                <button class="btn btn-danger"><a href="/admin/chi-tiet-khuyen-mai/remove/${ctkm.id}"
                                                   style="text-decoration: none;color: #FFFFFF">Remove</a></button>
             </td>
 
 
         </tr>
     </c:forEach>
-    <button class="btn btn-primary"><a href="/chi-tiet-khuyen-mai/hien-thi-add"
+    <button class="btn btn-primary"><a href="/admin/chi-tiet-khuyen-mai/hien-thi-add"
                                        style="text-decoration: none;color: #FFFFFF">ADD</a></button>
     </tbody>
 </table>

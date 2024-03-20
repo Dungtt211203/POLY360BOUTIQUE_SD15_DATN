@@ -73,7 +73,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KHÁCH HÀNG</h1>
-    <form:form action="/khach-hang/hien-thi-add" method="post" modelAttribute="khachHang">
+    <form:form action="/admin/khach-hang/hien-thi-add" method="post" modelAttribute="khachHang">
         <div class="input">
             <label>Mã Khách Hàng</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: #ff0000"/>

@@ -92,7 +92,7 @@
     <h1 style="text-align: center">Thống Kê Doanh Thu Theo Ngày Tháng Năm</h1>
     <div>
 
-        <form action="/thong-ke/hien-thi" method="get">
+        <form action="/admin/thong-ke/hien-thi" method="get">
             <label for="day">Ngày:</label>
             <select id="day" name="day">
                 <c:forEach begin="1" end="31" var="d">

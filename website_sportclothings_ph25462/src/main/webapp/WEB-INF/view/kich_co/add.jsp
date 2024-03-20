@@ -70,7 +70,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA KÍCH CỠ</h1>
-    <form:form action="/kich-co/hien-thi-add" method="post" modelAttribute="kichCo">
+    <form:form action="/admin/kich-co/hien-thi-add" method="post" modelAttribute="kichCo">
         <div class="input">
             <label>Mã Kích Cỡ</label>: <form:input path="ma"/>
             <form:errors path="ma" cssStyle="color: red"/>

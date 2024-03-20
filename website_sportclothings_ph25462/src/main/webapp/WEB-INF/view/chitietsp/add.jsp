@@ -33,7 +33,7 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA CTSP</h1>
-    <form:form method="post" action="/chitietsp/add" modelAttribute="ctsp">
+    <form:form method="post" action="/admin/chitietsp/add" modelAttribute="ctsp">
         ID:
         <form:input path="id"/><br>
         Ma:

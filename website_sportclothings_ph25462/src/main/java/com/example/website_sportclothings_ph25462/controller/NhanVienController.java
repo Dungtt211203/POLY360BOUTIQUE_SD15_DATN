@@ -51,7 +51,7 @@ public class NhanVienController {
             }
         nhanVien.setId(id);
         nhanVienService.add(nhanVien);
-        return "redirect:/nhan-vien/hien-thi";
+        return "redirect:/admin/nhan-vien/hien-thi";
     }
 
     @PostMapping("/nhan-vien/hien-thi-add")
@@ -70,13 +70,13 @@ public class NhanVienController {
             return "/nhan_vien/add";
         }
         nhanVienService.add(nhanVien);
-        return "redirect:/nhan-vien/hien-thi";
+        return "redirect:/admin/nhan-vien/hien-thi";
     }
 
     @GetMapping("/nhan-vien/remove/{id}")
     public String remove(@PathVariable("id") Long id) {
         nhanVienService.remove(id);
-        return "redirect:/nhan-vien/hien-thi";
+        return "redirect:/admin/nhan-vien/hien-thi";
     }
 
 //    @GetMapping("/search")

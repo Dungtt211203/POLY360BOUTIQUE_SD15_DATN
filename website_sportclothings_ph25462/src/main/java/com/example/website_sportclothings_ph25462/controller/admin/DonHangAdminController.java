@@ -237,6 +237,7 @@ public class DonHangAdminController {
 
     @GetMapping("/donHangDangGiao/{idDonHang}")
     public String xacNhanDonHangDangGiao(@PathVariable Long idDonHang) {
+        System.out.printf("xxxxxxx tới giao t công "+ idDonHang);
         HoaDon hoaDon = hoaDonService.getDonHangById(idDonHang);
         hoaDon.setNgayThanhToan(LocalDateTime.now());
         hoaDon.setTrangThai(1);

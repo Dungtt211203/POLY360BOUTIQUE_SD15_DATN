@@ -191,13 +191,14 @@
             </div>
             <div class="quantity">
                 <p>Quantity :</p>
-                <select class="mb-2 custom-select" id="soLuong" name="soLuong">
-                    <option value="1" selected="">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+                <input type="number" min="1" max="1000" value="" name="soLuong" id="soLuong">
+<%--                <select class="mb-2 custom-select" id="soLuong" name="soLuong">--%>
+<%--                    <option value="1" selected="">1</option>--%>
+<%--                    <option value="2">2</option>--%>
+<%--                    <option value="3">3</option>--%>
+<%--                    <option value="4">4</option>--%>
+<%--                    <option value="5">5</option>--%>
+<%--                </select>--%>
 
 
             </div>

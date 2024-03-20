@@ -84,13 +84,13 @@
                     <td>${nv.email}</td>
                     <td>${nv.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                     <td>
-                        <a href="/nhan-vien/view-update/${nv.id}" style="color: black"> <i
+                        <a href="/admin/nhan-vien/view-update/${nv.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/nhan-vien/remove/${nv.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/admin/nhan-vien/remove/${nv.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
-            <button class="btn btn-primary"><a href="/nhan-vien/hien-thi-add"
+            <button class="btn btn-primary"><a href="/admin/nhan-vien/hien-thi-add"
                                                style="text-decoration: none;color: #FFFFFF"><i
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
             </tbody>
