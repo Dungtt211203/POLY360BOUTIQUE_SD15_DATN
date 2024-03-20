@@ -49,26 +49,21 @@
         </div>
     </section>
     <section style="margin-top: 30px">
-        <h1 style="text-align: center;margin-top: 30px">SẢN PHẨM ĐANG SALE</h1>
+        <h1 style="text-align: center;margin-top: 30px">SẢN PHẨM THƯƠNG HIỆU ADIDAS</h1>
         <jsp:include page="../template_home/cart.jsp"/>
     </section>
-    <section style="margin-top: 30px">
-        <h1 style="text-align: center;margin-top: 30px">SẢN PHẨM BÁN CHẠY</h1>
-        <jsp:include page="../template_home/cart.jsp"/>
-    </section>
-</section>
-<jsp:include page="footer.jsp"/>
-<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-<script type="text/javascript">
-    jQuery('.nav-link').on('click', function name(params) {
-        jQuery('.nav-link').each(function name(params) {
-            jQuery(this).removeClass('active')
+    <jsp:include page="footer.jsp"/>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        jQuery('.nav-link').on('click', function name(params) {
+            jQuery('.nav-link').each(function name(params) {
+                jQuery(this).removeClass('active')
+            })
+            jQuery(this).addClass('active')
         })
-        jQuery(this).addClass('active')
-    })
-</script>
+    </script>
 
 
 </body>
