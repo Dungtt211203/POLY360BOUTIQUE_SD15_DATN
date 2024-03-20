@@ -36,7 +36,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }
                             <fmt:formatNumber
-                                    pattern="###,### VNĐ">
+                                    pattern="VNĐ">
                             </fmt:formatNumber>
                         </li>
                     </ul>

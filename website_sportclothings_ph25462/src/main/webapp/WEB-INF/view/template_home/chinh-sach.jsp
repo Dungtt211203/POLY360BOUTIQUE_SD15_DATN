@@ -65,5 +65,11 @@ Khi khách hàng mua sản phẩm, cửa hàng sẽ áp dụng đổi hoặc tr�
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+<script>
+    const element = document.getElementById("chinhsach");
+    const elementActive = document.getElementById("homepage");
+    elementActive.classList.remove("active");
+    element.classList.add("active");
+</script>
 </body>
 </html>

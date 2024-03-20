@@ -61,6 +61,8 @@ public class SanPham {
     @Column(name = "ngay_tao")
     private String ngayTao;
 
+    @Column(name="hinh_nen") // banner
+    private String hinhNen;
     @Column(name = "ngay_sua")
     private String ngaySua;
 

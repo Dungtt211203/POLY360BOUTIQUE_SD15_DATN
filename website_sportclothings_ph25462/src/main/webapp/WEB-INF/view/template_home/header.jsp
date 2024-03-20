@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" href="../../../css/header.css">
 <%@ page pageEncoding="utf-8" %>
 <header>
+
     <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -11,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 200px">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/poly360boutique/home"
+                            <a class="nav-link active" id="homepage" aria-current="page" href="/poly360boutique/home"
                                style="color: #2D2D2D">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
@@ -27,7 +28,8 @@
                             <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach" style="color: #2D2D2D">Chính Sách</a>
+                            <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach"
+                               style="font-weight: 400 !important;color: #2D2D2D" id="chinhsach">Chính Sách</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search" style="gap: 10px;">
@@ -36,15 +38,20 @@
                         <button type="submit" class="btn btn-outline-warning">Search</button>
                     </form>
                     <div onmouseover="myFunction()"><i class="fa-solid fa-user"
-                                                   style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
+                                                       style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
                     </div>
                     <div>${principal.tenTK}</div>
                     <div class="popuptext" id="myPopup">
                         <c:choose>
                             <c:when test="${empty principal}">
-                                <ul class="nav-dropdown nav-submenu">
-                                    <li><a href="/login">Đăng nhập</a></li>
-                                    <li><a href="/register">Đăng ký</a></li>
+                                <ul class="nav-dropdown nav-submenu"
+                                    style="margin: unset;padding: unset;list-style: none;">
+                                    <li><a href="/login"
+                                           style="background-color: black;color: WHITE;display: flex;justify-content: center;list-style: none">Đăng
+                                        nhập</a></li>
+                                    <li><a href="/register"
+                                           style="display: flex;align-items: center;justify-content: center;border: 1px solid;margin-top: 15px;list-style: none">Đăng
+                                        ký</a></li>
                                 </ul>
                             </c:when>
                             <c:otherwise>
@@ -81,10 +88,10 @@
                                 <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
                             </c:forEach>
                         </div>
-<%--                    <div class="popuptext" id="myPopup1">--%>
-<%--                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>--%>
-<%--                        <a>Đăng xuất</a>--%>
-<%--                    </div>--%>
+                        <%--                    <div class="popuptext" id="myPopup1">--%>
+                        <%--                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>--%>
+                        <%--                        <a>Đăng xuất</a>--%>
+                        <%--                    </div>--%>
                     </div>
                     <%--                    <div class="span8">--%>
                     <%--                        <div class="account pull-right">--%>
@@ -114,16 +121,29 @@
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
     }
+
     function myFunction1() {
         var popup = document.getElementById("myPopup1");
         popup.classList.toggle("show");
     }
+    const link = document.querySelector('.nav-link');
 
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const url = this.getAttribute('href');
+        window.location.href = url; // Redirect to the specified URL
+    });
 </script>
 <script src="../../../js/cart.js">
 
 </script>
 <style>
+    a.nav-link.active{
+        border-bottom: 4px solid #ffc107;
+    }
+    .nav-link::hover{
+        color:  #ffc107;
+    }
     .show {
         display: flex !important;
         flex-direction: column;
@@ -137,7 +157,8 @@
     .show button {
         width: 150px;
     }
-    a:hover{
+
+    a:hover {
         color: orange;
     }
 </style>
