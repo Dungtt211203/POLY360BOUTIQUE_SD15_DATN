@@ -7,6 +7,7 @@ import java.util.List;
 
 @Service
 public interface ThuongHieuService {
+
     List<ThuongHieu> getAll();
 
     void add(ThuongHieu thuongHieu);

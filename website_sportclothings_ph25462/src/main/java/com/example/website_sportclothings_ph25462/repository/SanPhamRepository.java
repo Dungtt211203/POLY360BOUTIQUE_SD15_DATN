@@ -17,4 +17,7 @@ public interface SanPhamRepository extends JpaRepository<SanPham, Long> {
 
     @Query("select sp from SanPham sp where  sp.ma =?1")
     SanPham getSanPhamByMaSP(String maSP);
+
+
+
 }

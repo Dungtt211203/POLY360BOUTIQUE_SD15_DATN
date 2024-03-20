@@ -38,12 +38,12 @@ public class ChiTietSanPham {
     private Long giaGoc;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "ngay_tao")
     private Date ngayTao;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "ngay_sua")
     private Date ngaySua;
 
@@ -70,7 +70,7 @@ public class ChiTietSanPham {
     @JoinColumn(name = "kich_co_id", referencedColumnName = "id")
     private KichCo kichCo;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
-    private HinhAnhSP hinhAnhSP;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "hinh_anh_id", referencedColumnName = "id")
+//    private HinhAnhSP hinhAnhSP;
 }

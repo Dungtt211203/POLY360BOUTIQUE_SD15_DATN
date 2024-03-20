@@ -17,75 +17,80 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D">Thương Hiệu
                                 <div class="dropdown-content">
-                                    <a href="/poly360boutique/thuong-hieu-nike">Nike</a>
-                                    <a href="/poly360boutique/thuong-hieu-nike">Adidas</a>
-                                    <a href="/poly360boutique/thuong-hieu-nike">Li-ning</a>
+                                    <a href="/poly360boutique/thuong-hieu/nike">Nike</a>
+                                    <a href="/poly360boutique/thuong-hieu/adidas">Adidas</a>
+                                    <a href="/poly360boutique/thuong-hieu/li-ning">Li-ning</a>
+                                    <a href="/poly360boutique/thuong-hieu/puma">Puma</a>
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: #2D2D2D">Sản Phẩm</a>
+                            <a class="nav-link" href="/poly360boutique/product" style="color: #2D2D2D">Sản Phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach" style="color: #2D2D2D">Chính Sách</a>
+                            <a class="nav-link fw-bold menu_hover" href="/poly360boutique/chinh-sach"
+                               style="color: #2D2D2D">Chính Sách</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search" style="gap: 10px;">
-                        <input class="search" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search"
+                    <form class="d-flex" role="search" style="gap:10px;">
+                        <input class="search" type="search" name="search" placeholder="Tìm kiếm sản phẩm"
+                               aria-label="Search"
                                style="height: 40px;margin: unset;">
                         <button type="submit" class="btn btn-outline-warning">Search</button>
                     </form>
                     <div onmouseover="myFunction()"><i class="fa-solid fa-user"
-                                                   style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
+                                                       style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
                     </div>
-                    <div class="popuptext" id="myPopup">
-                        <button class="btn btn-dark" style="width: 200px;height: 50px;margin-left: 50px"><a href="/poly360boutique/dang-nhap"  style="color: #FFFFFF;">Đăng nhập</a></button>
+                    <div class="popuptext">
+                        <button class="btn btn-dark" style="width: 200px;height: 50px;margin-left: 50px"><a
+                                href="/poly360boutique/dang-nhap" style="color: #FFFFFF;">Đăng nhập</a></button>
                         <a href="/poly360boutique/dang-ky" style="margin-left: 100px;font-size: 20px">Đăng Ký</a>
-                    <div onclick="myFunction()"><i class="far fa-user"
-                                                   style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
-                    </div>
-                    <div class="popuptext" id="myPopup">
-                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
-                        <a>Đăng xuất</a>
-                    </div>
-                    <div class="dropdown">
-                        <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
-                           style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
-                        <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
-                            <h3>Giỏ hàng</h3>
-                            <img src="../../../img/imgbanner/imagesgiohangtrong.png">
-                            <ul id="cartItems"></ul>
-                            <c:forEach var="gioHangChiTiet" items="${carts}">
-                                <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
-                                <div class="col">
-                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.gia}.đ</span></h6>
-                                    <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
-                                    <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
-                                    <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
-                                </div>
-                            </c:forEach>
-                            <a href="/showCheckout" class="btn buy-btn">Buy Now</a>
-                            <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
+                        <div onclick="myFunction()"><i class="far fa-user"
+                                                       style="color: #2D2D2D;font-size: 30px;margin-left: 20px;"></i>
                         </div>
+                        <div class="popuptext" id="myPopup">
+                            <a href="/poly360boutique/dang-nhap">Đăng nhập</a>
+                            <a>Đăng xuất</a>
+                        </div>
+                        <div class="dropdown">
+                            <i id="cartIcon" class="fa-sharp fa-regular fa-cart-shopping"
+                               style="color: #2D2D2D; margin-right: 20px;margin-left: 20px;font-size: 30px"></i>
+                            <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
+                                <h3>Giỏ hàng</h3>
+                                <img src="../../../img/imgbanner/imagesgiohangtrong.png">
+                                <ul id="cartItems"></ul>
+                                <c:forEach var="gioHangChiTiet" items="${carts}">
+                                    <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
+                                    <div class="col">
+                                        <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.gia}.đ</span></h6>
+                                        <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
+                                        <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
+                                        <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
+                                    </div>
+                                </c:forEach>
+                                <a href="/showCheckout" class="btn buy-btn">Buy Now</a>
+                                <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
+                            </div>
+                        </div>
+                        <%--                    <div class="span8">--%>
+                        <%--                        <div class="account pull-right">--%>
+                        <%--                            <ul class="user-menu">--%>
+                        <%--                                &lt;%&ndash;                                <li><a href="<c:url value='/cart/view' />">Your Cart <b>(<span&ndash;%&gt;--%>
+                        <%--                                &lt;%&ndash;                                        id="countTotal">${sessionScope.cart == null ? '0' : sessionScope.cart.tongsl}</span>)</b></a>&ndash;%&gt;--%>
+                        <%--                                &lt;%&ndash;                                </li>&ndash;%&gt;--%>
+                        <%--                                <c:if test="${empty sessionScope.taikhoan}">--%>
+                        <%--                                    <li><a href="/poly360boutique/dang-nhap">Login</a></li>--%>
+                        <%--                                </c:if>--%>
+                        <%--                                <c:if test="${not empty sessionScope.taikhoan}">--%>
+                        <%--                                    <li><a href="/poly360boutique/logout">Logout</a></li>--%>
+                        <%--                                    <li><i>Welcome,</i> <b>${sessionScope.taikhoan.tenTK}</b></li>--%>
+                        <%--                                </c:if>--%>
+                        <%--                            </ul>--%>
+                        <%--                        </div>--%>
+                        <%--                    </div>--%>
+
+
                     </div>
-                    <%--                    <div class="span8">--%>
-                    <%--                        <div class="account pull-right">--%>
-                    <%--                            <ul class="user-menu">--%>
-                    <%--                                &lt;%&ndash;                                <li><a href="<c:url value='/cart/view' />">Your Cart <b>(<span&ndash;%&gt;--%>
-                    <%--                                &lt;%&ndash;                                        id="countTotal">${sessionScope.cart == null ? '0' : sessionScope.cart.tongsl}</span>)</b></a>&ndash;%&gt;--%>
-                    <%--                                &lt;%&ndash;                                </li>&ndash;%&gt;--%>
-                    <%--                                <c:if test="${empty sessionScope.taikhoan}">--%>
-                    <%--                                    <li><a href="/poly360boutique/dang-nhap">Login</a></li>--%>
-                    <%--                                </c:if>--%>
-                    <%--                                <c:if test="${not empty sessionScope.taikhoan}">--%>
-                    <%--                                    <li><a href="/poly360boutique/logout">Logout</a></li>--%>
-                    <%--                                    <li><i>Welcome,</i> <b>${sessionScope.taikhoan.tenTK}</b></li>--%>
-                    <%--                                </c:if>--%>
-                    <%--                            </ul>--%>
-                    <%--                        </div>--%>
-                    <%--                    </div>--%>
-
-
                 </div>
             </div>
         </nav>
@@ -115,7 +120,8 @@
     .show button {
         width: 150px;
     }
-    a:hover{
+
+    a:hover {
         color: orange;
     }
 </style>
