@@ -4,6 +4,7 @@ import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
 import jakarta.validation.Valid;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,9 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RestController
-@RequiredArgsConstructor
-@Slf4j
+//@RestController
+//@RequiredArgsConstructor
+//@Slf4j
 @RequestMapping("/admin")
 public class ChatLieuController {
     @Autowired
@@ -28,18 +29,24 @@ public class ChatLieuController {
     @Autowired
     ChatLieuService chatLieuService;
 
+    @Data
+    public static class SearchForm {
+        String keyword = "";
+    }
+
     @GetMapping("/chat-lieu/hien-thi")
-    public String hienThi(Model model, @RequestParam(defaultValue = "0") int cl) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int cl, @ModelAttribute("searchForm") SearchForm searchForm) {
         Pageable pageable = PageRequest.of(cl, 5);
-        Page<ChatLieu> page = chatLieuService.getAll(pageable);
+        Page<ChatLieu> page = chatLieuService.getAll(searchForm.keyword,pageable);
         model.addAttribute("load", chatLieuService.getAll());
         model.addAttribute("cl", new ChatLieu());
         model.addAttribute("page", page);
-        model.addAttribute("view", "/chat_lieu/chinh-sach.jsp");
+        model.addAttribute("search", searchForm);
+//        model.addAttribute("view", "/chat_lieu/chinh-sach.jsp");
         return "/chat_lieu/index";
     }
 
-//    @GetMapping("/api/chat-lieu")
+//    @GetMapping("/chat-lieu/hien-thi")
 //    public ResponseEntity<?> index(Model model, @RequestParam(defaultValue = "0") int page) {
 //        Pageable pageable = PageRequest.of(page, 5);
 //        Page<ChatLieu> list = this.chatLieuRepository.findAll(pageable);
@@ -47,6 +54,7 @@ public class ChatLieuController {
 ////        model.addAttribute("searchForm", new SearchForm());
 //        return ResponseEntity.ok(clr.findAll());
 //    }
+
     @GetMapping("/chat-lieu/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
         return ("/chat_lieu/add");

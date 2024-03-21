@@ -21,8 +21,8 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     }
 
     @Override
-    public Page<ChatLieu> getAll(Pageable pageable) {
-        return clr.findAll(pageable);
+    public Page<ChatLieu> getAll(String search,Pageable pageable) {
+        return clr.search(search,pageable);
     }
 
     @Override

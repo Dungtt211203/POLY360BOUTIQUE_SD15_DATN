@@ -55,8 +55,8 @@
                     </div>
                     <div style="margin-left: 300px;margin-top: 100px">
                         <h1 style="text-align: center;color: black;font-size: 30px">QUẢN LÝ CHẤT LIỆU</h1>
-                        <form class="d-flex" role="search" style="width: 500px;margin-bottom: 30px;margin-top: 30px">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex" role="search" style="width: 500px;margin-bottom: 30px;margin-top: 30px" action="${pageContext.request.contextPath}/admin/chat-lieu/hien-thi" method="GET">
+                            <input class="form-control me-2" type="search" name="search" value="${search}" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                         <table style="width: 1000px">

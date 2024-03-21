@@ -32,6 +32,6 @@ public interface ChatLieuService {
 
     ChatLieu getOne(String maCL);
 
-    Page<ChatLieu> getAll(Pageable pageable);
+    Page<ChatLieu> getAll(String search,Pageable pageable);
 
 }
