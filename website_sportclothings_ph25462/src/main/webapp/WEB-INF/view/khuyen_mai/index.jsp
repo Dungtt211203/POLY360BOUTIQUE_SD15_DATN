@@ -138,7 +138,7 @@
 
                 </tr>
             </c:forEach>
-            <button  class="btn btn-outline-warning"><a href="/khuyen-mai/hien-thi-add"
+            <button  class="btn btn-outline-warning"><a href="/admin/khuyen-mai/hien-thi-add"
                                                style="text-decoration: none;color: black"><i
                     class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             </tbody>
