@@ -4,6 +4,8 @@ import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.repository.ChatLieuRepository;
 import com.example.website_sportclothings_ph25462.service.ChatLieuService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,9 +18,9 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-//@RestController
-//@RequiredArgsConstructor
-//@Slf4j
+@RestController
+@RequiredArgsConstructor
+@Slf4j
 @RequestMapping("/admin")
 public class ChatLieuController {
     @Autowired
@@ -37,14 +39,14 @@ public class ChatLieuController {
         return "/chat_lieu/index";
     }
 
-    @GetMapping("/chat-lieu")
-    public ResponseEntity<?> index() {
+//    @GetMapping("/api/chat-lieu")
+//    public ResponseEntity<?> index(Model model, @RequestParam(defaultValue = "0") int page) {
 //        Pageable pageable = PageRequest.of(page, 5);
-//        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+//        Page<ChatLieu> list = this.chatLieuRepository.findAll(pageable);
 //        model.addAttribute("list", list);
-//        model.addAttribute("searchForm", new SearchForm());
-        return ResponseEntity.ok(clr.findAll());
-    }
+////        model.addAttribute("searchForm", new SearchForm());
+//        return ResponseEntity.ok(clr.findAll());
+//    }
     @GetMapping("/chat-lieu/hien-thi-add")
     public String hienThiAdd(@ModelAttribute("chatLieu") ChatLieu chatLieu) {
         return ("/chat_lieu/add");

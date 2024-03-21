@@ -34,10 +34,7 @@
                         <h5 class="card-title">${hienthis.sanPham.ten}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia }
-                            <fmt:formatNumber
-                                    pattern="VNĐ">
-                            </fmt:formatNumber>
+                        <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia} đ
                         </li>
                     </ul>
                 </div>
