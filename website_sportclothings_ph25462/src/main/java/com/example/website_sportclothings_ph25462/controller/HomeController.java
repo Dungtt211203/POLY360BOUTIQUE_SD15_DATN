@@ -38,6 +38,7 @@ public class HomeController {
     @Autowired
     private KichCoService kichCoService;
 
+
     @Autowired
     private ThuongHieuService thuongHieuService;
 
