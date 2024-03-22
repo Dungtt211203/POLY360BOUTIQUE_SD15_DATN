@@ -55,7 +55,7 @@
             <tr>
                 <th>STT</th>
                 <th>ID</th>
-                <th>ID Tài Khoản</th>
+<%--                <th>ID Tài Khoản</th>--%>
                 <th>Mã Nhân Viên</th>
                 <th>Họ Nhân Viên</th>
                 <th>Tên Đệm Nhân Viên</th>
@@ -73,7 +73,7 @@
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${nv.id}</td>
-                    <td>${nv.taiKhoanNV.id}</td>
+<%--                    <td>${nv.taiKhoanNV.id}</td>--%>
                     <td>${nv.ma}</td>
                     <td>${nv.ho}</td>
                     <td>${nv.tenDem}</td>

@@ -1,11 +1,11 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
-import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +47,12 @@ public class SanPhamServiceImpl implements SanPhamService {
 
         return spr.getSanPhamByMaSP(maCL);
     }
+    public Page<SanPham> getData(Integer page) {
 
+        Pageable pageable = PageRequest.of(page, 4);
+
+        return spr.findAll(pageable);
+    }
     @Override
     public SanPham getById(long id) {
         return spr.findById(id).orElse(null);

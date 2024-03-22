@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
     @GetMapping("/poly360boutique/dashboard")
     public String getHienThiAdmin() {
-
         return ("/admin/index");
     }
 

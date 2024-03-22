@@ -1,5 +1,6 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;

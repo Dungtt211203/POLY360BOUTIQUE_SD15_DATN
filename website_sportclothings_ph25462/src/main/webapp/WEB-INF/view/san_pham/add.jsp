@@ -90,6 +90,11 @@
             <form:errors path="moTa" cssStyle="color: red"/>
             <br/>
         </div>
+        <div class="input">
+           Hinh Nền: <form:input path="hinhNen" cssStyle="margin-right: 135px"/>
+            <form:errors path="hinhNen" cssStyle="color: red"/>
+            <br/>
+        </div>
         <%--        Người Tạo: <form:input path="nguoiTao"/>--%>
         <%--        <form:errors path="nguoiTao" cssStyle="color: red"/>--%>
         <%--        <br/>--%>

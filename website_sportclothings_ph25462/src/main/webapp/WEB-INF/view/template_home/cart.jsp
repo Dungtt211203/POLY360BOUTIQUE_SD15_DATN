@@ -25,21 +25,20 @@
 
 
                     <div class="row">
-
                         <c:forEach items="${hienthi.content}" var="hienthis">
                             <div class="col-3 mt-3">
                                 <div class="card">
                                     <div id="cartItems">
                                         <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
-                                            <img src="/img/imgsanpham/${hienthis.url}"
+                                            <img src="/img/imgsanpham/${hienthis.hinhNen}"
                                                 class="card-img-top mx-auto d-block" alt=""
                                                 style="min-width: 319px; min-height: 319px"></a>
                                         <div class="card-body">
-                                            <h5 class="card-title">${hienthis.sanPham.ten}</h5>
+                                            <h5 class="card-title">${hienthis.ten}</h5>
                                         </div>
                                         <ul class="list-group list-group-flush">
 
-                                            <li class="list-group-item">Gía tiền: ${hienthis.sanPham.gia} đ
+                                            <li class="list-group-item">Gía tiền: ${hienthis.gia} đ
                                             </li>
                                         </ul>
                                     </div>

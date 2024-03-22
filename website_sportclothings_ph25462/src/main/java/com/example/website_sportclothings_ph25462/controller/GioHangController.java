@@ -72,8 +72,6 @@ public class GioHangController {
         if (taiKhoan == null) { // khách hàng không đămg nhập lưu vào session.
             ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
             List<GioHangChiTiet> gioHangChiTietSession = (List<GioHangChiTiet>) session.getAttribute("gioHangCT");
-
-
             if (gioHangChiTietSession == null) {
                 gioHangChiTietSession = new ArrayList<>();
                 session.setAttribute("gioHangCT", gioHangChiTietSession);

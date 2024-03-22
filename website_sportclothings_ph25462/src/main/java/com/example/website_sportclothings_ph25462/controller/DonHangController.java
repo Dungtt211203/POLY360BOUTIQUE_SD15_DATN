@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -31,7 +32,7 @@ public class DonHangController {
     @GetMapping("/getAll")
     public String hienThi(Model model) {
         TaiKhoan taiKhoan = taiKhoanDangDangNhap.getCurrentNguoiDung();
-        if(taiKhoan == null){
+        if (taiKhoan == null) {
             return "redirect:/login";
         }
 
@@ -62,6 +63,12 @@ public class DonHangController {
         return "/don_hang/don-hang-chi-tiet";
     }
 
+    @ModelAttribute("principal")
+    public TaiKhoan principal() {
+        TaiKhoan taiKhoan = taiKhoanDangDangNhap.getCurrentNguoiDung();
+        return taiKhoan;
+    }
+
     @GetMapping("/huy/{idHDCT}")
     public String khachHangHuyDonHang(@PathVariable long idHDCT) {
         HoaDonChiTiet hoaDonChiTiet = hoaDonChiTietService.getOne(idHDCT);
@@ -71,13 +78,13 @@ public class DonHangController {
 
         List<HoaDonChiTiet> hoaDonChiTietList = hoaDonChiTietService.getHDCTByIdHoaDon(hoaDon.getId());
         int count = 0;
-        for (HoaDonChiTiet hDCT: hoaDonChiTietList) {
-            if(hDCT.getTrangThai() == 1){
-                count  += 1;
-                System.out.printf("///////: " + count +"   ");
+        for (HoaDonChiTiet hDCT : hoaDonChiTietList) {
+            if (hDCT.getTrangThai() == 1) {
+                count += 1;
+                System.out.printf("///////: " + count + "   ");
             }
         }
-        if(count == 0){
+        if (count == 0) {
             hoaDon.setTongTien(0L);
             hoaDon.setTrangThai(0);
         }

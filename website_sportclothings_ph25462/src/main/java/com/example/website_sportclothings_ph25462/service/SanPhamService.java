@@ -25,5 +25,6 @@ public interface SanPhamService {
     SanPham getById(long id);
 
     Page<SanPham> getAll(Pageable pageable);
+    Page<SanPham> getData(Integer pageable);
 
 }

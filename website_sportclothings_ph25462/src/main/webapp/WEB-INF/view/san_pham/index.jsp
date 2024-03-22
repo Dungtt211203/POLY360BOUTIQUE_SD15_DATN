@@ -61,6 +61,7 @@
                 <th>Tên Sản Phẩm</th>
                 <th>Gíá Sản Phẩm</th>
                 <th>Mô Tả</th>
+                <th>Hình Nền</th>
                 <%--        <th>Ngày Tạo</th>--%>
                 <%--        <th>Người Tạo</th>--%>
                 <th>Trạng Thái</th>
@@ -76,6 +77,7 @@
                     <td>${sp.ten}</td>
                     <td>${sp.gia}</td>
                     <td>${sp.moTa}</td>
+                    <td>${sp.hinhNen}</td>
                         <%--            <td>${sp.ngayTao}</td>--%>
                         <%--            <td>${sp.nguoiTao}</td>--%>
                     <td>${sp.trangThai==0?"Hoạt Động":"Không Hoạt Động"}</td>

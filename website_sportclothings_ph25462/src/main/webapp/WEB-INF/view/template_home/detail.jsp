@@ -85,7 +85,6 @@
         });
 
 
-
         function kiemTraSLSP() {
             var idMau = document.querySelector('input[name="mauSac"]:checked').value || 0;
             var idSize = document.querySelector('input[name="size"]:checked').value || 0;
@@ -122,28 +121,14 @@
 <div class="flex-box">
     <div class="left">
         <div class="big-img">
-            <img src="../../../img/imgsanpham/sp12ao.png">
+            <img class="data-image-product" data-url="http://localhost:8080/img/imgsanpham/${sanPham.hinhNen}" src="../../../img/imgsanpham/${sanPham.hinhNen}">
         </div>
-        <div class="images">
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
-
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
-
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.4ao.png" onclick="showImg(this.src)">
-            </div>
+        <div class="images" >
+            <c:forEach var="hinhAnh" items="${hinhAnhList}">
+                <div class="small-img">
+                    <img class="img-th data-image-product" data-url="http://localhost:8080/img/imgsanpham/${hinhAnh.url}" src="../../../img/imgsanpham/${hinhAnh.url}" onclick="showImg(this.src)">
+                </div>
+            </c:forEach>
         </div>
     </div>
 
@@ -170,8 +155,10 @@
                     <c:forEach var="color" items="${listMauSac}" varStatus="colorState">
                         <div class="form-check size-option form-option form-check-inline mb-2">
                             <input type="radio" class="form-check-input " id="mauSac" name="mauSac" value="${color.id}"
-                                   onchange="kiemTraSLSP()">
-                            <span>${color.ten}</span>
+                                   onchange="kiemTraSLSP()"
+                                   style="background-color: ${color.ma};width: 20px;height: 20px;border-radius: 100%">
+                            <div></div>
+                            <span style="margin-top: 20px;margin-left: 10px">${color.ten}</span>
                         </div>
                     </c:forEach>
                 </div>
@@ -191,13 +178,21 @@
             </div>
             <div class="quantity">
                 <p>Quantity :</p>
-                <input type="number" min="1" max="1000" value="" name="soLuong" id="soLuong">
+                <input type="number" min="1" max="1000" value="1" name="soLuong" id="soLuong">
 
 
             </div>
             <div class="btn-box">
-                <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
-                <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                <c:if test="${sanPham.trangThai == 0}">
+                    <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
+                    <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                </c:if>
+                <c:if test="${sanPham.trangThai == 1}">
+                    <button type="submit" id="addToCard" disabled="true"
+                            style="background-color: orange;color: #ffffff">Không Hoạt Động
+                    </button>
+                    <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                </c:if>
             </div>
 
         </form>
@@ -214,7 +209,12 @@
             bigImg.src = pic;
         }
     }
-
+    let arrImage = [];
+    jQuery(".data-image-product").each(function name(params) {
+        arrImage.push($(this).attr("data-url"))
+    })
+    localStorage.setItem(${sanPham.id}, arrImage.join());
+        console.log(localStorage.getItem(${sanPham.id}));
 </script>
 </body>
 </html>

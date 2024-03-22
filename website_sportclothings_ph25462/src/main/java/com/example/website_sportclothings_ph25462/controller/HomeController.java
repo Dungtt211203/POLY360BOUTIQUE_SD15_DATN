@@ -53,8 +53,8 @@ public class HomeController {
 
     public String index(@RequestParam(defaultValue = "0", name = "page") Integer page, Model model) {
 
-        Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(page);
-        model.addAttribute("hienthi", hinhAnhSPS);
+        Page<SanPham> sanPhams = sanPhamService.getData(page);
+        model.addAttribute("hienthi", sanPhams);
 
 
         List<SanPham> sanPhamList = sanPhamService.getAll();
@@ -68,7 +68,7 @@ public class HomeController {
     public String detail(@PathVariable("id") String id, Model model) {
 
         try {
-            HinhAnhSP hinhAnhSP = hinhAnhSPService.getOne(id);
+            List<HinhAnhSP> hinhAnhSPList = hinhAnhSPService.getHinhAnhSPByIdSP(Long.valueOf(id));
             Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);
             model.addAttribute("hienthi", hinhAnhSPS);
 
@@ -80,7 +80,7 @@ public class HomeController {
             model.addAttribute("listMauSac", mauSacSet);
             model.addAttribute("listKichCo", kichCoSet);
 
-            model.addAttribute("detail", hinhAnhSP);
+            model.addAttribute("hinhAnhList", hinhAnhSPList);
             return "/template_home/detail";
         } catch (Exception e) {
             e.printStackTrace();

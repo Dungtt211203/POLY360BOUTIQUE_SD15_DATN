@@ -16,5 +16,6 @@ public interface HinhAnhSPService {
 
     List<HinhAnhSP> getAll();
 
+    List<HinhAnhSP> getHinhAnhSPByIdSP(Long idSanPham);
 
 }
