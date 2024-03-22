@@ -27,41 +27,45 @@
         font-family: "Nunito";
     }
 
-    form {
-        margin-left: 50px;
-    }
-
-    .formAdd > form > .mb-3 > .col-sm-8 {
-        margin-top: 20px;
-    }
-
-    .formAdd > h1 {
-        text-align: center;
-        padding-top: 40px;
-    }
-
-    .formAdd > form > .mb-3 > label {
-        margin-top: 20px;
-    }
-
-    .buttonSubmit {
-        margin-top: 50px;
-        margin-left: -50px;
-        text-align: center;
-    }
-
-    .buttonSubmit > button {
-        background-color: #FFFFFF;
-        color: black;
-        font-weight: bold;
-        width: 120px;
-        height: 40px;
+    input {
+        width: 300px;
+        margin-right: 20px;
         border-radius: 10px;
-        border: 0px;
+        border: none;
     }
 
-    .radioButton {
-        margin-top: 10px;
+    .input {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+    }
+
+    .input label {
+        padding-left: 50px;
+    }
+
+    #but {
+        margin-left: 300px;
+        width: 200px;
+        border-radius: 10px;
+        background-color: #3e8e41;
+        font-weight: bold;
+        margin-top: 70px;
+
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .tt {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .radio1 {
+        margin-left: -135px;
     }
 </style>
 <br>
@@ -69,15 +73,25 @@
 <body>
 <div class="formAdd">
     <h1>THÊM/SỬA MÀU SẮC</h1>
-    <form:form action="/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
-        Mã Màu Sắc: <form:input path="ma"/>
-        <br/>
-        Tên Màu Sắc: <form:input path="ten"/>
-        <br/>
-        Trạng Thái: <form:radiobutton path="tt" value="0" checked="true"/>Hoat Dong
-        <form:radiobutton path="tt" value="1"/>Khong Hoat Dong
-        <br/>
-        <form:button type="submit">Add</form:button>
+    <form:form action="/admin/mau-sac/hien-thi-add" method="post" modelAttribute="mauSac">
+        <div class="input">
+            <label>Mã Màu Sắc</label>: <form:input path="ma"/>
+            <form:errors path="ma" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div class="input">
+            <label>Tên Màu Sắc</label>: <form:input path="ten"/>
+            <form:errors path="ten" cssStyle="color: red"/>
+            <br/>
+        </div>
+        <div id="tt">
+            <label class="tt">Trạng Thái:</label> <form:radiobutton path="tt" value="0" checked="true" class="radio1"/>Hoạt
+            Động
+            <form:radiobutton path="tt" value="1" class="radio"/>Không Hoạt Động
+            <br/>
+        </div>
+        <form:button type="submit" class="btn btn-success" id="but" onclick="return confirm('Bạn có chắc chắn muốn thêm màu sắc này?')">Add</form:button>
     </form:form>
 </div>
+
 </body>

@@ -19,19 +19,22 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="icon" href="../../../svg/logohome.svg">
     <style>
-        .image-logo{
+        .image-logo {
             margin-left: 60px;
         }
-        h1{
+
+        h1 {
             color: #FFFFFF;
             font-size: 20px;
             text-align: center;
         }
-        .nav-link-admin{
+
+        .nav-link-admin {
             color: #FFFFFF;
             text-decoration: none;
         }
-        .nav-link-admin:hover{
+
+        .nav-link-admin:hover {
             color: black;
         }
 
@@ -45,39 +48,75 @@
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Trang chủ</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/mau-sac/hien-thi">Quản lý màu sắc</a>
+        <li class="nav-item" onclick="myDrowDown()">
+            <div class="nav-link-admin">Quản lý sản phẩm</div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/kich-co/hien-thi">Quản lý kích cỡ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/chat-lieu/hien-thi">Quản lý chất liệu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="/san-pham/hien-thi">Quản lý sản phẩm</a>
-        </li>
+        <div id="myDropdown" style="display: none;background-color: #FFFFFF;border-radius: 20px">
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/san-pham/hien-thi" style="color: black;margin-left: 10px">Sản
+                    phẩm</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/mau-sac/hien-thi" style="color: black;margin-left: 10px">Màu
+                    sắc</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/kich-co/hien-thi" style="color: black;margin-left: 10px">Kích
+                    cỡ</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/chat-lieu/hien-thi" style="color: black;margin-left: 10px">Chất
+                    liệu</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/thuong-hieu/hien-thi" style="color: black;margin-left: 10px">Thương
+                    hiệu</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/chitietsp/hien-thi" style="color: black;margin-left: 10px">Chi
+                    tiết sản
+                    phẩm</a>
+            </li>
+            <li class="nav-item admin-menu-hover">
+                <a class="nav-link-admin" href="/admin/hinh-anh/hien-thi" style="color: black;margin-left: 10px">Hình
+                    ảnh</a>
+            </li>
+        </div>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Bán hàng tại quầy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link-admin" href="/admin/donHang/donHangCho">Quản lý hóa đơn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link-admin" href="/admin/thong-ke/hien-thi">Thống Kê</a>
         </li>
         <li class="nav-item" onclick="myFunction()">
             <div class="nav-link-admin">Quản lý tài khoản</div>
         </li>
-        <div id="myPopup" style="display: none">
+        <div id="myPopup" style="display: none;background-color: #FFFFFF;border-radius: 20px">
             <li class="nav-item nav-popup">
-                <a class="nav-link-admin" href="#">Khách hàng</a>
+                <a class="nav-link-admin" href="/admin/khach-hang/hien-thi" style="color: black;margin-left: 20px">Khách
+                    hàng</a>
             </li>
             <li class="nav-item nav-popup">
-                <a class="nav-link-admin" href="#">Nhân viên</a>
+                <a class="nav-link-admin" href="/admin/nhan-vien/hien-thi" style="color: black;margin-left: 20px">Nhân
+                    viên</a>
             </li>
         </div>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản lý hóa đơn</a>
+        <li class="nav-item" onclick="myKhuyenMai()">
+            <div class="nav-link-admin">Quản lý khuyến mãi</div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link-admin" href="#">Quản Lý khuyến mãi</a>
-            <a class="nav-link-admin" href="/khuyen-mai/hien-thi">Quản Lý khuyến mãi</a>
-        </li>
+        <div id="myKhuyenMai" style="display: none;background-color: #FFFFFF;border-radius: 20px">
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/admin/khuyen-mai/hien-thi" style="color: black;margin-left: 20px">Khuyến
+                    Mại</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-admin" href="/admin/chi-tiet-khuyen-mai/hien-thi"
+                   style="color: black;margin-left: 20px">Khuyến Mại Chi Tiết</a>
+            </li>
+        </div>
         <li class="nav-item">
             <a class="nav-link-admin" href="#">Quản lý đổi trả</a>
         </li>
@@ -90,14 +129,45 @@
 <script>
     function myFunction() {
         var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+        popup.classList.toggle("ht");
+
+    }
+
+    function myDrowDown() {
+        var dropDown = document.getElementById("myDropdown");
+        dropDown.classList.toggle("show");
+    }
+
+    function myKhuyenMai() {
+        var khuyenMai = document.getElementById("myKhuyenMai");
+        khuyenMai.classList.toggle("show");
     }
 </script>
 <style>
-    .show{
-        display: flex!important;
+    .ht {
+        display: flex !important;
         flex-direction: column;
         gap: 10px;
+        cursor: pointer;
+    }
+
+    .show {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .admin-menu-hover:hover {
+        background-color: orange;
+        width: 100%;
+        color: #FFFFFF;
+    }
+
+    .nav-popup:hover {
+        background-color: orange;
+        width: 100%;
+        color: #FFFFFF;
     }
 </style>
 </body>

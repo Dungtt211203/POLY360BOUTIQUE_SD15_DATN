@@ -1,10 +1,13 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.KichCo;
 import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.repository.KichCoRepository;
 import com.example.website_sportclothings_ph25462.service.KichCoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,18 +24,29 @@ public class KichCoServiceImpl implements KichCoService {
     }
 
     @Override
+    public Page<KichCo> getAll(Pageable pageable) {
+        return kcr.findAll(pageable);
+    }
+
+    @Override
     public void add(KichCo kichCo) {
         kcr.save(kichCo);
     }
 
     @Override
-    public KichCo update(UUID id) {
+
+    public KichCo update(Long id) {
         return kcr.findById(id).orElse(null);
 
     }
 
     @Override
-    public void remove(UUID id) {
+
+    public void remove(Long id) {
         kcr.deleteById(id);
+    }
+
+    public KichCo getOne(String maKC) {
+        return kcr.getSanPhamByMaKC(maKC);
     }
 }

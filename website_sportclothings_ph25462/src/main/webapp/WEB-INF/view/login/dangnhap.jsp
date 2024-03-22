@@ -7,9 +7,11 @@
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>NICE SHOE</title>
-    <link rel="shortcut icon" type="image/png" href="/assets/images/z4754478488073_3d987c07976994288f3feae0cc9f3835_preview_rev_1.png" />
+    <title>POLY360BOUTIQUE</title>
+    <link rel="shortcut icon" type="image/png"
+          href="/assets/images/z4754478488073_3d987c07976994288f3feae0cc9f3835_preview_rev_1.png" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="icon" href="../../../svg/logohome.svg">
 </head>
 
 <style>
@@ -26,7 +28,7 @@
         width: 1000px;
         overflow: hidden;
         background-color: orange;
-        border-radius:20px;
+        border-radius: 20px;
     }
 
     .image-container {
@@ -78,52 +80,69 @@
     .login-container button:hover {
         background-color: #90d626;
     }
+    .dk-hover:hover{
+        color: #00aeff !important;
+    }
 </style>
 
 <body>
 <div class="container">
     <div class="image-container">
-        <img src="../../../svg/logoLogin.png" alt="Nice Shoe Image">
+        <img src="../../../svg/logoLogin.png" alt="">
     </div>
 
     <div class="login-container">
-        <form onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold">POLY 360 BOUTIQUE</h3>
+        <form action="/login" method="post" modelAttribute="taikhoan" mode onsubmit="return validateForm()">
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #2D2D2D">POLY 360 BOUTIQUE
+            </h3>
+            <br>
+            <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
+            <span class="header-title">
+                        <span style="color: red"></span>
+                        <span style="font-size: 17px;">Tên tài khoản</span>
+                    </span>
+            <input name="username" id="username" type="text" class="form-control" placeholder="Tên tài khoản..."
+                   required="" />
             <br>
             <span class="header-title">
-                    <span style="color: red"></span>
-                    <span style="font-size: 15px;">Tên tài khoản</span>
-                </span>
-            <input id="usernameLogin" type="text" class="form-control" placeholder="Tên tài khoản ..." required="" />
+                        <span style="color: red"></span>
+                        <span style="font-size: 17px;">Mật khẩu</span>
+                    </span>
+            <input name="password" id="password" type="password" class="form-control" placeholder="Mật khẩu..."
+                   required="" />
             <br>
-            <span class="header-title">
-                    <span style="color: red"></span>
-                    <span style="font-size: 15px;">Mật khẩu</span>
-                </span>
-            <input id="passwordLogin" type="password" class="form-control" placeholder="Mật khẩu ..." required="" />
-            <br>
-            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 155px;">Đăng nhập</button>
+
+            <p style="color: red; text-align: center; font-size: 19px;">${message}</p>
+
+            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 160px;"
+                    type="submit">Đăng
+                nhập
+            </button>
+            <div style="text-align: center;font-size: 15px">
+                <h1>Bạn chưa có tài khoản? <a href="/dang-ky" style="color: #FFFFFF" class="dk-hover">Đăng ký</a>
+                </h1>
+            </div>
         </form>
     </div>
 </div>
 
 <script>
-    function validateForm() {
-        var username = document.getElementById("usernameLogin").value;
-        var password = document.getElementById("passwordLogin").value;
-
-        if (username.trim() === "") {
-            alert("Tên tài khoản không được để trống");
-            return false;
-        }
-
-        if (password.trim() === "") {
-            alert("Mật khẩu không được để trống");
-            return false;
-        }
-
-        return true;
-    }
+    // function validateForm() {
+    //     var username = document.getElementById("usernameLogin").value;
+    //     var password = document.getElementById("passwordLogin").value;
+    //
+    //     if (username.trim() === "") {
+    //         alert("Tên tài khoản không được để trống");
+    //         return false;
+    //     }
+    //
+    //     if (password.trim() === "") {
+    //         alert("Mật khẩu không được để trống");
+    //         return false;
+    //     }
+    //
+    //     return true;
+    // }
 </script>
 </body>
 

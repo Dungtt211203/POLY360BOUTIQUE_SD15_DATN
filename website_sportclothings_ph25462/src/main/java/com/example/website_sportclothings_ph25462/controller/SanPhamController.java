@@ -1,47 +1,78 @@
 package com.example.website_sportclothings_ph25462.controller;
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
+import com.example.website_sportclothings_ph25462.entity.MauSac;
 import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.Impl.SanPhamServiceImpl;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @Controller
+//@RestController
+//@Slf4j
+@RequestMapping("/admin")
 public class SanPhamController {
     @Autowired
     SanPhamRepository spr;
     @Autowired
     SanPhamService sanPhamService;
 
-//    public Map<Integer, String> getDsTrangThai() {
+    //    public Map<Integer, String> getDsTrangThai() {
 //        Map<Integer, String> dsTrangThai = new HashMap<>();
 //        dsTrangThai.put(0, " hoạt động");
 //        dsTrangThai.put(1, " không Hoạt động");
 //        return dsTrangThai;
 //    }
+//    @GetMapping("/san-pham")
+//    public ResponseEntity<?> index() {
+////        Pageable pageable = PageRequest.of(page, 5);
+////        Page<ChatLieu> list = this.chatLieuRepo.findAll(pageable);
+////        model.addAttribute("list", list);
+////        model.addAttribute("searchForm", new SearchForm());
+//        return ResponseEntity.ok(spr.findAll());
+//    }
+
 
     @GetMapping("/san-pham/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int sp) {
+        Pageable pageable = PageRequest.of(sp, 5);
+        Page<SanPham> page = sanPhamService.getAll(pageable);
         model.addAttribute("load", sanPhamService.getAll());
         model.addAttribute("sp", new SanPham());
-        model.addAttribute("view", "../san_pham/index.jsp");
+        model.addAttribute("page", page);
         return "/san_pham/index";
     }
 
+    @PostMapping("/add/san-pham")
+    public ResponseEntity<?> add(@RequestBody @Valid SanPham sanPham) {
+        return ResponseEntity.ok(spr.save(sanPham));
+    }
+
+//    @GetMapping("/san-pham/hien-thi")
+//    public String hienThi(Model model) {
+//        model.addAttribute("load", sanPhamService.getAll());
+//        model.addAttribute("sp", new SanPham());
+//        model.addAttribute("view", "../webapp/WEB-INF/view/san_pham/index.jsp");
+//        return "/san_pham/index";
+//    }
+
     @GetMapping("/san-pham/view-update/{id}")
-    public String update(@PathVariable UUID id,
+    public String update(@PathVariable Long id,
                          Model model) {
         model.addAttribute("sanPham", sanPhamService.update(id));
         return "/san_pham/view_update";
@@ -49,11 +80,17 @@ public class SanPhamController {
 
     @PostMapping("/san-pham/view-update/{id}")
     public String update(
-            @PathVariable UUID id, @ModelAttribute("sanPham") SanPham sanPham
+            @PathVariable Long id, Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result
     ) {
+        Boolean hasError = result.hasErrors();
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/san_pham/view_update.jsp");
+            return "/san_pham/view_update";
+        }
         sanPham.setId(id);
         sanPhamService.add(sanPham);
-        return "redirect:/san-pham/hien-thi";
+        return "redirect:/admin/san-pham/hien-thi";
     }
 
     @GetMapping("/san-pham/hien-thi-add")
@@ -62,14 +99,28 @@ public class SanPhamController {
     }
 
     @PostMapping("/san-pham/hien-thi-add")
-    public String add(@ModelAttribute("sanPham") SanPham sanPham) {
+    public String add(Model model, @Valid @ModelAttribute("sanPham") SanPham sanPham, BindingResult result) {
+        Boolean hasError = result.hasErrors();
+        SanPham product = sanPhamService.getOne(sanPham.getMa());
+        if (product != null) {
+            hasError = true;
+            model.addAttribute("maclError", "Vui lòng không nhập trùng mã");
+            model.addAttribute("view", "/san_pham/add.jsp");
+            return "/san_pham/add";
+        }
+        if (hasError) {
+            // Báo lỗi
+            model.addAttribute("view", "/san_pham/add.jsp");
+            return "/san_pham/add";
+        }
         sanPhamService.add(sanPham);
-        return "redirect:/san-pham/hien-thi";
+        return "redirect:/admin/san-pham/hien-thi";
     }
 
     @GetMapping("/san-pham/remove/{id}")
-    public String remove(@PathVariable("id") UUID id) {
+    public String remove(@PathVariable("id") Long id) {
         sanPhamService.remove(id);
         return "redirect:/san-pham/hien-thi";
     }
+
 }

@@ -40,9 +40,8 @@ body {
 }
 
 #navbarSupportedContent ul li a:hover {
-    color: orange;
+    color: orange !important;
 }
-
 
 
 .search {

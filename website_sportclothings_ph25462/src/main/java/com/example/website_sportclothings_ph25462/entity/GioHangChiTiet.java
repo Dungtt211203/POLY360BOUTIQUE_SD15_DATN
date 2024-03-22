@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "gio_hang_chi_tiet")
 @Entity
@@ -17,9 +16,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class GioHangChiTiet {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
     @Column(name = "so_luong")
     private Integer soLuong;
     @Column(name = "ghi_chu")
@@ -30,7 +29,12 @@ public class GioHangChiTiet {
     private Date ngaySua;
     @Column(name = "trang_thai")
     private Boolean tt;
-//    @OneToOne()
-//    @JoinColumn(name = "chi_tiet_san_pham_id")
-//    private ChiTietSanPham nguoiSoHuu;
+    @OneToOne()
+    @JoinColumn(name = "chi_tiet_san_pham_id")
+    private ChiTietSanPham chiTietSanPham;
+    @OneToOne()
+    @JoinColumn(name = "gio_hang_id")
+    private GioHang gioHang;
+
+
 }

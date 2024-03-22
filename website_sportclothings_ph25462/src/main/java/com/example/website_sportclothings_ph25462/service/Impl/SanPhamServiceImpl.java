@@ -4,13 +4,16 @@ import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.SanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.SanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class SanPhamServiceImpl implements SanPhamService {
+
     @Autowired
     SanPhamRepository spr;
 
@@ -25,12 +28,41 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
-    public SanPham update(UUID id) {
+
+    public SanPham update(Long id) {
         return spr.findById(id).orElse(null);
     }
 
     @Override
-    public void remove(UUID id) {
+    public void remove(Long id) {
         spr.deleteById(id);
     }
+
+    @Override
+    public SanPham Detail(String id) {
+        return spr.findById(Long.valueOf(id)).orElse(null);
+    }
+
+    public SanPham getOne(String maCL) {
+
+        return spr.getSanPhamByMaSP(maCL);
+    }
+    public Page<SanPham> getData(Integer page) {
+
+        Pageable pageable = PageRequest.of(page, 4);
+
+        return spr.findAll(pageable);
+    }
+    @Override
+    public SanPham getById(long id) {
+        return spr.findById(id).orElse(null);
+    }
+
+
+    @Override
+    public Page<SanPham> getAll(Pageable pageable) {
+        return spr.findAll(pageable);
+    }
+
+
 }

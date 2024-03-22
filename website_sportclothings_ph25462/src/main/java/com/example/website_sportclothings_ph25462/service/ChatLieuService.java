@@ -18,14 +18,20 @@ public interface ChatLieuService {
 
     ChatLieu add(ChatLieu chatLieu);
 
+
 //    public ChatLieu createChatLieu(ChatLieu chatLieu) {
 //        ChatLieu banner = new ChatLieu();
 //        return bannerRepo.save(banner);
 //    }
 
-    void remove(UUID id);
+    void remove(Long id);
 
-    ChatLieu update(UUID id);
+    ChatLieu update(Long id);
 
     Page<ChatLieu> search(String key, Pageable pageable);
+
+    ChatLieu getOne(String maCL);
+
+    Page<ChatLieu> getAll(String search,Pageable pageable);
+
 }

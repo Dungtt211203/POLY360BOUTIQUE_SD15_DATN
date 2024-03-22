@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
@@ -18,11 +19,16 @@ import java.util.UUID;
 @NoArgsConstructor
 public class MauSac {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private UUID id;
+    private Long id;
+    @NotBlank(message = " không để trống mã")
+
+    @Length(min = 5,max = 50, message = " Không dưới 5 kí tự và không quá 50 kí tự")
     @Column(name = "ma_mau_sac")
     private String ma;
+    @NotBlank(message = "không để trống tên")
+    @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "ten_mau_sac")
     private String ten;
     @Column(name = "trang_thai")

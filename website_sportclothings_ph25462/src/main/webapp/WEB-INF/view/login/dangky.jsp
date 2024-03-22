@@ -2,14 +2,18 @@
 <html lang="zxx">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Ogani Template" />
-    <meta name="keywords" content="Ogani, unica, creative, html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>LOGIN POLY360BOUTIQUE</title>
+
+
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Ogani Template"/>
+    <meta name="keywords" content="Ogani, unica, creative, html"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>POLY360BOUTIQUE</title>
     <link rel="icon" href="../../../svg/logohome.svg">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="icon" href="../../../svg/logohome.svg">
+
 </head>
 
 <style>
@@ -26,7 +30,7 @@
         width: 1000px;
         overflow: hidden;
         background-color: orange;
-        border-radius:20px;
+        border-radius: 20px;
     }
 
     .image-container {
@@ -78,7 +82,11 @@
     .registration-container button:hover {
         background-color: #90d626;
     }
+    .dn-hover:hover{
+        color: #00aeff !important;
+    }
 </style>
+
 
 <body>
 <div class="container">
@@ -87,58 +95,69 @@
     </div>
 
     <div class="registration-container">
-        <form onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold">POLY 360 BOUTIQUE</h3>
+
+        <form action="/poly360boutique/dang-ky/add" method="post" onsubmit="return validateForm()">
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #2D2D2D">POLY 360 BOUTIQUE
+            </h3>
             <br>
             <span class="header-title">
-                    <span style="color: red"></span>
-                    <span style="font-size: 15px;">Tên tài khoản</span>
-                </span>
-            <input id="usernameRegis" type="text" class="form-control" placeholder="Tên tài khoản ..." required="" />
+                        <span style="color: red"></span>
+                        <span style="font-size: 17px;">Email</span>
+                    </span>
+            <input name="emailRegis" type="text" class="form-control" placeholder="Email..." required=""/>
             <br>
+
             <span class="header-title">
-                    <span style="color: red"></span>
-                    <span style="font-size: 15px;">Email</span>
-                </span>
-            <input id="emailRegis" type="text" class="form-control" placeholder="Email ..." required="" />
+                        <span style="color: red"></span>
+                        <span style="font-size: 17px;">Tên đăng nhập</span>
+                    </span>
+            <input name="userRegis" type="text" class="form-control" placeholder="Tên đăng nhập..."
+                   required=""/>
             <br>
+
             <span class="header-title">
-                    <span style="color: red"></span>
-                    <span style="font-size: 15px;">Mật khẩu</span>
-                </span>
-            <input id="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu ..." required="" />
+                        <span style="color: red"></span>
+                        <span style="font-size: 17px;">Mật khẩu</span>
+                    </span>
+            <input name="passwordRegis" type="password" class="form-control" placeholder="Mật khẩu..."
+                   required=""/>
             <br>
-            <button class="btn btn-warning" style="color: white; background-color: darkorange; margin-left: 155px;">Đăng ký</button>
+            <button class="btn btn-warning" style="color: white; background-color: #ff5e00; margin-left: 180px;"
+                    type="submit">Đăng ký
+            </button>
+            <div style="text-align: center;font-size: 15px">
+                <h1>Bạn đã có tài khoản? <a href="/login" style="color: #FFFFFF" class="dn-hover">Đăng
+                    nhập</a></h1>
+            </div>
         </form>
     </div>
 </div>
-
 <script>
-    function validateForm() {
-        var username = document.getElementById("usernameRegis").value;
-        var email = document.getElementById("emailRegis").value;
-        var password = document.getElementById("passwordRegis").value;
-
-        if (username.trim() === "") {
-            alert("Tên tài khoản không được để trống");
-            return false;
-        }
-
-        if (email.trim() === "") {
-            alert("Email không được để trống");
-            return false;
-        }
-
-        if (password.trim() === "") {
-            alert("Mật khẩu không được để trống");
-            return false;
-        }
-
-        // Add more validation logic if needed
-
-        return true;
-    }
+    // function validateForm() {
+    //     var username = document.getElementById("usernameRegis").value;
+    //     var email = document.getElementById("emailRegis").value;
+    //     var password = document.getElementById("passwordRegis").value;
+    //
+    //     if (username.trim() === "") {
+    //         alert("Tên tài khoản không được để trống");
+    //         return false;
+    //     }
+    //
+    //     if (email.trim() === "") {
+    //         alert("Email không được để trống");
+    //         return false;
+    //     }
+    //
+    //     if (password.trim() === "") {
+    //         alert("Mật khẩu không được để trống");
+    //         return false;
+    //     }
+    //     return true;
+    // }
 </script>
+</body>
+
+</html>
 </body>
 
 </html>
