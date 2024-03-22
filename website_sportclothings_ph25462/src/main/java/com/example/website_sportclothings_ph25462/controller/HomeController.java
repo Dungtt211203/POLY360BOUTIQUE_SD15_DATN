@@ -71,7 +71,6 @@ public class HomeController {
             List<HinhAnhSP> hinhAnhSPList = hinhAnhSPService.getHinhAnhSPByIdSP(Long.valueOf(id));
             Page<HinhAnhSP> hinhAnhSPS = hinhAnhSPService.getData(0);
             model.addAttribute("hienthi", hinhAnhSPS);
-
             SanPham sanPham = sanPhamService.getById(Long.valueOf(id));
             List<ChiTietSanPham> chiTietSanPhamList = chiTietSanPhamService.getCTSPByIdSanPham(sanPham.getId());
             Set<MauSac> mauSacSet = (Set) chiTietSanPhamList.stream().map(ChiTietSanPham::getMauSac).collect(Collectors.toSet());
@@ -79,7 +78,6 @@ public class HomeController {
             model.addAttribute("sanPham", sanPham);
             model.addAttribute("listMauSac", mauSacSet);
             model.addAttribute("listKichCo", kichCoSet);
-
             model.addAttribute("hinhAnhList", hinhAnhSPList);
             return "/template_home/detail";
         } catch (Exception e) {

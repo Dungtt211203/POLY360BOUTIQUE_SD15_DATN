@@ -81,10 +81,12 @@
                                 </ul>
 
                                 <div class="col">
-                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.giaGoc}.đ</span></h6>
+                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.giaHienHanh}.đ</span></h6>
                                     <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
                                     <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
-                                    <h6><span><img src="../../../img/imgsanpham/${gioHangChiTiet.chiTietSanPham.sanPham.hinhNen}" style="width: 100px;height: 100px"/> </span></h6>
+                                    <h6><span><img
+                                            src="../../../img/imgsanpham/${gioHangChiTiet.chiTietSanPham.sanPham.hinhNen}"
+                                            style="width: 100px;height: 100px"/> </span></h6>
                                     <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
                                 </div>
 
