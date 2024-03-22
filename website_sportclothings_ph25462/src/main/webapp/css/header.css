@@ -12,7 +12,7 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 0;
-    right: 1200px; /* Thay đổi vị trí sang phải */
+    right: 800px; /* Thay đổi vị trí sang phải */
 }
 
 .dropdown-content a {

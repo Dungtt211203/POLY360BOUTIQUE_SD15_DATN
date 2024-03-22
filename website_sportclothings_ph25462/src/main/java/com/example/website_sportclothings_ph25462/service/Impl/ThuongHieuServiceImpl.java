@@ -49,4 +49,5 @@ public class ThuongHieuServiceImpl implements ThuongHieuService {
     public ThuongHieu getOne(String maCL) {
         return thr.getSanPhamByMaSP(maCL);
     }
+
 }
