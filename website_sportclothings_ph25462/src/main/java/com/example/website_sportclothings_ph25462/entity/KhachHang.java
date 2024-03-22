@@ -51,6 +51,7 @@ public class KhachHang {
     @Length(max = 100, message = "Không quá 100 kí tự")
     @Column(name = "dia_chi")
     private String diaChi;
+    @NotBlank(message = "không để trống số điện thoại")
     @Pattern(regexp="^0\\d{9}$", message="Số điện thoại không hợp lệ")
     @Column(name = "so_dien_thoai")
     private String sdt;

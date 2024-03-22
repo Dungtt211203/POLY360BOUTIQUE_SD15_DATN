@@ -37,5 +37,10 @@ public class HinhAnhSPServiceImpl implements HinhAnhSPService {
         return hinhAnhSPRepository.findAll();
     }
 
+    @Override
+    public List<HinhAnhSP> getHinhAnhSPByIdSP(Long idSanPham) {
+        return hinhAnhSPRepository.getHinhAnhSPByIdSP(idSanPham);
+    }
+
 
 }

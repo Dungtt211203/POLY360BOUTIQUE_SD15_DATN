@@ -12,8 +12,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 200px">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active" id="homepage" aria-current="page" href="/poly360boutique/home"
-                               style="color: #2D2D2D">Trang Chủ</a>
+                            <a class="nav-link active" id="homepage" aria-current="page"
+                               href="/poly360boutique/home" style="color: #2D2D2D">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D">Thương Hiệu
@@ -49,7 +49,7 @@
                                     <li><a href="/login"
                                            style="background-color: black;color: WHITE;display: flex;justify-content: center;list-style: none">Đăng
                                         nhập</a></li>
-                                    <li><a href="/register"
+                                    <li><a href="/dang-ky"
                                            style="display: flex;align-items: center;justify-content: center;border: 1px solid;margin-top: 15px;list-style: none">Đăng
                                         ký</a></li>
                                 </ul>
@@ -69,18 +69,24 @@
                         <div class="dropdown-menu" aria-labelledby="cartIcon" id="cartDropdown">
 
                             <c:if test="${empty carts}">
-                                <img src="https://salanest.com/img/empty-cart.webp" height="250px" width="300px">
+                                <img src="https://salanest.com/img/empty-cart.webp" height="250px"
+                                     width="300px">
                             </c:if>
 
                             <c:forEach var="gioHangChiTiet" items="${carts}">
 
 
-                                <ul id="cartItems"><h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5></ul>
+                                <ul id="cartItems">
+                                    <h5> ${gioHangChiTiet.chiTietSanPham.sanPham.ten}</h5>
+                                </ul>
 
                                 <div class="col">
-                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.giaGoc}.đ</span></h6>
+                                    <h6><span>Gia: ${gioHangChiTiet.chiTietSanPham.giaHienHanh}.đ</span></h6>
                                     <h6><span>Màu: ${gioHangChiTiet.chiTietSanPham.mauSac.ten}</span></h6>
                                     <h6><span>Size: ${gioHangChiTiet.chiTietSanPham.kichCo.ten}</span></h6>
+                                    <h6><span><img
+                                            src="../../../img/imgsanpham/${gioHangChiTiet.chiTietSanPham.sanPham.hinhNen}"
+                                            style="width: 100px;height: 100px"/> </span></h6>
                                     <h6><span>Số Lượng: ${gioHangChiTiet.soLuong}</span></h6>
                                 </div>
 
@@ -88,27 +94,32 @@
                                 <a href="/gio-hang" class="btn cart-btn">Chỉnh Sửa</a>
                             </c:forEach>
                         </div>
-                        <%--                    <div class="popuptext" id="myPopup1">--%>
-                        <%--                        <a href="/poly360boutique/dang-nhap">Đăng nhập</a>--%>
-                        <%--                        <a>Đăng xuất</a>--%>
-                        <%--                    </div>--%>
+                        <%-- <div class="popuptext" id="myPopup1">--%>
+                        <%-- <a href="/poly360boutique/dang-nhap">Đăng nhập</a>--%>
+                        <%-- <a>Đăng xuất</a>--%>
+                        <%-- </div>--%>
                     </div>
-                    <%--                    <div class="span8">--%>
-                    <%--                        <div class="account pull-right">--%>
-                    <%--                            <ul class="user-menu">--%>
-                    <%--                                &lt;%&ndash;                                <li><a href="<c:url value='/cart/view' />">Your Cart <b>(<span&ndash;%&gt;--%>
-                    <%--                                &lt;%&ndash;                                        id="countTotal">${sessionScope.cart == null ? '0' : sessionScope.cart.tongsl}</span>)</b></a>&ndash;%&gt;--%>
-                    <%--                                &lt;%&ndash;                                </li>&ndash;%&gt;--%>
-                    <%--                                <c:if test="${empty sessionScope.taikhoan}">--%>
-                    <%--                                    <li><a href="/poly360boutique/dang-nhap">Login</a></li>--%>
-                    <%--                                </c:if>--%>
-                    <%--                                <c:if test="${not empty sessionScope.taikhoan}">--%>
-                    <%--                                    <li><a href="/poly360boutique/logout">Logout</a></li>--%>
-                    <%--                                    <li><i>Welcome,</i> <b>${sessionScope.taikhoan.tenTK}</b></li>--%>
-                    <%--                                </c:if>--%>
-                    <%--                            </ul>--%>
-                    <%--                        </div>--%>
-                    <%--                    </div>--%>
+                    <%-- <div class="span8">--%>
+                    <%-- <div class="account pull-right">--%>
+                    <%-- <ul class="user-menu">--%>
+                    <%-- &lt;%&ndash; <li><a href="<c:url value='/cart/view' />">Your Cart
+                            <b>(<span&ndash;%&gt;--%>
+                    <%-- &lt;%&ndash; id="countTotal">${sessionScope.cart == null ?
+                        '0' :
+                        sessionScope.cart.tongsl}</span>)</b></a>&ndash;%&gt;--%>
+                    <%-- &lt;%&ndash; </li>&ndash;%&gt;--%>
+                    <%-- <c:if test="${empty sessionScope.taikhoan}">--%>
+                    <%-- <li><a href="/poly360boutique/dang-nhap">Login</a></li>--%>
+                    <%-- </c:if>--%>
+                    <%-- <c:if test="${not empty sessionScope.taikhoan}">--%>
+                    <%-- <li><a href="/poly360boutique/logout">Logout</a>
+                        </li>--%>
+                    <%-- <li><i>Welcome,</i>
+                        <b>${sessionScope.taikhoan.tenTK}</b></li>--%>
+                    <%-- </c:if>--%>
+                    <%-- </ul>--%>
+                    <%-- </div>--%>
+                    <%-- </div>--%>
 
 
                 </div>
@@ -126,9 +137,10 @@
         var popup = document.getElementById("myPopup1");
         popup.classList.toggle("show");
     }
+
     const link = document.querySelector('.nav-link');
 
-    link.addEventListener('click', function(event) {
+    link.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         const url = this.getAttribute('href');
         window.location.href = url; // Redirect to the specified URL
@@ -138,9 +150,10 @@
 
 </script>
 <style>
-    a.nav-link.active{
+    a.nav-link.active {
         border-bottom: 4px solid #ffc107;
     }
+
     .show {
         display: flex !important;
         flex-direction: column;

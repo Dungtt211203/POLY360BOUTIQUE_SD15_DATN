@@ -79,14 +79,9 @@
             <form:errors path="ma" cssStyle="color: #ff0000"/>
             <br/>
         </div>
-    <div class="input">
-        TenSP: <form:select path="taiKhoanKH">
-        <form:options items="${taiKhoanKH}" itemLabel="ma"/>
-    </form:select><br>
-    </div>
         <div class="input">
-            TenSP: <form:select path="vaiTro">
-            <form:options items="${vaiTro}" itemLabel="tenVT"/>
+            TaiKhoanKH: <form:select path="taiKhoanKH">
+            <form:options items="${taiKhoanKH}" itemLabel="ma"/>
         </form:select><br>
         </div>
         <div class="input">

@@ -20,7 +20,8 @@ public class KhachHangController {
     KhachHangRepository khr;
     @Autowired
     KhachHangService khachHangService;
-
+    @Autowired
+    TaiKhoanRepository taiKhoanRepository;
 
 
     @GetMapping("/khach-hang/hien-thi")
@@ -32,13 +33,15 @@ public class KhachHangController {
     }
 
     @GetMapping("/khach-hang/hien-thi-add")
-    public String hienThiAdd(@ModelAttribute("khachHang") KhachHang khachHang) {
+    public String hienThiAdd(@ModelAttribute("khachHang") KhachHang khachHang, Model model) {
+        model.addAttribute("taiKhoanKH", taiKhoanRepository.findAll());
         return ("/khach_hang/add");
     }
 
     @GetMapping("/khach-hang/view-update/{id}")
     public String update(@PathVariable Long id,
                          Model model) {
+        model.addAttribute("taiKhoanKH", taiKhoanRepository.findAll());
         model.addAttribute("khachHang", khachHangService.update(id));
         return "/khach_hang/view_update";
     }
@@ -62,6 +65,7 @@ public class KhachHangController {
     public String add(Model model, @Valid @ModelAttribute("khachHang") KhachHang khachHang, BindingResult result) {
         Boolean hasError = result.hasErrors();
         KhachHang product = khachHangService.getOne(khachHang.getMa());
+        model.addAttribute("taiKhoanKH", taiKhoanRepository.findAll());
         if (product != null) {
             hasError = true;
             model.addAttribute("makhError", "Vui lòng không nhập trùng mã");

@@ -80,8 +80,8 @@
             <br/>
         </div>
         <div>
-            TenSP: <form:select path="taiKhoanKH">
-            <form:options items="${taiKhoanKH}" itemLabel="hoTen"  />
+            TaiKhoanKhachHang: <form:select path="taiKhoanKH">
+            <form:options items="${taiKhoanKH}" itemLabel="ma"/>
         </form:select><br>
         </div>
         <div class="input">

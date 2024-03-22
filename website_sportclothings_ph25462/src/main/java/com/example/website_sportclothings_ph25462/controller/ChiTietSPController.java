@@ -62,14 +62,10 @@ public class ChiTietSPController {
         ChiTietSanPham chiTietSanPhamDB = chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(chiTietSp.getSanPham().getId(), chiTietSp.getKichCo().getId(), chiTietSp.getMauSac().getId());
 
         if (chiTietSanPhamDB != null) {
-
             chiTietSanPhamDB.setSoLuong(chiTietSanPhamDB.getSoLuong() + chiTietSp.getSoLuong());
             chiTietSanPhamRepository.save(chiTietSanPhamDB);
             return "redirect:/admin/chitietsp/hien-thi";
         } else
-
-
-
         chiTietSanPhamRepository.save(chiTietSp);
         return "redirect:/admin/chitietsp/hien-thi";
     }

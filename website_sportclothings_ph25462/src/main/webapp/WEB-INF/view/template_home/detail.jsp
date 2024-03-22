@@ -25,6 +25,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -85,7 +86,6 @@
         });
 
 
-
         function kiemTraSLSP() {
             var idMau = document.querySelector('input[name="mauSac"]:checked').value || 0;
             var idSize = document.querySelector('input[name="size"]:checked').value || 0;
@@ -112,6 +112,55 @@
         }
 
 
+
+
+        $(document).ready(function () {
+            // Lặp qua mỗi sản phẩm
+            $(".giaBan").each(function () {
+                // Lấy id sản phẩm từ thẻ span
+                var idSanPham = $(this).attr("id");
+                console.log("id giá Bán : " + idSanPham)
+
+                // Gửi yêu cầu Ajax đến API để lấy giá bán
+                $.ajax({
+                    type: "GET",
+                    url: "/giaBan/" + idSanPham,
+                    success: function (response) {
+                        // Cập nhật nội dung của thẻ span với giá bán nhận được từ API
+                        $(this).text(response + ".đ");
+                    },
+                    error: function (error) {
+                        console.error("Error fetching data: " + error);
+                    },
+                    context: this // Đảm bảo "this" trong success callback là thẻ span đang xử lý
+                });
+            });
+
+            // Lặp qua mỗi sản phẩm
+            $(".giaGoc").each(function () {
+                // Lấy id sản phẩm từ thẻ span
+                var idSanPham = $(this).attr("id");
+                console.log("id giá gốc : " + idSanPham)
+                // Gửi yêu cầu Ajax đến API để lấy giá gốc
+                $.ajax({
+                    type: "GET",
+                    url: "/giaGoc/" + idSanPham,
+                    success: function (response) {
+                        // Cập nhật nội dung của thẻ span với giá gốc nhận được từ API
+                        $(this).text(response + ".đ");
+                    },
+                    error: function (error) {
+                        https://code.jquery.com/jquery-3.6.4.min.jscode.jquery.com/-strong/-heart:>:o:-((:-h
+
+                            console.error("Error fetching data: " + error);
+                    },
+                    context: this // Đảm bảo "this" trong success callback là thẻ span đang xử lý
+                });
+            });
+        });
+
+
+
     </script>
 
 </head>
@@ -122,28 +171,14 @@
 <div class="flex-box">
     <div class="left">
         <div class="big-img">
-            <img src="../../../img/imgsanpham/sp12ao.png">
+            <img class="data-image-product" data-url="http://localhost:8080/img/imgsanpham/${sanPham.hinhNen}" src="../../../img/imgsanpham/${sanPham.hinhNen}">
         </div>
-        <div class="images">
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
-
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.2ao.png" onclick="showImg(this.src)">
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.3ao.png" onclick="showImg(this.src)">
-
-            </div>
-            <div class="small-img">
-                <img class="img-th" src="../../../img/imgsanpham/ctsp12.4ao.png" onclick="showImg(this.src)">
-            </div>
+        <div class="images" >
+            <c:forEach var="hinhAnh" items="${hinhAnhList}">
+                <div class="small-img">
+                    <img class="img-th data-image-product" data-url="http://localhost:8080/img/imgsanpham/${hinhAnh.url}" src="../../../img/imgsanpham/${hinhAnh.url}" onclick="showImg(this.src)">
+                </div>
+            </c:forEach>
         </div>
     </div>
 
@@ -159,7 +194,23 @@
             <i class="fas fa-star-half-alt"></i>
         </div>
 
-        <div class="price">${sanPham.gia} .đ</div>
+        <%--        <div class="price">${sanPham.gia} .đ</div>--%>
+
+
+        <div class="price elis_rty">
+            <label>Giá Gốc: </label>
+            <span class="giaGoc text-muted ft-medium line-through mr-2"
+                  id="${sanPham.id}">Giá Gốc</span>
+
+            <label>Giá bán: </label>
+            <span class="giaBan ft-bold theme-cl fs-md" id="${sanPham.id}">Giá Bán</span>
+        </div>
+
+
+
+
+
+
 
         <form id="formThemGioHang" method="post" action="/add-to-cart/${sanPham.id}">
             <input type="text" id="idSanPham" value="${sanPham.id}" style="display: none">
@@ -170,8 +221,10 @@
                     <c:forEach var="color" items="${listMauSac}" varStatus="colorState">
                         <div class="form-check size-option form-option form-check-inline mb-2">
                             <input type="radio" class="form-check-input " id="mauSac" name="mauSac" value="${color.id}"
-                                   onchange="kiemTraSLSP()">
-                            <span>${color.ten}</span>
+                                   onchange="kiemTraSLSP()"
+                                   style="background-color: ${color.ma};width: 20px;height: 20px;border-radius: 100%">
+                            <div></div>
+                            <span style="margin-top: 20px;margin-left: 10px">${color.ten}</span>
                         </div>
                     </c:forEach>
                 </div>
@@ -191,13 +244,21 @@
             </div>
             <div class="quantity">
                 <p>Quantity :</p>
-                <input type="number" min="1" max="1000" value="" name="soLuong" id="soLuong">
+                <input type="number" min="1" max="1000" value="1" name="soLuong" id="soLuong">
 
 
             </div>
             <div class="btn-box">
-                <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
-                <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                <c:if test="${sanPham.trangThai == 0}">
+                    <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
+                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>
+                </c:if>
+                <c:if test="${sanPham.trangThai == 1}">
+                    <button type="submit" id="addToCard" disabled="true"
+                            style="background-color: orange;color: #ffffff">Không Hoạt Động
+                    </button>
+                    <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                </c:if>
             </div>
 
         </form>
@@ -214,7 +275,12 @@
             bigImg.src = pic;
         }
     }
-
+    let arrImage = [];
+    jQuery(".data-image-product").each(function name(params) {
+        arrImage.push($(this).attr("data-url"))
+    })
+    localStorage.setItem(${sanPham.id}, arrImage.join());
+    console.log(localStorage.getItem(${sanPham.id}));
 </script>
 </body>
 </html>

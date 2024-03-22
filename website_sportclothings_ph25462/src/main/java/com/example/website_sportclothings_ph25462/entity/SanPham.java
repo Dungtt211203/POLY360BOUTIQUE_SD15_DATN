@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+
 @Table(name = "san_pham")
 @Entity
 @Getter
@@ -60,8 +61,8 @@ public class SanPham {
 
     @Column(name = "ngay_tao")
     private String ngayTao;
-
-    @Column(name="hinh_nen") // banner
+    @NotBlank(message = "Không được để trống hình nền")
+    @Column(name = "hinh_nen") // banner
     private String hinhNen;
     @Column(name = "ngay_sua")
     private String ngaySua;

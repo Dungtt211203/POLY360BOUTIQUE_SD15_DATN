@@ -80,6 +80,9 @@
     .login-container button:hover {
         background-color: #90d626;
     }
+    .dk-hover:hover{
+        color: #00aeff !important;
+    }
 </style>
 
 <body>
@@ -90,7 +93,7 @@
 
     <div class="login-container">
         <form action="/login" method="post" modelAttribute="taikhoan" mode onsubmit="return validateForm()">
-            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #FFFFFF">POLY 360 BOUTIQUE
+            <h3 style="text-align: center; font-weight: bold;font-size: 30px;color: #2D2D2D">POLY 360 BOUTIQUE
             </h3>
             <br>
             <h5 style="color: red; text-align: center; margin-top: -10px">${errorMessage}</h5>
@@ -116,7 +119,7 @@
                 nhập
             </button>
             <div style="text-align: center;font-size: 15px">
-                <h1>Bạn chưa có tài khoản? <a href="/poly360boutique/dang-ky" style="color: #FFFFFF">Đăng ký</a>
+                <h1>Bạn chưa có tài khoản? <a href="/dang-ky" style="color: #FFFFFF" class="dk-hover">Đăng ký</a>
                 </h1>
             </div>
         </form>
