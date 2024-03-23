@@ -1,12 +1,10 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.*;
-import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.repository.GioHangChiTietRepository;
 import com.example.website_sportclothings_ph25462.repository.GioHangRepository;
 import com.example.website_sportclothings_ph25462.repository.KhachHangRepository;
 import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
-import com.example.website_sportclothings_ph25462.service.ChiTietSPService;
 import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
 import com.example.website_sportclothings_ph25462.service.GioHangService;
 import jakarta.servlet.http.HttpSession;

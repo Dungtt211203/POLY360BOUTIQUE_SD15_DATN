@@ -2,6 +2,7 @@ package com.example.website_sportclothings_ph25462.service.Impl;
 
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
 import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,40 +16,6 @@ import java.util.List;
 
 @Service
 public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
-    //
-//    @Autowired
-//    private ChiTietSanPhamRepository chiTietSanPhamRepository;
-//
-//    @Override
-//    public Page<ChiTietSanPham> getData(Integer page) {
-//        Pageable pageable = PageRequest.of(page, 4);
-//
-//        return chiTietSanPhamRepository.findAll(pageable);
-//    }
-//
-//    @Override
-//    public ChiTietSanPham getOne(String id) {
-//        return chiTietSanPhamRepository.findById(Long.getLong(id)).orElse(null);
-//    }
-//
-//    @Override
-//    public List<ChiTietSanPham> getAll() {
-//        return chiTietSanPhamRepository.findAll();
-//    }
-//
-//    @Override
-//    public List<ChiTietSanPham> getCTSPByIdSanPham(long id) {
-//        return chiTietSanPhamRepository.getAllByIdSanPham(id);
-//    }
-//
-//    @Override
-//    public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
-//        return chiTietSanPhamRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
-//    }
-//    @Override
-//    public void save(ChiTietSanPham chiTietSP) {
-//        chiTietSanPhamRepository.save(chiTietSP);
-//    }
     @Autowired
     ChiTietSanPhamRepository chiTietSPRepository;
 
@@ -73,7 +40,6 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     @Override
     public Page<ChiTietSanPham> getData(Integer page) {
         Pageable pageable = PageRequest.of(page, 1);
-
         return chiTietSPRepository.findAll(pageable);
     }
 
@@ -89,10 +55,14 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
         return chiTietSPRepository.getAllByIdSanPham(id);
     }
 
-//    @Override
+    //    @Override
 //    public ChiTietSP getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
 //        return null;
 //    }
+    @Override
+    public Page<ChiTietSanPham> getAll(Pageable pageable) {
+        return chiTietSPRepository.findAll(pageable);
+    }
 
     @Override
     public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {

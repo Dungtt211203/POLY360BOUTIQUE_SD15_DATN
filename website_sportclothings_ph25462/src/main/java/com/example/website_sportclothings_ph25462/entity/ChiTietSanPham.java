@@ -17,8 +17,6 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-
 public class ChiTietSanPham {
 
     @Id
