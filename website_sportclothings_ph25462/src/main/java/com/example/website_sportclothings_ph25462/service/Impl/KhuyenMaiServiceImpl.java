@@ -1,9 +1,12 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.KhuyenMai;
+import com.example.website_sportclothings_ph25462.entity.NhanVien;
 import com.example.website_sportclothings_ph25462.repository.KhuyenMaiRepository;
 import com.example.website_sportclothings_ph25462.service.KhuyenMaiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,4 +36,8 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
         return khuyenMaiRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public Page<KhuyenMai> getAll(Pageable pageable) {
+        return khuyenMaiRepository.findAll(pageable);
+    }
 }

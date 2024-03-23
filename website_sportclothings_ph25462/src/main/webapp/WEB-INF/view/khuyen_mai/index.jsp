@@ -49,6 +49,7 @@
         background-color: #5a8dee; /* Màu xanh nhạt */
         color: #6f42c1; /* Màu chữ đen */
     }
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -74,6 +75,7 @@
     tr:hover {
         background-color: orange;
     }
+
     .table tbody tr:hover {
         cursor: pointer;
     }
@@ -101,7 +103,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${load}" var="km" varStatus="i">
+            <c:forEach items="${page.content}" var="km" varStatus="i">
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${km.id}</td>
@@ -138,11 +140,24 @@
 
                 </tr>
             </c:forEach>
-            <button  class="btn btn-outline-warning"><a href="/admin/khuyen-mai/hien-thi-add"
-                                               style="text-decoration: none;color: black"><i
+            <button class="btn btn-outline-warning"><a href="/admin/khuyen-mai/hien-thi-add"
+                                                       style="text-decoration: none;color: black"><i
                     class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
             </tbody>
         </table>
+        <nav aria-label="...">
+            <ul class="pagination" style="margin-left: 700px">
+                <li class="page-item disabled">
+                    <a class="page-link" href="/admin/khuyen-mai/hien-thi?km=0">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/admin/khuyen-mai/hien-thi?km=${page.number-1}"><<<</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/admin/khuyen-mai/hien-thi?km=${page.number+1}">>>></a>
+                <li class="page-item">
+                    <a class="page-link" href="/admin/khuyen-mai/hien-thi?km=${page.totalPages+1}">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
