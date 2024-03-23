@@ -18,7 +18,36 @@
         width: 200px;
     }
 
+    button {
+        width: 100px;
+    }
 
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: orange;
+    }
     .badges {
         padding: 5px 10px;
         border-radius: 5px;
@@ -52,73 +81,81 @@
 </style>
 <body>
 
-<h1 style="text-align: center">QUẢN LÝ KHUYẾN MẠI CHI TIẾT</h1>
-<table class="table">
-    <thead>
-    <tr>
+<div style="display: flex">
+    <div>
+        <jsp:include page="../../../WEB-INF/view/admin/index.jsp"/>
+    </div>
+    <div style="margin-left: 300px;margin-top: 100px">
+        <h1 style="text-align: center;color: black;font-size: 30px">QUẢN LÝ KHUYẾN MẠI CHI TIẾT</h1>
+        <table style="width: 1000px">
+            <thead>
+            <tr>
 
-        <th>ID</th>
-        <th>Mã Khuyến Mại Chi Tiết</th>
-        <th>Hình Thức Giảm</th>
-        <th>Giá Trị Giảm</th>
-        <th>Sản Phẩm</th>
-        <th>Khuyến Mại</th>
-        <%--        <th>Ngày bắt Đầu</th>--%>
+                <th>ID</th>
+                <th>Mã Khuyến Mại Chi Tiết</th>
+                <th>Hình Thức Giảm</th>
+                <th>Giá Trị Giảm</th>
+                <th>Sản Phẩm</th>
+                <th>Khuyến Mại</th>
+                <%--        <th>Ngày bắt Đầu</th>--%>
 
-        <th colspan="2">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${page.content}" var="ctkm" varStatus="i">
-        <tr>
+                <th colspan="2">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${page.content}" var="ctkm" varStatus="i">
+                <tr>
 
-            <td>${ctkm.id}</td>
-            <td>${ctkm.maChiTietKhuyenMai}</td>
-            <td>
-                <c:choose>
-                    <c:when test="${ctkm.hinhThucGiam == 1}">
-                        <span class="badges bg-lightyellow">Giảm theo %</span>
-                    </c:when>
-                    <c:when test="${ctkm.hinhThucGiam == 0}">
-                        <span class="badges bg-lightyellow">Giảm theo thành viên</span>
-                    </c:when>
-                </c:choose>
-            </td>
-            <td>${ctkm.giaTriGiam}</td>
-            <td>${ctkm.chiTietSP.sanPham.ten}</td>
-            <td>${ctkm.khuyenMai.tenKhuyenMai}</td>
-                <%--            <td>${ctkm.ngayBatDau}</td>--%>
-
-
-            <td>
-                <button class="btn btn-success"><a href="/admin/chi-tiet-khuyen-mai/view-update/${ctkm.id}"
-                                                   style="text-decoration: none;color: #FFFFFF">Update</a></button>
-                <button class="btn btn-danger"><a href="/admin/chi-tiet-khuyen-mai/remove/${ctkm.id}"
-                                                  style="text-decoration: none;color: #FFFFFF">Remove</a></button>
-            </td>
+                    <td>${ctkm.id}</td>
+                    <td>${ctkm.maChiTietKhuyenMai}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${ctkm.hinhThucGiam == 1}">
+                                <span class="badges bg-lightyellow">Giảm theo %</span>
+                            </c:when>
+                            <c:when test="${ctkm.hinhThucGiam == 0}">
+                                <span class="badges bg-lightyellow">Giảm theo thành viên</span>
+                            </c:when>
+                        </c:choose>
+                    </td>
+                    <td>${ctkm.giaTriGiam}</td>
+                    <td>${ctkm.chiTietSP.sanPham.ten}</td>
+                    <td>${ctkm.khuyenMai.tenKhuyenMai}</td>
+                        <%--            <td>${ctkm.ngayBatDau}</td>--%>
 
 
-        </tr>
-    </c:forEach>
-    <button class="btn btn-primary"><a href="/admin/chi-tiet-khuyen-mai/hien-thi-add"
-                                       style="text-decoration: none;color: #FFFFFF">ADD</a></button>
-    </tbody>
-</table>
-<nav aria-label="...">
-    <ul class="pagination" style="margin-left: 700px">
-        <li class="page-item disabled">
-            <a class="page-link" href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=0">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link"
-                                 href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.number-1}"><<<</a>
-        </li>
-        <li class="page-item"><a class="page-link"
-                                 href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.number+1}">>>></a>
-        <li class="page-item">
-            <a class="page-link" href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.totalPages+1}">Next</a>
-        </li>
-    </ul>
-</nav>
+                    <td>
+                        <a href="/admin/chi-tiet-khuyen-mai/view-update/${ctkm.id}" style="color: black"> <i
+                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                        <a href="/admin/chi-tiet-khuyen-mai/remove/${ctkm.id}" style="color: black"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
+
+
+                </tr>
+            </c:forEach>
+            <button class="btn btn-outline-warning"><a href="/admin/chi-tiet-khuyen-mai/hien-thi-add"
+                                                       style="text-decoration: none;color: black"><i
+                    class="fa-sharp fa-solid fa-plus"></i> ADD</a></button>
+            </tbody>
+        </table>
+        <nav aria-label="...">
+            <ul class="pagination" style="margin-left: 700px">
+                <li class="page-item disabled">
+                    <a class="page-link" href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=0">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link"
+                                         href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.number-1}"><<<</a>
+                </li>
+                <li class="page-item"><a class="page-link"
+                                         href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.number+1}">>>></a>
+                <li class="page-item">
+                    <a class="page-link" href="/admin/chi-tiet-khuyen-mai/hien-thi?ctkm=${page.totalPages+1}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

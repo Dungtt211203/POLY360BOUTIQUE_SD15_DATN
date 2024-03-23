@@ -108,7 +108,7 @@ public class ThuongHieuController {
     @GetMapping("/thuong-hieu/remove/{id}")
     public String remove(@PathVariable("id") Long id) {
         thuongHieuService.remove(id);
-        return "redirect:/thuong-hieu/hien-thi";
+        return "redirect:/admin/thuong-hieu/hien-thi";
     }
     @GetMapping("/thuong-hieu/view-update/{id}")
     public String update(@PathVariable Long id,
