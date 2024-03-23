@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.HinhAnhSP;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.HinhAnhSPRepository;
 import com.example.website_sportclothings_ph25462.service.HinhAnhSPService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,23 @@ public class HinhAnhSPServiceImpl implements HinhAnhSPService {
         return hinhAnhSPRepository.getHinhAnhSPByIdSP(idSanPham);
     }
 
+    @Override
+    public Page<HinhAnhSP> getAll(Pageable pageable) {
+        return hinhAnhSPRepository.findAll(pageable);
+    }
+    @Override
+    public void add(HinhAnhSP hinhAnhSP) {
+        hinhAnhSPRepository.save(hinhAnhSP);
+    }
 
+    @Override
+
+    public HinhAnhSP update(Long id) {
+        return hinhAnhSPRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void remove(Long id) {
+        hinhAnhSPRepository.deleteById(id);
+    }
 }

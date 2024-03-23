@@ -78,8 +78,7 @@
                     phẩm</a>
             </li>
             <li class="nav-item admin-menu-hover">
-                <a class="nav-link-admin" href="/admin/hinh-anh/hien-thi" style="color: black;margin-left: 10px">Hình
-                    ảnh</a>
+                <a class="nav-link-admin" href="/admin/hinh-anh/hien-thi" style="color: black;margin-left: 10px">Hình ảnh</a>
             </li>
         </div>
         <li class="nav-item">
