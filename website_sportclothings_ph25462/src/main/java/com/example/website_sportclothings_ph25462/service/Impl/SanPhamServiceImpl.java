@@ -49,7 +49,7 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
     public Page<SanPham> getData(Integer page) {
 
-        Pageable pageable = PageRequest.of(page, 4);
+        Pageable pageable = PageRequest.of(page, 8);
 
         return spr.findAll(pageable);
     }

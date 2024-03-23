@@ -206,7 +206,7 @@
 
         <div class="box-shadow-page">
             <div class="card-body">
-                <form:form action="/thong-ke/hien-thi" method="get">
+                <form:form action="/admin/thong-ke/hien-thi" method="get">
                     <label for="startDate">Ngày Bắt Đầu:</label>
                     <input type="datetime-local" id="startDate" name="startDate" value="${startDate}" required>
 

@@ -198,9 +198,9 @@
 
 
         <div class="price elis_rty">
-            <label>Giá Gốc: </label>
-            <span class="giaGoc text-muted ft-medium line-through mr-2"
-                  id="${sanPham.id}">Giá Gốc</span>
+<%--            <label>Giá Gốc: </label>--%>
+<%--            <span class="giaGoc text-muted ft-medium line-through mr-2"--%>
+<%--                  id="${sanPham.id}">Giá Gốc</span>--%>
 
             <label>Giá bán: </label>
             <span class="giaBan ft-bold theme-cl fs-md" id="${sanPham.id}">Giá Bán</span>
