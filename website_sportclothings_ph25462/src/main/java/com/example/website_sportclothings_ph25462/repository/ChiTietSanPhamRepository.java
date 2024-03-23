@@ -1,7 +1,10 @@
 package com.example.website_sportclothings_ph25462.repository;
 
 
+import com.example.website_sportclothings_ph25462.entity.ChatLieu;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,8 +17,8 @@ import java.util.UUID;
 @Repository
 public interface ChiTietSanPhamRepository extends JpaRepository<ChiTietSanPham, Long> {
 
-    @Query(value = "SELECT * FROM ChiTietSP ", nativeQuery = true)
-    List<ChiTietSanPham> getAll();
+    @Query(value = "SELECT * FROM chi_Tiet_san_pham ", nativeQuery = true)
+    List<ChiTietSanPham> getAll(Pageable pageable);
 
     @Query(
             value = "SELECT * FROM chi_Tiet_san_pham where san_pham_id = :id ",
@@ -29,7 +32,7 @@ public interface ChiTietSanPhamRepository extends JpaRepository<ChiTietSanPham, 
 
     @Query(value = "SELECT so_luong FROM Chi_tiet_san_pham WHERE san_pham_id = :idSanPham AND mau_sac_id = :idMauSac AND kich_co_id = :idKichCo", nativeQuery = true)
     Long getSanPhamChiTietByIdSPAndIdSizeAndIdMauSac(@Param("idSanPham") Long idSanPham, @Param("idMauSac") Long idMauSac, @Param("idKichCo") Long idKichCo);
-
+    Page<ChiTietSanPham> findAll(Pageable pageable);
 
     @Query(value = "SELECT TOP 1 * FROM chi_tiet_san_pham WHERE san_pham_id = :idSanPham ORDER BY gia_hien_hanh ASC; ", nativeQuery = true)
     ChiTietSanPham getGiaSanPhamMinById(@Param("idSanPham") Long idSanPham);

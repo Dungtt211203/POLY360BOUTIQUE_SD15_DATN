@@ -2,8 +2,13 @@ package com.example.website_sportclothings_ph25462.controller;
 
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.*;
+import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -28,10 +34,14 @@ public class ChiTietSPController {
     private ChatLieuRepository chatLieuRepository;
     @Autowired
     private ThuongHieuRepository thuongHieuRepository;
+    @Autowired
+    private ChiTietSanPhamService chiTietSanPhamService;
 
 
     @GetMapping("/hien-thi")
-    public String view(Model model) {
+    public String view(Model model, @RequestParam(defaultValue = "0") int ctsp) {
+        Pageable pageable = PageRequest.of(ctsp, 5);
+        Page<ChiTietSanPham> page = chiTietSanPhamService.getAll(pageable);
         model.addAttribute("list", chiTietSanPhamRepository.findAll());
         model.addAttribute("sp", new ChiTietSanPham());
         model.addAttribute("view", "../chitietsp/index.jsp");
@@ -40,6 +50,7 @@ public class ChiTietSPController {
         model.addAttribute("mauSac", mauSacRepository.findAll());
         model.addAttribute("chatLieu", chatLieuRepository.findAll());
         model.addAttribute("thuongHieu", thuongHieuRepository.findAll());
+        model.addAttribute("page", page);
         return "/chitietsp/index";
     }
 
@@ -66,7 +77,7 @@ public class ChiTietSPController {
             chiTietSanPhamRepository.save(chiTietSanPhamDB);
             return "redirect:/admin/chitietsp/hien-thi";
         } else
-        chiTietSanPhamRepository.save(chiTietSp);
+            chiTietSanPhamRepository.save(chiTietSp);
         return "redirect:/admin/chitietsp/hien-thi";
     }
 
