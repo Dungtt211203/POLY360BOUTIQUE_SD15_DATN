@@ -70,7 +70,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${load}" var="nv" varStatus="i">
+            <c:forEach items="${page.content}" var="nv" varStatus="i">
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${nv.id}</td>
