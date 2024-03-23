@@ -18,6 +18,11 @@ import java.util.Map;
 public class KiemTraSLSanPhamController {
     @Autowired
     ChiTietSanPhamRepository chiTietSanPhamRepository;
+
+    @Autowired
+    private ChiTietSanPhamRepository sanPhamChiTietService;
+
+
     @GetMapping("/chitietsp/kiemTraSoLuongSanPham/{idSanPham}/{idMauSac}/{idKichCo}")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> kiemTraSoLuongSanPham(@PathVariable("idSanPham") Long idSanPham,
@@ -41,4 +46,32 @@ public class KiemTraSLSanPhamController {
         return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
+
+
+    @GetMapping("/giaBan/{idSanPham}")
+    public ResponseEntity<Long> getGiaBanByIdSanPham(@PathVariable long idSanPham) {
+        ChiTietSanPham chiTietSanPham = sanPhamChiTietService.getGiaSanPhamMinById(idSanPham);
+
+        if (chiTietSanPham != null) {
+            Long giaBan = chiTietSanPham.getGiaHienHanh();
+            return ResponseEntity.ok(giaBan);
+        } else {
+            // Trả về mã trạng thái 404 nếu không tìm thấy sản phẩm chi tiết
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/giaGoc/{idSanPham}")
+    public ResponseEntity<Long> getGiaGocByIdSanPham(@PathVariable long idSanPham) {
+        ChiTietSanPham chiTietSanPham = sanPhamChiTietService.getGiaSanPhamMinById(idSanPham);
+
+        if (chiTietSanPham != null) {
+            Long giaGoc = chiTietSanPham.getGiaGoc();
+            return ResponseEntity.ok(giaGoc);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 }
