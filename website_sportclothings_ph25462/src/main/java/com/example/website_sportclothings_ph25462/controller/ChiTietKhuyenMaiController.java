@@ -2,12 +2,16 @@ package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietKhuyenMai;
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.entity.KhachHang;
 import com.example.website_sportclothings_ph25462.entity.KhuyenMai;
 import com.example.website_sportclothings_ph25462.service.ChiTietKhuyenMaiService;
 import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
 import com.example.website_sportclothings_ph25462.service.KhuyenMaiService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,11 +33,14 @@ public class ChiTietKhuyenMaiController {
     KhuyenMaiService khuyenMaiService;
 
     @GetMapping("/chi-tiet-khuyen-mai/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int ctkm) {
+        Pageable pageable = PageRequest.of(ctkm, 5);
+        Page<ChiTietKhuyenMai> page = chiTietKhuyenMaiService.getAll(pageable);
         model.addAttribute("listKmmct", chiTietKhuyenMaiService.getAll());
         model.addAttribute("view", "../chi_tiet_khuyen_mai/index.jsp");
         model.addAttribute("chiTietSP", chiTietSanPhamService.getAll());
         model.addAttribute("khuyenMai", khuyenMaiService.getAll());
+        model.addAttribute("page", page);
         return "/chi_tiet_khuyen_mai/index";
     }
 
