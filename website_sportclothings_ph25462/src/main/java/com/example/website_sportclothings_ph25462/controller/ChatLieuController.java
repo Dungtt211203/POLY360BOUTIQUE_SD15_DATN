@@ -79,7 +79,7 @@ public class ChatLieuController {
         }
         chatLieu.setId(id);
         chatLieuService.add(chatLieu);
-        return "redirect:/chat-lieu/hien-thi";
+        return "redirect:/admin/chat-lieu/hien-thi";
     }
 
     @PostMapping("/add/chat-lieu")

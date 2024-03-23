@@ -79,9 +79,9 @@
                                         <td>${cl.ten}</td>
                                         <td>${cl.tt==0?"Hoạt Động":"Không Hoạt Động"}</td>
                                         <td>
-                                            <a href="/chat-lieu/view-update/${cl.id}" style="color: black"> <i
+                                            <a href="/admin/chat-lieu/view-update/${cl.id}" style="color: black"> <i
                                                     class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                            <a href="/chat-lieu/remove/${cl.id}" style="color: black"
+                                            <a href="/admin/chat-lieu/remove/${cl.id}" style="color: black"
                                                 onclick="return confirm('Bạn có chắc chắn muốn xóa chất liệu này?')"><i
                                                     class="fa-solid fa-trash"></i></a>
                                         </td>

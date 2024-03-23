@@ -40,7 +40,7 @@
     }
 
     tr:hover {
-        background-color: #e5e5e5;
+        background-color: orange;
     }
 </style>
 <body>
