@@ -8,6 +8,8 @@ import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepos
 import com.example.website_sportclothings_ph25462.repository.KhuyenMaiRepository;
 import com.example.website_sportclothings_ph25462.service.ChiTietKhuyenMaiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +31,6 @@ public class ChiTietKhuyenMaiServiceImpl implements ChiTietKhuyenMaiService {
 
         return chiTietKhuyenMaiRepository.findAll();
     }
-
 
 
 //    @Override
@@ -103,6 +104,10 @@ public class ChiTietKhuyenMaiServiceImpl implements ChiTietKhuyenMaiService {
         return chiTietKhuyenMaiRepository.getChiTietKhuyenMaiBy(maCtkm);
     }
 
+    @Override
+    public Page<ChiTietKhuyenMai> getAll(Pageable pageable) {
+        return chiTietKhuyenMaiRepository.findAll(pageable);
+    }
 
     @Override
     public void remove(Long id) {
