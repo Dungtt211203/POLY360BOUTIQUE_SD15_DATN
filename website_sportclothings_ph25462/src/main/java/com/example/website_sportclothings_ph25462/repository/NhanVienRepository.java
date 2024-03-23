@@ -15,4 +15,6 @@ public interface NhanVienRepository extends JpaRepository<NhanVien, Long> {
 
     @Query("select nv from NhanVien nv where  nv.ma =?1")
     NhanVien getSanPhamByMaSP(String maCl);
+
+    Page<NhanVien> findAll(Pageable pageable);
 }

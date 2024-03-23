@@ -20,4 +20,6 @@ public interface NhanVienService {
     Page<NhanVien> search(String key, Pageable pageable);
 
     NhanVien getOne(String maNV);
+
+    Page<NhanVien> getAll(Pageable pageable);
 }

@@ -17,6 +17,7 @@
     button {
         width: 100px;
     }
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -55,7 +56,7 @@
             <tr>
                 <th>STT</th>
                 <th>ID</th>
-<%--                <th>ID Tài Khoản</th>--%>
+                <%--                <th>ID Tài Khoản</th>--%>
                 <th>Mã Nhân Viên</th>
                 <th>Họ Nhân Viên</th>
                 <th>Tên Đệm Nhân Viên</th>
@@ -73,7 +74,7 @@
                 <tr>
                     <td>${i.index+1}</td>
                     <td>${nv.id}</td>
-<%--                    <td>${nv.taiKhoanNV.id}</td>--%>
+                        <%--                    <td>${nv.taiKhoanNV.id}</td>--%>
                     <td>${nv.ma}</td>
                     <td>${nv.ho}</td>
                     <td>${nv.tenDem}</td>
@@ -86,7 +87,8 @@
                     <td>
                         <a href="/admin/nhan-vien/view-update/${nv.id}" style="color: black"> <i
                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                        <a href="/admin/nhan-vien/remove/${nv.id}" style="color: black"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/admin/nhan-vien/remove/${nv.id}" style="color: black"><i
+                                class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </c:forEach>
@@ -95,6 +97,19 @@
                     class="fa-sharp fa-solid fa-plus"></i>ADD</a></button>
             </tbody>
         </table>
+        <nav aria-label="...">
+            <ul class="pagination" style="margin-left: 700px">
+                <li class="page-item disabled">
+                    <a class="page-link" href="/admin/nhan-vien/hien-thi?nv=0">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/admin/nhan-vien/hien-thi?nv=${page.number-1}"><<<</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/admin/nhan-vien/hien-thi?nv=${page.number+1}">>>></a>
+                <li class="page-item">
+                    <a class="page-link" href="/admin/nhan-vien/hien-thi?nv=${page.totalPages+1}">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
 </div>
