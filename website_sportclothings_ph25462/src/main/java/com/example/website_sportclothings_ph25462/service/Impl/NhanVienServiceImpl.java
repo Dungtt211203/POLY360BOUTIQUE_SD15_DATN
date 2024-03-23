@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class NhanVienServiceImpl implements NhanVienService {
     @Autowired
@@ -37,6 +38,11 @@ public class NhanVienServiceImpl implements NhanVienService {
     @Override
     public Page<NhanVien> search(String key, Pageable pageable) {
         return nvr.search(key, pageable);
+    }
+
+    @Override
+    public Page<NhanVien> getAll(Pageable pageable) {
+        return nvr.findAll(pageable);
     }
 
     public NhanVien getOne(String maCL) {

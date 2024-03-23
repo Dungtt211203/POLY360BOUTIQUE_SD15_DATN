@@ -6,6 +6,9 @@ import com.example.website_sportclothings_ph25462.repository.NhanVienRepository;
 import com.example.website_sportclothings_ph25462.service.NhanVienService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,9 +23,12 @@ public class NhanVienController {
     NhanVienService nhanVienService;
 
     @GetMapping("/nhan-vien/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int nv) {
+        Pageable pageable = PageRequest.of(nv, 5);
+        Page<NhanVien> page = nhanVienService.getAll(pageable);
         model.addAttribute("load", nhanVienService.getAll());
         model.addAttribute("nv", new NhanVien());
+        model.addAttribute("page",page);
         model.addAttribute("view", "../nhan_vien/chinh-sach.jsp");
         return "/nhan_vien/index";
     }
