@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.service.Impl;
 
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.KhachHangRepository;
 import com.example.website_sportclothings_ph25462.service.KhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class KhachHangServiceImpl implements KhachHangService {
     @Autowired
@@ -51,5 +53,10 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Override
     public KhachHang getKHByIdTaiKhoan(Long id) {
         return khr.getKhachHangByIdTaiKhoan(id);
+    }
+
+    @Override
+    public Page<KhachHang> getAll(Pageable pageable) {
+        return khr.findAll(pageable);
     }
 }

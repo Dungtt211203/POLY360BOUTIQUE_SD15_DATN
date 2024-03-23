@@ -1,5 +1,7 @@
 package com.example.website_sportclothings_ph25462.repository;
+
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,4 +21,6 @@ public interface KhachHangRepository extends JpaRepository<KhachHang, Long> {
 
     @Query(value = "SELECT kh.* FROM tai_khoan tk INNER JOIN khach_hang kh ON tk.id = kh.tai_khoan_id  WHERE tk.id = :idTK  ", nativeQuery = true)
     KhachHang getKhachHangByIdTaiKhoan(@Param("idTK") Long idTK);
+
+    Page<KhachHang> findAll(Pageable pageable);
 }
