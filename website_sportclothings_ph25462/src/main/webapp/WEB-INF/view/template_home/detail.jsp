@@ -25,6 +25,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -111,6 +112,55 @@
         }
 
 
+
+
+        $(document).ready(function () {
+            // Lặp qua mỗi sản phẩm
+            $(".giaBan").each(function () {
+                // Lấy id sản phẩm từ thẻ span
+                var idSanPham = $(this).attr("id");
+                console.log("id giá Bán : " + idSanPham)
+
+                // Gửi yêu cầu Ajax đến API để lấy giá bán
+                $.ajax({
+                    type: "GET",
+                    url: "/giaBan/" + idSanPham,
+                    success: function (response) {
+                        // Cập nhật nội dung của thẻ span với giá bán nhận được từ API
+                        $(this).text(response + ".đ");
+                    },
+                    error: function (error) {
+                        console.error("Error fetching data: " + error);
+                    },
+                    context: this // Đảm bảo "this" trong success callback là thẻ span đang xử lý
+                });
+            });
+
+            // Lặp qua mỗi sản phẩm
+            $(".giaGoc").each(function () {
+                // Lấy id sản phẩm từ thẻ span
+                var idSanPham = $(this).attr("id");
+                console.log("id giá gốc : " + idSanPham)
+                // Gửi yêu cầu Ajax đến API để lấy giá gốc
+                $.ajax({
+                    type: "GET",
+                    url: "/giaGoc/" + idSanPham,
+                    success: function (response) {
+                        // Cập nhật nội dung của thẻ span với giá gốc nhận được từ API
+                        $(this).text(response + ".đ");
+                    },
+                    error: function (error) {
+                        https://code.jquery.com/jquery-3.6.4.min.jscode.jquery.com/-strong/-heart:>:o:-((:-h
+
+                            console.error("Error fetching data: " + error);
+                    },
+                    context: this // Đảm bảo "this" trong success callback là thẻ span đang xử lý
+                });
+            });
+        });
+
+
+
     </script>
 
 </head>
@@ -144,7 +194,23 @@
             <i class="fas fa-star-half-alt"></i>
         </div>
 
-        <div class="price">${sanPham.gia} .đ</div>
+        <%--        <div class="price">${sanPham.gia} .đ</div>--%>
+
+
+        <div class="price elis_rty">
+            <label>Giá Gốc: </label>
+            <span class="giaGoc text-muted ft-medium line-through mr-2"
+                  id="${sanPham.id}">Giá Gốc</span>
+
+            <label>Giá bán: </label>
+            <span class="giaBan ft-bold theme-cl fs-md" id="${sanPham.id}">Giá Bán</span>
+        </div>
+
+
+
+
+
+
 
         <form id="formThemGioHang" method="post" action="/add-to-cart/${sanPham.id}">
             <input type="text" id="idSanPham" value="${sanPham.id}" style="display: none">
@@ -185,7 +251,7 @@
             <div class="btn-box">
                 <c:if test="${sanPham.trangThai == 0}">
                     <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
-                    <%--                <button type="button" class="buy-btn">Buy Now</button>--%>
+                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>
                 </c:if>
                 <c:if test="${sanPham.trangThai == 1}">
                     <button type="submit" id="addToCard" disabled="true"
@@ -214,7 +280,7 @@
         arrImage.push($(this).attr("data-url"))
     })
     localStorage.setItem(${sanPham.id}, arrImage.join());
-        console.log(localStorage.getItem(${sanPham.id}));
+    console.log(localStorage.getItem(${sanPham.id}));
 </script>
 </body>
 </html>
