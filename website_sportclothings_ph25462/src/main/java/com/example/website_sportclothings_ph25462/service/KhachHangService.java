@@ -19,6 +19,8 @@ public interface KhachHangService {
 
     Page<KhachHang> search(String key, Pageable pageable);
 
+    Page<KhachHang> getAll(Pageable pageable);
+
     KhachHang getOne(String maKH);
 
     KhachHang getOneById(Long id);

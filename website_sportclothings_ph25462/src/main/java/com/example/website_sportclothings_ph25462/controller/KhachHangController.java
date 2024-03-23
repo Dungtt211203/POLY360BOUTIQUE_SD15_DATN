@@ -1,6 +1,7 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.KhachHang;
+import com.example.website_sportclothings_ph25462.entity.SanPham;
 import com.example.website_sportclothings_ph25462.repository.KhachHangRepository;
 import com.example.website_sportclothings_ph25462.repository.TaiKhoanRepository;
 import com.example.website_sportclothings_ph25462.repository.VaiTroRepository;
@@ -8,6 +9,9 @@ import com.example.website_sportclothings_ph25462.service.KhachHangService;
 import com.example.website_sportclothings_ph25462.service.TaiKhoanService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,10 +29,13 @@ public class KhachHangController {
 
 
     @GetMapping("/khach-hang/hien-thi")
-    public String hienThi(Model model) {
+    public String hienThi(Model model, @RequestParam(defaultValue = "0") int kh) {
+        Pageable pageable = PageRequest.of(kh, 5);
+        Page<KhachHang> page = khachHangService.getAll(pageable);
         model.addAttribute("load", khachHangService.getAll());
         model.addAttribute("kh", new KhachHang());
         model.addAttribute("view", "../khach_hang/chinh-sach.jsp");
+        model.addAttribute("page", page);
         return "/khach_hang/index";
     }
 
