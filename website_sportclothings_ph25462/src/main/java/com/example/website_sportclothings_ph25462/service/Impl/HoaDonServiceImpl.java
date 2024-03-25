@@ -26,7 +26,7 @@ public class HoaDonServiceImpl implements HoaDonService {
 
 
     @Override
-    public List<HoaDon> getAll() {
+    public List<HoaDon> getTatCaDonHang() {
         return hoaDonRepository.findAll();
     }
 

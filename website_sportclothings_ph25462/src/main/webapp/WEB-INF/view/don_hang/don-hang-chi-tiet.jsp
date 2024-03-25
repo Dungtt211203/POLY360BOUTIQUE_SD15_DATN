@@ -168,7 +168,6 @@
             <th>Đơn Giá</th>
             <th>Ngày Đặt Hàng</th>
             <th>Trạng Thái</th>
-            <th>Hành Động</th>
         </tr>
         </thead>
         <tbody>

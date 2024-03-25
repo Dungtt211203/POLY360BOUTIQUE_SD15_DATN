@@ -7,10 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.awt.print.Pageable;
 import java.util.List;
+
 @Service
 public interface HoaDonService {
-
-    public List<HoaDon> getAll();
 
     public List<HoaDon> getAllByKhachHang();
 
@@ -32,8 +31,9 @@ public interface HoaDonService {
 
     public List<HoaDon> getDonHangDangGiao();
 
-    public HoaDon getDonHangById(Long id);
+    public List<HoaDon> getTatCaDonHang();
 
+    public HoaDon getDonHangById(Long id);
 
 
 }

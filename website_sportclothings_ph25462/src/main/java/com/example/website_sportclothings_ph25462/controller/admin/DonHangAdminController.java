@@ -25,7 +25,13 @@ public class DonHangAdminController {
     @Autowired
     private ChiTietSanPhamRepository chiTietSPRepository;
 
+    @GetMapping("/tatCaDonHang")
+    public String tatCaDonHang(Model model) {
 
+        model.addAttribute("tatCaDonHang", hoaDonService.getTatCaDonHang());
+
+        return "/admin/don_hang/tatcaDonHang";
+    }
     @GetMapping("/donHangCho")
     public String donHangCho(Model model) {
 
@@ -114,7 +120,6 @@ public class DonHangAdminController {
             for (int i = 0; i < huyDonHangRequest.getSelectedItems().size(); i++) {
                 HoaDon hoaDon = hoaDonService.getDonHangById(huyDonHangRequest.getSelectedItems().get(i));
                 hoaDon.setGhiChu(huyDonHangRequest.getLyDo());
-
                 List<HoaDonChiTiet> hoaDonChiTietList = hoaDonChiTietRepository.findDonHangChiTietByIdDonHang(hoaDon.getId());
                 for (HoaDonChiTiet hoaDonChiTiet : hoaDonChiTietList) {
 
