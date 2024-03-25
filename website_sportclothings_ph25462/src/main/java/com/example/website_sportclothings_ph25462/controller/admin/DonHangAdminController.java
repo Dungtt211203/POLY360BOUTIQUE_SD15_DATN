@@ -28,7 +28,7 @@ public class DonHangAdminController {
     @GetMapping("/tatCaDonHang")
     public String tatCaDonHang(Model model) {
 
-        model.addAttribute("tatCaDonHang", hoaDonService.getTatCaDonHang());
+        model.addAttribute("tatCaDonHang", hoaDonService.getAll());
 
         return "/admin/don_hang/tatcaDonHang";
     }

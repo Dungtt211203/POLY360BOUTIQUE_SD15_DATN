@@ -373,13 +373,13 @@
                                     <span class="badges bg-green">Thành Công</span>
                                 </c:when>
                                 <c:when test="${donHang.trangThai == 2}">
-                                    <span class="badges bg-lightgreen">Đã Xác Nhận</span>
+                                    <span class="badges bg-lightgreen">Chờ Xác Nhận</span>
                                 </c:when>
                                 <c:when test="${donHang.trangThai == 3}">
-                                    <span class="badges bg-lightblue">Đang Giao</span>
+                                    <span class="badges bg-lightblue">Đã Xác Nhận</span>
                                 </c:when>
                                 <c:when test="${donHang.trangThai == 4}">
-                                    <span class="badges bg-lightyellow">Chờ Xác Nhận</span>
+                                    <span class="badges bg-lightyellow">Đang Giao</span>
                                 </c:when>
                             </c:choose>
                         </td>
