@@ -112,16 +112,4 @@ public class ChatLieuController {
         chatLieuService.remove(id);
         return "redirect:/chat-lieu/hien-thi";
     }
-
-//    @GetMapping("/chat-lieu/search")
-//    public String search(Model model, @ModelAttribute("key") String key, @RequestParam(defaultValue = "0") Integer page,String cl) {
-//        Pageable pageable = PageRequest.of(page, 5);
-//        Page<ChatLieu> list = chatLieuService.search(key, pageable);
-//        model.addAttribute("load", chatLieuService.getAll());
-//        model.addAttribute("page", page);
-//        model.addAttribute("cl", cl);
-//        model.addAttribute("view", "/chat_lieu/chinh-sach.jsp");
-//        model.addAttribute("list", list);
-//        return "/chat_lieu/index";
-//    }
 }

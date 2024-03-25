@@ -21,14 +21,32 @@
     <link rel="icon" href="../../../svg/logohome.svg">
 </head>
 <style>
-    .giaGoc {
+    .giaBan {
+        font-weight: bold;
+    }
+    .giaGoc{
         text-decoration-line: line-through;
     }
 
-    .giaBan {
-        text-decoration-line: line-through;
-        font-weight: bold;
+    .btn-muangay {
+        width: 150px;
+        margin-top: 50px;
+        font-size: 15px;
+    }
 
+    .btn-giohang {
+        width: 250px;
+        margin-left: 80px;
+        margin-top: 50px;
+        font-size: 15px;
+    }
+
+    .button-container {
+        margin-left: 20px;
+
+    }
+    .elis_rty{
+        font-size: 25px;
     }
 </style>
 <body>
@@ -36,31 +54,27 @@
 
 <div class="row">
     <c:forEach items="${hienthi.content}" var="hienthis">
-        <div class="col-3 mt-3">
+        <div class="col-3 mt-3 col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card">
                 <div id="cartItems">
                     <a href="/poly360boutique/san-pham/detail/${hienthis.id}">
                         <img src="/img/imgsanpham/${hienthis.hinhNen}"
                              class="card-img-top mx-auto d-block" alt=""
                              style="min-width: 319px; min-height: 319px"></a>
-                    <div class="card-body">
+                    <div class="card-body" id="productList">
                         <h5 class="card-title">${hienthis.ten}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-
-                            <%--                        <li class="list-group-item">Gía tiền: ${hienthis.gia} đ--%>
-                            <%--                        </li>--%>
-
-
                         <div class="elis_rty">
-                            <label>Giá Gốc: </label>
                             <span class="giaGoc text-muted ft-medium line-through mr-2"
                                   id="${hienthis.id}">Giá Gốc</span>
-                            <br>
-                            <label>Giá bán: </label>
                             <span class="giaBan ft-bold theme-cl fs-md" id="${hienthis.id}">Giá Bán</span>
                         </div>
-
+<%--                        <div class="button-container">--%>
+<%--                            <button type="button" class="btn btn-outline-warning btn-muangay"><a>Mua ngay</a></button>--%>
+<%--                            <button type="button" class="btn btn-outline-dark btn-giohang"><a>Thêm vào giỏ hàng</a>--%>
+<%--                            </button>--%>
+<%--                        </div>--%>
                         <!-- Import thư viện jQuery (nếu chưa import) -->
                         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -79,7 +93,7 @@
                                         url: "/giaBan/" + idSanPham,
                                         success: function (response) {
                                             // Cập nhật nội dung của thẻ span với giá bán nhận được từ API
-                                            $(this).text(response + ".đ");
+                                            $(this).text(response + " đ");
                                         },
                                         error: function (error) {
                                             console.error("Error fetching data: " + error);
@@ -99,7 +113,7 @@
                                         url: "/giaGoc/" + idSanPham,
                                         success: function (response) {
                                             // Cập nhật nội dung của thẻ span với giá gốc nhận được từ API
-                                            $(this).text(response + ".đ");
+                                            $(this).text(response + " đ");
                                         },
                                         error: function (error) {
                                             https://code.jquery.com/jquery-3.6.4.min.jscode.jquery.com/-strong/-heart:>:o:-((:-h

@@ -112,8 +112,6 @@
         }
 
 
-
-
         $(document).ready(function () {
             // Lặp qua mỗi sản phẩm
             $(".giaBan").each(function () {
@@ -160,7 +158,6 @@
         });
 
 
-
     </script>
 
 </head>
@@ -171,12 +168,15 @@
 <div class="flex-box">
     <div class="left">
         <div class="big-img">
-            <img class="data-image-product" data-url="http://localhost:8080/img/imgsanpham/${sanPham.hinhNen}" src="../../../img/imgsanpham/${sanPham.hinhNen}">
+            <img class="data-image-product" data-url="http://localhost:8080/img/imgsanpham/${sanPham.hinhNen}"
+                 src="../../../img/imgsanpham/${sanPham.hinhNen}">
         </div>
-        <div class="images" >
+        <div class="images">
             <c:forEach var="hinhAnh" items="${hinhAnhList}">
-                <div class="small-img">
-                    <img class="img-th data-image-product" data-url="http://localhost:8080/img/imgsanpham/${hinhAnh.url}" src="../../../img/imgsanpham/${hinhAnh.url}" onclick="showImg(this.src)">
+                <div class="small-img pic">
+                    <img class="img-th data-image-product"
+                         data-url="http://localhost:8080/img/imgsanpham/${hinhAnh.url}"
+                         src="../../../img/imgsanpham/${hinhAnh.url}" onclick="showImg(this.src)">
                 </div>
             </c:forEach>
         </div>
@@ -198,18 +198,13 @@
 
 
         <div class="price elis_rty">
-<%--            <label>Giá Gốc: </label>--%>
-<%--            <span class="giaGoc text-muted ft-medium line-through mr-2"--%>
-<%--                  id="${sanPham.id}">Giá Gốc</span>--%>
+            <%--            <label>Giá Gốc: </label>--%>
+            <%--            <span class="giaGoc text-muted ft-medium line-through mr-2"--%>
+            <%--                  id="${sanPham.id}">Giá Gốc</span>--%>
 
             <label>Giá bán: </label>
             <span class="giaBan ft-bold theme-cl fs-md" id="${sanPham.id}">Giá Bán</span>
         </div>
-
-
-
-
-
 
 
         <form id="formThemGioHang" method="post" action="/add-to-cart/${sanPham.id}">
@@ -243,15 +238,13 @@
                 </div>
             </div>
             <div class="quantity">
-                <p>Quantity :</p>
+                <p>Số lượng :</p>
                 <input type="number" min="1" max="1000" value="1" name="soLuong" id="soLuong">
-
-
             </div>
             <div class="btn-box">
                 <c:if test="${sanPham.trangThai == 0}">
-                    <button type="submit" id="addToCard" class="cart-btn">Add to Cart</button>
-                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>
+                    <button type="submit" id="addToCard" class="cart-btn">Thêm vào giỏ hàng</button>
+                    <%--                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>--%>
                 </c:if>
                 <c:if test="${sanPham.trangThai == 1}">
                     <button type="submit" id="addToCard" disabled="true"
@@ -270,11 +263,11 @@
 
 <script type="text/javascript">
     let bigImg = document.querySelector('.big-img img');
+
     function showImg(pic) {
-        function showImg(pic) {
-            bigImg.src = pic;
-        }
+        bigImg.src = pic;
     }
+
     let arrImage = [];
     jQuery(".data-image-product").each(function name(params) {
         arrImage.push($(this).attr("data-url"))

@@ -42,7 +42,6 @@
             <img src="https://salt.tikicdn.com/desktop/img/mascot@2x.png">
             <br><br>
             <div id="buttons">
-
 <%--                <a href="/poly360boutique/home" class="btn btn-primary btn-lg">Trang chủ</a>--%>
                 <a href="/poly360boutique/home" class="btn btn-lg btn-primary ">Trang chủ </a>
                 <a href="/donHang/donHangChiTiet/${idHD} " class="btn btn-secondary btn-lg">Xem đơn hàng</a>

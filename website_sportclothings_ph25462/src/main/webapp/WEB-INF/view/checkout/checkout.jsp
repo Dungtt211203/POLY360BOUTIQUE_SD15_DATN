@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -28,42 +27,6 @@
             font-family: Arial, sans-serif;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
 
         .form-section {
             flex: 1;
@@ -85,7 +48,7 @@
         }
 
         /* Style the submit button as a square */
-        button[type="submit"] {
+        btn-diachi {
             background-color: #007bff;
             color: #fff;
             padding: 15px 20px;
@@ -98,7 +61,7 @@
         }
 
         /* Hover effect for the submit button */
-        button[type="submit"]:hover {
+        btn-diachi:hover {
             background-color: #0056b3;
             /* Darker blue on hover */
         }
@@ -126,34 +89,240 @@
             color: #333;
         }
 
-
-        /* Định dạng cho nội dung của modal */
-        .modal-content {
-            background-color: #fefefe;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%; /* Chiều rộng của nội dung modal */
+        #checkoutForm {
+            max-width: 100%;
         }
 
-        /* Định dạng cho nút đóng modal */
+        #checkoutForm .row {
+            margin-bottom: 20px;
+        }
+
+        #checkoutForm .form-group {
+            margin-bottom: 15px;
+        }
+
+        #checkoutForm label {
+            font-weight: bold;
+        }
+
+        #checkoutForm input[type="text"],
+        #checkoutForm input[type="email"],
+        #checkoutForm select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #checkoutForm #openModalBtn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #checkoutForm #openModalBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #checkoutForm .list-group-item {
+            border: none;
+            padding: 10px;
+        }
+
+        #checkoutForm .list-group-item p {
+            margin-bottom: 5px;
+        }
+
+        #checkoutForm .btn-block {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        #checkoutForm .btn-block:hover {
+            background-color: #0056b3;
+        }
+
+        .container-mathang {
+            background-color: #f8f9fa; /* Màu nền của mỗi mục */
+            padding: 15px; /* Khoảng cách bên trong mỗi mục */
+            margin-bottom: 10px; /* Khoảng cách giữa các mục */
+            border-radius: 10px; /* Độ cong của góc */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+        }
+
+        .container-mathang:last-child {
+            margin-bottom: 0; /* Không có khoảng cách dưới cùng nếu là mục cuối cùng */
+        }
+
+        #checkoutForm {
+            border: 1px solid #ccc; /* Màu và độ dày của khung viền */
+            border-radius: 10px; /* Độ cong của góc */
+            padding: 20px; /* Khoảng cách bên trong form */
+        }
+
+        #checkoutForm .row {
+            margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+        }
+
+        #checkoutForm label {
+            font-weight: bold;
+        }
+
+        #checkoutForm input[type="text"],
+        #checkoutForm input[type="email"],
+        #checkoutForm select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #checkoutForm button[type="button"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #checkoutForm button[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+
+        .card {
+            border: 1px solid #ccc; /* Màu và độ dày của khung viền */
+            border-radius: 10px; /* Độ cong của góc */
+        }
+
+        .card-body {
+            padding: 20px; /* Khoảng cách bên trong card */
+        }
+
+        .payment-method {
+            border: 1px solid #ccc; /* Màu và độ dày của border */
+            border-radius: 5px; /* Độ cong của góc */
+            padding: 15px; /* Khoảng cách bên trong */
+        }
+
+        .payment-method h3 {
+            margin-bottom: 10px; /* Khoảng cách dưới của tiêu đề */
+        }
+
+        .payment-method input[type="radio"] {
+            display: none; /* Ẩn input radio mặc định */
+        }
+
+        .payment-method label {
+            display: block;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+        .payment-method label:hover {
+            background-color: #f0f0f0; /* Màu nền khi hover */
+        }
+
+        .payment-method input[type="radio"] + label:before {
+            content: '';
+            display: inline-block;
+            width: 20px; /* Kích thước của radio box */
+            height: 20px; /* Kích thước của radio box */
+            border: 2px solid #ccc; /* Màu và độ dày của border */
+            border-radius: 50%; /* Độ cong của radio box */
+            margin-right: 10px; /* Khoảng cách với label */
+        }
+
+        .payment-method input[type="radio"]:checked + label:before {
+            background-color: #007bff; /* Màu nền của radio box khi được chọn */
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Nội dung modal */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        /* Nút Close */
         .close {
-            color: #aaa;
+            color: orange;
             float: right;
-            font-size: 28px;
+            font-size: 50px;
             font-weight: bold;
         }
 
         .close:hover,
         .close:focus {
-            color: black;
+            color: cadetblue;
             text-decoration: none;
             cursor: pointer;
+        }
+        /* Tiêu đề modal */
+        .modal-title {
+            color: orange;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Form section */
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        /* Radio box */
+        .radio-custom {
+            margin-right: 10px;
+        }
+
+        /* Button */
+        .btn-add {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block; /* Chuyển nút thành block để có thể căn giữa */
+            margin: 0 auto; /* Căn giữa theo chiều ngang */
+        }
+
+        .btn-add:hover {
+            background-color: #c9302c;
         }
 
 
     </style>
-
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../../js/themNhanhDIaChi.js"></script>
@@ -172,7 +341,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div class="text-center d-block mb-5">
-                    <h2>Checkout</h2>
+                    <h2>Chi tiết đơn hàng</h2>
                 </div>
             </div>
         </div>
@@ -181,7 +350,7 @@
                 <div class="col-12 col-lg-7 col-md-12">
                     <!-- Checkout Form -->
                     <!-- Add your existing form content here -->
-                    <h5 class="mb-4 ft-medium">Chi Tiết Thanh Toán </h5>
+                    <h5 class="mb-4 ft-medium">Chi Tiết Thanh Toán</h5>
                     <div class="row mb-2">
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -194,7 +363,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="text-dark">Email </label>
-                                <input disabled type="email"  id="hienThiEmail" class="form-control"/>
+                                <input disabled type="email" id="hienThiEmail" class="form-control"/>
                             </div>
                         </div>
 
@@ -229,7 +398,7 @@
 
                                 </div>
                             </div>
-                            <button type="button" id="openModalBtn">Thêm Địa Chỉ</button>
+                            <button type="button" id="openModalBtn" class="btn-diachi">Thêm Địa Chỉ</button>
                             <%--                            <button type="button" id="suaDiaChi" class="btn btn-danger">Sửa Địa Chỉ</button>--%>
 
 
@@ -255,27 +424,28 @@
                         <h4 class="mb-4">Các mặt hàng:</h4>
                         <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x mb-4">
                             <c:forEach var="gioHangCT" items="${carts}">
-                                <li class="list-group-item">
-
-
+                                <li class="list-group-item container-mathang">
                                     <div class="d-flex justify-content-between">
                                         <div>
                                             <h5 class="mb-1">${gioHangCT.chiTietSanPham.sanPham.ten}</h5>
                                             <p class="mb-1">Số lượng: ${gioHangCT.soLuong}</p>
-                                            <p class="mb-1">Kích cỡ:  ${gioHangCT.chiTietSanPham.kichCo.ten}</p>
+                                            <p class="mb-1">Kích cỡ: ${gioHangCT.chiTietSanPham.kichCo.ten}</p>
                                             <p class="mb-1">Màu sắc : ${gioHangCT.chiTietSanPham.mauSac.ten}</p>
                                             <p class="mb-1">Đơn Giá : ${gioHangCT.chiTietSanPham.giaHienHanh} .₫</p>
-
-
                                         </div>
-
                                     </div>
-
-
                                 </li>
                             </c:forEach>
                         </ul>
                     </div>
+                    <div class="payment-method">
+                        <h3 style="font-size: 25px">Phương thức thanh toán</h3>
+                        <input type="radio" id="cash-on-delivery" name="payment-method" value="cash">
+                        <label for="cash-on-delivery">Thanh toán khi nhận hàng</label><br>
+                        <input type="radio" id="vnpay" name="payment-method" value="vnpay">
+                        <label for="vnpay">Thanh toán bằng VNPAY</label>
+                    </div>
+
 
                     <!-- Cart Summary -->
                     <!-- Thêm thông tin tổng cộng sau danh sách sản phẩm -->
@@ -292,7 +462,8 @@
 
                             <!-- Thêm thông tin tổng cộng vào đây -->
                             <li class="list-group-item d-flex justify-content-between text-dark fs-sm ft-regular">
-                                <span>Tổng</span> <span class="ml-auto text-dark ft-medium" id="tongTien">${totalAmount}</span>
+                                <span>Tổng</span> <span class="ml-auto text-dark ft-medium"
+                                                        id="tongTien">${totalAmount}đ</span>
                                 <input type="number" id="tongTienPC" value="999" style="display: none">
 
                             </li>
@@ -300,7 +471,7 @@
                             <li class="list-group-item d-flex justify-content-between text-dark fs-sm ft-regular">
                                 <span>Phí vận chuyển</span> <span name="phiVanChuyen"
                                                                   class="ml-auto text-dark ft-medium"
-                                                                  id="phiVanChuyen"> 30.000.đ </span>
+                                                                  id="phiVanChuyen">30.000.đ</span>
 
                             </li>
                             <input name="shippingFee" id="shippingFee" style="display: none">
@@ -319,19 +490,12 @@
                                 <input name="tongTien" style="display: none"
                                        value="${totalAmount}">
                             </li>
-
-
                         </div>
                     </div>
-
-
                     <button type="button" class="btn btn-block btn-dark mb-3" onclick="validateAndSubmit()">Đặt Hàng
                     </button>
-
                     <!-- End Checkout Button -->
-
                 </div>
-
             </div>
         </form>
 
@@ -342,7 +506,7 @@
             <div class="modal-content">
                 <span class="close" id="closeModalBtn">&times;</span>
                 <div>
-                    <h2 style="color: red; background: #d2d728; text-align: center ">Tạo Địa chỉ giao hàng mới</h2>
+                    <h2 class="modal-title">Tạo Địa chỉ giao hàng mới</h2>
                     <form class="row m-0" name="address" method="post">
                         <!-- SoDiaChi fields -->
                         <div class="form-section">
@@ -409,8 +573,9 @@
                         </div>
 
                     </form>
-                    <button type="button" class="btn btn-light btn-danger" onclick="confirmAddDiaChi()">Thêm
+                    <button type="button" class="btn btn-light btn-danger btn-add" onclick="confirmAddDiaChi()">Thêm
                     </button>
+
                 </div>
             </div>
         </div>

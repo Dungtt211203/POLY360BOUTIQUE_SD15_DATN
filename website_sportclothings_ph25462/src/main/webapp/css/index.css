@@ -143,3 +143,49 @@ body {
 .hide {
     display: none;
 }
+/* Định dạng phần tiêu đề */
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Định dạng các carousel slide */
+.carousel-item img {
+
+    object-fit: cover; /* Đảm bảo hình ảnh được hiển thị mà không bị bóp méo */
+}
+
+
+/* Định dạng thanh điều hướng */
+.navbar {
+    background-color: #ffffff; /* Màu nền của thanh điều hướng */
+    border-bottom: 1px solid #ccc; /* Đường viền dưới */
+}
+
+/* Định dạng các mục thanh điều hướng */
+.nav-link {
+    color: #333; /* Màu chữ */
+}
+
+/* Định dạng footer */
+footer {
+    background-color: #f8f9fa; /* Màu nền footer */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Định dạng tiêu đề footer */
+footer h4 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Định dạng văn bản footer */
+footer p {
+    font-size: 16px;
+    color: #666;
+}
+

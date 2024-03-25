@@ -60,6 +60,76 @@
             background-color: #ffc9c9;
             color: #f62222;
         }
+        /* CSS cho bảng */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* CSS cho header của bảng */
+        th {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* CSS cho dòng chẵn trong bảng */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* CSS cho dòng lẻ trong bảng */
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        /* CSS cho các ô trong bảng */
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ffc107; /* Đường viền dưới */
+        }
+
+        /* CSS cho khi con trỏ di chuột vào dòng trong bảng */
+        tr:hover {
+            background-color: orange;
+        }
+        /* Định dạng phần đầu của danh sách đơn hàng */
+        .ord_list_wrap {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Định dạng phần tiêu đề */
+        .ord_list_head {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        /* Định dạng các thành phần trong phần tiêu đề */
+        .ord_list_head .olh_flex {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Định dạng các phần tử văn bản trong phần tiêu đề */
+        .ord_list_head p, .ord_list_head h6 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        /* Định dạng văn bản màu xám */
+        .ord_list_head .text-muted {
+            color: #666;
+        }
+
+        /* Định dạng cho số đơn hàng và tổng tiền */
+        .ord_list_head h6 {
+            margin-left: 10px;
+            font-weight: normal;
+        }
 
 
     </style>
@@ -69,7 +139,8 @@
 <header>
     <jsp:include page="../template_home/header.jsp"/>
 </header>
-<div><h3>Chi Tiết Đơn Hàng</h3>
+<div>
+    <h3 style="text-align: center;font-size: 30px">Chi Tiết Đơn Hàng</h3>
     <br>
 </div>
 
@@ -79,51 +150,39 @@
             <p class="m-0 p-0"><span class="text-muted">Mã Đơn Hàng</span></p>
             <h6 class="mb-0 ft-medium"><c:out value="${maDonHang}"/></h6>
         </div>
-
         <div class="olh_flex">
             <p class="m-0 p-0"><span class="text-muted">Tổng Tiền</span></p>
             <h6 class="mb-0 ft-medium"><c:out value="${tongTien}"/> đ</h6>
         </div>
-
-
     </div>
 </div>
 
-
 <div class="ord_list_body text-left">
-    <!-- First Product -->
-    <c:forEach var="donHangChiTiet" items="${donHangChiTietList}">
-        <div class="row align-items-center justify-content-center m-0 py-4 br-bottom">
-            <div class="col-xl-5 col-lg-5 col-md-5 col-12">
-                <div class="cart_single d-flex align-items-start mfliud-bot">
-                    <div class="cart_selected_single_thumb">
-                            <%--                        <a href="/products/${donHangChiTiet.chiTietSanPham.sanPham.id}">--%>
-                            <%--                            <img src="${donHangChiTiet.chiTietSanPham.sanPham.hinhNen}" width="75" class="img-fluid rounded" alt="">--%>
-                            <%--                        </a>--%>
-                    </div>
-                    <div class="cart_single_caption pl-3">
-                        <p class="mb-0">Số Lượng: <span class="text-muted small"><c:out
-                                value="${donHangChiTiet.soLuong}"/></span></p>
-                        <h4 class="product_title fs-sm ft-medium mb-1 lh-1">
-                            <a href="/products/${donHangChiTiet.chiTietSP.sanPham.id}"
-                               th:text="${donHangChiTiet.chiTietSP.sanPham.ten}"></a>
-                        </h4>
-                        <p class="mb-2">
-                            <span class="text-dark medium"><c:out
-                                    value="${donHangChiTiet.chiTietSP.kichCo.ten}"/></span>,
-                            <span class="text-dark medium"><c:out
-                                    value="${donHangChiTiet.chiTietSP.mauSac.ten}"/></span>
-                        </p>
-                        <h4 class="fs-sm ft-bold mb-0 lh-1">${donHangChiTiet.donGia * donHangChiTiet.soLuong} đ</h4>
-                        <br>
-                        <p class="mb-1 p-0"><span class="text-muted">Ngày Đặt Hàng  </span></p>
-                        <h6 class="mb-0 ft-medium fs-sm"><c:out value="${donHangChiTiet.hoaDon.ngayTao}"/></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-                <p class="mb-1 p-0"><span class="text-muted">Trạng Thái</span></p>
-                <div class="delv_status">
+    <table>
+        <thead>
+        <tr>
+            <th>Số Lượng</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Kích Cỡ</th>
+            <th>Màu Sắc</th>
+            <th>Đơn Giá</th>
+            <th>Ngày Đặt Hàng</th>
+            <th>Trạng Thái</th>
+            <th>Hành Động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop through each order detail -->
+        <c:forEach var="donHangChiTiet" items="${donHangChiTietList}">
+            <tr>
+                <td><c:out value="${donHangChiTiet.soLuong}"/></td>
+                <td><a href="/products/${donHangChiTiet.chiTietSP.sanPham.id}"
+                       th:text="${donHangChiTiet.chiTietSP.sanPham.ten}"></a></td>
+                <td><c:out value="${donHangChiTiet.chiTietSP.kichCo.ten}"/></td>
+                <td><c:out value="${donHangChiTiet.chiTietSP.mauSac.ten}"/></td>
+                <td><c:out value="${donHangChiTiet.donGia * donHangChiTiet.soLuong}"/> đ</td>
+                <td><c:out value="${donHangChiTiet.hoaDon.ngayTao}"/></td>
+                <td>
                     <c:choose>
                         <c:when test="${donHangChiTiet.hoaDon.trangThai eq 0 || donHangChiTiet.trangThai eq 0}">
                             <span class="badges bg-lighthuy">Đã Hủy</span>
@@ -144,44 +203,24 @@
                             <span class="badges bg-lightblack">Trạng thái không hợp lệ</span>
                         </c:otherwise>
                     </c:choose>
-                </div>
-            </div>
-            <c:if test="${(donHangChiTiet.hoaDon.trangThai eq 2 || donHangChiTiet.hoaDon.trangThai eq 3) && donHangChiTiet.trangThai eq 1}">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-6">
-                    <br>
-                    <a href="/donHang/huy/${donHangChiTiet.id}" class="btn btn-danger"><span class="text-muted">Hủy Đơn </span></a>
-                </div>
-            </c:if>
-
-            <c:if test="${donHangChiTiet.trangThai eq 0}">
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-6">
-                    <br>
-                <span class="badges ">Đơn Hàng Đã Hủy</span>
-                </div>
-            </c:if>
-
-
-
-        </div>
-    </c:forEach>
+                </td>
+                <td>
+                    <c:if test="${(donHangChiTiet.hoaDon.trangThai eq 2 || donHangChiTiet.hoaDon.trangThai eq 3) && donHangChiTiet.trangThai eq 1}">
+                        <a href="/donHang/huy/${donHangChiTiet.id}" class="btn btn-danger"><span
+                                class="text-muted">Hủy Đơn </span></a>
+                    </c:if>
+                    <c:if test="${donHangChiTiet.trangThai eq 0}">
+                        <span class="badges ">Đơn Hàng Đã Hủy</span>
+                    </c:if>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
 
 
+
 <jsp:include page="../template_home/footer.jsp"/>
-
-<script type="text/javascript">
-    let bigImg = document.querySelector('.big-img img');
-
-
-    function showImg(pic) {
-
-        function showImg(pic) {
-
-            bigImg.src = pic;
-        }
-    }
-
-</script>
 </body>
 </html>

@@ -60,6 +60,39 @@
             background-color: #ffc9c9;
             color: #f62222;
         }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:hover {
+            background-color: #ddd;
+        }
+        .order-link {
+            color: #007bff; /* Màu văn bản */
+            text-decoration: none; /* Loại bỏ gạch chân */
+            font-weight: bold; /* Đậm */
+        }
+
+        .order-link:hover {
+            color: orange; /* Màu văn bản khi hover */
+            text-decoration: none; /* Gạch chân khi hover */
+            dis
+        }
 
 
     </style>
@@ -69,43 +102,26 @@
 <header>
     <jsp:include page="../template_home/header.jsp"/>
 </header>
-
 <div class="ord_list_wrap border mb-4 mfliud">
-    <div class="ord_list_head gray d-flex align-items-center justify-content-between px-3 py-3">
-        <div class="olh_flex">
-            <p class="m-0 p-0"><span class="text-muted">Mã Đơn Hàng</span></p>
-            <h6 class="mb-0 ft-medium"></h6>
-        </div>
-        <div class="olh_flex">
-            <div>Xem Chi Tiết</div>
-        </div>
-    </div>
-
-    <!-- ==================================================-->
 
     <div class="ord_list_body text-left">
-        <!-- First Product -->
-        <c:forEach var="donHang" items="${donHangList}">
-            <div class="row align-items-center justify-content-center m-0 py-4 br-bottom">
-
-                <div class="col-xl-5 col-lg-5 col-md-5 col-12">
-                    <div class="cart_single d-flex align-items-start mfliud-bot">
-                        <div class="cart_selected_single_thumb">
-<%--                            <a href="#"><img src="/" width="75" class="img-fluid rounded" alt=""></a>--%>
-                        </div>
-                        <div class="cart_single_caption pl-3">
-
-                            <h3 class="product_title fs-sm ft-medium mb-1 lh-1">
-
-                                <a href="/user/orderDetail/${donHang.id}" >${donHang.maHoaDon}</a>
-                            </h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-                    <p class="mb-1 p-0"><span class="text-muted">Trạng Thái</span></p>
-                    <div class="delv_status">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Mã Đơn Hàng</th>
+                <th>Trạng Thái</th>
+                <th>Ngày Đặt Hàng</th>
+                <th>Chi Tiết</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="donHang" items="${donHangList}">
+                <tr>
+                    <td>
+<%--                        href="/user/orderDetail/${donHang.id}"--%>
+                        <label  class="order-link" >${donHang.maHoaDon}</label>
+                    </td>
+                    <td>
                         <c:choose>
                             <c:when test="${donHang.trangThai eq 0}">
                                 <span class="badges bg-lighthuy">Đã Hủy</span>
@@ -126,20 +142,17 @@
                                 <span class="badges bg-lightblack">Trạng thái không hợp lệ</span>
                             </c:otherwise>
                         </c:choose>
-                    </div>
-
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-6">
-                    <p class="mb-1 p-0"><span class="text-muted">Ngày Đặt Hàng </span></p>
-                    <h6 class="mb-0 ft-medium fs-sm"><c:out value="${donHang.ngayTao}"/></h6>
-                    <a class="btn btn-dark" href="/donHang/donHangChiTiet/${donHang.id}">Chi Tiết</a>
-
-                </div>
-
-
-            </div>
-        </c:forEach>
+                    </td>
+                    <td><c:out value="${donHang.ngayTao}"/></td>
+                    <td>
+                        <a class="btn btn-dark" href="/donHang/donHangChiTiet/${donHang.id}">Chi Tiết</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
+
 
 
 
