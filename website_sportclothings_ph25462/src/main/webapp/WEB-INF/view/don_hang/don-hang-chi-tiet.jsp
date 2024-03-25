@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="th" %>
+
 
 <html lang="en">
 <head>
@@ -60,6 +62,7 @@
             background-color: #ffc9c9;
             color: #f62222;
         }
+
         /* CSS cho bảng */
         table {
             width: 100%;
@@ -95,6 +98,7 @@
         tr:hover {
             background-color: orange;
         }
+
         /* Định dạng phần đầu của danh sách đơn hàng */
         .ord_list_wrap {
             border: 1px solid #ccc;
@@ -206,7 +210,7 @@
                 <td>
                     <c:if test="${(donHangChiTiet.hoaDon.trangThai eq 2 || donHangChiTiet.hoaDon.trangThai eq 3) && donHangChiTiet.trangThai eq 1}">
                         <a href="/donHang/huy/${donHangChiTiet.id}" class="btn btn-danger"><span
-                                class="text-muted">Hủy Đơn </span></a>
+                                class="text-muted">Hủy Đơn</span></a>
                     </c:if>
                     <c:if test="${donHangChiTiet.trangThai eq 0}">
                         <span class="badges ">Đơn Hàng Đã Hủy</span>
@@ -217,9 +221,8 @@
         </tbody>
     </table>
 </div>
-
-
-
-<jsp:include page="../template_home/footer.jsp"/>
+<div style="position: fixedl">
+    <jsp:include page="../template_home/footer.jsp"/>
+</div>
 </body>
 </html>
