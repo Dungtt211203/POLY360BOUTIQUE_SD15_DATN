@@ -20,7 +20,7 @@
     <!-- Include Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+    <link rel="icon" href="../../../svg/logohome.svg">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -85,6 +85,35 @@
         /* Màu chữ khi di chuột qua */
     }
 
+    /* Đã Hủy */
+    .badges.bg-lightred {
+        background-color: lightcoral;
+        color: #fff; /* Màu chữ tùy chỉnh */
+    }
+
+    /* Thành Công */
+    .badges.bg-green {
+        background-color: limegreen;
+        color: #fff; /* Màu chữ tùy chỉnh */
+    }
+
+    /* Đã Xác Nhận */
+    .badges.bg-lightgreen {
+        background-color: lightgreen;
+        color: #333; /* Màu chữ tùy chỉnh */
+    }
+
+    /* Đang Giao */
+    .badges.bg-lightblue {
+        background-color: lightblue;
+        color: #333; /* Màu chữ tùy chỉnh */
+    }
+
+    /* Chờ Xác Nhận */
+    .badges.bg-lightyellow {
+        background-color: lightyellow;
+        color: #333; /* Màu chữ tùy chỉnh */
+    }
 </style>
 
 
@@ -301,6 +330,15 @@
                 <div class="col-md-2">
                     <a class="btn btnx" href="/admin/donHang/donHangDangGiao">Đang giao</a>
                 </div>
+                <div class="col-md-2">
+                    <a class="btn btnx" href="/admin/donHang/tatCaDonHang">Thành Công</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btnx" href="/admin/donHang/tatCaDonHang">Đã Hủy</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btnx" href="/admin/donHang/tatCaDonHang">Tất cả đơn hàng</a>
+                </div>
             </div>
 
             <table class="table table-bordered">
@@ -312,6 +350,7 @@
                     <th>Tổng Tiền</th>
                     <th>Ngày Đặt</th>
                     <th>Địa Chỉ</th>
+                    <th>Trạng Thái</th>
                     <th>Xem Chi Tiết</th>
                 </tr>
                 </thead>
@@ -325,6 +364,25 @@
                         <td>${donHang.tongTien}.đ</td>
                         <td>${donHang.ngayTao}</td>
                         <td>${donHang.diaChiNguoiNhan}</td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${donHang.trangThai == 0}">
+                                    <span class="badges bg-lightred">Đã Hủy</span>
+                                </c:when>
+                                <c:when test="${donHang.trangThai == 1}">
+                                    <span class="badges bg-green">Thành Công</span>
+                                </c:when>
+                                <c:when test="${donHang.trangThai == 2}">
+                                    <span class="badges bg-lightgreen">Đã Xác Nhận</span>
+                                </c:when>
+                                <c:when test="${donHang.trangThai == 3}">
+                                    <span class="badges bg-lightblue">Đang Giao</span>
+                                </c:when>
+                                <c:when test="${donHang.trangThai == 4}">
+                                    <span class="badges bg-lightyellow">Chờ Xác Nhận</span>
+                                </c:when>
+                            </c:choose>
+                        </td>
                         <td><a class="button" href="/admin/donHang/${donHang.id}">Chi Tiết</a></td>
                     </tr>
                 </c:forEach>

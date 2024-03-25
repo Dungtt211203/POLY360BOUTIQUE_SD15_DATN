@@ -54,7 +54,7 @@ public class HoaDon {
     @Column(name = "ngay_sua")
     private LocalDateTime ngaySua;
     @Column(name = "trang_thai")
-    private Integer trangThai;// 1 thanh cong, 2 tro xac nhan, 3 da xac nhan, 4 dang giao , 5 giao thanh cong, 0 huy
+    private Integer trangThai;// 1 thanh cong, 2 tro xac nhan, 3 da xac nhan, 4 dang giao , 0 huy
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_nhan_vien", referencedColumnName = "id")
     private NhanVien nhanVien;
