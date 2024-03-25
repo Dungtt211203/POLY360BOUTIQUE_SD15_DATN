@@ -26,10 +26,10 @@
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-banner" src="../../../img/imgbanner/bannerqao3.png" class="d-block w-100" alt="...">
+                    <img class="img-banner" src="../../../img/imgbanner/bannerqa2.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="img-banner" src="../../../img/imgbanner/bannerqa2.png" class="d-block w-100" alt="...">
+                    <img class="img-banner" src="../../../img/imgbanner/bannerqao3.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img class="img-banner" src="../../../img/imgbanner/bannerwelcome1.png" class="d-block w-100"
@@ -50,10 +50,6 @@
     </section>
     <section style="margin-top: 30px">
         <h1 style="text-align: center;margin-top: 30px">SẢN PHẨM ĐANG SALE</h1>
-        <jsp:include page="../template_home/cart.jsp"/>
-    </section>
-    <section style="margin-top: 30px">
-        <h1 style="text-align: center;margin-top: 30px">SẢN PHẨM BÁN CHẠY</h1>
         <jsp:include page="../template_home/cart.jsp"/>
     </section>
 </section>

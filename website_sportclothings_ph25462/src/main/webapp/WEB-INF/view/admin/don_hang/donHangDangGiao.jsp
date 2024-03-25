@@ -62,9 +62,7 @@
         /* Màu chữ khi di chuột qua */
     }
 
-
     .btnx {
-
         background-color: #ffffff;
         /* Màu nền */
         color: #333333;
@@ -282,23 +280,13 @@
 
 <body>
 
-<h1 style="text-align: center">Đơn Hàng Chờ Giao</h1>
+<h1 style="text-align: center">Quản Lý Hóa Đơn</h1>
 
 
 <div class="content">
-    <div class="page-header">
-        <div class="page-title">
-            <h4>Đơn Hàng Chờ</h4>
-            <h6>Xác Nhận Đơn Hàng</h6>
-        </div>
-
-    </div>
-
     <div class="card">
         <div class="card-body">
-
             <br><br>
-
             <!-- Chờ xác nhận, Chờ giao, Đang giao -->
             <div class="row">
                 <div class="col-md-2">

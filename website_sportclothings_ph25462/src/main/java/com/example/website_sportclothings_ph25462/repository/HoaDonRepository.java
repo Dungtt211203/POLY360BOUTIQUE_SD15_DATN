@@ -1,12 +1,16 @@
 package com.example.website_sportclothings_ph25462.repository;
 
 import com.example.website_sportclothings_ph25462.entity.HoaDon;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.awt.print.Pageable;
 import java.util.List;
+
 @Repository
 public interface HoaDonRepository extends JpaRepository<HoaDon, Long> {
     @Query(value = " SELECT TOP 1 id FROM hoa_don ORDER BY id DESC ", nativeQuery = true)
@@ -26,4 +30,6 @@ public interface HoaDonRepository extends JpaRepository<HoaDon, Long> {
 
     @Query(value = " SELECT * FROM hoa_don WHERE trang_thai = 4 ORDER BY id DESC ", nativeQuery = true)
     List<HoaDon> getDonHangDangGiao();
+
+//    Page<HoaDon> findByMaHoaDonContaining(String keyword, Sort sort, Pageable pageable);
 }

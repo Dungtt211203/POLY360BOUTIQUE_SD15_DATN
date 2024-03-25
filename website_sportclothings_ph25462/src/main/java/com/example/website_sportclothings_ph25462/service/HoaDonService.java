@@ -1,8 +1,11 @@
 package com.example.website_sportclothings_ph25462.service;
 
 import com.example.website_sportclothings_ph25462.entity.HoaDon;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.List;
 @Service
 public interface HoaDonService {
@@ -10,6 +13,8 @@ public interface HoaDonService {
     public List<HoaDon> getAll();
 
     public List<HoaDon> getAllByKhachHang();
+
+//    Page<HoaDon> search(String keyword, Sort sort, Pageable pageable);
 
     public HoaDon add(HoaDon hoaDon);
 

@@ -49,7 +49,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Thành công',
-                                text: 'Sản Phẩm Đã Xóa Khỏi Giỏ Hàng. ',
+                                text: 'Sản Phẩm Đã Xóa Khỏi Giỏ Hàng.',
                             }).then((result) => {
                                 // Sau khi hộp thoại đóng, kiểm tra xem người dùng đã nhấn nút "OK" hay chưa
                                 location.reload();
@@ -174,7 +174,7 @@
 
 
                                         <div style="margin: 8px">
-                                            <h4 class="fs-md ft-medium m-0 lh-1"><sup> ${cart.soLuong * cart.chiTietSanPham.gia }.đ </sup></h4>
+                                            <h4 class="fs-md ft-medium m-0 lh-1"><sup> ${cart.soLuong * cart.chiTietSanPham.gia}.đ </sup></h4>
                                         </div>
 
                                     </div>

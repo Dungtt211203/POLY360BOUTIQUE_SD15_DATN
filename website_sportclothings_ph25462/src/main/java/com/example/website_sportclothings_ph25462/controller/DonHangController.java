@@ -7,13 +7,13 @@ import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
 import com.example.website_sportclothings_ph25462.service.HoaDonChiTietService;
 import com.example.website_sportclothings_ph25462.service.HoaDonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @Controller
@@ -28,6 +28,21 @@ public class DonHangController {
 
     @Autowired
     private TaiKhoanDangDangNhap taiKhoanDangDangNhap;
+
+//    @GetMapping("/products")
+//    public String search(@RequestParam(defaultValue = "") String keyword,
+//                         @RequestParam(defaultValue = "name") String sortBy,
+//                         @RequestParam(defaultValue = "ASC") String direction,
+//                         Pageable pageable, Model model) {
+//        Sort sort = Sort.by(Sort.Direction.fromString(direction), sortBy);
+//        Page<HoaDon> products = hoaDonService.search(keyword, sort, pageable);
+//        model.addAttribute("products", products);
+//        model.addAttribute("keyword", keyword);
+//        model.addAttribute("sortBy", sortBy);
+//        model.addAttribute("direction", direction);
+//        return "product-list";
+//    }
+
 
     @GetMapping("/getAll")
     public String hienThi(Model model) {

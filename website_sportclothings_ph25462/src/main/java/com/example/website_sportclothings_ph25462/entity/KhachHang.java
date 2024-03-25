@@ -2,6 +2,7 @@ package com.example.website_sportclothings_ph25462.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
