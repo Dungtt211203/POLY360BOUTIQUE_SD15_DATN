@@ -85,6 +85,24 @@
             });
         });
 
+        function kiemtraSLGH() {
+            var quantity = document.getElementById("soLuong").value.trim();
+            var soLuongSPConLai = parseInt(document.getElementById("soLuongConLai").textContent) || 0;
+            var soLuongChon = parseInt(quantity) || 0;
+            var soLuongTrongGioHang = parseInt(quantity) || 0;
+            var soLuongThem = soLuongChon;
+            if (soLuongThem + soLuongTrongGioHang < soLuongSPConLai) {
+                // Hiển thị thông báo cảnh báo cho người dùng
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Số lượng trong giỏ hàng vượt quá số lượng sản phẩm',
+                    text: 'Số lượng sản phẩm trong giỏ hàng vượt quá số lượng sản phẩm còn lại.',
+                });
+                // event.preventDefault(); // Ngăn chặn sự kiện submit
+                return false; // Ngăn chặn việc thêm sản phẩm vào giỏ hàng
+            }
+            return true;
+        }
 
         function kiemTraSLSP() {
             var idMau = document.querySelector('input[name="mauSac"]:checked').value || 0;
@@ -243,7 +261,9 @@
             </div>
             <div class="btn-box">
                 <c:if test="${sanPham.trangThai == 0}">
-                    <button type="submit" id="addToCard" class="cart-btn">Thêm vào giỏ hàng</button>
+                    <button type="submit" id="addToCard" class="cart-btn" onclick="return kiemtraSLGH()">Thêm vào giỏ
+                        hàng
+                    </button>
                     <%--                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>--%>
                 </c:if>
                 <c:if test="${sanPham.trangThai == 1}">

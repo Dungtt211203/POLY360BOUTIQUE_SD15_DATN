@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLY360BOUTIQUE</title>
-    <link rel="stylesheet" href="../../../css/index.css">
+<%--    <link rel="stylesheet" href="../../../css/index.css">--%>
     <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
@@ -93,7 +93,7 @@
 
         /* CSS cho khi con trỏ di chuột vào dòng trong bảng */
         tr:hover {
-            background-color: orange;
+            background-color: #FFFFFF;
         }
         /* Định dạng phần đầu của danh sách đơn hàng */
         .ord_list_wrap {
@@ -130,7 +130,10 @@
             margin-left: 10px;
             font-weight: normal;
         }
-
+        .tenSP{
+            text-decoration: none;
+            color: black;
+        }
 
     </style>
 
@@ -168,6 +171,7 @@
             <th>Đơn Giá</th>
             <th>Ngày Đặt Hàng</th>
             <th>Trạng Thái</th>
+            <th>Hành Động</th>
         </tr>
         </thead>
         <tbody>
@@ -175,8 +179,7 @@
         <c:forEach var="donHangChiTiet" items="${donHangChiTietList}">
             <tr>
                 <td><c:out value="${donHangChiTiet.soLuong}"/></td>
-                <td><a href="/products/${donHangChiTiet.chiTietSP.sanPham.id}"
-                       th:text="${donHangChiTiet.chiTietSP.sanPham.ten}"></a></td>
+                <td><a href="/products/${donHangChiTiet.chiTietSP.sanPham.id}" class="tenSP">${donHangChiTiet.chiTietSP.sanPham.ten}</a></td>
                 <td><c:out value="${donHangChiTiet.chiTietSP.kichCo.ten}"/></td>
                 <td><c:out value="${donHangChiTiet.chiTietSP.mauSac.ten}"/></td>
                 <td><c:out value="${donHangChiTiet.donGia * donHangChiTiet.soLuong}"/> đ</td>
