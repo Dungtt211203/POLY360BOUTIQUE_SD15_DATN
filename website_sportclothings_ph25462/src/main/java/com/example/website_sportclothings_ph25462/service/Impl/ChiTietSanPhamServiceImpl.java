@@ -65,7 +65,7 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     }
 
     @Override
-    public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(long idSP, long idMauSac, long idKicCo) {
+    public ChiTietSanPham getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(Long idSP, Long idMauSac, Long idKicCo) {
         return chiTietSPRepository.getAllByIdSanPhamAndIdMauSacAndIdKichCo(idSP, idMauSac, idKicCo);
     }
 }

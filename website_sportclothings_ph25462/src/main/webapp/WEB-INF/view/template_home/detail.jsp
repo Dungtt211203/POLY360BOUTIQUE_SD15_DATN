@@ -174,7 +174,43 @@
                 });
             });
         });
+        function BuyNowProduct() {
+            var selectedColor = document.querySelector('input[name="mauSac"]:checked');
+            var selectedSize = document.querySelector('input[name="size"]:checked');
+            var quantity = document.getElementById("soLuong").value.trim();
 
+
+            if (!selectedColor || !selectedSize || quantity === "") {
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi!',
+                    text: 'Vui lòng chọn màu sắc, size sản phẩm và nhập số lượng.',
+                });
+                return; // Thoát khỏi hàm để không tiếp tục xử lý
+            }
+
+            var soLuongSPConLai = parseInt(document.getElementById("soLuongConLai").textContent) || 0;
+            var soLuongChon = parseInt(quantity) || 0;
+
+            if (soLuongSPConLai <= 0 || soLuongSPConLai < soLuongChon) {
+                event.preventDefault(); // Ngăn chặn sự kiện submit
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Xin lỗi!',
+                    text: soLuongSPConLai <= 0 ? 'Sản phẩm bạn chọn đã hết hàng.' : 'Số lượng sản phẩm còn lại không đủ.',
+                });
+                return; // Thoát khỏi hàm để không tiếp tục xử lý
+            }
+            var form = document.getElementById("formThemGioHang");
+            console.log(form)
+            var idMauSac = document.getElementById("mauSac").value;
+            var idSanPham = document.getElementById("idSanPham").value;
+            var idKichCo = document.getElementById("size").value;
+            var soLuong = document.getElementById("soLuong").value;
+            form.submit();
+            window.location.href = "/buyNow/" + idSanPham + "/" + idMauSac + "/" + idKichCo + "/" + soLuong;
+        }
 
     </script>
 
@@ -264,7 +300,7 @@
                     <button type="submit" id="addToCard" class="cart-btn" onclick="return kiemtraSLGH()">Thêm vào giỏ
                         hàng
                     </button>
-                    <%--                    <button type="button" class="buy-btn"> <a href="/checkout/show" style="text-decoration: none;color: #ffffff">Buy Now</a></button>--%>
+                    <button type="button" class="buy-btn" onclick="return BuyNowProduct()">Buy Now</button>
                 </c:if>
                 <c:if test="${sanPham.trangThai == 1}">
                     <button type="submit" id="addToCard" disabled="true"
