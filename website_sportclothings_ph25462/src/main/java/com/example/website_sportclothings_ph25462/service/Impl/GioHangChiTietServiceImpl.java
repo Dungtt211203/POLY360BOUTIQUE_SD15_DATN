@@ -140,7 +140,35 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
         }
 
     }
-
+    @Override
+    public Double getTotalMoney(List<GioHangChiTiet> listGHCT) {
+        Double sum = 0.0;
+        Double sumGoc = 0.0;
+        Double sumKhuyenMai = 0.0;
+//        for (GioHangChiTiet hdct : listGHCT) {
+//            if (hdct.getCtsp().getCtkm().isEmpty()) {
+//                sumGoc += hdct.getDonGia() * hdct.getSoLuong();
+//            } else {
+//                Boolean allTrangThai1 = false;
+//                for (ChiTietKhuyenMai chiTietKhuyenMai : hdct.getCtsp().getCtkm()) {
+//                    if (chiTietKhuyenMai.getTrangThai() == 0) {
+//                        if (chiTietKhuyenMai.getKhuyenMai().getDonVi().equals("%")){
+//                            sumKhuyenMai += (chiTietKhuyenMai.getCtsp().getGiaBan() - (chiTietKhuyenMai.getCtsp().getGiaBan()
+//                                    * chiTietKhuyenMai.getKhuyenMai().getGiaTri() / 100)) * hdct.getSoLuong();
+//                        }else{
+//                            sumKhuyenMai += (chiTietKhuyenMai.getCtsp().getGiaBan() - chiTietKhuyenMai.getKhuyenMai().getGiaTri()) * hdct.getSoLuong();
+//                        }
+//                        allTrangThai1 = true;
+//                    }
+//                }
+//                if (allTrangThai1 == false){
+//                    sumGoc += hdct.getDonGia() * hdct.getSoLuong();
+//                }
+//            }
+//            sum = sumGoc + sumKhuyenMai;
+//        }
+        return sum;
+    }
     @Override
     public void clearAll(long idGioHang) {
         gioHangChiTietRepository.deleteAllByIdGioHang(idGioHang);
