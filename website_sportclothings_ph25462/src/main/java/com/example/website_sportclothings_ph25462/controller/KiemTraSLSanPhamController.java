@@ -1,8 +1,15 @@
 package com.example.website_sportclothings_ph25462.controller;
 
 import com.example.website_sportclothings_ph25462.entity.ChiTietSanPham;
+import com.example.website_sportclothings_ph25462.entity.GioHangChiTiet;
+import com.example.website_sportclothings_ph25462.entity.KhachHang;
+import com.example.website_sportclothings_ph25462.entity.TaiKhoan;
 import com.example.website_sportclothings_ph25462.repository.ChiTietSanPhamRepository;
+import com.example.website_sportclothings_ph25462.security.TaiKhoanDangDangNhap;
 import com.example.website_sportclothings_ph25462.service.ChiTietSanPhamService;
+import com.example.website_sportclothings_ph25462.service.GioHangChiTietService;
+import com.example.website_sportclothings_ph25462.service.GioHangService;
+import com.example.website_sportclothings_ph25462.service.KhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +25,18 @@ import java.util.Map;
 public class KiemTraSLSanPhamController {
     @Autowired
     ChiTietSanPhamRepository chiTietSanPhamRepository;
-
+    @Autowired
+    private TaiKhoanDangDangNhap khachHangDangDangNhap;
     @Autowired
     private ChiTietSanPhamRepository sanPhamChiTietService;
-
+    @Autowired
+    KhachHangService khachHangService;
+    @Autowired
+    GioHangService gioHangService;
+    @Autowired
+    ChiTietSanPhamService chiTietSanPhamService;
+    @Autowired
+    GioHangChiTietService gioHangChiTietService;
 
     @GetMapping("/chitietsp/kiemTraSoLuongSanPham/{idSanPham}/{idMauSac}/{idKichCo}")
     @ResponseBody
@@ -73,5 +88,35 @@ public class KiemTraSLSanPhamController {
         }
     }
 
+    @GetMapping("/buyNow/{idSanPham}/{idMauSac}/{idKichCo}/{SoLuong}")
+    public String hienThiBuyNow(@PathVariable("idSanPham") Long idSanPham, @PathVariable("idMauSac") Long idMauSac,
+                                @PathVariable("idKichCo") Long idKichCo, @PathVariable("SoLuong") Integer soLuong) {
+        TaiKhoan taiKhoan = khachHangDangDangNhap.getCurrentNguoiDung();
+        if (taiKhoan == null) {
+            return "redirect:/login";
+        }
+        if (taiKhoan != null) {
+
+            KhachHang khachHang = khachHangService.getKHByIdTaiKhoan(taiKhoan.getId());
+
+            long idGioHang = gioHangService.kiemTraGioHangCuaKhachHang(khachHang).getId();
+            long idSPCT = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo).getId();
+            GioHangChiTiet gioHangChiTiet = gioHangChiTietService.getGioHangChiTietByIdGioHangAndIdCTSP(idGioHang, idSPCT);
+            if (gioHangChiTiet == null) {
+                gioHangChiTiet = new GioHangChiTiet();
+                gioHangChiTiet.setSoLuong(soLuong);
+                ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getCTSPByIdSanPhamAndIdMauSacAndIdKichCo(idSanPham, idMauSac, idKichCo);
+                gioHangChiTiet.setChiTietSanPham(chiTietSanPham); //
+                gioHangChiTiet.setGioHang(gioHangService.kiemTraGioHangCuaKhachHang(khachHang));
+                gioHangChiTietService.add(gioHangChiTiet);
+                return "redirect:/checkout/show";
+
+            }
+            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong() + soLuong); // số lượng cũ cộng số lượng mới
+            gioHangChiTietService.add(gioHangChiTiet);
+            return "redirect:/checkout/show";
+        }
+        return "redirect:/checkout/show";
+    }
 
 }

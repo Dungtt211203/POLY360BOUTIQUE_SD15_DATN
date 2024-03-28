@@ -431,7 +431,7 @@
                                             <p class="mb-1">Số lượng: ${gioHangCT.soLuong}</p>
                                             <p class="mb-1">Kích cỡ: ${gioHangCT.chiTietSanPham.kichCo.ten}</p>
                                             <p class="mb-1">Màu sắc : ${gioHangCT.chiTietSanPham.mauSac.ten}</p>
-                                            <p class="mb-1">Đơn Giá : ${gioHangCT.chiTietSanPham.giaHienHanh} .₫</p>
+                                            <p class="mb-1">Đơn Giá : ${gioHangCT.chiTietSanPham.giaHienHanh}.₫</p>
                                         </div>
                                     </div>
                                 </li>

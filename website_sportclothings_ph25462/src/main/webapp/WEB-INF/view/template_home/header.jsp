@@ -18,9 +18,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" style="color: #2D2D2D" onclick="toggleNavbar()">Thương Hiệu</a>
                             <div class="dropdown-content" style="display: none;">
-                                <a href="/poly360boutique/thuong-hieu-nike">Nike</a>
-                                <a href="/poly360boutique/thuong-hieu-nike">Adidas</a>
-                                <a href="/poly360boutique/thuong-hieu-nike">Li-ning</a>
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Li-ning</a>
                             </div>
                         </li>
                         <li class="nav-item">
