@@ -19,6 +19,8 @@ public interface GioHangChiTietService {
 
     public void delete(Long id);
 
+    Double getTotalMoney(List<GioHangChiTiet> listGHCT);
+
     public GioHangChiTiet getGioHangChiTietByIdGioHangAndIdCTSP(long idGioHang, long idSPCT);
 
     public GioHangChiTiet getOne(Long id);
